@@ -1,0 +1,23 @@
+# Words for generating fun usernames like "HappyPanda" or "SneakyFox"
+ADJECTIVES = [
+    "Happy",
+    "Sleepy",
+    "Grumpy",
+    "Sneezy",
+    "Bashful",
+    "Dopey",
+    "Doc",
+    "Swift",
+    "Clever",
+    "Brave",
+    "Gentle",
+    "Mighty",
+    "Sneaky",
+    "Jolly",
+    "Fuzzy",
+    "Jumpy",
+    "Wiggly",
+    "Bouncy",
+    "Sparkly",
+    "Fluffy",
+]
