@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "api",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "main",
+            "console": "internalConsole",
+            "justMyCode": true,
+            "args": [
+                "--local"
+            ]
+        }
+    ]
+}
