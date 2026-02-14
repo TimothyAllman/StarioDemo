@@ -18,8 +18,8 @@ from stario.html import Span
 from stario.html import Title
 from stario.toys import toy_inspector
 
-from stariodemo.DataStructsPkg.UserModule import User
 from stariodemo.DataStructsPkg.MessageModule import Message
+from stariodemo.DataStructsPkg.UserModule import User
 
 
 def page(*children):
@@ -37,6 +37,7 @@ def page(*children):
             Title("Chat - Stario"),
             Link({"rel": "stylesheet", "href": "/static/" + asset("css/style.css")}),
             Script({"type": "module", "src": "/static/" + asset("js/datastar.js")}),
+            Script({"src": "https://cdn.tailwindcss.com"}),
         ),
         Body(*children),
     )
