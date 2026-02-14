@@ -22,6 +22,7 @@ from stariodemo.DataStructsPkg.MessageModule import Message
 from stariodemo.DataStructsPkg.UserModule import User
 from stariodemo.ViewsPkg.InputFormViewModule import input_form_view
 from stariodemo.ViewsPkg.MessagesViewModule import messages_view
+from stariodemo.ViewsPkg.NavBarModule import NavBarFragment
 from stariodemo.ViewsPkg.OnlineUsersViewModule import online_users_view
 from stariodemo.ViewsPkg.PageModule import page
 from stariodemo.ViewsPkg.TypingIndicatorViewModule import typing_indicator_view
@@ -53,6 +54,7 @@ def chat_view(
     - data.init(at.get("/subscribe")): opens SSE connection on page load
     """
     return page(
+        NavBarFragment(),
         toy_inspector(),  # Dev tool: shows current signals state
         Div(
             {"class": "chat-container"},
