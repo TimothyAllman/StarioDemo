@@ -20,7 +20,7 @@ from stario.toys import toy_inspector
 
 from stariodemo.DataStructsPkg.MessageModule import Message
 from stariodemo.DataStructsPkg.UserModule import User
-from stariodemo.ViewsPkg.MessageViewModule import message_view
+from stariodemo.HtmlViewsPkg.MessageViewModule import message_view
 
 
 def messages_view(

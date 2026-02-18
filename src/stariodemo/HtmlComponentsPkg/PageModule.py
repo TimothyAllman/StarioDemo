@@ -39,5 +39,7 @@ def page(*children):
             Script({"type": "module", "src": "/static/" + asset("js/datastar.js")}),
             Script({"src": "https://cdn.tailwindcss.com"}),
         ),
-        Body(*children),
+        Body(
+            *children,
+        ),
     )

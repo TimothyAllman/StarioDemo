@@ -21,10 +21,23 @@ from stario import RichTracer
 from stario import Stario
 
 from stariodemo.DataBasePkg.db import create_database
-from stariodemo.HandlersPkg.HomeModule import HomeEndpoint
+from stariodemo.DataStructsPkg.UrlsModule import ABC_ADD_URL
+from stariodemo.DataStructsPkg.UrlsModule import ABC_LIST_URL
+from stariodemo.DataStructsPkg.UrlsModule import CHAT_URL
+from stariodemo.DataStructsPkg.UrlsModule import HOME_PAGE_URL
+from stariodemo.DataStructsPkg.UrlsModule import SEND_URL
+from stariodemo.DataStructsPkg.UrlsModule import SUBSCRIBE_URL
+from stariodemo.DataStructsPkg.UrlsModule import TYPING_URL
+from stariodemo.DataStructsPkg.UrlsModule import XYZ_ADD_URL
+from stariodemo.DataStructsPkg.UrlsModule import XYZ_LIST_URL
+from stariodemo.HandlersPkg.AbcAddPageEndpointModule import AbcAddPageEndpoint
+from stariodemo.HandlersPkg.AbcListPageEndpointModule import AbcListPageEndpoint
+from stariodemo.HandlersPkg.ChatPageEndpointModule import ChatPageEndpoint
+from stariodemo.HandlersPkg.HomePageEndpointModule import HomePageEndpoint
 from stariodemo.HandlersPkg.SendMessageModule import send_message
 from stariodemo.HandlersPkg.SubscribeModule import subscribe
 from stariodemo.HandlersPkg.TypingModule import typing
+from stariodemo.HandlersPkg.XyzListPageEndpointModule import XyzListPageEndpoint
 
 
 async def main():
@@ -55,10 +68,15 @@ async def main():
         app.assets("/static", Path(__file__).parent / "static")
 
         # Routes - closures inject db/relay where needed
-        app.get("/", HomeEndpoint(None))
-        app.get("/subscribe", subscribe(db, relay))
-        app.post("/send", send_message(db, relay))
-        app.post("/typing", typing(db, relay))
+        app.get(HOME_PAGE_URL, HomePageEndpoint(None))
+        app.get(CHAT_URL, ChatPageEndpoint(None))
+        app.get(ABC_ADD_URL, AbcAddPageEndpoint(None))
+        app.get(ABC_LIST_URL, AbcListPageEndpoint(None))
+        app.get(XYZ_ADD_URL, AbcAddPageEndpoint(None))
+        app.get(XYZ_LIST_URL, XyzListPageEndpoint(None))
+        app.get(SUBSCRIBE_URL, subscribe(db, relay))
+        app.post(SEND_URL, send_message(db, relay))
+        app.post(TYPING_URL, typing(db, relay))
 
         await app.serve(host=host, port=port, workers=workers)
 

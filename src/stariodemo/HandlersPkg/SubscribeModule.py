@@ -2,7 +2,7 @@ from stario import Context, Relay, Writer
 from stariodemo.DataBasePkg.db import Database
 from stariodemo.DataStructsPkg.UserModule import User
 from stariodemo.HandlersPkg import ChatSignals
-from stariodemo.ViewsPkg.ChatViewModule import chat_view
+from stariodemo.HtmlViewsPkg.ChatViewModule import chat_view
 
 
 def subscribe(db: Database, relay: Relay[str]):

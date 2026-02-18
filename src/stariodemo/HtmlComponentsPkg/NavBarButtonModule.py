@@ -1,5 +1,8 @@
+from stario import at
+from stario.datastar import data
 from stario.html import H1
 from stario.html import A
+from stario.html import Div
 
 
 def NavBarButton(url, name):
@@ -10,6 +13,7 @@ def NavBarButton(url, name):
                 "hover:bg-blue-800 transition transform hover:scale-105",
             ]
         },
+        data.on("click", at.get("/thing2")),
         {"href": url},
         name,
     )

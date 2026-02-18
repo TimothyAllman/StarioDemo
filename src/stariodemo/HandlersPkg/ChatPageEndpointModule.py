@@ -1,0 +1,25 @@
+import uuid
+
+from stario import Context
+from stario import Writer
+
+from stariodemo.DataStructsPkg.GenerateColorModule import generate_color
+from stariodemo.DataStructsPkg.GenerateUserNameModule import generate_username
+from stariodemo.HtmlViewsPkg.ChatViewModule import chat_view
+
+
+def ChatPageEndpoint(
+    noDeps: None,
+):
+    async def handler(c: Context, w: Writer) -> None:
+        """
+        Serve the home page
+        """
+        user_id = str(uuid.uuid4())[:8]
+        username = generate_username()
+        color = generate_color()
+
+        # Pass empty collections - user will get real data after subscribing
+        w.html(chat_view(user_id, username, color, messages=[], users={}))
+
+    return handler
