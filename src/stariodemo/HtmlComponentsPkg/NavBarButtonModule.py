@@ -13,7 +13,6 @@ def NavBarButton(url, name):
                 "hover:bg-blue-800 transition transform hover:scale-105",
             ]
         },
-        data.on("click", at.get("/thing2")),
         {"href": url},
         name,
     )
