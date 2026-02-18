@@ -37,6 +37,7 @@ from stariodemo.HandlersPkg.HomePageEndpointModule import HomePageEndpoint
 from stariodemo.HandlersPkg.SendMessageModule import send_message
 from stariodemo.HandlersPkg.SubscribeModule import subscribe
 from stariodemo.HandlersPkg.TypingModule import typing
+from stariodemo.HandlersPkg.XyzAddPageEndpointModule import XyzAddPageEndpoint
 from stariodemo.HandlersPkg.XyzListPageEndpointModule import XyzListPageEndpoint
 
 
@@ -72,7 +73,7 @@ async def main():
         app.get(CHAT_URL, ChatPageEndpoint(None))
         app.get(ABC_ADD_URL, AbcAddPageEndpoint(None))
         app.get(ABC_LIST_URL, AbcListPageEndpoint(None))
-        app.get(XYZ_ADD_URL, AbcAddPageEndpoint(None))
+        app.get(XYZ_ADD_URL, XyzAddPageEndpoint(None))
         app.get(XYZ_LIST_URL, XyzListPageEndpoint(None))
         app.get(SUBSCRIBE_URL, subscribe(db, relay))
         app.post(SEND_URL, send_message(db, relay))
