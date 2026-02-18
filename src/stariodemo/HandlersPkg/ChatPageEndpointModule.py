@@ -5,7 +5,9 @@ from stario import Writer
 
 from stariodemo.DataStructsPkg.GenerateColorModule import generate_color
 from stariodemo.DataStructsPkg.GenerateUserNameModule import generate_username
+from stariodemo.HtmlComponentsPkg.PageModule import page
 from stariodemo.HtmlViewsPkg.ChatViewModule import chat_view
+from stariodemo.HtmlViewsPkg.NavBarAndFooterViewModule import NavBarAndFooterView
 
 
 def ChatPageEndpoint(
@@ -20,6 +22,18 @@ def ChatPageEndpoint(
         color = generate_color()
 
         # Pass empty collections - user will get real data after subscribing
-        w.html(chat_view(user_id, username, color, messages=[], users={}))
+        w.html(
+            page(
+                NavBarAndFooterView(
+                    chat_view(
+                        user_id,
+                        username,
+                        color,
+                        messages=[],
+                        users={},
+                    )
+                )
+            )
+        )
 
     return handler

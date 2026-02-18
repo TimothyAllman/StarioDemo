@@ -31,7 +31,7 @@ from stariodemo.HtmlViewsPkg.OnlineUsersViewModule import online_users_view
 from stariodemo.HtmlViewsPkg.TypingIndicatorViewModule import typing_indicator_view
 
 
-def NavBarAnfFooterView(
+def NavBarAndFooterView(
     *children,
 ):
     """

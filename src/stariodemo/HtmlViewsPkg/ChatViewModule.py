@@ -21,11 +21,11 @@ from stario.toys import toy_inspector
 from stariodemo.DataStructsPkg.MessageModule import Message
 from stariodemo.DataStructsPkg.UserModule import User
 from stariodemo.HtmlComponentsPkg.FooterBarModule import FooterBar
+from stariodemo.HtmlComponentsPkg.NavBarModule import NavBar
+from stariodemo.HtmlComponentsPkg.PageModule import page
 from stariodemo.HtmlViewsPkg.InputFormViewModule import input_form_view
 from stariodemo.HtmlViewsPkg.MessagesViewModule import messages_view
-from stariodemo.HtmlComponentsPkg.NavBarModule import NavBar
 from stariodemo.HtmlViewsPkg.OnlineUsersViewModule import online_users_view
-from stariodemo.HtmlComponentsPkg.PageModule import page
 from stariodemo.HtmlViewsPkg.TypingIndicatorViewModule import typing_indicator_view
 
 
@@ -54,8 +54,7 @@ def chat_view(
     - data.signals({...}, ifmissing=True): initializes client state (only if not set)
     - data.init(at.get("/subscribe")): opens SSE connection on page load
     """
-    return page(
-        NavBar(),
+    return Div(
         toy_inspector(),  # Dev tool: shows current signals state
         Div(
             {"class": "chat-container"},
@@ -79,5 +78,4 @@ def chat_view(
                 input_form_view(),
             ),
         ),
-        FooterBar(),
     )

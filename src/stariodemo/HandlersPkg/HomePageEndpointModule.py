@@ -8,7 +8,7 @@ from stariodemo.DataStructsPkg.GenerateUserNameModule import generate_username
 from stariodemo.HtmlComponentsPkg.PageModule import page
 from stariodemo.HtmlViewsPkg.ChatViewModule import chat_view
 from stariodemo.HtmlViewsPkg.HomeViewModule import HomeView
-from stariodemo.HtmlViewsPkg.NavBarAndFooterViewModule import NavBarAnfFooterView
+from stariodemo.HtmlViewsPkg.NavBarAndFooterViewModule import NavBarAndFooterView
 
 
 def HomePageEndpoint(noDeps: None):
@@ -23,7 +23,7 @@ def HomePageEndpoint(noDeps: None):
         # Pass empty collections - user will get real data after subscribing
         w.html(
             page(
-                NavBarAnfFooterView(
+                NavBarAndFooterView(
                     HomeView(),
                 )
             )

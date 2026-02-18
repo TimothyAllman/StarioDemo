@@ -6,7 +6,7 @@ from stario import Writer
 from stariodemo.HtmlComponentsPkg.PageModule import page
 from stariodemo.HtmlViewsPkg.AbcListViewModule import AbcListView
 from stariodemo.HtmlViewsPkg.AbcSidebarViewModule import AbcSideBarView
-from stariodemo.HtmlViewsPkg.NavBarAndFooterViewModule import NavBarAnfFooterView
+from stariodemo.HtmlViewsPkg.NavBarAndFooterViewModule import NavBarAndFooterView
 
 
 def AbcListPageEndpoint(noDeps: None):
@@ -16,7 +16,7 @@ def AbcListPageEndpoint(noDeps: None):
         """
         w.html(
             page(
-                NavBarAnfFooterView(
+                NavBarAndFooterView(
                     AbcSideBarView(
                         AbcListView(),
                     )
