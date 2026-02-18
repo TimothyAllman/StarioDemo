@@ -28,13 +28,14 @@ from stariodemo.HtmlComponentsPkg.PageModule import page
 from stariodemo.HtmlComponentsPkg.SideBarButtonModule import SideBarButton
 from stariodemo.HtmlComponentsPkg.SideBarModule import SideBar
 from stariodemo.HtmlViewsPkg.InputFormViewModule import input_form_view
+from stariodemo.HtmlViewsPkg.LeftSidebarViewModule import LeftSidebarWithContentView
 from stariodemo.HtmlViewsPkg.MessagesViewModule import messages_view
 from stariodemo.HtmlViewsPkg.OnlineUsersViewModule import online_users_view
 from stariodemo.HtmlViewsPkg.TypingIndicatorViewModule import typing_indicator_view
 
 
 def AbcSideBarView(
-    children,
+    *children,
     # username: str,
     # color: str,
     # *,
@@ -47,17 +48,11 @@ def AbcSideBarView(
 
     return Div(
         H1("abc"),
-        Div(
-            {"class": "grid grid-cols-1 lg:grid-cols-[200px_1fr]"},
-            SideBar(
-                [
-                    SideBarButton(name="List", url=ABC_LIST_URL),
-                    SideBarButton(name="Add", url=ABC_ADD_URL),
-                ]
-            ),
-            Div(
-                {"class": "bg-red-500 w-full"},
-            ),
+        LeftSidebarWithContentView(
+            [
+                SideBarButton(name="List", url=ABC_LIST_URL),
+                SideBarButton(name="Add", url=ABC_ADD_URL),
+            ],
+            *children,
         ),
-        *children,
     )
