@@ -21,8 +21,13 @@ from stario.toys import toy_inspector
 from stariodemo.DataStructsPkg.MessageModule import Message
 from stariodemo.DataStructsPkg.UserModule import User
 from stariodemo.HtmlComponentsPkg.FooterBarModule import FooterBar
+from stariodemo.HtmlComponentsPkg.MessageBoxModule import MessageBoxError
+from stariodemo.HtmlComponentsPkg.MessageBoxModule import MessageBoxInfo
+from stariodemo.HtmlComponentsPkg.MessageBoxModule import MessageBoxSuccess
+from stariodemo.HtmlComponentsPkg.MessageBoxModule import MessageBoxWarning
 from stariodemo.HtmlComponentsPkg.NavBarModule import NavBar
 from stariodemo.HtmlComponentsPkg.PageModule import page
+from stariodemo.HtmlComponentsPkg.PlaneIconModule import PlaneIcon
 from stariodemo.HtmlComponentsPkg.SideBarButtonModule import SideBarButton
 from stariodemo.HtmlComponentsPkg.SideBarModule import SideBar
 from stariodemo.HtmlViewsPkg.InputFormViewModule import input_form_view
@@ -43,4 +48,13 @@ def HomeView(
     docstring
     """
 
-    return Div("home")
+    showPlaneIsTrue = False
+
+    return Div(
+        MessageBoxInfo(),
+        MessageBoxSuccess(),
+        MessageBoxWarning(),
+        MessageBoxError(),
+        PlaneIcon() if showPlaneIsTrue else None,
+        "home",
+    )
