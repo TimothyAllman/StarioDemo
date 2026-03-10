@@ -70,11 +70,14 @@ async def main():
 
         # Routes - closures inject db/relay where needed
         app.get(HOME_PAGE_URL, HomePageEndpoint())
-        app.get(CHAT_URL, ChatPageEndpoint())
+
         app.get(ABC_ADD_URL, AbcAddPageEndpoint())
         app.get(ABC_LIST_URL, AbcListPageEndpoint())
+
         app.get(XYZ_ADD_URL, XyzAddPageEndpoint())
         app.get(XYZ_LIST_URL, XyzListPageEndpoint())
+
+        app.get(CHAT_URL, ChatPageEndpoint())
         app.get(SUBSCRIBE_URL, subscribe(db, relay))
         app.post(SEND_URL, send_message(db, relay))
         app.post(TYPING_URL, typing(db, relay))
