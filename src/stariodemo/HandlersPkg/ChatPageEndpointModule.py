@@ -10,9 +10,7 @@ from stariodemo.HtmlViewsPkg.ChatViewModule import chat_view
 from stariodemo.HtmlViewsPkg.NavBarAndFooterViewModule import NavBarAndFooterView
 
 
-def ChatPageEndpoint(
-    noDeps: None,
-):
+def ChatPageEndpoint():
     async def handler(c: Context, w: Writer) -> None:
         """
         Serve the home page

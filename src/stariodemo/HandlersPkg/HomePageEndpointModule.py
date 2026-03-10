@@ -10,7 +10,7 @@ from stariodemo.HtmlViewsPkg.HomeViewModule import HomeView
 from stariodemo.HtmlViewsPkg.NavBarAndFooterViewModule import NavBarAndFooterView
 
 
-def HomePageEndpoint(noDeps: None):
+def HomePageEndpoint():
     async def handler(c: Context, w: Writer) -> None:
         """
         Serve the home page

@@ -34,7 +34,7 @@ def page(*children):
         Head(
             Meta({"charset": "UTF-8"}),
             Meta({"name": "viewport", "content": "width=device-width, initial-scale=1"}),
-            Title("Chat - Stario"),
+            Title("Template - Stario"),
             Link({"rel": "stylesheet", "href": "/static/" + asset("css/style.css")}),
             Script({"type": "module", "src": "/static/" + asset("js/datastar.js")}),
             Script({"src": "https://cdn.tailwindcss.com"}),

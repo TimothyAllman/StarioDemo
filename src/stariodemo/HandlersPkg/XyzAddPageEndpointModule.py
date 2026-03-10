@@ -9,7 +9,7 @@ from stariodemo.HtmlViewsPkg.XyzAddViewModule import XyzAddView
 from stariodemo.HtmlViewsPkg.XyzSidebarViewModule import XyzSidebarView
 
 
-def XyzAddPageEndpoint(noDeps: None):
+def XyzAddPageEndpoint():
     async def handler(c: Context, w: Writer) -> None:
 
         # Pass empty collections - user will get real data after subscribing

@@ -69,12 +69,12 @@ async def main():
         app.assets("/static", Path(__file__).parent / "static")
 
         # Routes - closures inject db/relay where needed
-        app.get(HOME_PAGE_URL, HomePageEndpoint(None))
-        app.get(CHAT_URL, ChatPageEndpoint(None))
-        app.get(ABC_ADD_URL, AbcAddPageEndpoint(None))
-        app.get(ABC_LIST_URL, AbcListPageEndpoint(None))
-        app.get(XYZ_ADD_URL, XyzAddPageEndpoint(None))
-        app.get(XYZ_LIST_URL, XyzListPageEndpoint(None))
+        app.get(HOME_PAGE_URL, HomePageEndpoint())
+        app.get(CHAT_URL, ChatPageEndpoint())
+        app.get(ABC_ADD_URL, AbcAddPageEndpoint())
+        app.get(ABC_LIST_URL, AbcListPageEndpoint())
+        app.get(XYZ_ADD_URL, XyzAddPageEndpoint())
+        app.get(XYZ_LIST_URL, XyzListPageEndpoint())
         app.get(SUBSCRIBE_URL, subscribe(db, relay))
         app.post(SEND_URL, send_message(db, relay))
         app.post(TYPING_URL, typing(db, relay))

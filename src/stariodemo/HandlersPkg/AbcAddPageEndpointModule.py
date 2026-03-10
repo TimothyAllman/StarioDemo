@@ -1,5 +1,3 @@
-import uuid
-
 from stario import Context
 from stario import Writer
 
@@ -9,7 +7,7 @@ from stariodemo.HtmlViewsPkg.AbcSidebarViewModule import AbcSideBarView
 from stariodemo.HtmlViewsPkg.NavBarAndFooterViewModule import NavBarAndFooterView
 
 
-def AbcAddPageEndpoint(noDeps: None):
+def AbcAddPageEndpoint():
     async def handler(c: Context, w: Writer) -> None:
         """
         Serve abc list page

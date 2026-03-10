@@ -1,5 +1,3 @@
-import uuid
-
 from stario import Context
 from stario import Writer
 
@@ -9,7 +7,7 @@ from stariodemo.HtmlViewsPkg.XyzListViewModule import XyzListView
 from stariodemo.HtmlViewsPkg.XyzSidebarViewModule import XyzSidebarView
 
 
-def XyzListPageEndpoint(noDeps: None):
+def XyzListPageEndpoint():
     async def handler(c: Context, w: Writer) -> None:
 
         # Pass empty collections - user will get real data after subscribing
