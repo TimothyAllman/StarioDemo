@@ -1,35 +1,15 @@
-from stario.html import Div
-from stario.html import G
-from stario.html import Path
-from stario.html import Svg
+from stario.html import SafeString
 
 
-def PlaneIcon(strokeWidth=10):
-    return Div(
-        {"class": "flex-shrink-0"},
-        Svg(
-            {"viewBox": "0 0 512 512"},
-            G(
-                {"fill": "none", "stroke": "#000", "stroke-width": "20", "stroke-linejoin": "round"},
-                # Path({"d": "M143.533 256 79.267 384.533v-192.8L497 127.467z"}),
-                Path({"d": "M143.533 256 79.267 384.533l119.352-73.448zM15 127.467h482L79.267 191.733z"}),
-                # Path({"d": "M143.533 256 497 127.467l-241 241z"}),
-            ),
-        ),
+def PlaneIcon(
+    strokeWidth=2,
+    classes="",
+):
+    """
+    from tabler icons
+    """
+    return SafeString(
+        f"""
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="{strokeWidth}" stroke-linecap="round" stroke-linejoin="round" class="{classes} icon icon-tabler icons-tabler-outline icon-tabler-brand-telegram"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" /></svg>
+"""
     )
-
-
-# return Div(
-#         {"class": "flex-shrink-0"},
-#         SafeString(
-#             f"""
-#         <svg viewBox="0 0 512 512">
-#         <g fill="none" stroke="#000" stroke-width="{strokeWidth}" stroke-linejoin="round">
-#             <path d="M143.533 256 79.267 384.533v-192.8L497 127.467z"/>
-#             <path d="M143.533 256 79.267 384.533l119.352-73.448zM15 127.467h482L79.267 191.733z"/>
-#             <path d="M143.533 256 497 127.467l-241 241z"/>
-#         </g>
-#         </svg>
-#             """
-#         ),
-#     )

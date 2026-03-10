@@ -28,7 +28,7 @@ from stariodemo.HtmlComponentsPkg.PageModule import page
 from stariodemo.HtmlComponentsPkg.SideBarButtonModule import SideBarButton
 from stariodemo.HtmlComponentsPkg.SideBarModule import SideBar
 from stariodemo.HtmlViewsPkg.InputFormViewModule import input_form_view
-from stariodemo.HtmlViewsPkg.LeftSidebarViewModule import LeftSidebarWithContentView
+from stariodemo.HtmlViewsPkg.LeftSidebarAndContentViewModule import LeftSidebarAndContentView
 from stariodemo.HtmlViewsPkg.MessagesViewModule import messages_view
 from stariodemo.HtmlViewsPkg.OnlineUsersViewModule import online_users_view
 from stariodemo.HtmlViewsPkg.TypingIndicatorViewModule import typing_indicator_view
@@ -47,8 +47,7 @@ def AbcSideBarView(
     """
 
     return Div(
-        H1("abc"),
-        LeftSidebarWithContentView(
+        LeftSidebarAndContentView(
             [
                 SideBarButton(name="List", url=ABC_LIST_URL),
                 SideBarButton(name="Add", url=ABC_ADD_URL),

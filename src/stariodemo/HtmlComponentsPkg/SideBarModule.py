@@ -7,6 +7,6 @@ from stariodemo.HtmlComponentsPkg.SideBarButtonModule import SideBarButton
 
 def SideBar(*buttons):
     return Div(
-        {"class": "bg-red-700"},
+        {"class": "flex flex-col"},
         [item for item in buttons],
     )
