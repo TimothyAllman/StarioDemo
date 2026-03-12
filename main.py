@@ -12,7 +12,6 @@ Run with: uv run main.py
 """
 
 import asyncio
-import sys
 from pathlib import Path
 
 from stario import JsonTracer
@@ -21,15 +20,15 @@ from stario import RichTracer
 from stario import Stario
 
 from stariodemo.DataBasePkg.db import create_database
-from stariodemo.DataStructsPkg.UrlsModule import ABC_ADD_URL
-from stariodemo.DataStructsPkg.UrlsModule import ABC_LIST_URL
-from stariodemo.DataStructsPkg.UrlsModule import CHAT_URL
+from stariodemo.DataStructsPkg.UrlsModule import ABC_ADD_PAGE_URL
+from stariodemo.DataStructsPkg.UrlsModule import ABC_LIST_PAGE_URL
+from stariodemo.DataStructsPkg.UrlsModule import CHAT_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import HOME_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import SEND_URL
 from stariodemo.DataStructsPkg.UrlsModule import SUBSCRIBE_URL
 from stariodemo.DataStructsPkg.UrlsModule import TYPING_URL
-from stariodemo.DataStructsPkg.UrlsModule import XYZ_ADD_URL
-from stariodemo.DataStructsPkg.UrlsModule import XYZ_LIST_URL
+from stariodemo.DataStructsPkg.UrlsModule import XYZ_ADD_PAGE_URL
+from stariodemo.DataStructsPkg.UrlsModule import XYZ_LIST_PAGE_URL
 from stariodemo.HandlersPkg.AbcAddPageEndpointModule import AbcAddPageEndpoint
 from stariodemo.HandlersPkg.AbcListPageEndpointModule import AbcListPageEndpoint
 from stariodemo.HandlersPkg.ChatPageEndpointModule import ChatPageEndpoint
@@ -43,7 +42,7 @@ from stariodemo.HandlersPkg.XyzListPageEndpointModule import XyzListPageEndpoint
 
 async def main():
     # Determine environment
-    is_dev = "--local" in sys.argv or sys.stdout.isatty()
+    is_dev = True  # "--local" in sys.argv or sys.stdout.isatty()
 
     if is_dev:
         tracer = RichTracer()
@@ -71,13 +70,13 @@ async def main():
         # Routes - closures inject db/relay where needed
         app.get(HOME_PAGE_URL, HomePageEndpoint())
 
-        app.get(ABC_ADD_URL, AbcAddPageEndpoint())
-        app.get(ABC_LIST_URL, AbcListPageEndpoint())
+        app.get(ABC_ADD_PAGE_URL, AbcAddPageEndpoint())
+        app.get(ABC_LIST_PAGE_URL, AbcListPageEndpoint())
 
-        app.get(XYZ_ADD_URL, XyzAddPageEndpoint())
-        app.get(XYZ_LIST_URL, XyzListPageEndpoint())
+        app.get(XYZ_ADD_PAGE_URL, XyzAddPageEndpoint())
+        app.get(XYZ_LIST_PAGE_URL, XyzListPageEndpoint())
 
-        app.get(CHAT_URL, ChatPageEndpoint())
+        app.get(CHAT_PAGE_URL, ChatPageEndpoint())
         app.get(SUBSCRIBE_URL, subscribe(db, relay))
         app.post(SEND_URL, send_message(db, relay))
         app.post(TYPING_URL, typing(db, relay))
