@@ -21,6 +21,7 @@ from stario import Stario
 
 from stariodemo.DataBasePkg.db import create_database
 from stariodemo.DataStructsPkg.UrlsModule import ABC_ADD_PAGE_URL
+from stariodemo.DataStructsPkg.UrlsModule import ABC_CALCULATION_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import ABC_LIST_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import CHAT_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import HOME_PAGE_URL
@@ -30,6 +31,7 @@ from stariodemo.DataStructsPkg.UrlsModule import TYPING_URL
 from stariodemo.DataStructsPkg.UrlsModule import XYZ_ADD_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import XYZ_LIST_PAGE_URL
 from stariodemo.HandlersPkg.AbcAddPageEndpointModule import AbcAddPageEndpoint
+from stariodemo.HandlersPkg.AbcCalculationPageEndpointModule import AbcCalculationPageEndpoint
 from stariodemo.HandlersPkg.AbcListPageEndpointModule import AbcListPageEndpoint
 from stariodemo.HandlersPkg.ChatPageEndpointModule import ChatPageEndpoint
 from stariodemo.HandlersPkg.HomePageEndpointModule import HomePageEndpoint
@@ -72,6 +74,7 @@ async def main():
 
         app.get(ABC_ADD_PAGE_URL, AbcAddPageEndpoint())
         app.get(ABC_LIST_PAGE_URL, AbcListPageEndpoint())
+        app.get(ABC_CALCULATION_PAGE_URL, AbcCalculationPageEndpoint())
 
         app.get(XYZ_ADD_PAGE_URL, XyzAddPageEndpoint())
         app.get(XYZ_LIST_PAGE_URL, XyzListPageEndpoint())
