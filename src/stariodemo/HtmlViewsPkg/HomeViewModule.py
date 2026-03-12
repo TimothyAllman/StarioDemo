@@ -4,7 +4,7 @@ from stariodemo.HtmlComponentsPkg.MessageBoxModule import MessageBoxError
 from stariodemo.HtmlComponentsPkg.MessageBoxModule import MessageBoxInfo
 from stariodemo.HtmlComponentsPkg.MessageBoxModule import MessageBoxSuccess
 from stariodemo.HtmlComponentsPkg.MessageBoxModule import MessageBoxWarning
-from stariodemo.HtmlComponentsPkg.PlaneIconModule import PlaneIcon
+from stariodemo.HtmlIconsPkg.PlaneIconModule import PlaneIcon
 
 
 def HomeView(

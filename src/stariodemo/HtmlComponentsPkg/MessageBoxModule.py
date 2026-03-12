@@ -1,10 +1,10 @@
 from stario.html import Div
 
-from stariodemo.HtmlComponentsPkg.IconAlertTriangleIconModule import IconAlertTriangleIcon
-from stariodemo.HtmlComponentsPkg.InfoCircleIconModule import InfoCircleIcon
-from stariodemo.HtmlComponentsPkg.MoodHappyIconModule import MoodHappyIcon
+from stariodemo.HtmlIconsPkg.IconAlertTriangleIconModule import IconAlertTriangleIcon
+from stariodemo.HtmlIconsPkg.InfoCircleIconModule import InfoCircleIcon
+from stariodemo.HtmlIconsPkg.MoodHappyIconModule import MoodHappyIcon
 from stariodemo.HtmlComponentsPkg.MoodSadIconModule import MoodSadIcon
-from stariodemo.HtmlComponentsPkg.PlaneIconModule import PlaneIcon
+from stariodemo.HtmlIconsPkg.PlaneIconModule import PlaneIcon
 
 
 def MessageBox(

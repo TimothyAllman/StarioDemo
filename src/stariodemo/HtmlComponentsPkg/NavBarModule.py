@@ -1,10 +1,10 @@
 from stario.html import H1
 from stario.html import Div
 
-from stariodemo.DataStructsPkg.UrlsModule import ABC_LIST_URL
-from stariodemo.DataStructsPkg.UrlsModule import CHAT_URL
+from stariodemo.DataStructsPkg.UrlsModule import ABC_LIST_PAGE_URL
+from stariodemo.DataStructsPkg.UrlsModule import CHAT_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import HOME_PAGE_URL
-from stariodemo.DataStructsPkg.UrlsModule import XYZ_LIST_URL
+from stariodemo.DataStructsPkg.UrlsModule import XYZ_LIST_PAGE_URL
 from stariodemo.HtmlComponentsPkg.NavBarButtonModule import NavBarButton
 
 
@@ -19,7 +19,7 @@ def NavBar():
             ),
         ),
         NavBarButton(name="Home", url=HOME_PAGE_URL),
-        NavBarButton(name="Abc", url=ABC_LIST_URL),
-        NavBarButton(name="Xyz", url=XYZ_LIST_URL),
-        NavBarButton(name="Chat", url=CHAT_URL),
+        NavBarButton(name="Abc", url=ABC_LIST_PAGE_URL),
+        NavBarButton(name="Xyz", url=XYZ_LIST_PAGE_URL),
+        NavBarButton(name="Chat", url=CHAT_PAGE_URL),
     )
