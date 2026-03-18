@@ -1,16 +1,19 @@
 from stario.html import Div
 
+from stariodemo.HtmlViewsPkg.UserListCardViewModule import UserListCardView
 
-def XyzListView(
-    # user_id: str,
-    # username: str,
-    # color: str,
-    # *,
-    # messages: list[Message],
-    # users: dict[str, User],
-):
+
+def XyzListView(items: list):
     """
     docstring
     """
 
-    return Div("xyz listy")
+    return Div(
+        Div("xyz listy"),
+        *[
+            UserListCardView(
+                x,
+            )
+            for x in items
+        ],
+    )
