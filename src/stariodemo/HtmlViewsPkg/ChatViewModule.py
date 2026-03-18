@@ -55,7 +55,7 @@ def chat_view(
     - data.init(at.get("/subscribe")): opens SSE connection on page load
     """
     return Div(
-        toy_inspector(),  # Dev tool: shows current signals state
+        # toy_inspector(),  # Dev tool: shows current signals state
         Div(
             {"class": "chat-container"},
             data.signals(
