@@ -20,9 +20,11 @@ from stario import RichTracer
 from stario import Stario
 
 from stariodemo.DataBasePkg.db import create_database
-from stariodemo.DataStructsPkg.UrlsModule import ABC_ADD_PAGE_URL
+from stariodemo.DataBasePkg.TortoiseModelsModule import TortoiseDbUsers
+from stariodemo.DataStructsPkg.UrlsModule import ABC_ADD_PAGE_URL, API_ABC_CALCULATION_URL, API_USER_CREATE_URL
 from stariodemo.DataStructsPkg.UrlsModule import ABC_CALCULATION_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import ABC_LIST_PAGE_URL
+from stariodemo.DataStructsPkg.UrlsModule import API_CALCULATION_URL
 from stariodemo.DataStructsPkg.UrlsModule import CHAT_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import HOME_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import SEND_URL
@@ -31,8 +33,10 @@ from stariodemo.DataStructsPkg.UrlsModule import TYPING_URL
 from stariodemo.DataStructsPkg.UrlsModule import XYZ_ADD_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import XYZ_LIST_PAGE_URL
 from stariodemo.HandlersPkg.AbcAddPageEndpointModule import AbcAddPageEndpoint
+from stariodemo.HandlersPkg.AbcCalculationEndpointModule import AbcCalculationEndpoint
 from stariodemo.HandlersPkg.AbcCalculationPageEndpointModule import AbcCalculationPageEndpoint
 from stariodemo.HandlersPkg.AbcListPageEndpointModule import AbcListPageEndpoint
+from stariodemo.HandlersPkg.ApiCalculationEndpointModule import ApiCalculationEndpoint
 from stariodemo.HandlersPkg.ChatPageEndpointModule import ChatPageEndpoint
 from stariodemo.HandlersPkg.HomePageEndpointModule import HomePageEndpoint
 from stariodemo.HandlersPkg.SendMessageModule import send_message
@@ -77,15 +81,21 @@ async def main():
         app.get(ABC_CALCULATION_PAGE_URL, AbcCalculationPageEndpoint())
 
         app.get(XYZ_ADD_PAGE_URL, XyzAddPageEndpoint())
-        app.get(XYZ_LIST_PAGE_URL, XyzListPageEndpoint())
+        app.get(XYZ_LIST_PAGE_URL, XyzListPageEndpoint(Database=TortoiseDbUsers))
 
         app.get(CHAT_PAGE_URL, ChatPageEndpoint())
         app.get(SUBSCRIBE_URL, subscribe(db, relay))
         app.post(SEND_URL, send_message(db, relay))
         app.post(TYPING_URL, typing(db, relay))
 
+        app.get(API_CALCULATION_URL, ApiCalculationEndpoint())
+        app.get(API_USER_CREATE_URL, ApiCalculationEndpoint())
+        app.get(API_ABC_CALCULATION_URL, AbcCalculationEndpoint())
+
         await app.serve(host=host, port=port, workers=workers)
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    asyncio.run(
+        main(),
+    )
