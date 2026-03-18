@@ -1,5 +1,7 @@
 from stario.html import Div
 
+from stariodemo.HtmlViewsPkg.UserCreateViewModule import UserCreateView
+
 
 def XyzAddView(
     # user_id: str,
@@ -15,5 +17,5 @@ def XyzAddView(
 
     return Div(
         Div("xyz Add"),
-        UserCreateView()
+        UserCreateView(),
     )
