@@ -1,3 +1,5 @@
+from stario import at
+from stario import data
 from stario.html import Div
 from stario.html import Input
 
@@ -22,18 +24,18 @@ def UserCreateView():
                     "autocomplete": "off",
                     "autofocus": True,
                 },
-                # data.bind("message"),
-                # data.on(
-                #     "keydown",
-                #     """
-                # if (evt.key === 'Enter' && !evt.shiftKey && $message.trim()) {
-                #     evt.preventDefault();
-                #     @post('/send');
-                #     $message = '';
-                # }
-                # """,
-                # ),
-                # data.on("input", at.post("/typing")),
+                data.bind("message"),
+                data.on(
+                    "keydown",
+                    """
+                if (evt.key === 'Enter' && !evt.shiftKey && $message.trim()) {
+                    evt.preventDefault();
+                    @post('/send');
+                    $message = '';
+                }
+                """,
+                ),
+                data.on("input", at.post("/typing")),
             ),
             DemoAppButton(
                 "Create",
