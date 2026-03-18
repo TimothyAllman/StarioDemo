@@ -10,7 +10,10 @@ def XyzAddView(
     # users: dict[str, User],
 ):
     """
-    docstring asdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd adssssssssssssssssss
+    docstring
     """
 
-    return Div("xyz Add")
+    return Div(
+        Div("xyz Add"),
+        UserCreateView()
+    )
