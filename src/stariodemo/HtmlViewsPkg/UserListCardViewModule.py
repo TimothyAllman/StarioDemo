@@ -20,6 +20,7 @@ def UserListCardView(
             Div(f"color =>{user.color}"),
             DemoAppButton(
                 f"press me for {user.username}",
+                buttoncolor="yellow" if user.username=="trin" else "blue"
             ),
         ),
     )

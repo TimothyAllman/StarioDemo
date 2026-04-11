@@ -1,9 +1,12 @@
-from stario import Context, Relay, Writer
-from stariodemo.DataBasePkg.db import Database
+from stario import Context
+from stario import Relay
+from stario import Writer
+
 from stariodemo.HandlersPkg import ChatSignals
+from stariodemo.PiccoloPkg import PiccoloChatDb
 
 
-def typing(db: Database, relay: Relay[str]):
+def typing(db: PiccoloChatDb, relay: Relay[str]):
     """
     Factory that returns typing indicator handler with db and relay injected.
 
@@ -14,13 +17,13 @@ def typing(db: Database, relay: Relay[str]):
         """Update typing indicator status."""
         signals = await c.signals(ChatSignals)
 
-        if not signals.user_id or not db.user_exists(signals.user_id):
+        if not signals.user_id or not await db.user_exists(signals.user_id):
             w.empty(204)
             return
 
         is_typing = bool(signals.message.strip())
 
-        if db.set_user_typing(signals.user_id, is_typing):
+        if await db.set_user_typing(signals.user_id, is_typing):
             relay.publish("update", "typing")
 
         w.empty(204)

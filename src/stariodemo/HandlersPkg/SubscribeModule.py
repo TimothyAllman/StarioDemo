@@ -1,11 +1,15 @@
-from stario import Context, Relay, Writer
-from stariodemo.DataBasePkg.db import Database
+from stario import Context
+from stario import Relay
+from stario import Writer
+
+from stariodemo.DataStructsPkg.UrlsModule import CHAT_PAGE_URL
 from stariodemo.DataStructsPkg.UserModule import User
 from stariodemo.HandlersPkg import ChatSignals
 from stariodemo.HtmlViewsPkg.ChatViewModule import chat_view
+from stariodemo.PiccoloPkg import PiccoloChatDb
 
 
-def subscribe(db: Database, relay: Relay[str]):
+def subscribe(db: PiccoloChatDb, relay: Relay[str]):
     """
     Factory that returns SSE subscription handler with db and relay injected.
 
@@ -25,7 +29,7 @@ def subscribe(db: Database, relay: Relay[str]):
         signals = await c.signals(ChatSignals)
 
         if not signals.user_id:
-            w.redirect("/")
+            w.redirect(CHAT_PAGE_URL)
             return
 
         # Add user to database
@@ -34,7 +38,7 @@ def subscribe(db: Database, relay: Relay[str]):
             username=signals.username,
             color=signals.color,
         )
-        db.add_user(user)
+        await db.add_user(user)
         c("User connected", {"user_id": signals.user_id, "username": signals.username})
 
         # Tell everyone that someone joined
@@ -46,8 +50,8 @@ def subscribe(db: Database, relay: Relay[str]):
                 signals.user_id,
                 signals.username,
                 signals.color,
-                messages=db.get_messages(),
-                users=db.get_users(),
+                messages=await db.get_messages(),
+                users=await db.get_users(),
             )
         )
 
@@ -59,14 +63,14 @@ def subscribe(db: Database, relay: Relay[str]):
                     signals.user_id,
                     signals.username,
                     signals.color,
-                    messages=db.get_messages(),
-                    users=db.get_users(),
+                    messages=await db.get_messages(),
+                    users=await db.get_users(),
                 )
             )
 
         # Cleanup on disconnect
         c("User disconnected", {"user_id": signals.user_id})
-        db.remove_user(signals.user_id)
+        await db.remove_user(signals.user_id)
         relay.publish("update", "presence")
 
     return handler

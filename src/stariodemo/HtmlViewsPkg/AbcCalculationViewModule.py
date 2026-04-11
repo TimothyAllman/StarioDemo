@@ -27,6 +27,7 @@ def AbcCalculationView(
                 {"class": "border"},
                 data.on("click", at.get(API_ABC_CALCULATION_URL)),
                 "press me",
+                buttoncolor="green",
             ),
         ),
         Div(

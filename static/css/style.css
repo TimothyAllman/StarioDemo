@@ -203,9 +203,9 @@ body {
     font-weight: 600;
 }
 
-.message.own .username {
+/* .message.own .username {
     display: none;
-}
+} */
 
 .timestamp {
     font-size: 0.65rem;

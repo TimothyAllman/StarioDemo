@@ -3,7 +3,6 @@ from stario import Writer
 
 from stariodemo.HtmlComponentsPkg.PageModule import page
 from stariodemo.HtmlViewsPkg.AbcCalculationViewModule import AbcCalculationView
-from stariodemo.HtmlViewsPkg.AbcListViewModule import AbcListView
 from stariodemo.HtmlViewsPkg.AbcSidebarViewModule import AbcSideBarView
 from stariodemo.HtmlViewsPkg.NavBarAndFooterViewModule import NavBarAndFooterView
 

@@ -15,3 +15,10 @@ TYPING_URL = "/typing/"
 API_CALCULATION_URL = "/api/calculation/"
 API_USER_CREATE_URL = "/api/user/create"
 API_ABC_CALCULATION_URL = "/api/abc/calculation/"
+
+API_WIDGET_LIST_URL = "/api/widget/list"
+API_WIDGET_ADD_URL = "/api/widget/create"
+# API_ABC_CALCULATION_URL = "/api/abc/calculation/"
+
+GIVE_ME_TEXT_URL = "/givemetext/"
+GIVE_ME_JSON_URL = "/givemejson/"

@@ -9,11 +9,16 @@ from stariodemo.HtmlViewsPkg.XyzSidebarViewModule import XyzSidebarView
 
 
 def XyzListPageEndpoint(
-    Database: list[User],
+    # Database: list[User],
 ):
     async def handler(c: Context, w: Writer) -> None:
 
-        items = Database[1:-1]
+        items = [
+            User(id="hfjjk9432024", username="bob", color="golden"),
+            User(id="823089whe0f", username="steve", color="blue"),
+            User(id="924900913", username="bella", color="red"),
+            User(id="hfjjk9432024", username="bob", color="golden"),
+        ]
 
         # Pass empty collections - user will get real data after subscribing
         w.html(

@@ -5,12 +5,13 @@ from stario import Context
 from stario import Relay
 from stario import Writer
 
-from stariodemo.DataBasePkg.db import Database
-from stariodemo.HandlersPkg import ChatSignals
 from stariodemo.DataStructsPkg.MessageModule import Message
+from stariodemo.DataStructsPkg.UrlsModule import HOME_PAGE_URL
+from stariodemo.HandlersPkg import ChatSignals
+from stariodemo.PiccoloPkg import PiccoloChatDb
 
 
-def send_message(db: Database, relay: Relay[str]):
+def send_message(db: PiccoloChatDb, relay: Relay[str]):
     """
     Factory that returns message send handler with db and relay injected.
 
@@ -21,8 +22,8 @@ def send_message(db: Database, relay: Relay[str]):
         """Handle new message submission."""
         signals = await c.signals(ChatSignals)
 
-        if not signals.user_id or not db.user_exists(signals.user_id):
-            w.redirect("/")
+        if not signals.user_id or not await db.user_exists(signals.user_id):
+            w.redirect(HOME_PAGE_URL)
             return
 
         text = signals.message.strip()
@@ -38,8 +39,8 @@ def send_message(db: Database, relay: Relay[str]):
             text=text,
             timestamp=time.time(),
         )
-        db.add_message(msg)
-        db.set_user_typing(signals.user_id, False)
+        await db.add_message(msg)
+        await db.set_user_typing(signals.user_id, False)
 
         c("Message sent", {"user_id": signals.user_id, "text": text[:50]})
 

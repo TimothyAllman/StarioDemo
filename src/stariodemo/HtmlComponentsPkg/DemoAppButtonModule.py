@@ -1,12 +1,15 @@
 from stario.html import Button
 
 
-def DemoAppButton(*children):
+def DemoAppButton(
+    *children,
+    buttoncolor="blue",
+):
     return Button(
         {
             "class": [
-                "text-white font-semibold px-4 py-4 bg-blue-700",
-                "hover:bg-blue-800 transition transform hover:scale-105",
+                f"text-white font-semibold px-4 py-4 bg-{buttoncolor}-700",
+                f"hover:bg-{buttoncolor}-800 transition transform hover:scale-105",
             ]
         },
         *children,
