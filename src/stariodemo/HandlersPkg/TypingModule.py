@@ -14,8 +14,12 @@ def typing(db: PiccoloChatDb, relay: Relay[str]):
     """
 
     async def handler(c: Context, w: Writer) -> None:
-        """Update typing indicator status."""
+        """
+        Update typing indicator status.
+        """
         signals = await c.signals(ChatSignals)
+
+
 
         if not signals.user_id or not await db.user_exists(signals.user_id):
             w.empty(204)

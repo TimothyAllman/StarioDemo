@@ -34,4 +34,4 @@ async def AddMessage(msg: MessageDto) -> None:
         deleteQry = MessageDb.delete().where(
             MessageDb.id.not_in(keep_ids),
         )
-        result = deleteQry.run()
+        result = await deleteQry.run()

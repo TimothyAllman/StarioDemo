@@ -27,6 +27,6 @@ async def SetUserTyping(user_id: str, typing: bool) -> bool:
     ).where(
         UserDb.id == user_id,
     )
-    result = qry.run()
+    result = await qry.run()
 
     return True
