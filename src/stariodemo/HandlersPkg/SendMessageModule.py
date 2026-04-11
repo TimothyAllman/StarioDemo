@@ -39,10 +39,14 @@ def send_message(db: PiccoloChatDb, relay: Relay[str]):
             text=text,
             timestamp=time.time(),
         )
+
         await db.add_message(msg)
         await db.set_user_typing(signals.user_id, False)
 
-        c("Message sent", {"user_id": signals.user_id, "text": text[:50]})
+        c(
+            "Message sent",
+            {"user_id": signals.user_id, "text": text[:50]},
+        )
 
         w.empty(204)
         relay.publish("update", "message")

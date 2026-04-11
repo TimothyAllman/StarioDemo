@@ -22,7 +22,9 @@ async def SetUserTyping(user_id: str, typing: bool) -> bool:
 
     row["typing"] = typing
 
-    qry = UserDb.update({UserDb.typing: typing}).where(
+    qry = UserDb.update(
+        {UserDb.typing: typing},
+    ).where(
         UserDb.id == user_id,
     )
     result = qry.run()

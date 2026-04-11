@@ -38,8 +38,13 @@ def subscribe(db: PiccoloChatDb, relay: Relay[str]):
             username=signals.username,
             color=signals.color,
         )
+        print(f"{user=}")
+        
         await db.add_user(user)
-        c("User connected", {"user_id": signals.user_id, "username": signals.username})
+        c(
+            "User connected",
+            {"user_id": signals.user_id, "username": signals.username},
+        )
 
         # Tell everyone that someone joined
         relay.publish("update", "presence")
@@ -69,7 +74,11 @@ def subscribe(db: PiccoloChatDb, relay: Relay[str]):
             )
 
         # Cleanup on disconnect
-        c("User disconnected", {"user_id": signals.user_id})
+        c(
+            "User disconnected",
+            {"user_id": signals.user_id},
+        )
+
         await db.remove_user(signals.user_id)
         relay.publish("update", "presence")
 

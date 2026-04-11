@@ -11,26 +11,50 @@ from stariodemo.PiccoloPkg.UserExistsModule import UserExists
 
 
 class PiccoloChatDb:
-    async def add_user(self, user: UserDto) -> None:
+    async def add_user(
+        self,
+        user: UserDto,
+    ) -> None:
         await AddUser(user)
 
-    async def add_message(self, msg: MessageDto) -> None:
+    async def add_message(
+        self,
+        msg: MessageDto,
+    ) -> None:
         await AddMessage(msg)
 
-    async def get_messages(self, limit: int = 100) -> list[MessageDto]:
+    async def get_messages(
+        self,
+        limit: int = 100,
+    ) -> list[MessageDto]:
         return await GetMessages(limit)
 
-    async def remove_user(self, user_id: str) -> None:
+    async def remove_user(
+        self,
+        user_id: str,
+    ) -> None:
         await RemoveUser(user_id)
 
-    async def get_user(self, user_id: str) -> UserDto | None:
+    async def get_user(
+        self,
+        user_id: str,
+    ) -> UserDto | None:
         return await GetUser(user_id)
 
-    async def get_users(self) -> dict[str, UserDto]:
+    async def get_users(
+        self,
+    ) -> dict[str, UserDto]:
         return await GetUsers()
 
-    async def user_exists(self, user_id: str) -> bool:
+    async def user_exists(
+        self,
+        user_id: str,
+    ) -> bool:
         return await UserExists(user_id)
 
-    async def set_user_typing(self, user_id: str, typing: bool) -> bool:
+    async def set_user_typing(
+        self,
+        user_id: str,
+        typing: bool,
+    ) -> bool:
         return await SetUserTyping(user_id, typing)

@@ -11,7 +11,10 @@ def typing_indicator_view(current_user_id: str, users: dict[str, UserDto]):
     Filters out the current user - you don't need to see your own typing indicator.
     Returns hidden div when nobody is typing (preserves element for patching).
     """
+
     typing_users = [user for user in users.values() if user.typing and user.id != current_user_id]
+    print(typing_users)
+
 
     if not typing_users:
         return Div({"id": "typing", "class": "typing-indicator hidden"})
