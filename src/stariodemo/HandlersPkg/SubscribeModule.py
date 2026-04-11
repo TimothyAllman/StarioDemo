@@ -78,7 +78,7 @@ def subscribe(db: PiccoloChatDb, relay: Relay[str]):
             {"user_id": signals.user_id},
         )
 
-        # await db.remove_user(signals.user_id)
+        await db.remove_user(signals.user_id)
         relay.publish("update", "presence")
 
     return handler
