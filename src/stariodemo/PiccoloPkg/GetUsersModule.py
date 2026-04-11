@@ -1,8 +1,8 @@
-from stariodemo.DataStructsPkg.UserModule import User
+from stariodemo.DataStructsPkg.UserModule import UserDto
 from stariodemo.PiccoloPkg.UserDbModule import UserDb
 
 
-async def GetUsers() -> dict[str, User]:
+async def GetUsers() -> dict[str, UserDto]:
     qry = UserDb.select(
         UserDb.id,
         UserDb.username,
@@ -13,7 +13,7 @@ async def GetUsers() -> dict[str, User]:
     result = await qry.run()
 
     dtos = {
-        row["id"]: User(
+        row["id"]: UserDto(
             id=row["id"],
             username=row["username"],
             color=row["color"],

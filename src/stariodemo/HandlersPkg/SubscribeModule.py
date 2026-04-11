@@ -3,7 +3,7 @@ from stario import Relay
 from stario import Writer
 
 from stariodemo.DataStructsPkg.UrlsModule import CHAT_PAGE_URL
-from stariodemo.DataStructsPkg.UserModule import User
+from stariodemo.DataStructsPkg.UserModule import UserDto
 from stariodemo.HandlersPkg import ChatSignals
 from stariodemo.HtmlViewsPkg.ChatViewModule import chat_view
 from stariodemo.PiccoloPkg import PiccoloChatDb
@@ -33,7 +33,7 @@ def subscribe(db: PiccoloChatDb, relay: Relay[str]):
             return
 
         # Add user to database
-        user = User(
+        user = UserDto(
             id=signals.user_id,
             username=signals.username,
             color=signals.color,

@@ -2,8 +2,8 @@ from stario import at
 from stario import data
 from stario.html import Div
 
-from stariodemo.DataStructsPkg.MessageModule import Message
-from stariodemo.DataStructsPkg.UserModule import User
+from stariodemo.DataStructsPkg.MessageModule import MessageDto
+from stariodemo.DataStructsPkg.UserModule import UserDto
 from stariodemo.HtmlViewsPkg.InputFormViewModule import input_form_view
 from stariodemo.HtmlViewsPkg.MessagesViewModule import messages_view
 from stariodemo.HtmlViewsPkg.OnlineUsersViewModule import online_users_view
@@ -15,8 +15,8 @@ def chat_view(
     username: str,
     color: str,
     *,
-    messages: list[Message],
-    users: dict[str, User],
+    messages: list[MessageDto],
+    users: dict[str, UserDto],
 ):
     """
     Main chat page.

@@ -1,7 +1,6 @@
 from stario import Context
 from stario import Writer
 
-from stariodemo.DataStructsPkg.UserModule import User
 from stariodemo.HtmlComponentsPkg.PageModule import page
 from stariodemo.HtmlViewsPkg.NavBarAndFooterViewModule import NavBarAndFooterView
 from stariodemo.HtmlViewsPkg.XyzAddViewModule import XyzAddView

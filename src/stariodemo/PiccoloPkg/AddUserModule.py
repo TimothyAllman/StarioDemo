@@ -1,8 +1,8 @@
-from stariodemo.DataStructsPkg.UserModule import User
+from stariodemo.DataStructsPkg.UserModule import UserDto
 from stariodemo.PiccoloPkg.UserDbModule import UserDb
 
 
-async def AddUser(user: User) -> None:
+async def AddUser(user: UserDto) -> None:
     trsc = UserDb.insert(
         UserDb(
             id=user.id,

@@ -1,8 +1,8 @@
-from stariodemo.DataStructsPkg.MessageModule import Message
+from stariodemo.DataStructsPkg.MessageModule import MessageDto
 from stariodemo.PiccoloPkg.MessageDbModule import MessageDb
 
 
-async def AddMessage(msg: Message) -> None:
+async def AddMessage(msg: MessageDto) -> None:
     trsc = MessageDb.insert(
         MessageDb(
             id=msg.id,

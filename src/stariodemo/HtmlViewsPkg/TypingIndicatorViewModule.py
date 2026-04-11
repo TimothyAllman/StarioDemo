@@ -1,10 +1,10 @@
 from stario.html import Div
 from stario.html import Span
 
-from stariodemo.DataStructsPkg.UserModule import User
+from stariodemo.DataStructsPkg.UserModule import UserDto
 
 
-def typing_indicator_view(current_user_id: str, users: dict[str, User]):
+def typing_indicator_view(current_user_id: str, users: dict[str, UserDto]):
     """
     Shows who's typing.
 

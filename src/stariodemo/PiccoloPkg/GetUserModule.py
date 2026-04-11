@@ -1,8 +1,8 @@
-from stariodemo.DataStructsPkg.UserModule import User
+from stariodemo.DataStructsPkg.UserModule import UserDto
 from stariodemo.PiccoloPkg.UserDbModule import UserDb
 
 
-async def GetUser(user_id: str) -> User | None:
+async def GetUser(user_id: str) -> UserDto | None:
     qry = (
         UserDb.select(
             UserDb.id,
@@ -19,7 +19,7 @@ async def GetUser(user_id: str) -> User | None:
     if row is None:
         return None
 
-    return User(
+    return UserDto(
         id=row["id"],
         username=row["username"],
         color=row["color"],

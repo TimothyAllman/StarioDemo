@@ -1,11 +1,11 @@
 from stario.html import Div
 
-from stariodemo.DataStructsPkg.UserModule import User
+from stariodemo.DataStructsPkg.UserModule import UserDto
 from stariodemo.HtmlComponentsPkg.DemoAppButtonModule import DemoAppButton
 
 
 def UserListCardView(
-    user: User,
+    user: UserDto,
 ):
     """
     docstring
@@ -18,9 +18,6 @@ def UserListCardView(
             Div(f"name => {user.username}"),
             Div(f"ID =>{user.id}"),
             Div(f"color =>{user.color}"),
-            DemoAppButton(
-                f"press me for {user.username}",
-                buttoncolor="yellow" if user.username=="trin" else "blue"
-            ),
+            DemoAppButton(f"press me for {user.username}", buttoncolor="yellow" if user.username == "trin" else "blue"),
         ),
     )

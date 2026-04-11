@@ -5,7 +5,7 @@ from stario import Context
 from stario import Relay
 from stario import Writer
 
-from stariodemo.DataStructsPkg.MessageModule import Message
+from stariodemo.DataStructsPkg.MessageModule import MessageDto
 from stariodemo.DataStructsPkg.UrlsModule import HOME_PAGE_URL
 from stariodemo.HandlersPkg import ChatSignals
 from stariodemo.PiccoloPkg import PiccoloChatDb
@@ -31,7 +31,7 @@ def send_message(db: PiccoloChatDb, relay: Relay[str]):
             w.empty(204)
             return
 
-        msg = Message(
+        msg = MessageDto(
             id=str(uuid.uuid4())[:8],
             user_id=signals.user_id,
             username=signals.username,
