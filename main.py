@@ -27,6 +27,9 @@ from stariodemo.DataStructsPkg.UrlsModule import ABC_LIST_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import API_ABC_CALCULATION_URL
 from stariodemo.DataStructsPkg.UrlsModule import API_CALCULATION_URL
 from stariodemo.DataStructsPkg.UrlsModule import API_USER_CREATE_URL
+from stariodemo.DataStructsPkg.UrlsModule import API_WIDGET_ADD_URL
+from stariodemo.DataStructsPkg.UrlsModule import API_WIDGET_LIST_URL
+from stariodemo.DataStructsPkg.UrlsModule import API_WIDGET_SEED_URL
 from stariodemo.DataStructsPkg.UrlsModule import CHAT_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import GIVE_ME_JSON_URL
 from stariodemo.DataStructsPkg.UrlsModule import GIVE_ME_TEXT_URL
@@ -50,6 +53,9 @@ from stariodemo.HandlersPkg.SubscribeModule import subscribe
 from stariodemo.HandlersPkg.TypingModule import typing
 
 # from stariodemo.HandlersPkg.WidgetAddEndpointModule import WidgetAddEndpoint
+from stariodemo.HandlersPkg.WidgetAddEndpointModule import WidgetAddEndpoint
+from stariodemo.HandlersPkg.WidgetListEndpointModule import WidgetListEndpoint
+from stariodemo.HandlersPkg.WidgetSeedEndpointModule import WidgetSeedEndpoint
 from stariodemo.HandlersPkg.XyzAddPageEndpointModule import XyzAddPageEndpoint
 from stariodemo.HandlersPkg.XyzListPageEndpointModule import XyzListPageEndpoint
 from stariodemo.PiccoloPkg import PiccoloChatDb
@@ -112,8 +118,9 @@ async def main():
             app.get(API_USER_CREATE_URL, ApiCalculationEndpoint())
             app.get(API_ABC_CALCULATION_URL, AbcCalculationEndpoint())
 
-            # app.get(API_WIDGET_ADD_URL, WidgetAddEndpoint(db))
-            # app.get(API_WIDGET_LIST_URL, WidgetListEndpoint(db))
+            app.get(API_WIDGET_ADD_URL, WidgetAddEndpoint())
+            app.get(API_WIDGET_LIST_URL, WidgetListEndpoint())
+            app.get(API_WIDGET_SEED_URL, WidgetSeedEndpoint())
 
             app.get(GIVE_ME_TEXT_URL, GiveMeTextEndpoint())
             app.get(GIVE_ME_JSON_URL, GiveMeJsonEndpoint())

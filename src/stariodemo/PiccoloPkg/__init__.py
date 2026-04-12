@@ -1,13 +1,16 @@
 from stariodemo.PiccoloPkg.AddMessageModule import AddMessage
 from stariodemo.PiccoloPkg.AddUserModule import AddUser
+from stariodemo.PiccoloPkg.AddWidgetModule import AddWidget
 from stariodemo.PiccoloPkg.GetMessagesModule import GetMessages
 from stariodemo.PiccoloPkg.GetUserModule import GetUser
 from stariodemo.PiccoloPkg.GetUsersModule import GetUsers
 from stariodemo.PiccoloPkg.MessageDbModule import MessageDto
 from stariodemo.PiccoloPkg.RemoveUserModule import RemoveUser
+from stariodemo.PiccoloPkg.SeedWidgetModule import SeedWidget
 from stariodemo.PiccoloPkg.SetUserTypingModule import SetUserTyping
 from stariodemo.PiccoloPkg.UserDbModule import UserDto
 from stariodemo.PiccoloPkg.UserExistsModule import UserExists
+from stariodemo.PiccoloPkg.WidgetDbModule import WidgetDto
 
 
 class PiccoloChatDb:

@@ -1,15 +1,14 @@
 from stario import Context
 from stario import Writer
 
-from stariodemo.PiccoloPkg.GetWidgetsModule import GetWidgets
+from stariodemo.PiccoloPkg.SeedWidgetModule import SeedWidget
 
 
-def WidgetListEndpoint():
+def WidgetSeedEndpoint():
     async def handler(c: Context, w: Writer) -> None:
 
-        dtos = await GetWidgets()
-
-        print(dtos)
+        # Create some tasks
+        await SeedWidget()
 
         w.empty(204)
 

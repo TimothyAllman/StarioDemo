@@ -18,6 +18,8 @@ API_ABC_CALCULATION_URL = "/api/abc/calculation/"
 
 API_WIDGET_LIST_URL = "/api/widget/list"
 API_WIDGET_ADD_URL = "/api/widget/create"
+API_WIDGET_SEED_URL = "/api/widget/seed"
+
 # API_ABC_CALCULATION_URL = "/api/abc/calculation/"
 
 GIVE_ME_TEXT_URL = "/givemetext/"

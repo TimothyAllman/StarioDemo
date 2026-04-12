@@ -15,7 +15,9 @@ class UserDb(Table):
 
 
 class UserDto(BaseModel):
-    """A connected user with their display info and typing state."""
+    """
+    A connected user with their display info and typing state.
+    """
 
     id: str
     username: str
