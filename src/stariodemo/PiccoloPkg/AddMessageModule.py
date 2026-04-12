@@ -5,12 +5,7 @@ from stariodemo.PiccoloPkg.MessageDbModule import MessageDto
 async def AddMessage(msg: MessageDto) -> None:
     trsc = MessageDb.insert(
         MessageDb(
-            id=msg.id,
-            user_id=msg.user_id,
-            username=msg.username,
-            color=msg.color,
-            text=msg.text,
-            timestamp=msg.timestamp,
+            **msg.model_dump(),
         )
     )
     result = await trsc.run()

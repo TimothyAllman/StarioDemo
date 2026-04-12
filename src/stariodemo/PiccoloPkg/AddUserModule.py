@@ -5,10 +5,7 @@ from stariodemo.PiccoloPkg.UserDbModule import UserDto
 async def AddUser(user: UserDto) -> None:
     trsc = UserDb.insert(
         UserDb(
-            id=user.id,
-            username=user.username,
-            color=user.color,
-            typing=bool(user.typing),
+            **user.model_dump(),
         )
     ).on_conflict(
         target=UserDb.id,
