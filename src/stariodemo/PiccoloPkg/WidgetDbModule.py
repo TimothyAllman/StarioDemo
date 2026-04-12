@@ -8,7 +8,7 @@ from pydantic import BaseModel
 
 
 class WidgetDb(Table):
-    id = Integer(unique=True, primary_key=True)
+    # id = Varchar(length=64, primary_key=True)
     title = Varchar(length=200, null=False)
     description = Text(null=True)
     is_completed = Boolean(default=False)

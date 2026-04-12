@@ -9,6 +9,7 @@ from piccolo.conf.apps import AppConfig
 
 from stariodemo.PiccoloPkg.MessageDbModule import MessageDb
 from stariodemo.PiccoloPkg.UserDbModule import UserDb
+from stariodemo.PiccoloPkg.WidgetDbModule import WidgetDb
 
 CURRENT_DIRECTORY = os.path.dirname(os.path.abspath(__file__))
 
@@ -19,6 +20,7 @@ APP_CONFIG = AppConfig(
     table_classes=[
         UserDb,
         MessageDb,
+        WidgetDb,
     ],
     migration_dependencies=[],
     commands=[],
