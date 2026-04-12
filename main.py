@@ -48,9 +48,9 @@ from stariodemo.HandlersPkg.ChatPageEndpointModule import ChatPageEndpoint
 from stariodemo.HandlersPkg.GiveMeJsonEndpointModule import GiveMeJsonEndpoint
 from stariodemo.HandlersPkg.GiveMeTextEndpointModule import GiveMeTextEndpoint
 from stariodemo.HandlersPkg.HomePageEndpointModule import HomePageEndpoint
-from stariodemo.HandlersPkg.SendMessageModule import send_message
-from stariodemo.HandlersPkg.SubscribeModule import subscribe
-from stariodemo.HandlersPkg.TypingModule import typing
+from stariodemo.HandlersPkg.SendMessageModule import SendMessageEndpoint
+from stariodemo.HandlersPkg.SubscribeModule import SubscribeEndpoint
+from stariodemo.HandlersPkg.TypingModule import TypingEndpoint
 
 # from stariodemo.HandlersPkg.WidgetAddEndpointModule import WidgetAddEndpoint
 from stariodemo.HandlersPkg.WidgetAddEndpointModule import WidgetAddEndpoint
@@ -110,9 +110,9 @@ async def main():
             app.get(XYZ_LIST_PAGE_URL, XyzListPageEndpoint())
 
             app.get(CHAT_PAGE_URL, ChatPageEndpoint())
-            app.get(SUBSCRIBE_URL, subscribe(db, relay))
-            app.post(SEND_URL, send_message(db, relay))
-            app.post(TYPING_URL, typing(db, relay))
+            app.get(SUBSCRIBE_URL, SubscribeEndpoint(db, relay))
+            app.post(SEND_URL, SendMessageEndpoint(db, relay))
+            app.post(TYPING_URL, TypingEndpoint(db, relay))
 
             app.get(API_CALCULATION_URL, ApiCalculationEndpoint())
             app.get(API_USER_CREATE_URL, ApiCalculationEndpoint())

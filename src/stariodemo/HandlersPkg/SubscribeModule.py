@@ -3,14 +3,13 @@ from stario import Relay
 from stario import Writer
 
 from stariodemo.DataStructsPkg.UrlsModule import CHAT_PAGE_URL
-
 from stariodemo.HandlersPkg import ChatSignals
 from stariodemo.HtmlViewsPkg.ChatViewModule import chat_view
 from stariodemo.PiccoloPkg import PiccoloChatDb
 from stariodemo.PiccoloPkg.UserDbModule import UserDto
 
 
-def subscribe(db: PiccoloChatDb, relay: Relay[str]):
+def SubscribeEndpoint(db: PiccoloChatDb, relay: Relay[str]):
     """
     Factory that returns SSE subscription handler with db and relay injected.
 

@@ -11,7 +11,7 @@ from stariodemo.PiccoloPkg import PiccoloChatDb
 from stariodemo.PiccoloPkg.MessageDbModule import MessageDto
 
 
-def send_message(db: PiccoloChatDb, relay: Relay[str]):
+def SendMessageEndpoint(db: PiccoloChatDb, relay: Relay[str]):
     """
     Factory that returns message send handler with db and relay injected.
 
