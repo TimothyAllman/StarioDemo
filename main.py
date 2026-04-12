@@ -50,7 +50,7 @@ from stariodemo.HandlersPkg.GiveMeTextEndpointModule import GiveMeTextEndpoint
 from stariodemo.HandlersPkg.HomePageEndpointModule import HomePageEndpoint
 from stariodemo.HandlersPkg.SendMessageEndpointModule import SendMessageEndpoint
 from stariodemo.HandlersPkg.SubscribeEndpointModule import SubscribeEndpoint
-from stariodemo.HandlersPkg.TypingEEndpointModule import TypingEndpoint
+from stariodemo.HandlersPkg.TypingEndpointModule import TypingEndpoint
 
 # from stariodemo.HandlersPkg.WidgetAddEndpointModule import WidgetAddEndpoint
 from stariodemo.HandlersPkg.WidgetAddEndpointModule import WidgetAddEndpoint
