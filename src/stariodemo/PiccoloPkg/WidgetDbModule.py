@@ -29,3 +29,6 @@ class WidgetDto(BaseModel):
 
     title: str
     description: str
+    is_completed: bool
+    priority: int
+    category: str

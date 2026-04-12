@@ -1,11 +1,10 @@
 from stario.html import Div
 
-from stariodemo.HtmlComponentsPkg.DemoAppButtonModule import DemoAppButton
-from stariodemo.PiccoloPkg.UserDbModule import UserDto
+from stariodemo.PiccoloPkg.WidgetDbModule import WidgetDto
 
 
-def UserListCardView(
-    user: UserDto,
+def WidgetListCardView(
+    widget: WidgetDto,
 ):
     """
     docstring
@@ -15,9 +14,9 @@ def UserListCardView(
         {"class": "mt-3 bg-gray-100 p-4"},  # {"class": "bg-gray-100 p-4 border border-gray-800"},
         Div(
             {"class": "flex flex-row justify-between"},
-            Div(f"name => {user.username}"),
-            Div(f"ID =>{user.id}"),
-            Div(f"color =>{user.color}"),
-            DemoAppButton(f"press me for {user.username}", buttoncolor="yellow" if user.username == "trin" else "blue"),
+            Div(f"title => {widget.title}"),
+            Div(f"description =>{widget.description}"),
+            Div(f"completed? =>{widget.is_completed}"),
+            # DemoAppButton(f"press me for {widget.username}", buttoncolor="yellow" if widget.username == "trin" else "blue"),
         ),
     )

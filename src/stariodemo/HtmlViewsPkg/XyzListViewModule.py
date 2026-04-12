@@ -1,6 +1,6 @@
 from stario.html import Div
 
-from stariodemo.HtmlViewsPkg.UserListCardViewModule import UserListCardView
+from stariodemo.HtmlViewsPkg.UserListCardViewModule import WidgetListCardView
 
 
 def XyzListView(items: list):
@@ -9,9 +9,9 @@ def XyzListView(items: list):
     """
 
     return Div(
-        Div("xyz listy"),
+        Div("xyz list of widgets"),
         *[
-            UserListCardView(
+            WidgetListCardView(
                 x,
             )
             for x in items
