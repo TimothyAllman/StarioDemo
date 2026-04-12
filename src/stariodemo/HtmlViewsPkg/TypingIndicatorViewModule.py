@@ -1,10 +1,13 @@
 from stario.html import Div
 from stario.html import Span
 
-from stariodemo.DataStructsPkg.UserModule import UserDto
+from stariodemo.PiccoloPkg.UserDbModule import UserDto
 
 
-def typing_indicator_view(current_user_id: str, users: dict[str, UserDto]):
+def typing_indicator_view(
+    current_user_id: str,
+    users: dict[str, UserDto],
+):
     """
     Shows who's typing.
 
@@ -13,7 +16,6 @@ def typing_indicator_view(current_user_id: str, users: dict[str, UserDto]):
     """
 
     typing_users = [user for user in users.values() if user.typing and user.id != current_user_id]
-
 
     if not typing_users:
         return Div({"id": "typing", "class": "typing-indicator hidden"})

@@ -1,7 +1,9 @@
 from stariodemo.PiccoloPkg.UserDbModule import UserDb
+from stariodemo.PiccoloPkg.UserDbModule import UserDto
 
 
 async def SetUserTyping(user_id: str, typing: bool) -> bool:
+    # set up query
     qry = (
         UserDb.select()
         .where(
@@ -10,18 +12,17 @@ async def SetUserTyping(user_id: str, typing: bool) -> bool:
         .first()
     )
 
-    row = await qry.run()
-
-    if row is None:
+    # get result if empty/None nothing to update so return false
+    result = await qry.run()
+    if result is None:
         return False
 
-    typing = bool(typing)
-
-    if bool(row["typing"]) == typing:
+    # validate types by instantiating userDto from data. check if the same nothing to update so return false
+    dto = UserDto(**result)
+    if dto.typing == typing:
         return False
 
-    row["typing"] = typing
-
+    # else update the typing column with the changed status
     qry = UserDb.update(
         {UserDb.typing: typing},
     ).where(
@@ -29,4 +30,5 @@ async def SetUserTyping(user_id: str, typing: bool) -> bool:
     )
     result = await qry.run()
 
+    # return true i.e. and update to the db has occurred i.e. a users typing status has been changed
     return True

@@ -3,7 +3,7 @@ import time
 from stario.html import Div
 from stario.html import Span
 
-from stariodemo.DataStructsPkg.MessageModule import MessageDto
+from stariodemo.PiccoloPkg.MessageDbModule import MessageDto
 
 
 def message_view(

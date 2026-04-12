@@ -1,11 +1,12 @@
 from stario import Context
 from stario import Writer
 
-from stariodemo.DataStructsPkg.UserModule import UserDto
+
 from stariodemo.HtmlComponentsPkg.PageModule import page
 from stariodemo.HtmlViewsPkg.NavBarAndFooterViewModule import NavBarAndFooterView
 from stariodemo.HtmlViewsPkg.XyzListViewModule import XyzListView
 from stariodemo.HtmlViewsPkg.XyzSidebarViewModule import XyzSidebarView
+from stariodemo.PiccoloPkg.UserDbModule import UserDto
 
 
 def XyzListPageEndpoint(

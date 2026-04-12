@@ -1,8 +1,8 @@
 from stario import data
 from stario.html import Div
 
-from stariodemo.DataStructsPkg.MessageModule import MessageDto
 from stariodemo.HtmlViewsPkg.MessageViewModule import message_view
+from stariodemo.PiccoloPkg.MessageDbModule import MessageDto
 
 
 def messages_view(

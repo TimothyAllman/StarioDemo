@@ -12,6 +12,6 @@ async def UserExists(user_id: str) -> bool:
         .first()
     )
 
-    row = await qry.run()
+    result = await qry.run()
 
-    return row is not None
+    return result is not None

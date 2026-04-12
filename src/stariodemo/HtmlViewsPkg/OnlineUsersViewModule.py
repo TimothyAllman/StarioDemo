@@ -1,7 +1,8 @@
 from stario.html import Div
 from stario.html import Span
 
-from stariodemo.DataStructsPkg.UserModule import UserDto
+from stariodemo.PiccoloPkg.UserDbModule import UserDto
+
 
 
 def online_users_view(

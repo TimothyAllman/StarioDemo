@@ -2,12 +2,12 @@ from stario import at
 from stario import data
 from stario.html import Div
 
-from stariodemo.DataStructsPkg.MessageModule import MessageDto
-from stariodemo.DataStructsPkg.UserModule import UserDto
 from stariodemo.HtmlViewsPkg.InputFormViewModule import input_form_view
 from stariodemo.HtmlViewsPkg.MessagesViewModule import messages_view
 from stariodemo.HtmlViewsPkg.OnlineUsersViewModule import online_users_view
 from stariodemo.HtmlViewsPkg.TypingIndicatorViewModule import typing_indicator_view
+from stariodemo.PiccoloPkg.MessageDbModule import MessageDto
+from stariodemo.PiccoloPkg.UserDbModule import UserDto
 
 
 def chat_view(

@@ -1,7 +1,7 @@
 from stario.html import Div
 
-from stariodemo.DataStructsPkg.UserModule import UserDto
 from stariodemo.HtmlComponentsPkg.DemoAppButtonModule import DemoAppButton
+from stariodemo.PiccoloPkg.UserDbModule import UserDto
 
 
 def UserListCardView(

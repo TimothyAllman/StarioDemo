@@ -1,6 +1,7 @@
 from piccolo.columns import Boolean
 from piccolo.columns import Varchar
 from piccolo.table import Table
+from pydantic import BaseModel
 
 
 class UserDb(Table):
@@ -11,3 +12,12 @@ class UserDb(Table):
 
     class Meta:
         tablename = "users"
+
+
+class UserDto(BaseModel):
+    """A connected user with their display info and typing state."""
+
+    id: str
+    username: str
+    color: str
+    typing: bool = False

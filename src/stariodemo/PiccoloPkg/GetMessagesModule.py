@@ -1,5 +1,5 @@
-from stariodemo.DataStructsPkg.MessageModule import MessageDto
 from stariodemo.PiccoloPkg.MessageDbModule import MessageDb
+from stariodemo.PiccoloPkg.MessageDbModule import MessageDto
 
 
 async def GetMessages(limit: int = 100) -> list[MessageDto]:
@@ -21,16 +21,6 @@ async def GetMessages(limit: int = 100) -> list[MessageDto]:
 
     result = await qry.run()
 
-    dtos = [
-        MessageDto(
-            id=row["id"],
-            user_id=row["user_id"],
-            username=row["username"],
-            color=row["color"],
-            text=row["text"],
-            timestamp=row["timestamp"],
-        )
-        for row in result
-    ]
+    dtos = [MessageDto(**item) for item in result]
 
     return dtos

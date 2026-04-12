@@ -5,10 +5,10 @@ from stario import Context
 from stario import Relay
 from stario import Writer
 
-from stariodemo.DataStructsPkg.MessageModule import MessageDto
 from stariodemo.DataStructsPkg.UrlsModule import HOME_PAGE_URL
 from stariodemo.HandlersPkg import ChatSignals
 from stariodemo.PiccoloPkg import PiccoloChatDb
+from stariodemo.PiccoloPkg.MessageDbModule import MessageDto
 
 
 def send_message(db: PiccoloChatDb, relay: Relay[str]):

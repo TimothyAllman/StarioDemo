@@ -2,6 +2,7 @@ from piccolo.columns import Float
 from piccolo.columns import Text
 from piccolo.columns import Varchar
 from piccolo.table import Table
+from pydantic import BaseModel
 
 
 class MessageDb(Table):
@@ -14,3 +15,16 @@ class MessageDb(Table):
 
     class Meta:
         tablename = "messages"
+
+
+class MessageDto(BaseModel):
+    """
+    A chat message with sender info and timestamp.
+    """
+
+    id: str
+    user_id: str
+    username: str
+    color: str
+    text: str
+    timestamp: float
