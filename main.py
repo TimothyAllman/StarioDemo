@@ -48,9 +48,9 @@ from stariodemo.HandlersPkg.ChatPageEndpointModule import ChatPageEndpoint
 from stariodemo.HandlersPkg.GiveMeJsonEndpointModule import GiveMeJsonEndpoint
 from stariodemo.HandlersPkg.GiveMeTextEndpointModule import GiveMeTextEndpoint
 from stariodemo.HandlersPkg.HomePageEndpointModule import HomePageEndpoint
-from stariodemo.HandlersPkg.SendMessageModule import SendMessageEndpoint
-from stariodemo.HandlersPkg.SubscribeModule import SubscribeEndpoint
-from stariodemo.HandlersPkg.TypingModule import TypingEndpoint
+from stariodemo.HandlersPkg.SendMessageEndpointModule import SendMessageEndpoint
+from stariodemo.HandlersPkg.SubscribeEndpointModule import SubscribeEndpoint
+from stariodemo.HandlersPkg.TypingEEndpointModule import TypingEndpoint
 
 # from stariodemo.HandlersPkg.WidgetAddEndpointModule import WidgetAddEndpoint
 from stariodemo.HandlersPkg.WidgetAddEndpointModule import WidgetAddEndpoint
