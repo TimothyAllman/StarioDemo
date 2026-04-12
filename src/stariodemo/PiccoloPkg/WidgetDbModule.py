@@ -27,6 +27,7 @@ class WidgetDto(BaseModel):
     A connected user with their display info and typing state.
     """
 
+    id: int
     title: str
     description: str
     is_completed: bool

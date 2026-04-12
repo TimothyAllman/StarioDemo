@@ -12,6 +12,7 @@ def WidgetAddEndpoint():
             title="asdas",
             description="asasd",
         )
+
         print(dto)
 
         await AddWidget(dto)
