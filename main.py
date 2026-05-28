@@ -11,14 +11,14 @@ Run with: uv run main.py
       or: python main.py
 """
 
-import asyncio
 import os
+from collections.abc import AsyncIterator
 from pathlib import Path
 
-from stario import JsonTracer
+from stario import App
 from stario import Relay
-from stario import RichTracer
-from stario import Stario
+from stario import Span
+from stario import StaticAssets
 
 from piccolo_conf import SQLITE_DB_PATH
 from stariodemo.DataStructsPkg.UrlsModule import ABC_ADD_PAGE_URL
@@ -62,29 +62,20 @@ from stariodemo.PiccoloPkg import PiccoloChatDb
 from stariodemo.PiccoloPkg.InitPiccoloDbModule import InitPiccoloDb
 
 
-async def main():
-    # Determine environment
-    is_dev = True  # "--local" in sys.argv or sys.stdout.isatty()
+async def bootstrap(
+    app: App,
+    span: Span,
+) -> AsyncIterator[None]:
 
-    if is_dev:
-        tracer = RichTracer()
-        host = "127.0.0.1"
-        port = 8000
-        workers = 1
-    else:
-        tracer = JsonTracer()
-        host = "0.0.0.0"
-        port = 8000
-        workers = 4
+    span.event("stariodemo.startup.begin")
 
     # remove any prior db
     print("deleting db....")
     if os.path.exists(SQLITE_DB_PATH):
         os.remove(SQLITE_DB_PATH)
 
-    # Create database - in-memory for dev, file-based for prod
+    # Create database
     print("creating db...")
-    # db = create_database(is_dev=False)
     await InitPiccoloDb()
     db = PiccoloChatDb()
     print("db created successfully")
@@ -92,45 +83,45 @@ async def main():
     # Relay for pub/sub between SSE connections
     relay: Relay[str] = Relay()
 
+    # Static files - note: path is relative to this file's location
+    app.assets("/static", Path(__file__).parent / "static")
+    static_dir = Path(__file__).parent / "src" / "stariodemo" / "static"
+    static_dir_display = static_dir.relative_to(Path.cwd()) if static_dir.is_relative_to(Path.cwd()) else static_dir
+    span.attrs({"stariodemo.static_dir": str(static_dir_display)})
+    span.event("stariodemo.startup.configured")
+    app.mount("/static", StaticAssets(static_dir, name="static"))
+
+    # Routes - closures inject db/relay where needed
+    app.get(HOME_PAGE_URL, HomePageEndpoint())
+
+    app.get(ABC_ADD_PAGE_URL, AbcAddPageEndpoint())
+    app.get(ABC_LIST_PAGE_URL, AbcListPageEndpoint())
+    app.get(ABC_CALCULATION_PAGE_URL, AbcCalculationPageEndpoint())
+
+    app.get(XYZ_ADD_PAGE_URL, XyzAddPageEndpoint())
+    app.get(XYZ_LIST_PAGE_URL, XyzListPageEndpoint())
+
+    app.get(CHAT_PAGE_URL, ChatPageEndpoint())
+    app.get(SUBSCRIBE_URL, SubscribeEndpoint(db, relay))
+    app.post(SEND_URL, SendMessageEndpoint(db, relay))
+    app.post(TYPING_URL, TypingEndpoint(db, relay))
+
+    app.get(API_CALCULATION_URL, ApiCalculationEndpoint())
+    app.get(API_USER_CREATE_URL, ApiCalculationEndpoint())
+    app.get(API_ABC_CALCULATION_URL, AbcCalculationEndpoint())
+
+    app.get(API_WIDGET_ADD_URL, WidgetAddEndpoint())
+    app.get(API_WIDGET_LIST_URL, WidgetListEndpoint())
+    app.get(API_WIDGET_SEED_URL, WidgetSeedEndpoint())
+
+    app.get(GIVE_ME_TEXT_URL, GiveMeTextEndpoint())
+    app.get(GIVE_ME_JSON_URL, GiveMeJsonEndpoint())
+
+    span.event("stariodemo.startup.ready")
+
     try:
-        with tracer:
-            app = Stario(tracer)
-
-            # Static files - note: path is relative to this file's location
-            app.assets("/static", Path(__file__).parent / "static")
-
-            # Routes - closures inject db/relay where needed
-            app.get(HOME_PAGE_URL, HomePageEndpoint())
-
-            app.get(ABC_ADD_PAGE_URL, AbcAddPageEndpoint())
-            app.get(ABC_LIST_PAGE_URL, AbcListPageEndpoint())
-            app.get(ABC_CALCULATION_PAGE_URL, AbcCalculationPageEndpoint())
-
-            app.get(XYZ_ADD_PAGE_URL, XyzAddPageEndpoint())
-            app.get(XYZ_LIST_PAGE_URL, XyzListPageEndpoint())
-
-            app.get(CHAT_PAGE_URL, ChatPageEndpoint())
-            app.get(SUBSCRIBE_URL, SubscribeEndpoint(db, relay))
-            app.post(SEND_URL, SendMessageEndpoint(db, relay))
-            app.post(TYPING_URL, TypingEndpoint(db, relay))
-
-            app.get(API_CALCULATION_URL, ApiCalculationEndpoint())
-            app.get(API_USER_CREATE_URL, ApiCalculationEndpoint())
-            app.get(API_ABC_CALCULATION_URL, AbcCalculationEndpoint())
-
-            app.get(API_WIDGET_ADD_URL, WidgetAddEndpoint())
-            app.get(API_WIDGET_LIST_URL, WidgetListEndpoint())
-            app.get(API_WIDGET_SEED_URL, WidgetSeedEndpoint())
-
-            app.get(GIVE_ME_TEXT_URL, GiveMeTextEndpoint())
-            app.get(GIVE_ME_JSON_URL, GiveMeJsonEndpoint())
-
-            await app.serve(host=host, port=port, workers=workers)
+        yield
     finally:
-        print("ending...")
-        x = 0
-        # await close_db()
-
-
-if __name__ == "__main__":
-    asyncio.run(main())
+        span.attr("stariodemo.shutting.down", True)
+        span.event("stariodemo.shutdown.begin")
+        span.event("stariodemo.shutdown.complete")
