@@ -1,10 +1,10 @@
 from stario import Context
 from stario import Writer
 
-from stariodemo.HtmlComponentsPkg.PageModule import page
-from stariodemo.HtmlViewsPkg.AbcCalculationViewModule import AbcCalculationView
-from stariodemo.HtmlViewsPkg.AbcSidebarViewModule import AbcSideBarView
-from stariodemo.HtmlViewsPkg.NavBarAndFooterViewModule import NavBarAndFooterView
+from stariodemo.HtmlComponentsPkg.PageHtmlModule import PageHtml
+from stariodemo.HtmlHtmlsPkg.AbcCalculationHtmlModule import AbcCalculationHtml
+from stariodemo.HtmlHtmlsPkg.AbcSidebarHtmlModule import AbcSideBarHtml
+from stariodemo.HtmlHtmlsPkg.NavBarAndFooterHtmlModule import NavBarAndFooterHtml
 
 
 def AbcCalculationPageEndpoint():
@@ -13,10 +13,10 @@ def AbcCalculationPageEndpoint():
         Serve abc list page
         """
         w.html(
-            page(
-                NavBarAndFooterView(
-                    AbcSideBarView(
-                        AbcCalculationView(),
+            PageHtml(
+                NavBarAndFooterHtml(
+                    AbcSideBarHtml(
+                        AbcCalculationHtml(),
                     )
                 )
             )
