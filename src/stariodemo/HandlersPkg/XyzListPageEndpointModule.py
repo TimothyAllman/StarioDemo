@@ -1,10 +1,10 @@
 from stario import Context
 from stario import Writer
 
-from stariodemo.HtmlComponentsPkg.PageModule import page
-from stariodemo.HtmlViewsPkg.NavBarAndFooterViewModule import NavBarAndFooterView
-from stariodemo.HtmlViewsPkg.XyzListViewModule import XyzListView
-from stariodemo.HtmlViewsPkg.XyzSidebarViewModule import XyzSidebarView
+from stariodemo.HtmlComponentsPkg.PageHtmlModule import PageHtml
+from stariodemo.HtmlHtmlsPkg.NavBarAndFooterHtmlModule import NavBarAndFooterHtml
+from stariodemo.HtmlHtmlsPkg.XyzListHtmlModule import XyzListHtml
+from stariodemo.HtmlHtmlsPkg.XyzSidebarHtmlModule import XyzSidebarHtml
 from stariodemo.PiccoloPkg.GetWidgetsModule import GetWidgets
 
 
@@ -17,10 +17,10 @@ def XyzListPageEndpoint(
 
         # Pass empty collections - user will get real data after subscribing
         w.html(
-            page(
-                NavBarAndFooterView(
-                    XyzSidebarView(
-                        XyzListView(items),
+            PageHtml(
+                NavBarAndFooterHtml(
+                    XyzSidebarHtml(
+                        XyzListHtml(items),
                     )
                 )
             )
