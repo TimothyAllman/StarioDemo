@@ -7,9 +7,9 @@ requires-python = ">=3.14"
 dependencies = [
     "piccolo[sqlite]>=1.33.0",
     "pydantic==2.12.5",
-    # "sqlalchemy[asyncio]==2.0.48",
-    "stario==2.2.1",
-    # "tortoise-orm==1.1.7",
+
+    "stario==3.3.0",
+
     "tzdata==2025.3", # was getting weird utc error so need to import
 ]
 
@@ -19,5 +19,5 @@ build-backend = "hatchling.build"
 
 [dependency-groups]
 dev = [
-    "watchfiles>=1.1.1",
+    "ipykernel",
 ]
