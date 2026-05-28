@@ -5,9 +5,9 @@ from stario import Writer
 
 from stariodemo.DataStructsPkg.GenerateColorModule import generate_color
 from stariodemo.DataStructsPkg.GenerateUserNameModule import generate_username
-from stariodemo.HtmlComponentsPkg.PageModule import page
-from stariodemo.HtmlViewsPkg.HomeViewModule import HomeView
-from stariodemo.HtmlViewsPkg.NavBarAndFooterViewModule import NavBarAndFooterView
+from stariodemo.HtmlComponentsPkg.PageHtmlModule import PageHtml
+from stariodemo.HtmlHtmlsPkg.HomeHtmlModule import HomeHtml
+from stariodemo.HtmlHtmlsPkg.NavBarAndFooterHtmlModule import NavBarAndFooterHtml
 
 
 def HomePageEndpoint():
@@ -21,9 +21,9 @@ def HomePageEndpoint():
 
         # Pass empty collections - user will get real data after subscribing
         w.html(
-            page(
-                NavBarAndFooterView(
-                    HomeView(),
+            PageHtml(
+                NavBarAndFooterHtml(
+                    HomeHtml(),
                 )
             )
         )
