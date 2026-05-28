@@ -1,7 +1,7 @@
 from stario import Context
 from stario import Writer
 
-from stariodemo.HtmlViewsPkg.CalculationResultBoxViewModule import CalculationResultBoxView
+from stariodemo.HtmlHtmlsPkg.CalculationResultBoxHtmlModule import CalculationResultBoxHtml
 
 
 def AbcCalculationEndpoint():
@@ -10,7 +10,7 @@ def AbcCalculationEndpoint():
         path the abc result box
         """
         w.patch(
-            CalculationResultBoxView(
+            CalculationResultBoxHtml(
                 result="running calculation...",
             )
         )
