@@ -1,7 +1,7 @@
 from stario.html import Div
 
 
-def CalculationResultBoxView(
+def CalculationResultBoxHtml(
     result,
 ):
     """

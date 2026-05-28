@@ -3,17 +3,17 @@ from stario import data
 from stario.html import Div
 
 from stariodemo.DataStructsPkg.UrlsModule import API_WIDGET_SEED_URL
-from stariodemo.HtmlComponentsPkg.DemoAppButtonModule import DemoAppButton
-from stariodemo.HtmlViewsPkg.WidgetListCardViewModule import WidgetListCardView
+from stariodemo.HtmlComponentsPkg.DemoAppButtonHtmlModule import DemoAppButtonHtml
+from stariodemo.HtmlHtmlsPkg.WidgetListCardHtmlModule import WidgetListCardHtml
 
 
-def XyzListView(items: list):
+def XyzListHtml(items: list):
     """
     docstring
     """
 
     return Div(
-        DemoAppButton(
+        DemoAppButtonHtml(
             data.on(
                 "click",
                 at.get(url=API_WIDGET_SEED_URL),
@@ -22,7 +22,7 @@ def XyzListView(items: list):
         ),
         Div("xyz list of widgets"),
         *[
-            WidgetListCardView(
+            WidgetListCardHtml(
                 x,
             )
             for x in items

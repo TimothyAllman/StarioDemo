@@ -2,7 +2,10 @@ from stario.html import A
 from stario.html import Span
 
 
-def SideBarButton(url, name):
+def SideBarButtonHtml(
+    url,
+    name,
+):
     return A(
         {
             "class": [

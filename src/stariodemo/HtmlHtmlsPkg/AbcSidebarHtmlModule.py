@@ -3,11 +3,11 @@ from stario.html import Div
 from stariodemo.DataStructsPkg.UrlsModule import ABC_ADD_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import ABC_CALCULATION_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import ABC_LIST_PAGE_URL
-from stariodemo.HtmlComponentsPkg.SideBarButtonModule import SideBarButton
-from stariodemo.HtmlViewsPkg.LeftSidebarAndContentViewModule import LeftSidebarAndContentView
+from stariodemo.HtmlComponentsPkg.SideBarButtonHtmlModule import SideBarButtonHtml
+from stariodemo.HtmlHtmlsPkg.LeftSidebarAndContentHtmlModule import LeftSidebarAndContentHtml
 
 
-def AbcSideBarView(
+def AbcSideBarHtml(
     *children,
     # username: str,
     # color: str,
@@ -20,11 +20,11 @@ def AbcSideBarView(
     """
 
     return Div(
-        LeftSidebarAndContentView(
+        LeftSidebarAndContentHtml(
             [
-                SideBarButton(name="List", url=ABC_LIST_PAGE_URL),
-                SideBarButton(name="Add", url=ABC_ADD_PAGE_URL),
-                SideBarButton(name="Calculation", url=ABC_CALCULATION_PAGE_URL),
+                SideBarButtonHtml(name="List", url=ABC_LIST_PAGE_URL),
+                SideBarButtonHtml(name="Add", url=ABC_ADD_PAGE_URL),
+                SideBarButtonHtml(name="Calculation", url=ABC_CALCULATION_PAGE_URL),
             ],
             *children,
         ),

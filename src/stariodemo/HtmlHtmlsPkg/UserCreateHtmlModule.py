@@ -3,10 +3,10 @@ from stario import data
 from stario.html import Div
 from stario.html import Input
 
-from stariodemo.HtmlComponentsPkg.DemoAppButtonModule import DemoAppButton
+from stariodemo.HtmlComponentsPkg.DemoAppButtonHtmlModule import DemoAppButtonHtml
 
 
-def UserCreateView():
+def UserCreateHtml():
     """
     docstring
     """
@@ -37,7 +37,7 @@ def UserCreateView():
                 ),
                 data.on("input", at.post("/typing")),
             ),
-            DemoAppButton(
+            DemoAppButtonHtml(
                 "Create",
             ),
         ),

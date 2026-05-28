@@ -9,7 +9,9 @@ from stario.html import Title
 from stario.toys import toy_inspector
 
 
-def page(*children):
+def PageHtml(
+    *children,
+):
     """
     Base HTML shell with Datastar loaded.
 

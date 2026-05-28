@@ -3,11 +3,11 @@ from stario import data
 from stario.html import Div
 
 from stariodemo.DataStructsPkg.UrlsModule import API_ABC_CALCULATION_URL
-from stariodemo.HtmlComponentsPkg.DemoAppButtonModule import DemoAppButton
-from stariodemo.HtmlViewsPkg.CalculationResultBoxViewModule import CalculationResultBoxView
+from stariodemo.HtmlComponentsPkg.DemoAppButtonHtmlModule import DemoAppButtonHtml
+from stariodemo.HtmlHtmlsPkg.CalculationResultBoxHtmlModule import CalculationResultBoxHtml
 
 
-def AbcCalculationView(
+def AbcCalculationHtml(
     # user_id: str,
     # username: str,
     # color: str,
@@ -23,7 +23,7 @@ def AbcCalculationView(
         Div("abc calc"),
         Div(
             {"class": ""},
-            DemoAppButton(
+            DemoAppButtonHtml(
                 {"class": "border"},
                 data.on("click", at.get(API_ABC_CALCULATION_URL)),
                 "press me",
@@ -32,7 +32,7 @@ def AbcCalculationView(
         ),
         Div(
             {"class": "mt-3"},
-            CalculationResultBoxView(
+            CalculationResultBoxHtml(
                 result=" initialised",
             ),
         ),

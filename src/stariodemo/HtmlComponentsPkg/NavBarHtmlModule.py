@@ -5,10 +5,10 @@ from stariodemo.DataStructsPkg.UrlsModule import ABC_LIST_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import CHAT_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import HOME_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import XYZ_LIST_PAGE_URL
-from stariodemo.HtmlComponentsPkg.NavBarButtonModule import NavBarButton
+from stariodemo.HtmlComponentsPkg.NavBarHtmlButtonModule import NavBarButtonHtml
 
 
-def NavBar():
+def NavBarHtml():
     return Div(
         {"class": "bg-blue-600 p-4 flex items center"},
         Div(
@@ -18,8 +18,8 @@ def NavBar():
                 "Stario With Tailwind",
             ),
         ),
-        NavBarButton(name="Home", url=HOME_PAGE_URL),
-        NavBarButton(name="Abc", url=ABC_LIST_PAGE_URL),
-        NavBarButton(name="Xyz", url=XYZ_LIST_PAGE_URL),
-        NavBarButton(name="Chat", url=CHAT_PAGE_URL),
+        NavBarButtonHtml(name="Home", url=HOME_PAGE_URL),
+        NavBarButtonHtml(name="Abc", url=ABC_LIST_PAGE_URL),
+        NavBarButtonHtml(name="Xyz", url=XYZ_LIST_PAGE_URL),
+        NavBarButtonHtml(name="Chat", url=CHAT_PAGE_URL),
     )

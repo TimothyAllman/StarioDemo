@@ -1,7 +1,9 @@
 from stario.html import Div
 
+from stariodemo.HtmlHtmlsPkg.UserCreateHtmlModule import UserCreateHtml
 
-def AbcAddView(
+
+def XyzAddHtml(
     # user_id: str,
     # username: str,
     # color: str,
@@ -13,4 +15,7 @@ def AbcAddView(
     docstring
     """
 
-    return Div("Add")
+    return Div(
+        Div("xyz Add"),
+        UserCreateHtml(),
+    )

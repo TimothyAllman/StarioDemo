@@ -8,4 +8,5 @@ async def AddWidget(widget: WidgetDto) -> None:
             **widget.model_dump(),
         )
     )
+    
     result = await trsc.run()

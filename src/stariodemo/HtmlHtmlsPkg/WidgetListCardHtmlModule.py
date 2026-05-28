@@ -3,7 +3,7 @@ from stario.html import Div
 from stariodemo.PiccoloPkg.WidgetDbModule import WidgetDto
 
 
-def WidgetListCardView(
+def WidgetListCardHtml(
     widget: WidgetDto,
 ):
     """

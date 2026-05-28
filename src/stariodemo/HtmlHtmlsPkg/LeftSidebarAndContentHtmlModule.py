@@ -1,9 +1,9 @@
 from stario.html import Div
 
-from stariodemo.HtmlComponentsPkg.SideBarModule import SideBar
+from stariodemo.HtmlComponentsPkg.SideBarHtmlModule import SideBarHtml
 
 
-def LeftSidebarAndContentView(
+def LeftSidebarAndContentHtml(
     buttons: list,
     *children,
 ):
@@ -15,7 +15,7 @@ def LeftSidebarAndContentView(
         {"class": "grid grid-cols-1 lg:grid-cols-[200px_1fr]"},
         Div(
             {"class": "min-h-screen bg-red-500 w-full"},
-            SideBar(
+            SideBarHtml(
                 [item for item in buttons],
             ),
         ),

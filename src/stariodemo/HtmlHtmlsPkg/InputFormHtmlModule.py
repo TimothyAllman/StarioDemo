@@ -1,5 +1,5 @@
 from stario import at
-from stario import data
+from stario import datastar
 from stario.html import Button
 from stario.html import Form
 from stario.html import Input
@@ -12,13 +12,13 @@ def input_form_view():
     Message input with keyboard and button support.
 
     Key Datastar patterns used here:
-    - data.bind("message"): two-way binds input value to $message signal
-    - data.on("keydown", ...): runs JS on keypress, @post triggers server request
-    - data.attr({disabled: "!$message"}): reactively disables button when empty
+    - datastar.bind("message"): two-way binds input value to $message signal
+    - datastar.on("keydown", ...): runs JS on keypress, @post triggers server request
+    - datastar.attr({disabled: "!$message"}): reactively disables button when empty
     """
     return Form(
         {"id": "input-form", "class": "input-form"},
-        data.on("submit", "evt.preventDefault()"),
+        datastar.on("submit", "evt.preventDefault()"),
         Input(
             {
                 "id": "message-input",
@@ -28,8 +28,8 @@ def input_form_view():
                 "autocomplete": "off",
                 "autofocus": True,
             },
-            data.bind("message"),
-            data.on(
+            datastar.bind("message"),
+            datastar.on(
                 "keydown",
                 """
                 if (evt.key === 'Enter' && !evt.shiftKey && $message.trim()) {
@@ -39,15 +39,15 @@ def input_form_view():
                 }
                 """,
             ),
-            data.on("input", at.post("/typing")),
+            datastar.on("input", at.post("/typing")),
         ),
         Button(
             {
                 "type": "button",
                 "class": "send-button",
             },
-            data.attr({"disabled": "!$message"}),
-            data.on(
+            datastar.attr({"disabled": "!$message"}),
+            datastar.on(
                 "click",
                 """
                 if ($message.trim()) {
