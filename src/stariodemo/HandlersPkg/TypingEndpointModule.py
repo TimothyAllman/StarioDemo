@@ -20,7 +20,7 @@ def TypingEndpoint(db: PiccoloChatDb, relay: Relay[str]):
         signals = await c.signals(ChatSignals)
 
         if not signals.user_id or not await db.user_exists(signals.user_id):
-            w.empty(204)
+            responses.empty(w,204)
             return
 
         is_typing = bool(signals.message.strip())
@@ -28,6 +28,6 @@ def TypingEndpoint(db: PiccoloChatDb, relay: Relay[str]):
         if await db.set_user_typing(signals.user_id, is_typing):
             relay.publish("update", "typing")
 
-        w.empty(204)
+        responses.empty(w,204)
 
     return handler

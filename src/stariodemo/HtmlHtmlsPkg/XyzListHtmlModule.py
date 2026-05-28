@@ -1,5 +1,4 @@
-from stario import at
-from stario import data
+from stario import datastar
 from stario.html import Div
 
 from stariodemo.DataStructsPkg.UrlsModule import API_WIDGET_SEED_URL
@@ -14,10 +13,7 @@ def XyzListHtml(items: list):
 
     return Div(
         DemoAppButtonHtml(
-            data.on(
-                "click",
-                at.get(url=API_WIDGET_SEED_URL),
-            ),
+            datastar.on("click", datastar.get(url=API_WIDGET_SEED_URL)),
             "Press Me For Data",
         ),
         Div("xyz list of widgets"),

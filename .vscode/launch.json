@@ -2,15 +2,15 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "api",
+            "name": "stario serve",
             "type": "debugpy",
             "request": "launch",
-            "module": "main",
-            "console": "internalConsole",
-            "justMyCode": true,
-            "args": [
-                "--local"
-            ]
+            "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+            "program": "${workspaceFolder}/.scripts/UvRunStarioServeMainBootstrap.py",
+            "cwd": "${workspaceFolder}",
+            "args": [],
+            "console": "integratedTerminal",
+            "justMyCode": false,
         }
     ]
 }

@@ -1,4 +1,4 @@
-from stario import Context
+from stario import Context, responses
 from stario import Writer
 
 from stariodemo.HtmlComponentsPkg.PageHtmlModule import PageHtml
@@ -12,7 +12,7 @@ def AbcCalculationPageEndpoint():
         """
         Serve abc list page
         """
-        w.html(
+        responses.html(w,
             PageHtml(
                 NavBarAndFooterHtml(
                     AbcSideBarHtml(

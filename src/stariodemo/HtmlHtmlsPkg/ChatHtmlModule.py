@@ -1,5 +1,4 @@
-from stario import at
-from stario import data
+from stario import datastar
 from stario.html import Div
 
 from stariodemo.HtmlHtmlsPkg.InputFormHtmlModule import input_form_view
@@ -32,19 +31,19 @@ def chat_view(
         users: Dict of online users
 
     Key setup:
-    - data.signals({...}, ifmissing=True): initializes client state (only if not set)
-    - data.init(at.get("/subscribe")): opens SSE connection on page load
+    - datastar.signals({...}, ifmissing=True): initializes client state (only if not set)
+    - datastar.init(at.get("/subscribe")): opens SSE connection on page load
     """
     return Div(
-        {"id": "__chat"},  # NB NB NB w.patch(chatview()) does not work if there is no id on the top level div that is returned
+        {"id": "__chat"},  # NB NB NB datastar.sse.patch_elements(w,chatview()) does not work if there is no id on the top level div that is returned
         # toy_inspector(),  # Dev tool: shows current signals state
         Div(
             {"class": "chat-container"},
-            data.signals(
+            datastar.signals(
                 {"user_id": user_id, "username": username, "color": color, "message": ""},
                 ifmissing=True,
             ),
-            data.init(at.get("/subscribe")),
+            datastar.init(datastar.get("/subscribe")),
             Div(
                 {"class": "chat-header"},
                 Div({"class": "chat-title"}, "Stario Chat 🐾"),

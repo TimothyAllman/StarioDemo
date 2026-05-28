@@ -1,4 +1,4 @@
-from stario import Context
+from stario import Context, responses
 from stario import Writer
 
 from stariodemo.PiccoloPkg.AddWidgetModule import AddWidget
@@ -17,6 +17,6 @@ def WidgetAddEndpoint():
 
         await AddWidget(dto)
 
-        w.empty(204)
+        responses.empty(w, 204)
 
     return handler

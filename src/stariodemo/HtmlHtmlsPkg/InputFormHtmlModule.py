@@ -1,4 +1,3 @@
-from stario import at
 from stario import datastar
 from stario.html import Button
 from stario.html import Form
@@ -39,14 +38,14 @@ def input_form_view():
                 }
                 """,
             ),
-            datastar.on("input", at.post("/typing")),
+            datastar.on("input", datastar.post("/typing")),
         ),
         Button(
             {
                 "type": "button",
                 "class": "send-button",
             },
-            datastar.attr({"disabled": "!$message"}),
+            datastar.attr("disabled", "!$message"),
             datastar.on(
                 "click",
                 """

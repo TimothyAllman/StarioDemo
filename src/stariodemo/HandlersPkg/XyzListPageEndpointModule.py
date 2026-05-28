@@ -1,5 +1,6 @@
 from stario import Context
 from stario import Writer
+from stario import responses
 
 from stariodemo.HtmlComponentsPkg.PageHtmlModule import PageHtml
 from stariodemo.HtmlHtmlsPkg.NavBarAndFooterHtmlModule import NavBarAndFooterHtml
@@ -16,14 +17,15 @@ def XyzListPageEndpoint(
         items = await GetWidgets()
 
         # Pass empty collections - user will get real data after subscribing
-        w.html(
+        responses.html(
+            w,
             PageHtml(
                 NavBarAndFooterHtml(
                     XyzSidebarHtml(
                         XyzListHtml(items),
                     )
                 )
-            )
+            ),
         )
 
     return handler

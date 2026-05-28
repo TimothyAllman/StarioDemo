@@ -51,8 +51,6 @@ from stariodemo.HandlersPkg.HomePageEndpointModule import HomePageEndpoint
 from stariodemo.HandlersPkg.SendMessageEndpointModule import SendMessageEndpoint
 from stariodemo.HandlersPkg.SubscribeEndpointModule import SubscribeEndpoint
 from stariodemo.HandlersPkg.TypingEndpointModule import TypingEndpoint
-
-# from stariodemo.HandlersPkg.WidgetAddEndpointModule import WidgetAddEndpoint
 from stariodemo.HandlersPkg.WidgetAddEndpointModule import WidgetAddEndpoint
 from stariodemo.HandlersPkg.WidgetListEndpointModule import WidgetListEndpoint
 from stariodemo.HandlersPkg.WidgetSeedEndpointModule import WidgetSeedEndpoint
@@ -84,7 +82,6 @@ async def bootstrap(
     relay: Relay[str] = Relay()
 
     # Static files - note: path is relative to this file's location
-    app.assets("/static", Path(__file__).parent / "static")
     static_dir = Path(__file__).parent / "src" / "stariodemo" / "static"
     static_dir_display = static_dir.relative_to(Path.cwd()) if static_dir.is_relative_to(Path.cwd()) else static_dir
     span.attrs({"stariodemo.static_dir": str(static_dir_display)})

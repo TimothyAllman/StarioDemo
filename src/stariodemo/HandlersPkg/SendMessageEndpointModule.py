@@ -1,7 +1,7 @@
 import time
 import uuid
 
-from stario import Context
+from stario import Context, responses
 from stario import Relay
 from stario import Writer
 
@@ -28,7 +28,7 @@ def SendMessageEndpoint(db: PiccoloChatDb, relay: Relay[str]):
 
         text = signals.message.strip()
         if not text:
-            w.empty(204)
+            responses.empty(w, 204)
             return
 
         msg = MessageDto(
@@ -48,7 +48,7 @@ def SendMessageEndpoint(db: PiccoloChatDb, relay: Relay[str]):
             {"user_id": signals.user_id, "text": text[:50]},
         )
 
-        w.empty(204)
+        responses.empty(w, 204)
         relay.publish("update", "message")
 
     return handler

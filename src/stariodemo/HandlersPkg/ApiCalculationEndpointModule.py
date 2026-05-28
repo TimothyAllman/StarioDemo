@@ -1,4 +1,4 @@
-from stario import Context
+from stario import Context, responses
 from stario import Writer
 
 
@@ -7,10 +7,11 @@ def ApiCalculationEndpoint():
         """
         Serve abc list page
         """
-        w.json(
+        responses.json(
+            w,
             {
                 "message": "success",
-            }
+            },
         )
 
     return handler

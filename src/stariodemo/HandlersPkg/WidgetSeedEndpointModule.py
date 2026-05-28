@@ -13,6 +13,6 @@ def WidgetSeedEndpoint():
 
         w.redirect(XYZ_LIST_PAGE_URL)
 
-        # w.empty(204)
+        # responses.empty(w,204)
 
     return handler

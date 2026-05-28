@@ -27,7 +27,7 @@ def RunStario() -> int:
     root = _repo_root(Path(__file__))
     load_dotenv(
         dotenv_path=root / ".env",
-        overide=False,
+        override=False,
     )
     port = _read_port_from_env()
     args = ["serve", "main:bootstrap", "--port", port]

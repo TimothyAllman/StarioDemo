@@ -1,4 +1,4 @@
-from stario import data
+from stario import datastar
 from stario.html import Div
 
 from stariodemo.HtmlHtmlsPkg.MessageHtmlModule import message_view
@@ -23,6 +23,6 @@ def messages_view(
 
     return Div(
         {"id": "messages", "class": "messages"},
-        data.on("load", "setTimeout(() => this.scrollTop = this.scrollHeight, 10)"),
+        datastar.on("load", "setTimeout(() => this.scrollTop = this.scrollHeight, 10)"),
         *[message_view(msg, current_user_id) for msg in messages],
     )

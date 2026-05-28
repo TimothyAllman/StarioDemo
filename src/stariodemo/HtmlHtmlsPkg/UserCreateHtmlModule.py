@@ -1,5 +1,5 @@
-from stario import at
-from stario import data
+
+from stario import datastar
 from stario.html import Div
 from stario.html import Input
 
@@ -24,8 +24,8 @@ def UserCreateHtml():
                     "autocomplete": "off",
                     "autofocus": True,
                 },
-                data.bind("message"),
-                data.on(
+                datastar.bind("message"),
+                datastar.on(
                     "keydown",
                     """
                 if (evt.key === 'Enter' && !evt.shiftKey && $message.trim()) {
@@ -35,7 +35,7 @@ def UserCreateHtml():
                 }
                 """,
                 ),
-                data.on("input", at.post("/typing")),
+                datastar.on("input", datastar.post("/typing")),
             ),
             DemoAppButtonHtml(
                 "Create",

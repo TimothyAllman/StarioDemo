@@ -1,5 +1,6 @@
 from stario import Context
 from stario import Writer
+from stario import responses
 
 
 def GiveMeJsonEndpoint():
@@ -7,6 +8,9 @@ def GiveMeJsonEndpoint():
         """
         Serve abc list page
         """
-        w.json({"bank balance": 10000})
+        responses.json(
+            w,
+            {"bank balance": 10000},
+        )
 
     return handler

@@ -1,5 +1,6 @@
 from stario import Context
 from stario import Writer
+from stario import responses
 
 
 def GiveMeTextEndpoint():
@@ -7,6 +8,9 @@ def GiveMeTextEndpoint():
         """
         Serve abc list page
         """
-        w.text("hi there")
+        responses.text(
+            w,
+            "hi there",
+        )
 
     return handler

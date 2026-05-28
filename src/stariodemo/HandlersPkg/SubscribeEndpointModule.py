@@ -22,7 +22,7 @@ def SubscribeEndpoint(db: PiccoloChatDb, relay: Relay[str]):
 
         1. Client connects (triggered by data.init in the HTML)
         2. We register them in the database
-        3. We send initial state via w.patch()
+        3. We send initial state via datastar.sse.patch_elements(w,)
         4. We loop, waiting for relay events and sending patches
         5. When client disconnects, the loop exits and we clean up
         """
@@ -49,27 +49,29 @@ def SubscribeEndpoint(db: PiccoloChatDb, relay: Relay[str]):
         relay.publish("update", "presence")
 
         # Send current state immediately
-        w.patch(
+        datastar.sse.patch_elements(
+            w,
             chat_view(
                 signals.user_id,
                 signals.username,
                 signals.color,
                 messages=await db.get_messages(),
                 users=await db.get_users(),
-            )
+            ),
         )
 
         # Main loop: wait for events, send patches
         async for _, event_type in w.alive(relay.subscribe("update")):
             c("event_type", {"event_type": event_type})
-            w.patch(
+            datastar.sse.patch_elements(
+                w,
                 chat_view(
                     signals.user_id,
                     signals.username,
                     signals.color,
                     messages=await db.get_messages(),
                     users=await db.get_users(),
-                )
+                ),
             )
 
         # Cleanup on disconnect

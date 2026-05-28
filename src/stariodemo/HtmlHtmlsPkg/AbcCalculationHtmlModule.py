@@ -1,5 +1,4 @@
-from stario import at
-from stario import data
+from stario import datastar
 from stario.html import Div
 
 from stariodemo.DataStructsPkg.UrlsModule import API_ABC_CALCULATION_URL
@@ -25,7 +24,7 @@ def AbcCalculationHtml(
             {"class": ""},
             DemoAppButtonHtml(
                 {"class": "border"},
-                data.on("click", at.get(API_ABC_CALCULATION_URL)),
+                datastar.on("click", datastar.get(API_ABC_CALCULATION_URL)),
                 "press me",
                 buttoncolor="green",
             ),
