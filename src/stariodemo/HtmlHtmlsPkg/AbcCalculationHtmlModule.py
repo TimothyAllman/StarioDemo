@@ -2,24 +2,19 @@ from stario import datastar
 from stario.html import Div
 
 from stariodemo.DataStructsPkg.UrlsModule import API_ABC_CALCULATION_URL
+from stariodemo.HtmlComponentsPkg.BigTitleHtmlModule import BigTitleHtml
+from stariodemo.HtmlComponentsPkg.CommonMainMiddleSectionHtmlModule import CommonMainMiddleSectionHtml
 from stariodemo.HtmlComponentsPkg.DemoAppButtonHtmlModule import DemoAppButtonHtml
 from stariodemo.HtmlHtmlsPkg.CalculationResultBoxHtmlModule import CalculationResultBoxHtml
 
 
-def AbcCalculationHtml(
-    # user_id: str,
-    # username: str,
-    # color: str,
-    # *,
-    # messages: list[Message],
-    # users: dict[str, User],
-):
+def AbcCalculationHtml():
     """
     docstring
     """
 
-    return Div(
-        Div("abc calc"),
+    return CommonMainMiddleSectionHtml(
+        BigTitleHtml("abc calc"),
         Div(
             {"class": ""},
             DemoAppButtonHtml(
@@ -35,4 +30,5 @@ def AbcCalculationHtml(
                 result=" initialised",
             ),
         ),
+        rightSidebar=None,
     )

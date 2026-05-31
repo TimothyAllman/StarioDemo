@@ -26,7 +26,7 @@ def PageHtml(
             Script({"src": "https://cdn.tailwindcss.com"}),
         ),
         Body(
-            toy_inspector(position="bottom-left"),  # Dev tool: shows current signals state
+            toy_inspector(position="bottom-right"),  # Dev tool: shows current signals state
             *children,
         ),
     )

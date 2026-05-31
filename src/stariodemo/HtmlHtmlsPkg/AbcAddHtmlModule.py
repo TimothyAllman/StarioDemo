@@ -1,4 +1,6 @@
-from stario.html import Div
+from stariodemo.HtmlComponentsPkg.BigTitleHtmlModule import BigTitleHtml
+from stariodemo.HtmlComponentsPkg.CommonMainMiddleSectionHtmlModule import CommonMainMiddleSectionHtml
+from stariodemo.HtmlComponentsPkg.CommonSidebarRightHtmlModule import CommonSidebarRightHtml
 
 
 def AbcAddHtml(
@@ -13,6 +15,7 @@ def AbcAddHtml(
     docstring
     """
 
-    return Div(
-        "Add",
+    return CommonMainMiddleSectionHtml(
+        BigTitleHtml("abc add"),
+        rightSidebar=CommonSidebarRightHtml(),
     )
