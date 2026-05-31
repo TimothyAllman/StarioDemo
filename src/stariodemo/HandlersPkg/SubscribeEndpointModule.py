@@ -1,35 +1,35 @@
 from stario import Context
 from stario import Relay
 from stario import Writer
+from stario import datastar
+from stario import responses
 
+from stariodemo.DataStructsPkg.RelayTopicsModule import CHAT_PRESENCE
+from stariodemo.DataStructsPkg.RelayTopicsModule import CHAT_SUBSCRIBE_PATTERN
 from stariodemo.DataStructsPkg.UrlsModule import CHAT_PAGE_URL
-from stariodemo.HandlersPkg import ChatSignals
 from stariodemo.HtmlHtmlsPkg.ChatHtmlModule import chat_view
 from stariodemo.PiccoloPkg import PiccoloChatDb
 from stariodemo.PiccoloPkg.UserDbModule import UserDto
+from stariodemo.SignalsPkg.ChatSignalsModule import read_chat_signal
 
 
 def SubscribeEndpoint(db: PiccoloChatDb, relay: Relay[str]):
-    """
-    Factory that returns SSE subscription handler with db and relay injected.
-
-    Usage: app.get("/subscribe", subscribe(db, relay))
-    """
+    """``router.get(..., subscribe(db, relay))`` — captures shared deps."""
 
     async def handler(c: Context, w: Writer) -> None:
         """
-        SSE endpoint for real-time updates.
+        Long-lived SSE handler: **setup**, **while connected**, **cleanup**.
 
-        1. Client connects (triggered by data.init in the HTML)
-        2. We register them in the database
-        3. We send initial state via datastar.sse.patch_elements(w,)
-        4. We loop, waiting for relay events and sending patches
-        5. When client disconnects, the loop exits and we clean up
+        Same lifecycle as tiles: ``async with relay.subscribe(...)`` first so
+        ``publish`` cannot race ahead of this connection's queue, then
+        ``async for`` inside ``w.alive(live)``, then teardown before exiting the
+        ``async with``.
         """
-        signals = await c.signals(ChatSignals)
+
+        signals = await read_chat_signal(c)
 
         if not signals.user_id:
-            w.redirect(CHAT_PAGE_URL)
+            responses.redirect(w, CHAT_PAGE_URL)
             return
 
         # Add user to database
@@ -40,29 +40,17 @@ def SubscribeEndpoint(db: PiccoloChatDb, relay: Relay[str]):
         )
 
         await db.add_user(user)
-        c(
+        c.span.event(
             "User connected",
             {"user_id": signals.user_id, "username": signals.username},
         )
 
-        # Tell everyone that someone joined
-        relay.publish("update", "presence")
+        # Register relay queue before CHAT_PRESENCE publish so this client cannot miss events.
+        async with relay.subscribe(CHAT_SUBSCRIBE_PATTERN) as live:
+            # Fan-out: every SSE client subscribed to ``chat.*`` wakes and patches.
+            relay.publish(CHAT_PRESENCE, "join")
 
-        # Send current state immediately
-        datastar.sse.patch_elements(
-            w,
-            chat_view(
-                signals.user_id,
-                signals.username,
-                signals.color,
-                messages=await db.get_messages(),
-                users=await db.get_users(),
-            ),
-        )
-
-        # Main loop: wait for events, send patches
-        async for _, event_type in w.alive(relay.subscribe("update")):
-            c("event_type", {"event_type": event_type})
+            # First patch: stream has started; ship current db truth (messages, roster).
             datastar.sse.patch_elements(
                 w,
                 chat_view(
@@ -74,13 +62,22 @@ def SubscribeEndpoint(db: PiccoloChatDb, relay: Relay[str]):
                 ),
             )
 
-        # Cleanup on disconnect
-        c(
-            "User disconnected",
-            {"user_id": signals.user_id},
-        )
+            async for subject, _ in w.alive(live):
+                c.span.event("relay", {"subject": subject})
+                datastar.sse.patch_elements(
+                    w,
+                    chat_view(
+                        signals.user_id,
+                        signals.username,
+                        signals.color,
+                        messages=await db.get_messages(),
+                        users=await db.get_users(),
+                    ),
+                )
 
-        await db.remove_user(signals.user_id)
-        relay.publish("update", "presence")
+            # Disconnect cleanup — not an error path.
+            c.span.event("User disconnected", {"user_id": signals.user_id})
+            await db.remove_user(signals.user_id)
+            relay.publish(CHAT_PRESENCE, "leave")
 
     return handler

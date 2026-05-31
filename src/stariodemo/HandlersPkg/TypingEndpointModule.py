@@ -1,9 +1,11 @@
 from stario import Context
 from stario import Relay
 from stario import Writer
+from stario import responses
 
-from stariodemo.HandlersPkg import ChatSignals
+from stariodemo.DataStructsPkg.RelayTopicsModule import CHAT_TYPING
 from stariodemo.PiccoloPkg import PiccoloChatDb
+from stariodemo.SignalsPkg.ChatSignalsModule import read_chat_signal
 
 
 def TypingEndpoint(db: PiccoloChatDb, relay: Relay[str]):
@@ -17,17 +19,17 @@ def TypingEndpoint(db: PiccoloChatDb, relay: Relay[str]):
         """
         Update typing indicator status.
         """
-        signals = await c.signals(ChatSignals)
+        signals = await read_chat_signal(c)
 
         if not signals.user_id or not await db.user_exists(signals.user_id):
-            responses.empty(w,204)
+            responses.empty(w, 204)
             return
 
         is_typing = bool(signals.message.strip())
 
         if await db.set_user_typing(signals.user_id, is_typing):
-            relay.publish("update", "typing")
+            relay.publish(CHAT_TYPING, "changed")
 
-        responses.empty(w,204)
+        responses.empty(w, 204)
 
     return handler
