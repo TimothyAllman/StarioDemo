@@ -1,6 +1,7 @@
 from stario import datastar
 from stario.html import Div
 
+from stariodemo.DataStructsPkg.UrlsModule import CHAT_SUBSCRIBE_URL
 from stariodemo.HtmlHtmlsPkg.InputFormHtmlModule import input_form_view
 from stariodemo.HtmlHtmlsPkg.MessagesHtmlModule import messages_view
 from stariodemo.HtmlHtmlsPkg.OnlineUsersHtmlModule import online_users_view
@@ -43,7 +44,7 @@ def chat_view(
                 {"user_id": user_id, "username": username, "color": color, "message": ""},
                 ifmissing=True,
             ),
-            datastar.init(datastar.get("/subscribe")),
+            datastar.init(datastar.get(CHAT_SUBSCRIBE_URL)),
             Div(
                 {"class": "chat-header"},
                 Div({"class": "chat-title"}, "Stario Chat 🐾"),
