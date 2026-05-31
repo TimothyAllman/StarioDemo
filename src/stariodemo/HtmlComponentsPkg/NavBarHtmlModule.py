@@ -4,7 +4,7 @@ from stario.html import Div
 from stariodemo.DataStructsPkg.UrlsModule import ABC_LIST_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import CHAT_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import HOME_PAGE_URL
-from stariodemo.DataStructsPkg.UrlsModule import XYZ_LIST_PAGE_URL
+from stariodemo.DataStructsPkg.UrlsModule import USER_LIST_PAGE_URL
 from stariodemo.HtmlComponentsPkg.NavBarHtmlButtonModule import NavBarButtonHtml
 
 
@@ -20,6 +20,6 @@ def NavBarHtml():
         ),
         NavBarButtonHtml(name="Home", url=HOME_PAGE_URL),
         NavBarButtonHtml(name="Abc", url=ABC_LIST_PAGE_URL),
-        NavBarButtonHtml(name="Xyz", url=XYZ_LIST_PAGE_URL),
+        NavBarButtonHtml(name="Users", url=USER_LIST_PAGE_URL),
         NavBarButtonHtml(name="Chat", url=CHAT_PAGE_URL),
     )
