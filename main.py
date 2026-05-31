@@ -26,17 +26,20 @@ from stariodemo.DataStructsPkg.UrlsModule import ABC_CALCULATION_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import ABC_LIST_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import API_ABC_CALCULATION_URL
 from stariodemo.DataStructsPkg.UrlsModule import API_CALCULATION_URL
-from stariodemo.DataStructsPkg.UrlsModule import API_USER_CREATE_URL
 from stariodemo.DataStructsPkg.UrlsModule import API_WIDGET_ADD_URL
 from stariodemo.DataStructsPkg.UrlsModule import API_WIDGET_LIST_URL
 from stariodemo.DataStructsPkg.UrlsModule import API_WIDGET_SEED_URL
 from stariodemo.DataStructsPkg.UrlsModule import CHAT_PAGE_URL
+from stariodemo.DataStructsPkg.UrlsModule import CHAT_SEND_URL
+from stariodemo.DataStructsPkg.UrlsModule import CHAT_SUBSCRIBE_URL
+from stariodemo.DataStructsPkg.UrlsModule import CHAT_TYPING_URL
 from stariodemo.DataStructsPkg.UrlsModule import GIVE_ME_JSON_URL
 from stariodemo.DataStructsPkg.UrlsModule import GIVE_ME_TEXT_URL
 from stariodemo.DataStructsPkg.UrlsModule import HOME_PAGE_URL
-from stariodemo.DataStructsPkg.UrlsModule import SEND_URL
-from stariodemo.DataStructsPkg.UrlsModule import SUBSCRIBE_URL
-from stariodemo.DataStructsPkg.UrlsModule import TYPING_URL
+from stariodemo.DataStructsPkg.UrlsModule import USER_ADD_PAGE_URL
+from stariodemo.DataStructsPkg.UrlsModule import USER_DETAILS_PAGE_URL
+from stariodemo.DataStructsPkg.UrlsModule import USER_EDIT_PAGE_URL
+from stariodemo.DataStructsPkg.UrlsModule import USER_LIST_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import XYZ_ADD_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import XYZ_LIST_PAGE_URL
 from stariodemo.HandlersPkg.AbcAddPageEndpointModule import AbcAddPageEndpoint
@@ -51,6 +54,10 @@ from stariodemo.HandlersPkg.HomePageEndpointModule import HomePageEndpoint
 from stariodemo.HandlersPkg.SendMessageEndpointModule import SendMessageEndpoint
 from stariodemo.HandlersPkg.SubscribeEndpointModule import SubscribeEndpoint
 from stariodemo.HandlersPkg.TypingEndpointModule import TypingEndpoint
+from stariodemo.HandlersPkg.UserAddPageEndpointModule import UserAddPageEndpoint
+from stariodemo.HandlersPkg.UserDetailsPageEndpointModule import UserDetailsPageEndpoint
+from stariodemo.HandlersPkg.UserEditPageEndpointModule import UserEditPageEndpoint
+from stariodemo.HandlersPkg.UserListPageEndpointModule import UserListPageEndpoint
 from stariodemo.HandlersPkg.WidgetAddEndpointModule import WidgetAddEndpoint
 from stariodemo.HandlersPkg.WidgetListEndpointModule import WidgetListEndpoint
 from stariodemo.HandlersPkg.WidgetSeedEndpointModule import WidgetSeedEndpoint
@@ -91,6 +98,7 @@ async def bootstrap(
     # Routes - closures inject db/relay where needed
     app.get(HOME_PAGE_URL, HomePageEndpoint())
 
+    # other pages
     app.get(ABC_ADD_PAGE_URL, AbcAddPageEndpoint())
     app.get(ABC_LIST_PAGE_URL, AbcListPageEndpoint())
     app.get(ABC_CALCULATION_PAGE_URL, AbcCalculationPageEndpoint())
@@ -99,12 +107,17 @@ async def bootstrap(
     app.get(XYZ_LIST_PAGE_URL, XyzListPageEndpoint())
 
     app.get(CHAT_PAGE_URL, ChatPageEndpoint())
-    app.get(SUBSCRIBE_URL, SubscribeEndpoint(db, relay))
-    app.post(SEND_URL, SendMessageEndpoint(db, relay))
-    app.post(TYPING_URL, TypingEndpoint(db, relay))
+    app.get(CHAT_SUBSCRIBE_URL, SubscribeEndpoint(db, relay))
+    app.post(CHAT_SEND_URL, SendMessageEndpoint(db, relay))
+    app.post(CHAT_TYPING_URL, TypingEndpoint(db, relay))
 
+    app.get(USER_ADD_PAGE_URL, UserAddPageEndpoint())
+    app.get(USER_LIST_PAGE_URL, UserListPageEndpoint())
+    app.get(USER_EDIT_PAGE_URL, UserEditPageEndpoint())
+    app.get(USER_DETAILS_PAGE_URL, UserDetailsPageEndpoint())
+
+    # api Userions
     app.get(API_CALCULATION_URL, ApiCalculationEndpoint())
-    app.get(API_USER_CREATE_URL, ApiCalculationEndpoint())
     app.get(API_ABC_CALCULATION_URL, AbcCalculationEndpoint())
 
     app.get(API_WIDGET_ADD_URL, WidgetAddEndpoint())
