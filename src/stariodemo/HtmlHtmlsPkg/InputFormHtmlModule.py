@@ -5,6 +5,8 @@ from stario.html import Input
 from stario.html import SafeString
 from stario.html import Span
 
+from stariodemo.DataStructsPkg.UrlsModule import CHAT_TYPING_URL
+
 
 def input_form_view():
     """
@@ -38,7 +40,7 @@ def input_form_view():
                 }
                 """,
             ),
-            datastar.on("input", datastar.post("/typing")),
+            datastar.on("input", datastar.post(CHAT_TYPING_URL)),
         ),
         Button(
             {
