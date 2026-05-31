@@ -7,10 +7,10 @@ def CommonMainMiddleSectionHtml(
 ):
     return Div(
         {
-            "class": "flex flex-row gap-3 items-stretch",
+            "class": "flex flex-row items-stretch",
         },
         Div(
-            {"class": "flex-1 min-w-0 my-3"},
+            {"class": "flex-1 min-w-0 m-3"},
             *children,
         ),
         rightSidebar,

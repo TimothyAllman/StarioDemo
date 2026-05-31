@@ -13,7 +13,10 @@ def CommonSidebarRightHtml(
         {
             "class": "shrink-0 flex flex-row items-stretch",
         },
-        datastar.signals({"rightSidebarOpen": False}, ifmissing=True),
+        datastar.signals(
+            {"rightSidebarOpen": False},
+            ifmissing=True,
+        ),
         Button(
             {
                 "class": [
