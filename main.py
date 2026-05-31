@@ -26,9 +26,6 @@ from stariodemo.DataStructsPkg.UrlsModule import ABC_CALCULATION_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import ABC_LIST_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import API_ABC_CALCULATION_URL
 from stariodemo.DataStructsPkg.UrlsModule import API_CALCULATION_URL
-from stariodemo.DataStructsPkg.UrlsModule import API_WIDGET_ADD_URL
-from stariodemo.DataStructsPkg.UrlsModule import API_WIDGET_LIST_URL
-from stariodemo.DataStructsPkg.UrlsModule import API_WIDGET_SEED_URL
 from stariodemo.DataStructsPkg.UrlsModule import CHAT_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import CHAT_SEND_URL
 from stariodemo.DataStructsPkg.UrlsModule import CHAT_SUBSCRIBE_URL
@@ -40,8 +37,6 @@ from stariodemo.DataStructsPkg.UrlsModule import USER_ADD_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import USER_DETAILS_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import USER_EDIT_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import USER_LIST_PAGE_URL
-from stariodemo.DataStructsPkg.UrlsModule import XYZ_ADD_PAGE_URL
-from stariodemo.DataStructsPkg.UrlsModule import XYZ_LIST_PAGE_URL
 from stariodemo.HandlersPkg.AbcAddPageEndpointModule import AbcAddPageEndpoint
 from stariodemo.HandlersPkg.AbcCalculationEndpointModule import AbcCalculationEndpoint
 from stariodemo.HandlersPkg.AbcCalculationPageEndpointModule import AbcCalculationPageEndpoint
@@ -58,11 +53,6 @@ from stariodemo.HandlersPkg.UserAddPageEndpointModule import UserAddPageEndpoint
 from stariodemo.HandlersPkg.UserDetailsPageEndpointModule import UserDetailsPageEndpoint
 from stariodemo.HandlersPkg.UserEditPageEndpointModule import UserEditPageEndpoint
 from stariodemo.HandlersPkg.UserListPageEndpointModule import UserListPageEndpoint
-from stariodemo.HandlersPkg.WidgetAddEndpointModule import WidgetAddEndpoint
-from stariodemo.HandlersPkg.WidgetListEndpointModule import WidgetListEndpoint
-from stariodemo.HandlersPkg.WidgetSeedEndpointModule import WidgetSeedEndpoint
-from stariodemo.HandlersPkg.XyzAddPageEndpointModule import XyzAddPageEndpoint
-from stariodemo.HandlersPkg.XyzListPageEndpointModule import XyzListPageEndpoint
 from stariodemo.PiccoloPkg import PiccoloChatDb
 from stariodemo.PiccoloPkg.InitPiccoloDbModule import InitPiccoloDb
 
@@ -103,9 +93,6 @@ async def bootstrap(
     app.get(ABC_LIST_PAGE_URL, AbcListPageEndpoint())
     app.get(ABC_CALCULATION_PAGE_URL, AbcCalculationPageEndpoint())
 
-    app.get(XYZ_ADD_PAGE_URL, XyzAddPageEndpoint())
-    app.get(XYZ_LIST_PAGE_URL, XyzListPageEndpoint())
-
     app.get(CHAT_PAGE_URL, ChatPageEndpoint())
     app.get(CHAT_SUBSCRIBE_URL, SubscribeEndpoint(db, relay))
     app.post(CHAT_SEND_URL, SendMessageEndpoint(db, relay))
@@ -119,10 +106,6 @@ async def bootstrap(
     # api Userions
     app.get(API_CALCULATION_URL, ApiCalculationEndpoint())
     app.get(API_ABC_CALCULATION_URL, AbcCalculationEndpoint())
-
-    app.get(API_WIDGET_ADD_URL, WidgetAddEndpoint())
-    app.get(API_WIDGET_LIST_URL, WidgetListEndpoint())
-    app.get(API_WIDGET_SEED_URL, WidgetSeedEndpoint())
 
     app.get(GIVE_ME_TEXT_URL, GiveMeTextEndpoint())
     app.get(GIVE_ME_JSON_URL, GiveMeJsonEndpoint())
