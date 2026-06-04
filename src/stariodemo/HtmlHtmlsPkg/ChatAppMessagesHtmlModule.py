@@ -1,7 +1,7 @@
 from stario.html import Div
 
 
-def ChatAppMessageInputHtml(
+def ChatAppMessagesHtml(
     *children,
     extra_classes: str = "",
 ):

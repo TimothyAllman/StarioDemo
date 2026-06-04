@@ -1,8 +1,10 @@
 import time
 
-from stario.html import Div
-from stario.html import Span
-
+from stariodemo.HtmlHtmlsPkg.ChatAppMessageBubbleHtmlModule import ChatAppMessageBubbleHtml
+from stariodemo.HtmlHtmlsPkg.ChatAppMessageBubbleHtmlModule import ChatAppMessageHeaderHtml
+from stariodemo.HtmlHtmlsPkg.ChatAppMessageUsernameHtmlModule import ChatAppMessageTextHtml
+from stariodemo.HtmlHtmlsPkg.ChatAppMessageUsernameHtmlModule import ChatAppTimestampHtml
+from stariodemo.HtmlHtmlsPkg.ChatAppMessageUsernameHtmlModule import ChatAppUsernameHtml
 from stariodemo.PiccoloPkg.MessageDbModule import MessageDto
 
 
@@ -12,18 +14,22 @@ def message_view(
 ):
     """Single chat message bubble. Own messages get different styling."""
     is_own = msg.user_id == current_user_id
-    bubble_class = "message own" if is_own else "message"
     msg_time = time.strftime("%H:%M", time.localtime(msg.timestamp))
 
-    return Div(
-        {"class": bubble_class, "data-msg-id": msg.id},
-        Div(
-            {"class": "message-header"},
-            Span(
-                {"class": "username", "style": {"color": msg.color}},
-                msg.username,
+    return ChatAppMessageBubbleHtml(
+        ChatAppMessageHeaderHtml(
+            ChatAppUsernameHtml(
+                username_text=msg.username,
+                username_color=msg.color,
             ),
-            Span({"class": "timestamp"}, msg_time),
+            ChatAppTimestampHtml(
+                msg_time,
+            ),
+            is_own=is_own,
         ),
-        Div({"class": "message-text"}, msg.text),
+        ChatAppMessageTextHtml(
+            msg.text,
+        ),
+        is_own=is_own,
+        msg_id=msg.id,
     )

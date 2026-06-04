@@ -2,6 +2,11 @@ from stario import datastar
 from stario.html import Div
 
 from stariodemo.DataStructsPkg.UrlsModule import CHAT_SUBSCRIBE_URL
+from stariodemo.HtmlHtmlsPkg.ChatAppChatBodyHtmlModule import ChatAppChatBodyHtml
+from stariodemo.HtmlHtmlsPkg.ChatAppChatContainerHtmlModule import ChatAppChatContainerHtml
+from stariodemo.HtmlHtmlsPkg.ChatAppChatFooterHtmlModule import ChatAppChatFooterHtml
+from stariodemo.HtmlHtmlsPkg.ChatAppChatHeaderHtmlModule import ChatAppChatHeaderHtml
+from stariodemo.HtmlHtmlsPkg.ChatAppChatTitleHtmlModule import ChatAppChatTitleHtml
 from stariodemo.HtmlHtmlsPkg.InputFormHtmlModule import input_form_view
 from stariodemo.HtmlHtmlsPkg.MessagesHtmlModule import messages_view
 from stariodemo.HtmlHtmlsPkg.OnlineUsersHtmlModule import online_users_view
@@ -38,25 +43,21 @@ def chat_view(
     return Div(
         {"id": "__chat"},  # NB NB NB datastar.sse.patch_elements(w,chatview()) does not work if there is no id on the top level div that is returned
         # toy_inspector(),  # Dev tool: shows current signals state
-        Div(
-            {"class": "chat-container"},
+        ChatAppChatContainerHtml(
             datastar.signals(
                 {"user_id": user_id, "username": username, "color": color, "message": ""},
                 ifmissing=True,
             ),
             datastar.init(datastar.get(CHAT_SUBSCRIBE_URL)),
-            Div(
-                {"class": "chat-header"},
-                Div({"class": "chat-title"}, "Stario Chat 🐾"),
+            ChatAppChatHeaderHtml(
+                ChatAppChatTitleHtml("Stario Chat 🐾"),
                 online_users_view(users),
             ),
-            Div(
-                {"class": "chat-body"},
+            ChatAppChatBodyHtml(
                 messages_view(user_id, messages),
                 typing_indicator_view(user_id, users),
             ),
-            Div(
-                {"class": "chat-footer"},
+            ChatAppChatFooterHtml(
                 input_form_view(),
             ),
         ),

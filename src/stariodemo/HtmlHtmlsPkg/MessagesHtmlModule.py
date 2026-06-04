@@ -1,6 +1,7 @@
 from stario import datastar
-from stario.html import Div
 
+from stariodemo.HtmlHtmlsPkg.ChatAppChatEmptyStateHtmlModule import ChatAppChatEmptyStateHtml
+from stariodemo.HtmlHtmlsPkg.ChatAppMessagesHtmlModule import ChatAppMessagesHtml
 from stariodemo.HtmlHtmlsPkg.MessageHtmlModule import message_view
 from stariodemo.PiccoloPkg.MessageDbModule import MessageDto
 
@@ -16,13 +17,12 @@ def messages_view(
     This runs client-side after Datastar merges the patch into the DOM.
     """
     if not messages:
-        return Div(
-            {"id": "messages", "class": "messages empty"},
-            Div({"class": "empty-state"}, "No messages yet. Say hello!"),
+        return ChatAppMessagesHtml(
+            ChatAppChatEmptyStateHtml(),
+            extra_classes="empty justify-center items-center",
         )
 
-    return Div(
-        {"id": "messages", "class": "messages"},
+    return ChatAppMessagesHtml(
         datastar.on("load", "setTimeout(() => this.scrollTop = this.scrollHeight, 10)"),
         *[message_view(msg, current_user_id) for msg in messages],
     )
