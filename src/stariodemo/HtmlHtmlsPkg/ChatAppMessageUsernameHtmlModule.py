@@ -39,7 +39,7 @@ def ChatAppMessageTextHtml(
     return Div(
         {
             "class": [
-                "message-text tex-[0.9rem] leading-[1.45] break-words text-fg",
+                "message-text text-[0.9rem] leading-[1.45] break-words text-fg",
             ]
         },
         message_text,

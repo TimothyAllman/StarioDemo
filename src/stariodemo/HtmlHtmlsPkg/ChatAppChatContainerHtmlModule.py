@@ -7,7 +7,7 @@ def ChatAppChatContainerHtml(
     return Div(
         {
             "class": [
-                "chat-container flex flex-col hscreen max-w-full mx-auto bg-bg",
+                "chat-container flex flex-col h-screen max-w-full mx-auto bg-bg",
                 "md:max-w-[700px]",
             ]
         },

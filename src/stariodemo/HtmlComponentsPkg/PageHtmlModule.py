@@ -10,22 +10,42 @@ from stario.toys import toy_inspector
 
 GLOBAL_CSS_STYLES = """
 @theme {
-    --bg: #fafaf9;
-    --fg: #1c1917;
-    --surface: #ffffff;
-    --surface-hover: #fef3c7;
-    --border: #e7e5e4;
-    --border-strong: #d6d3d1;
-    --accent: #f59e0b;
-    --accent-light: #fbbf24;
-    --accent-glow: rgba(245, 158, 11, 0.25);
-    --accent-soft: #fef3c7;
-    --muted: #78716c;
-    --radius: 10px;
+
+    --color-color1: #0e47a1; 
+    --color-color11: #2365cf;
+    --color-color111: #4287f5;
+
+    --color-color2: #bd6004;
+    --color-color22: #f2800f;
+    --color-color222: #f2a85e;
+
+    --color-color3: #fafaf9;
+    --color-color33: #fafaf9;
+    --color-color333: #fafaf9;
+
+    --color-color4: #fafaf9;
+    --color-color44: #fafaf9;
+    --color-color444: #fafaf9;
+
+    
+
+    --color-bg: #fafaf9;
+    --color-fg: #1c1917;
+    --color-surface: #ffffff;
+    --color-surface-hover: #fef3c7;
+    --color-border: #e7e5e4;
+    --color-border-strong: #d6d3d1;
+    --color-accent: #f59e0b;
+    --color-accent-light: #fbbf24;
+    --color-accent-glow: rgba(245, 158, 11, 0.25);
+    --color-accent-soft: #fef3c7;
+    --color-muted: #78716c;
+
+    --radius-custom: 10px;
 
     /* Chat-specific */
-    --bg-bubble-other: #ffffff;
-    --bg-bubble-own: #fef3c7;
+    --color-bubble-other: #ffffff;
+    --color-bubble-own: #fef3c7;
 
 }
 
@@ -44,17 +64,17 @@ GLOBAL_CSS_STYLES = """
     }
 
     body {
-        background: var(--bg);
-        color: var(--fg);
+        @apply bg-bg text-fg;
 
         /* Dotted pattern background like Stario */
         background-image: radial-gradient(circle, #d6d3d1 1px, transparent 1px);
         background-size: 24px 24px;
     }
 
-    button:not(disabled)
+    button:not(disabled),
+    
     [role="button"]:not(:disabled){
-        cursor:pointer;
+        cursor: pointer;
     }
 }
 """
@@ -76,7 +96,8 @@ def PageHtml(
             Link({"rel": "stylesheet", "href": "/static/css/style.css"}),
             Script({"type": "module", "src": "/static/js/datastar.js"}),
             # Script({"src": "https://cdn.tailwindcss.com"}), tailwind v3
-            Script({"src": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"}),
+            # Script({"src": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"}),
+            Script({"src": "https://unpkg.com/@tailwindcss/browser@4"}),
             Style(
                 {"type": "text/tailwindcss"},
                 GLOBAL_CSS_STYLES,
