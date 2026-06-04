@@ -1,5 +1,4 @@
-from stario.html import Div
-
+from stariodemo.HtmlComponentsPkg.CommonMainMiddleSectionHtmlModule import CommonMainMiddleSectionHtml
 from stariodemo.HtmlComponentsPkg.MessageBoxHtmlModule import MessageBoxErrorHtml
 from stariodemo.HtmlComponentsPkg.MessageBoxHtmlModule import MessageBoxInfoHtml
 from stariodemo.HtmlComponentsPkg.MessageBoxHtmlModule import MessageBoxSuccessHtml
@@ -21,10 +20,11 @@ def HomeHtml(
 
     showPlaneIsTrue = False
 
-    return Div(
+    return CommonMainMiddleSectionHtml(
         MessageBoxInfoHtml(),
         MessageBoxSuccessHtml(),
         MessageBoxWarningHtml(),
         MessageBoxErrorHtml(),
         PlaneIcon() if showPlaneIsTrue else None,
+        rightSidebar=None
     )
