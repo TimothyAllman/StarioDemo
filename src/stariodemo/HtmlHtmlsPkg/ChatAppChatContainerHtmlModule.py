@@ -11,5 +11,5 @@ def ChatAppChatContainerHtml(
                 "md:max-w-[700px]",
             ]
         },
-        children,
+        *children,
     )

@@ -8,5 +8,5 @@ def ChatAppChatBodyHtml(
         {
             "class": "chat-body flex1 overflow-y-auto flex flex-col relative bg-bg",
         },
-        children,
+        *children,
     )

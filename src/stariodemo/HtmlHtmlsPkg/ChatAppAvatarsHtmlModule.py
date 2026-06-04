@@ -8,5 +8,5 @@ def ChatAppAvatarsHtml(
         {
             "class": "avatars flex flex-row-reverse",
         },
-        children,
+        *children,
     )
