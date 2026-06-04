@@ -103,7 +103,7 @@ async def bootstrap(
     app.get(USER_EDIT_PAGE_URL, UserEditPageEndpoint())
     app.get(USER_DETAILS_PAGE_URL, UserDetailsPageEndpoint())
 
-    # api Userions
+    # api 
     app.get(API_CALCULATION_URL, ApiCalculationEndpoint())
     app.get(API_ABC_CALCULATION_URL, AbcCalculationEndpoint())
 

@@ -4,7 +4,7 @@ from stario.html import Div
 
 def FooterBarHtml():
     return Div(
-        {"class": "bg-blue-600 p-4 flex items center justify-between min-h-60"},
+        {"class": "bg-color11 p-4 flex items center justify-between min-h-60"},
         {"id": "idFooter"},
         Div(
             {"class": "flex items-center space-x-6"},

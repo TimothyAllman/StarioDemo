@@ -4,7 +4,7 @@ from stario import responses
 
 from stariodemo.HtmlComponentsPkg.PageHtmlModule import PageHtml
 from stariodemo.HtmlHtmlsPkg.NavBarAndFooterHtmlModule import NavBarAndFooterHtml
-from stariodemo.HtmlHtmlsPkg.UserListHtmlModule import UserListHtml
+from stariodemo.HtmlHtmlsPkg.UserDetailsHtmlModule import UserDetailsHtml
 from stariodemo.HtmlHtmlsPkg.UserSidebarHtmlModule import UserSideBarHtml
 
 
@@ -18,7 +18,7 @@ def UserDetailsPageEndpoint():
             PageHtml(
                 NavBarAndFooterHtml(
                     UserSideBarHtml(
-                        UserListHtml(),
+                        UserDetailsHtml(),
                     )
                 )
             ),
