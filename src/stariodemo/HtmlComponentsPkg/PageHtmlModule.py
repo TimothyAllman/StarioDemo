@@ -97,11 +97,11 @@ def PageHtml(
             Script({"type": "module", "src": "/static/js/datastar.js"}),
             # Script({"src": "https://cdn.tailwindcss.com"}), tailwind v3
             # Script({"src": "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"}),
-            Script({"src": "https://unpkg.com/@tailwindcss/browser@4"}),
-            Style(
-                {"type": "text/tailwindcss"},
-                GLOBAL_CSS_STYLES,
-            ),
+            # Script({"src": "https://unpkg.com/@tailwindcss/browser@4"}),
+            # Style(
+            #     {"type": "text/tailwindcss"},
+            #     GLOBAL_CSS_STYLES,
+            # ),
         ),
         Body(
             toy_inspector(position="bottom-right"),  # Dev tool: shows current signals state

@@ -1,11 +1,10 @@
 from stario import datastar
-from stario.html import Button
-from stario.html import Form
-from stario.html import Input
-from stario.html import SafeString
-from stario.html import Span
 
 from stariodemo.DataStructsPkg.UrlsModule import CHAT_TYPING_URL
+from stariodemo.HtmlHtmlsPkg.ChatAppInputFormHtmlModule import ChatAppInputFormHtml
+from stariodemo.HtmlHtmlsPkg.ChatAppMessageInputHtmlModule import ChatAppMessageInputHtml
+from stariodemo.HtmlHtmlsPkg.ChatAppSendButtonHtmlModule import ChatAppSendButtonHtml
+from stariodemo.HtmlHtmlsPkg.ChatAppSendIconHtmlModule import ChatAppSendIconHtml
 
 
 def input_form_view():
@@ -17,18 +16,9 @@ def input_form_view():
     - datastar.on("keydown", ...): runs JS on keypress, @post triggers server request
     - datastar.attr({disabled: "!$message"}): reactively disables button when empty
     """
-    return Form(
-        {"id": "input-form", "class": "input-form"},
+    return ChatAppInputFormHtml(
         datastar.on("submit", "evt.preventDefault()"),
-        Input(
-            {
-                "id": "message-input",
-                "type": "text",
-                "class": "message-input",
-                "placeholder": "Type a message...",
-                "autocomplete": "off",
-                "autofocus": True,
-            },
+        ChatAppMessageInputHtml(
             datastar.bind("message"),
             datastar.on(
                 "keydown",
@@ -42,11 +32,7 @@ def input_form_view():
             ),
             datastar.on("input", datastar.post(CHAT_TYPING_URL)),
         ),
-        Button(
-            {
-                "type": "button",
-                "class": "send-button",
-            },
+        ChatAppSendButtonHtml(
             datastar.attr("disabled", "!$message"),
             datastar.on(
                 "click",
@@ -58,11 +44,6 @@ def input_form_view():
                 }
                 """,
             ),
-            Span(
-                {"class": "send-icon"},
-                SafeString(
-                    """<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg>"""
-                ),
-            ),
+            ChatAppSendIconHtml(),
         ),
     )

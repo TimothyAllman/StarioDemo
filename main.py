@@ -20,7 +20,7 @@ from stario import Relay
 from stario import Span
 from stario import StaticAssets
 
-from piccolo_conf import SQLITE_DB_PATH
+from piccolo_conf import SQLITE_DB_PATH, enable_wal
 from stariodemo.DataStructsPkg.UrlsModule import ABC_ADD_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import ABC_CALCULATION_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import ABC_LIST_PAGE_URL
@@ -73,6 +73,7 @@ async def bootstrap(
     print("creating db...")
     await InitPiccoloDb()
     db = PiccoloChatDb()
+    await enable_wal()
     print("db created successfully")
 
     # Relay for pub/sub between SSE connections

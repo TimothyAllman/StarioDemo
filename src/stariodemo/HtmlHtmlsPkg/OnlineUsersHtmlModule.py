@@ -1,8 +1,8 @@
-from stario.html import Div
-from stario.html import Span
-
+from stariodemo.HtmlHtmlsPkg.ChatAppAvatarHtmlModule import ChatAppAvatarHtml, ChatAppAvatarMoreHtml
+from stariodemo.HtmlHtmlsPkg.ChatAppAvatarsHtmlModule import ChatAppAvatarsHtml
+from stariodemo.HtmlHtmlsPkg.ChatAppOnlineLabelHtmlModule import ChatAppOnlineLabelHtml
+from stariodemo.HtmlHtmlsPkg.ChatAppOnlineUsersHtmlModule import ChatAppOnlineUsersHtml
 from stariodemo.PiccoloPkg.UserDbModule import UserDto
-
 
 
 def online_users_view(
@@ -10,24 +10,29 @@ def online_users_view(
 ):
     """Shows online user avatars. Caps at 8 with a +N overflow indicator."""
     if not users:
-        return Div({"id": "online", "class": "online-users"})
+        return ChatAppOnlineUsersHtml()
 
-    return Div(
-        {"id": "online", "class": "online-users"},
-        Span({"class": "online-label"}, f"{len(users)} online"),
-        Div(
-            {"class": "avatars"},
+    return ChatAppOnlineUsersHtml(
+        ChatAppOnlineLabelHtml(
+            f"{len(users)} online",
+        ),
+        ChatAppAvatarsHtml(
             *[
-                Span(
-                    {
-                        "class": "avatar",
-                        "style": {"background-color": user.color},
-                        "title": user.username,
-                    },
-                    user.username[0].upper(),
+                ChatAppAvatarHtml(
+                    avatar_text=user.username[0].upper(),
+                    avatar_title=user.username,
+                    avatar_color=user.color,
                 )
                 for user in list(users.values())[:8]
             ],
-            *([Span({"class": "avatar more"}, f"+{len(users) - 8}")] if len(users) > 8 else []),
+            *(
+                [
+                    ChatAppAvatarMoreHtml(
+                        f"+{len(users) - 8}",
+                    )
+                ]
+                if len(users) > 8
+                else []
+            ),
         ),
     )
