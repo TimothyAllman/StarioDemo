@@ -26,3 +26,12 @@ class UserListDto(BaseModel):
     id: str
     username: str
     name: str
+
+class UserUpdateDto(BaseModel):
+    """
+    A connected user with their display info and typing state.
+    """
+
+    id: str
+    username: str
+    name: str
