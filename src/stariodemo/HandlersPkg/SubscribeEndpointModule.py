@@ -4,12 +4,12 @@ from stario import Writer
 from stario import datastar
 from stario import responses
 
+from stariodemo.DatabasePiccoloFunctionsPkg import PiccoloChatDb
+from stariodemo.DatabasePiccoloTablesPkg.ChatAppUserDbModule import ChatAppUserDto
 from stariodemo.DataStructsPkg.RelayTopicsModule import CHAT_PRESENCE
 from stariodemo.DataStructsPkg.RelayTopicsModule import CHAT_SUBSCRIBE_PATTERN
 from stariodemo.DataStructsPkg.UrlsModule import CHAT_PAGE_URL
-from stariodemo.HtmlHtmlsPkg.ChatHtmlModule import chat_view
-from stariodemo.PiccoloPkg import PiccoloChatDb
-from stariodemo.PiccoloPkg.UserDbModule import UserDto
+from stariodemo.HtmlPkg.ChatHtmlModule import chat_view
 from stariodemo.SignalsPkg.ChatSignalsModule import read_chat_signal
 
 
@@ -33,7 +33,7 @@ def SubscribeEndpoint(db: PiccoloChatDb, relay: Relay[str]):
             return
 
         # Add user to database
-        user = UserDto(
+        user = ChatAppUserDto(
             id=signals.user_id,
             username=signals.username,
             color=signals.color,

@@ -6,7 +6,7 @@ from stariodemo.HtmlComponentsPkg.CommonMainMiddleSectionHtmlModule import Commo
 from stariodemo.HtmlComponentsPkg.CommonNothingToShowPlaceholderHtmlModule import CommonNothingToShowPlaceholderHtml
 from stariodemo.HtmlComponentsPkg.CommonRedirectButtonHtmlModule import CommonRedirectButtonHtml
 from stariodemo.HtmlComponentsPkg.CommonSidebarRightHtmlModule import CommonSidebarRightHtml
-from stariodemo.HtmlHtmlsPkg.UserCardHtmlModule import UserCardHtml
+from stariodemo.HtmlPkg.UserCardHtmlModule import UserCardHtml
 
 
 def UserListHtml():

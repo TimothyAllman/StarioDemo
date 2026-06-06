@@ -2,7 +2,7 @@ from stario import Context
 from stario import Writer
 from stario import datastar
 
-from stariodemo.HtmlHtmlsPkg.CalculationResultBoxHtmlModule import CalculationResultBoxHtml
+from stariodemo.HtmlPkg.CalculationResultBoxHtmlModule import CalculationResultBoxHtml
 
 
 def AbcCalculationEndpoint():

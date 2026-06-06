@@ -1,14 +1,14 @@
 from stario import datastar
 
-from stariodemo.HtmlHtmlsPkg.ChatAppChatEmptyStateHtmlModule import ChatAppChatEmptyStateHtml
-from stariodemo.HtmlHtmlsPkg.ChatAppMessagesHtmlModule import ChatAppMessagesHtml
-from stariodemo.HtmlHtmlsPkg.MessageHtmlModule import message_view
-from stariodemo.PiccoloPkg.MessageDbModule import MessageDto
+from stariodemo.DatabasePiccoloTablesPkg.ChatAppMessageDbModule import ChatAppMessageDto
+from stariodemo.HtmlPkg.ChatAppChatEmptyStateHtmlModule import ChatAppChatEmptyStateHtml
+from stariodemo.HtmlPkg.ChatAppMessagesHtmlModule import ChatAppMessagesHtml
+from stariodemo.HtmlPkg.MessageHtmlModule import message_view
 
 
 def messages_view(
     current_user_id: str,
-    messages: list[MessageDto],
+    messages: list[ChatAppMessageDto],
 ):
     """
     Message list container.

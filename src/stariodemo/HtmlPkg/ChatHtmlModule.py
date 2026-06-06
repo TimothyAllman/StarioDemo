@@ -1,18 +1,18 @@
 from stario import datastar
 from stario.html import Div
 
+from stariodemo.DatabasePiccoloTablesPkg.ChatAppMessageDbModule import ChatAppMessageDto
+from stariodemo.DatabasePiccoloTablesPkg.ChatAppUserDbModule import ChatAppUserDto
 from stariodemo.DataStructsPkg.UrlsModule import CHAT_SUBSCRIBE_URL
-from stariodemo.HtmlHtmlsPkg.ChatAppChatBodyHtmlModule import ChatAppChatBodyHtml
-from stariodemo.HtmlHtmlsPkg.ChatAppChatContainerHtmlModule import ChatAppChatContainerHtml
-from stariodemo.HtmlHtmlsPkg.ChatAppChatFooterHtmlModule import ChatAppChatFooterHtml
-from stariodemo.HtmlHtmlsPkg.ChatAppChatHeaderHtmlModule import ChatAppChatHeaderHtml
-from stariodemo.HtmlHtmlsPkg.ChatAppChatTitleHtmlModule import ChatAppChatTitleHtml
-from stariodemo.HtmlHtmlsPkg.InputFormHtmlModule import input_form_view
-from stariodemo.HtmlHtmlsPkg.MessagesHtmlModule import messages_view
-from stariodemo.HtmlHtmlsPkg.OnlineUsersHtmlModule import online_users_view
-from stariodemo.HtmlHtmlsPkg.TypingIndicatorHtmlModule import typing_indicator_view
-from stariodemo.PiccoloPkg.MessageDbModule import MessageDto
-from stariodemo.PiccoloPkg.UserDbModule import UserDto
+from stariodemo.HtmlPkg.ChatAppChatBodyHtmlModule import ChatAppChatBodyHtml
+from stariodemo.HtmlPkg.ChatAppChatContainerHtmlModule import ChatAppChatContainerHtml
+from stariodemo.HtmlPkg.ChatAppChatFooterHtmlModule import ChatAppChatFooterHtml
+from stariodemo.HtmlPkg.ChatAppChatHeaderHtmlModule import ChatAppChatHeaderHtml
+from stariodemo.HtmlPkg.ChatAppChatTitleHtmlModule import ChatAppChatTitleHtml
+from stariodemo.HtmlPkg.InputFormHtmlModule import input_form_view
+from stariodemo.HtmlPkg.MessagesHtmlModule import messages_view
+from stariodemo.HtmlPkg.OnlineUsersHtmlModule import online_users_view
+from stariodemo.HtmlPkg.TypingIndicatorHtmlModule import typing_indicator_view
 
 
 def chat_view(
@@ -20,8 +20,8 @@ def chat_view(
     username: str,
     color: str,
     *,
-    messages: list[MessageDto],
-    users: dict[str, UserDto],
+    messages: list[ChatAppMessageDto],
+    users: dict[str, ChatAppUserDto],
 ):
     """
     Main chat page.

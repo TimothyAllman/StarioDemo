@@ -4,7 +4,7 @@ from stario import Writer
 from stario import responses
 
 from stariodemo.DataStructsPkg.RelayTopicsModule import CHAT_TYPING
-from stariodemo.PiccoloPkg import PiccoloChatDb
+from stariodemo.DatabasePiccoloFunctionsPkg import PiccoloChatDb
 from stariodemo.SignalsPkg.ChatSignalsModule import read_chat_signal
 
 

@@ -5,7 +5,7 @@ from stariodemo.DataStructsPkg.UrlsModule import API_ABC_CALCULATION_URL
 from stariodemo.HtmlComponentsPkg.BigTitleHtmlModule import BigTitleHtml
 from stariodemo.HtmlComponentsPkg.CommonMainMiddleSectionHtmlModule import CommonMainMiddleSectionHtml
 from stariodemo.HtmlComponentsPkg.DemoAppButtonHtmlModule import DemoAppButtonHtml
-from stariodemo.HtmlHtmlsPkg.CalculationResultBoxHtmlModule import CalculationResultBoxHtml
+from stariodemo.HtmlPkg.CalculationResultBoxHtmlModule import CalculationResultBoxHtml
 
 
 def AbcCalculationHtml():

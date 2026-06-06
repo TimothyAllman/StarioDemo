@@ -3,9 +3,9 @@ from stario import Writer
 from stario import responses
 
 from stariodemo.HtmlComponentsPkg.PageHtmlModule import PageHtml
-from stariodemo.HtmlHtmlsPkg.AbcAddHtmlModule import AbcAddHtml
-from stariodemo.HtmlHtmlsPkg.AbcSidebarHtmlModule import AbcSideBarHtml
-from stariodemo.HtmlHtmlsPkg.NavBarAndFooterHtmlModule import NavBarAndFooterHtml
+from stariodemo.HtmlPkg.AbcAddHtmlModule import AbcAddHtml
+from stariodemo.HtmlPkg.AbcSidebarHtmlModule import AbcSideBarHtml
+from stariodemo.HtmlPkg.NavBarAndFooterHtmlModule import NavBarAndFooterHtml
 
 
 def AbcAddPageEndpoint():

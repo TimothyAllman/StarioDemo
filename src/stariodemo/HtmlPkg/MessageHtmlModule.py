@@ -1,15 +1,15 @@
 import time
 
-from stariodemo.HtmlHtmlsPkg.ChatAppMessageBubbleHtmlModule import ChatAppMessageBubbleHtml
-from stariodemo.HtmlHtmlsPkg.ChatAppMessageBubbleHtmlModule import ChatAppMessageHeaderHtml
-from stariodemo.HtmlHtmlsPkg.ChatAppMessageUsernameHtmlModule import ChatAppMessageTextHtml
-from stariodemo.HtmlHtmlsPkg.ChatAppMessageUsernameHtmlModule import ChatAppTimestampHtml
-from stariodemo.HtmlHtmlsPkg.ChatAppMessageUsernameHtmlModule import ChatAppUsernameHtml
-from stariodemo.PiccoloPkg.MessageDbModule import MessageDto
+from stariodemo.DatabasePiccoloTablesPkg.ChatAppMessageDbModule import ChatAppMessageDto
+from stariodemo.HtmlPkg.ChatAppMessageBubbleHtmlModule import ChatAppMessageBubbleHtml
+from stariodemo.HtmlPkg.ChatAppMessageBubbleHtmlModule import ChatAppMessageHeaderHtml
+from stariodemo.HtmlPkg.ChatAppMessageUsernameHtmlModule import ChatAppMessageTextHtml
+from stariodemo.HtmlPkg.ChatAppMessageUsernameHtmlModule import ChatAppTimestampHtml
+from stariodemo.HtmlPkg.ChatAppMessageUsernameHtmlModule import ChatAppUsernameHtml
 
 
 def message_view(
-    msg: MessageDto,
+    msg: ChatAppMessageDto,
     current_user_id: str,
 ):
     """Single chat message bubble. Own messages get different styling."""

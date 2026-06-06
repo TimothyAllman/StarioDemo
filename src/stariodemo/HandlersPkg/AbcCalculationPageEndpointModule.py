@@ -2,9 +2,9 @@ from stario import Context, responses
 from stario import Writer
 
 from stariodemo.HtmlComponentsPkg.PageHtmlModule import PageHtml
-from stariodemo.HtmlHtmlsPkg.AbcCalculationHtmlModule import AbcCalculationHtml
-from stariodemo.HtmlHtmlsPkg.AbcSidebarHtmlModule import AbcSideBarHtml
-from stariodemo.HtmlHtmlsPkg.NavBarAndFooterHtmlModule import NavBarAndFooterHtml
+from stariodemo.HtmlPkg.AbcCalculationHtmlModule import AbcCalculationHtml
+from stariodemo.HtmlPkg.AbcSidebarHtmlModule import AbcSideBarHtml
+from stariodemo.HtmlPkg.NavBarAndFooterHtmlModule import NavBarAndFooterHtml
 
 
 def AbcCalculationPageEndpoint():

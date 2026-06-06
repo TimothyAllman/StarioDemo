@@ -30,6 +30,6 @@ async def enable_wal():
 
 APP_REGISTRY = AppRegistry(
     apps=[
-        "stariodemo.PiccoloPkg.piccolo_app",
+        "stariodemo.DatabasePiccoloFunctionsPkg.piccolo_app",
     ]
 )

@@ -1,12 +1,13 @@
-from stariodemo.HtmlHtmlsPkg.ChatAppAvatarHtmlModule import ChatAppAvatarHtml, ChatAppAvatarMoreHtml
-from stariodemo.HtmlHtmlsPkg.ChatAppAvatarsHtmlModule import ChatAppAvatarsHtml
-from stariodemo.HtmlHtmlsPkg.ChatAppOnlineLabelHtmlModule import ChatAppOnlineLabelHtml
-from stariodemo.HtmlHtmlsPkg.ChatAppOnlineUsersHtmlModule import ChatAppOnlineUsersHtml
-from stariodemo.PiccoloPkg.UserDbModule import UserDto
+from stariodemo.DatabasePiccoloTablesPkg.ChatAppUserDbModule import ChatAppUserDto
+from stariodemo.HtmlPkg.ChatAppAvatarHtmlModule import ChatAppAvatarHtml
+from stariodemo.HtmlPkg.ChatAppAvatarHtmlModule import ChatAppAvatarMoreHtml
+from stariodemo.HtmlPkg.ChatAppAvatarsHtmlModule import ChatAppAvatarsHtml
+from stariodemo.HtmlPkg.ChatAppOnlineLabelHtmlModule import ChatAppOnlineLabelHtml
+from stariodemo.HtmlPkg.ChatAppOnlineUsersHtmlModule import ChatAppOnlineUsersHtml
 
 
 def online_users_view(
-    users: dict[str, UserDto],
+    users: dict[str, ChatAppUserDto],
 ):
     """Shows online user avatars. Caps at 8 with a +N overflow indicator."""
     if not users:

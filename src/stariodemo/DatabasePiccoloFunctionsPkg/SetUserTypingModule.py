@@ -1,13 +1,13 @@
-from stariodemo.PiccoloPkg.UserDbModule import UserDb
-from stariodemo.PiccoloPkg.UserDbModule import UserDto
+from stariodemo.DatabasePiccoloTablesPkg.ChatAppUserDbModule import ChatAppUserDb
+from stariodemo.DatabasePiccoloTablesPkg.ChatAppUserDbModule import ChatAppUserDto
 
 
 async def SetUserTyping(user_id: str, typing: bool) -> bool:
     # set up query
     qry = (
-        UserDb.select()
+        ChatAppUserDb.select()
         .where(
-            UserDb.id == user_id,
+            ChatAppUserDb.id == user_id,
         )
         .first()
     )
@@ -18,15 +18,15 @@ async def SetUserTyping(user_id: str, typing: bool) -> bool:
         return False
 
     # validate types by instantiating userDto from data. check if the same nothing to update so return false
-    dto = UserDto(**result)
+    dto = ChatAppUserDto(**result)
     if dto.typing == typing:
         return False
 
     # else update the typing column with the changed status
-    qry = UserDb.update(
-        {UserDb.typing: typing},
+    qry = ChatAppUserDb.update(
+        {ChatAppUserDb.typing: typing},
     ).where(
-        UserDb.id == user_id,
+        ChatAppUserDb.id == user_id,
     )
     result = await qry.run()
 

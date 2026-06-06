@@ -1,12 +1,12 @@
 from stario.html import Div
 from stario.html import Span
 
-from stariodemo.PiccoloPkg.UserDbModule import UserDto
+from stariodemo.DatabasePiccoloTablesPkg.ChatAppUserDbModule import ChatAppUserDto
 
 
 def typing_indicator_view(
     current_user_id: str,
-    users: dict[str, UserDto],
+    users: dict[str, ChatAppUserDto],
 ):
     """
     Shows who's typing.

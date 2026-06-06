@@ -6,8 +6,8 @@ from stario import Writer
 from stariodemo.DataStructsPkg.GenerateColorModule import generate_color
 from stariodemo.DataStructsPkg.GenerateUserNameModule import generate_username
 from stariodemo.HtmlComponentsPkg.PageHtmlModule import PageHtml
-from stariodemo.HtmlHtmlsPkg.ChatHtmlModule import chat_view
-from stariodemo.HtmlHtmlsPkg.NavBarAndFooterHtmlModule import NavBarAndFooterHtml
+from stariodemo.HtmlPkg.ChatHtmlModule import chat_view
+from stariodemo.HtmlPkg.NavBarAndFooterHtmlModule import NavBarAndFooterHtml
 
 
 def ChatPageEndpoint():

@@ -5,7 +5,7 @@ from piccolo.table import Table
 from pydantic import BaseModel
 
 
-class MessageDb(Table):
+class ChatAppMessageDb(Table):
     id = Varchar(length=64, primary_key=True)
     user_id = Varchar(length=64)
     username = Varchar(length=255)
@@ -13,11 +13,11 @@ class MessageDb(Table):
     text = Text()
     timestamp = Float()
 
-    class Meta:
-        tablename = "messages"
+    # class Meta:
+    #     tablename = "messages"
 
 
-class MessageDto(BaseModel):
+class ChatAppMessageDto(BaseModel):
     """
     A chat message with sender info and timestamp.
     """

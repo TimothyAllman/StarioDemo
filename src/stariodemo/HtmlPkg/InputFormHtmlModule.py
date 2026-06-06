@@ -1,10 +1,10 @@
 from stario import datastar
 
 from stariodemo.DataStructsPkg.UrlsModule import CHAT_TYPING_URL
-from stariodemo.HtmlHtmlsPkg.ChatAppInputFormHtmlModule import ChatAppInputFormHtml
-from stariodemo.HtmlHtmlsPkg.ChatAppMessageInputHtmlModule import ChatAppMessageInputHtml
-from stariodemo.HtmlHtmlsPkg.ChatAppSendButtonHtmlModule import ChatAppSendButtonHtml
-from stariodemo.HtmlHtmlsPkg.ChatAppSendIconHtmlModule import ChatAppSendIconHtml
+from stariodemo.HtmlPkg.ChatAppInputFormHtmlModule import ChatAppInputFormHtml
+from stariodemo.HtmlPkg.ChatAppMessageInputHtmlModule import ChatAppMessageInputHtml
+from stariodemo.HtmlPkg.ChatAppSendButtonHtmlModule import ChatAppSendButtonHtml
+from stariodemo.HtmlPkg.ChatAppSendIconHtmlModule import ChatAppSendIconHtml
 
 
 def input_form_view():

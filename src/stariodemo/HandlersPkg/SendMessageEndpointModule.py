@@ -6,10 +6,10 @@ from stario import Relay
 from stario import Writer
 from stario import responses
 
+from stariodemo.DatabasePiccoloFunctionsPkg import PiccoloChatDb
+from stariodemo.DatabasePiccoloTablesPkg.ChatAppMessageDbModule import ChatAppMessageDto
 from stariodemo.DataStructsPkg.RelayTopicsModule import CHAT_MESSAGE
 from stariodemo.DataStructsPkg.UrlsModule import HOME_PAGE_URL
-from stariodemo.PiccoloPkg import PiccoloChatDb
-from stariodemo.PiccoloPkg.MessageDbModule import MessageDto
 from stariodemo.SignalsPkg.ChatSignalsModule import read_chat_signal
 
 
@@ -33,7 +33,7 @@ def SendMessageEndpoint(db: PiccoloChatDb, relay: Relay[str]):
             responses.empty(w, 204)
             return
 
-        msg = MessageDto(
+        msg = ChatAppMessageDto(
             id=str(uuid.uuid4())[:8],
             user_id=signals.user_id,
             username=signals.username,

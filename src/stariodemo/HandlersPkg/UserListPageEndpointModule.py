@@ -3,9 +3,9 @@ from stario import Writer
 from stario import responses
 
 from stariodemo.HtmlComponentsPkg.PageHtmlModule import PageHtml
-from stariodemo.HtmlHtmlsPkg.NavBarAndFooterHtmlModule import NavBarAndFooterHtml
-from stariodemo.HtmlHtmlsPkg.UserListHtmlModule import UserListHtml
-from stariodemo.HtmlHtmlsPkg.UserSidebarHtmlModule import UserSideBarHtml
+from stariodemo.HtmlPkg.NavBarAndFooterHtmlModule import NavBarAndFooterHtml
+from stariodemo.HtmlPkg.UserListHtmlModule import UserListHtml
+from stariodemo.HtmlPkg.UserSidebarHtmlModule import UserSideBarHtml
 
 
 def UserListPageEndpoint():
