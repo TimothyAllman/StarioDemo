@@ -14,9 +14,9 @@ def UserSideBarHtml(
 
     return CommonSidebarLeftHtml(
         [
-            SideBarButtonHtml(name="List Users", url=USER_LIST_PAGE_URL),
-            SideBarButtonHtml(name="Add User", url=USER_ADD_PAGE_URL),
-            SideBarButtonHtml(name="Edit User", url=USER_EDIT_PAGE_URL),
+            SideBarButtonHtml(name="List Users", url=USER_LIST_PAGE_URL.href()),
+            SideBarButtonHtml(name="Add User", url=USER_ADD_PAGE_URL.href()),
+            SideBarButtonHtml(name="Edit User", url=USER_EDIT_PAGE_URL.href()),
         ],
         *children,
     )
