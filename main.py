@@ -53,8 +53,8 @@ from stariodemo.HandlersPkg.UserAddPageEndpointModule import UserAddPageEndpoint
 from stariodemo.HandlersPkg.UserDetailsPageEndpointModule import UserDetailsPageEndpoint
 from stariodemo.HandlersPkg.UserEditPageEndpointModule import UserEditPageEndpoint
 from stariodemo.HandlersPkg.UserListPageEndpointModule import UserListPageEndpoint
-from stariodemo.DatabasePiccoloFunctionsPkg import PiccoloChatDb
-from stariodemo.DatabasePiccoloFunctionsPkg.InitPiccoloDbModule import InitPiccoloDb
+from stariodemo.FromTableDatabaseFunctionsPkg import PiccoloChatDb
+from stariodemo.FromTableDatabaseFunctionsPkg.InitPiccoloDbModule import InitPiccoloDb
 
 
 async def bootstrap(

@@ -7,7 +7,7 @@ import os
 
 from piccolo.conf.apps import AppConfig
 
-from stariodemo.DatabasePiccoloFunctionsPkg.WidgetDbModule import WidgetDb
+from stariodemo.FromTableDatabaseFunctionsPkg.WidgetDbModule import WidgetDb
 from stariodemo.DatabasePiccoloTablesPkg.ChatAppMessageDbModule import ChatAppMessageDb
 from stariodemo.DatabasePiccoloTablesPkg.ChatAppUserDbModule import ChatAppUserDb
 

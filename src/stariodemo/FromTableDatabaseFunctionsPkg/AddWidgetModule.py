@@ -1,5 +1,5 @@
-from stariodemo.DatabasePiccoloFunctionsPkg.WidgetDbModule import WidgetDb
-from stariodemo.DatabasePiccoloFunctionsPkg.WidgetDbModule import WidgetDto
+from stariodemo.FromTableDatabaseFunctionsPkg.WidgetDbModule import WidgetDb
+from stariodemo.FromTableDatabaseFunctionsPkg.WidgetDbModule import WidgetDto
 
 
 async def AddWidget(widget: WidgetDto) -> None:

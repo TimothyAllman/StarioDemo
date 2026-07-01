@@ -1,7 +1,7 @@
 from piccolo.conf.apps import AppRegistry
 from piccolo.engine.sqlite import SQLiteEngine
 
-from stariodemo.DatabasePiccoloFunctionsPkg import piccolo_app
+from stariodemo.FromTableDatabaseFunctionsPkg import piccolo_app
 
 SQLITE_DB_PATH = "piccolochat.db"
 
