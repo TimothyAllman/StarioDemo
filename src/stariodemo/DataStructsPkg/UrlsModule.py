@@ -1,26 +1,28 @@
-HOME_PAGE_URL = "/"
+from stario.routing import UrlPath
 
-ABC_LIST_PAGE_URL = "/abc-list"
-ABC_ADD_PAGE_URL = "/abc-add"
-ABC_CALCULATION_PAGE_URL = "/abc-calculation"
+HOME_PAGE_URL = UrlPath("/")
 
-
-USER_LIST_PAGE_URL = "/user-list"
-USER_ADD_PAGE_URL = "/user-add"
-USER_EDIT_PAGE_URL = "/user-edit"
-USER_DETAILS_PAGE_URL = "/user-details"
+ABC_LIST_PAGE_URL = UrlPath("/abc-list")
+ABC_ADD_PAGE_URL = UrlPath("/abc-add")
+ABC_CALCULATION_PAGE_URL = UrlPath("/abc-calculation")
 
 
-CHAT_PAGE_URL = "/chat/"
-CHAT_SUBSCRIBE_URL = "/subscribe"
-CHAT_SEND_URL = "/send/"
-CHAT_TYPING_URL = "/typing"
+USER_LIST_PAGE_URL = UrlPath("/user-list")
+USER_ADD_PAGE_URL = UrlPath("/user-add")
+USER_EDIT_PAGE_URL = UrlPath("/user-edit")
+USER_DETAILS_PAGE_URL = UrlPath("/user-details")
 
 
-API_CALCULATION_URL = "/api/calculation"
-API_USER_CREATE_URL = "/api/user/create"
-API_ABC_CALCULATION_URL = "/api/abc/calculation"
+CHAT_PAGE_URL = UrlPath("/chat/")
+CHAT_SUBSCRIBE_URL = UrlPath("/subscribe")
+CHAT_SEND_URL = UrlPath("/send/")
+CHAT_TYPING_URL = UrlPath("/typing")
 
 
-GIVE_ME_TEXT_URL = "/give-me-text"
-GIVE_ME_JSON_URL = "/give-me-json"
+API_CALCULATION_URL = UrlPath("/api/calculation")
+API_USER_CREATE_URL = UrlPath("/api/user/create")
+API_ABC_CALCULATION_URL = UrlPath("/api/abc/calculation")
+
+
+GIVE_ME_TEXT_URL = UrlPath("/give-me-text")
+GIVE_ME_JSON_URL = UrlPath("/give-me-json")
