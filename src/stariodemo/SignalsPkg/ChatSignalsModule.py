@@ -21,7 +21,7 @@ class ChatSignals:
 
 async def read_chat_signal(c: Context) -> ChatSignals:
 
-    payload = await datastar.data.read_signals(
+    payload = await datastar.read_signals(
         c.req,
     )
 
