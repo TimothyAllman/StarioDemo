@@ -14,9 +14,18 @@ def AbcSideBarHtml(
 
     return CommonSidebarLeftHtml(
         [
-            SideBarButtonHtml(name="List", url=ABC_LIST_PAGE_URL),
-            SideBarButtonHtml(name="Add", url=ABC_ADD_PAGE_URL),
-            SideBarButtonHtml(name="Calculation", url=ABC_CALCULATION_PAGE_URL),
+            SideBarButtonHtml(
+                name="List",
+                url=ABC_LIST_PAGE_URL.href(),
+            ),
+            SideBarButtonHtml(
+                name="Add",
+                url=ABC_ADD_PAGE_URL.href(),
+            ),
+            SideBarButtonHtml(
+                name="Calculation",
+                url=ABC_CALCULATION_PAGE_URL.href(),
+            ),
         ],
         *children,
     )
