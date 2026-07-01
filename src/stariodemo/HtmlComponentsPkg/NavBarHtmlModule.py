@@ -18,8 +18,8 @@ def NavBarHtml():
                 "Stario With Tailwind",
             ),
         ),
-        NavBarButtonHtml(name="Home", url=HOME_PAGE_URL),
-        NavBarButtonHtml(name="Abc", url=ABC_LIST_PAGE_URL),
-        NavBarButtonHtml(name="Users", url=USER_LIST_PAGE_URL),
-        NavBarButtonHtml(name="Chat", url=CHAT_PAGE_URL),
+        NavBarButtonHtml(name="Home", url=HOME_PAGE_URL.href()),
+        NavBarButtonHtml(name="Abc", url=ABC_LIST_PAGE_URL.href()),
+        NavBarButtonHtml(name="Users", url=USER_LIST_PAGE_URL.href()),
+        NavBarButtonHtml(name="Chat", url=CHAT_PAGE_URL.href()),
     )
