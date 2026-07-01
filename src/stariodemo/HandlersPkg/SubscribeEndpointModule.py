@@ -51,7 +51,7 @@ def SubscribeEndpoint(db: PiccoloChatDb, relay: Relay[str]):
             relay.publish(CHAT_PRESENCE, "join")
 
             # First patch: stream has started; ship current db truth (messages, roster).
-            datastar.data.SSE(w).patch_elements(
+            datastar.SSE(w).patch_elements(
                 chat_view(
                     signals.user_id,
                     signals.username,
@@ -61,9 +61,9 @@ def SubscribeEndpoint(db: PiccoloChatDb, relay: Relay[str]):
                 ),
             )
 
-            async for subject, _ in w.alive(live):
+            async for subject, _ in c.alive(live):
                 c.span.event("relay", {"subject": subject})
-                datastar.data.SSE(w).patch_elements(
+                datastar.SSE(w).patch_elements(
                     chat_view(
                         signals.user_id,
                         signals.username,
