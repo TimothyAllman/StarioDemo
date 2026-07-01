@@ -45,7 +45,7 @@ from stariodemo.HandlersPkg.UserAddPageEndpointModule import UserAddPageEndpoint
 from stariodemo.HandlersPkg.UserDetailsPageEndpointModule import UserDetailsPageEndpoint
 from stariodemo.HandlersPkg.UserEditPageEndpointModule import UserEditPageEndpoint
 from stariodemo.HandlersPkg.UserListPageEndpointModule import UserListPageEndpoint
-from stariodemo.static.StaticAssetsModule import ASSETS
+from stariodemo.StaticAssetsPkg.StaticAssetsModule import ASSETS
 
 
 async def bootstrap(
