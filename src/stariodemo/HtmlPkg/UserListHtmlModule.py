@@ -42,7 +42,7 @@ def UserListHtml():
         message="No user found. add your first user.",
         callToActionButton=CommonRedirectButtonHtml(
             name="Add New User",
-            url=ABC_ADD_PAGE_URL,
+            url=ABC_ADD_PAGE_URL.href(),
         ),
     )
 
