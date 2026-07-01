@@ -1,6 +1,6 @@
 from stario import Context
 from stario import Writer
-from stario import datastar
+from stario.datastar import SSE
 
 from stariodemo.HtmlPkg.CalculationResultBoxHtmlModule import CalculationResultBoxHtml
 
@@ -10,8 +10,8 @@ def AbcCalculationEndpoint():
         """
         path the abc result box
         """
-        datastar.sse.patch_elements(
-            w,
+        sse = SSE(w)
+        sse.patch_elements(
             CalculationResultBoxHtml(
                 result="running calculation...",
             ),

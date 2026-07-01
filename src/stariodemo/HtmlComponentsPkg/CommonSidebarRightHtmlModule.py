@@ -13,9 +13,9 @@ def CommonSidebarRightHtml(
         {
             "class": "shrink-0 flex flex-row items-stretch",
         },
-        datastar.signals(
+        datastar.data.signals(
             {"rightSidebarOpen": False},
-            ifmissing=True,
+            if_missing=True,
         ),
         Button(
             {
@@ -27,15 +27,15 @@ def CommonSidebarRightHtml(
                 "type": "button",
                 "title": "Toggle right sidebar",
             },
-            datastar.on("click", "$rightSidebarOpen=!$rightSidebarOpen"),
+            datastar.data.on("click", "$rightSidebarOpen=!$rightSidebarOpen"),
             Span(
-                datastar.class_("block", "$rightSidebarOpen"),
-                datastar.class_("hidden", "!$rightSidebarOpen"),
+                datastar.data.class_("block", "$rightSidebarOpen"),
+                datastar.data.class_("hidden", "!$rightSidebarOpen"),
                 ">>",
             ),
             Span(
-                datastar.class_("hidden", "$rightSidebarOpen"),
-                datastar.class_("block", "!$rightSidebarOpen"),
+                datastar.data.class_("hidden", "$rightSidebarOpen"),
+                datastar.data.class_("block", "!$rightSidebarOpen"),
                 "<<",
             ),
         ),
@@ -46,7 +46,7 @@ def CommonSidebarRightHtml(
                     "transition-all duration-200 overflow-hidden",
                 ]
             },
-            datastar.classes(
+            datastar.data.classes(
                 {
                     "w-[200px]": "$rightSidebarOpen",
                     "w-0": "!$rightSidebarOpen",
@@ -55,7 +55,7 @@ def CommonSidebarRightHtml(
             Div(
                 {"class": "p-3"},
                 Div(
-                    datastar.show("$rightSidebarOpen"),
+                    datastar.data.show("$rightSidebarOpen"),
                     Div(
                         {"class": "flex flex-col gap-2"},
                         *children

@@ -11,13 +11,13 @@ def CommonSidebarLeftHtml(
 
     return Div(
         {"class": "flex flex-row"},
-        datastar.signals(
+        datastar.data.signals(
             {"sidebarOpen": True},
-            ifmissing=True,
+            if_missing=True,
         ),
         Div(
             {"class": "min-h-screen bg-slate-100 transition-all duration-200 overflow-hidden"},
-            datastar.classes(
+            datastar.data.classes(
                 {
                     "w-[200px]": "$sidebarOpen",
                     "w-0": "!$sidebarOpen",
@@ -26,7 +26,7 @@ def CommonSidebarLeftHtml(
             Div(
                 {"class": "p-3"},
                 Div(
-                    datastar.show("$sidebarOpen"),
+                    datastar.data.show("$sidebarOpen"),
                     Div(
                         {"class": "flex flex-col gap-2"},
                         *navItems,
@@ -46,15 +46,15 @@ def CommonSidebarLeftHtml(
                     "type": "button",
                     "title": "Toggle sidebar",
                 },
-                datastar.on("click", "$sidebarOpen=!$sidebarOpen"),
+                datastar.data.on("click", "$sidebarOpen=!$sidebarOpen"),
                 Span(
-                    datastar.class_("block", "$sidebarOpen"),
-                    datastar.class_("hidden", "!$sidebarOpen"),
+                    datastar.data.class_("block", "$sidebarOpen"),
+                    datastar.data.class_("hidden", "!$sidebarOpen"),
                     "<<",
                 ),
                 Span(
-                    datastar.class_("hidden", "$sidebarOpen"),
-                    datastar.class_("block", "!$sidebarOpen"),
+                    datastar.data.class_("hidden", "$sidebarOpen"),
+                    datastar.data.class_("block", "!$sidebarOpen"),
                     ">>",
                 ),
             ),

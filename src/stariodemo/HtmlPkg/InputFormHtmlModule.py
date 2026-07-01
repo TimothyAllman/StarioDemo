@@ -12,15 +12,15 @@ def input_form_view():
     Message input with keyboard and button support.
 
     Key Datastar patterns used here:
-    - datastar.bind("message"): two-way binds input value to $message signal
-    - datastar.on("keydown", ...): runs JS on keypress, @post triggers server request
-    - datastar.attr({disabled: "!$message"}): reactively disables button when empty
+    - datastar.data.bind("message"): two-way binds input value to $message signal
+    - datastar.data.on("keydown", ...): runs JS on keypress, @post triggers server request
+    - datastar.data.attr({disabled: "!$message"}): reactively disables button when empty
     """
     return ChatAppInputFormHtml(
-        datastar.on("submit", "evt.preventDefault()"),
+        datastar.data.on("submit", "evt.preventDefault()"),
         ChatAppMessageInputHtml(
-            datastar.bind("message"),
-            datastar.on(
+            datastar.data.bind("message"),
+            datastar.data.on(
                 "keydown",
                 """
                 if (evt.key === 'Enter' && !evt.shiftKey && $message.trim()) {
@@ -30,11 +30,11 @@ def input_form_view():
                 }
                 """,
             ),
-            datastar.on("input", datastar.post(CHAT_TYPING_URL)),
+            datastar.data.on("input", datastar.data.post(CHAT_TYPING_URL)),
         ),
         ChatAppSendButtonHtml(
-            datastar.attr("disabled", "!$message"),
-            datastar.on(
+            datastar.data.attr("disabled", "!$message"),
+            datastar.data.on(
                 "click",
                 """
                 if ($message.trim()) {

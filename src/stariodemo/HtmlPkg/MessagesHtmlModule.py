@@ -23,6 +23,6 @@ def messages_view(
         )
 
     return ChatAppMessagesHtml(
-        datastar.on("load", "setTimeout(() => this.scrollTop = this.scrollHeight, 10)"),
+        datastar.data.on("load", "setTimeout(() => this.scrollTop = this.scrollHeight, 10)"),
         *[message_view(msg, current_user_id) for msg in messages],
     )

@@ -19,7 +19,7 @@ def AbcCalculationHtml():
             {"class": ""},
             DemoAppButtonHtml(
                 {"class": "border"},
-                datastar.on("click", datastar.get(API_ABC_CALCULATION_URL)),
+                datastar.data.on("click", datastar.at.get(API_ABC_CALCULATION_URL)),
                 "press me",
                 buttoncolor="green",
             ),

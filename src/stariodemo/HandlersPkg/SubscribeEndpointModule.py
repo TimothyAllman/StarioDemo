@@ -4,11 +4,11 @@ from stario import Writer
 from stario import datastar
 from stario import responses
 
-from stariodemo.FromTableDatabaseFunctionsPkg import PiccoloChatDb
 from stariodemo.DatabasePiccoloTablesPkg.ChatAppUserDbModule import ChatAppUserDto
 from stariodemo.DataStructsPkg.RelayTopicsModule import CHAT_PRESENCE
 from stariodemo.DataStructsPkg.RelayTopicsModule import CHAT_SUBSCRIBE_PATTERN
 from stariodemo.DataStructsPkg.UrlsModule import CHAT_PAGE_URL
+from stariodemo.FromTableDatabaseFunctionsPkg import PiccoloChatDb
 from stariodemo.HtmlPkg.ChatHtmlModule import chat_view
 from stariodemo.SignalsPkg.ChatSignalsModule import read_chat_signal
 
@@ -51,8 +51,7 @@ def SubscribeEndpoint(db: PiccoloChatDb, relay: Relay[str]):
             relay.publish(CHAT_PRESENCE, "join")
 
             # First patch: stream has started; ship current db truth (messages, roster).
-            datastar.sse.patch_elements(
-                w,
+            datastar.data.SSE(w).patch_elements(
                 chat_view(
                     signals.user_id,
                     signals.username,
@@ -64,8 +63,7 @@ def SubscribeEndpoint(db: PiccoloChatDb, relay: Relay[str]):
 
             async for subject, _ in w.alive(live):
                 c.span.event("relay", {"subject": subject})
-                datastar.sse.patch_elements(
-                    w,
+                datastar.data.SSE(w).patch_elements(
                     chat_view(
                         signals.user_id,
                         signals.username,
