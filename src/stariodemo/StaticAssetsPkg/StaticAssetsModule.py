@@ -6,6 +6,8 @@ from stario import AssetManifest
 
 # Cheap at import time: scan + fingerprint only. Serving (compression, caching)
 # is paid in bootstrap when StaticAssets wraps the manifest.
-ASSETS = AssetManifest(Path(__file__).resolve().parent.parent / "static")
-STYLE_CSS = ASSETS.href("css/style.css")
-DATASTAR_JS = ASSETS.href("js/datastar.data.js")
+ASSETS = AssetManifest(
+    Path(__file__).resolve().parent.parent / "static",
+)
+STYLE_CSS = ASSETS.href("/css/style.css")
+DATASTAR_JS = ASSETS.href("/js/datastar.js")
