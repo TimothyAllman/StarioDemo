@@ -1,4 +1,4 @@
-from stario.markup.html import SafeString
+from stario.markup.types import SafeString
 
 
 def MoodHappyIcon(
