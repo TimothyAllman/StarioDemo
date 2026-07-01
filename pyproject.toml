@@ -5,12 +5,12 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
-    "piccolo[sqlite]>=1.33.0",
-    "plotly>=6.7.0",
+    "piccolo[sqlite]==1.33.0",
+    "plotly==6.7.0",
     "pydantic==2.12.5",
-    "python-dotenv>=1.2.2",
+    "python-dotenv==1.2.2",
     "stario==4.0.0",
-    "typer>=0.26.3",
+    "typer==0.26.3",
     "tzdata==2025.3", # was getting weird utc error so need to import
 ]
 

@@ -798,7 +798,7 @@ wheels = [
 
 [[package]]
 name = "stario"
-version = "3.3.0"
+version = "4.0.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "aiofiles" },
@@ -807,9 +807,9 @@ dependencies = [
     { name = "watchfiles" },
     { name = "xxhash" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/3e/cd/fc43ba49300bf7b93d507552b7e1f068da3db1249b1eeb0bccb0195a78bd/stario-3.3.0.tar.gz", hash = "sha256:b50cb5d132c986aaaa8c70800a2dc0c9e2be16e60dc10d2a659e114a3c441af4", size = 142796, upload-time = "2026-05-15T09:37:35.214Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/82/f0/87b9958d53fa14687b00442e7373ffb0f6a776dd10c55884fc1b94e7ba99/stario-4.0.0.tar.gz", hash = "sha256:f124c669b9f149371635572219badbcff8c99acbcf75bf8fc2d8e2411391e7ff", size = 129772, upload-time = "2026-06-25T13:51:20.03Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/6f/d3/9db2a02b88a1bc890b074b922e2388c4d980f7517d5ae251641348032fc5/stario-3.3.0-py3-none-any.whl", hash = "sha256:354e1962453f8fd2ab219541ebc130ad21a265f4bb308df09c63d1fedf2ce66c", size = 167301, upload-time = "2026-05-15T09:37:37.3Z" },
+    { url = "https://files.pythonhosted.org/packages/d2/2c/6fea7976f29425000e0588274780569ee75567e6924794eace12a06d851a/stario-4.0.0-py3-none-any.whl", hash = "sha256:8e992f0fbba1e82fd53ef6013863a6f3eda0ec8dab48a656322fec4e105993d3", size = 163232, upload-time = "2026-06-25T13:51:17.167Z" },
 ]
 
 [[package]]
@@ -833,12 +833,12 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "piccolo", extras = ["sqlite"], specifier = ">=1.33.0" },
-    { name = "plotly", specifier = ">=6.7.0" },
+    { name = "piccolo", extras = ["sqlite"], specifier = "==1.33.0" },
+    { name = "plotly", specifier = "==6.7.0" },
     { name = "pydantic", specifier = "==2.12.5" },
-    { name = "python-dotenv", specifier = ">=1.2.2" },
-    { name = "stario", specifier = "==3.3.0" },
-    { name = "typer", specifier = ">=0.26.3" },
+    { name = "python-dotenv", specifier = "==1.2.2" },
+    { name = "stario", specifier = "==4.0.0" },
+    { name = "typer", specifier = "==0.26.3" },
     { name = "tzdata", specifier = "==2025.3" },
 ]
 
