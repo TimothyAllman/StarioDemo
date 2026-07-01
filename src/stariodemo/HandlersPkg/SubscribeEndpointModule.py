@@ -2,6 +2,7 @@ from stario import Context
 from stario import Relay
 from stario import Writer
 from stario import responses
+from stario.datastar import SSE
 
 from stariodemo.DatabasePiccoloTablesPkg.ChatAppUserDbModule import ChatAppUserDto
 from stariodemo.DataStructsPkg.RelayTopicsModule import CHAT_PRESENCE
