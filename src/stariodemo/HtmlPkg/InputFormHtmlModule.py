@@ -30,7 +30,7 @@ def input_form_view():
                 }
                 """,
             ),
-            datastar.data.on("input", datastar.data.post(CHAT_TYPING_URL)),
+            datastar.data.on("input", datastar.at.post(CHAT_TYPING_URL.href())),
         ),
         ChatAppSendButtonHtml(
             datastar.data.attr("disabled", "!$message"),

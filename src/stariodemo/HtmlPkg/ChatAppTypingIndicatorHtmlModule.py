@@ -10,10 +10,12 @@ def ChatAppTypingIndicatorHtml(
     return Div(
         {"id": "typing"},
         {
-            "class": [
-                "typing-indicator px-4 py-2 flex items-center gap-2 text-muted tex-[0.8rem] shrink-0",
-                "hidden" if hidden else "",
-            ]
+            "class": " ".join(
+                [
+                    "typing-indicator px-4 py-2 flex items-center gap-2 text-muted tex-[0.8rem] shrink-0",
+                    "hidden" if hidden else "",
+                ]
+            )
         },
         *children,
     )
@@ -25,9 +27,11 @@ def ChatAppTypingTextHtml(
 
     return Span(
         {
-            "class": [
-                "typing-text italic",
-            ]
+            "class": " ".join(
+                [
+                    "typing-text italic",
+                ]
+            )
         },
         typing_text,
     )
@@ -39,9 +43,11 @@ def ChatAppTypingDotsHtml(
 
     return Span(
         {
-            "class": [
-                "typing-dots inline-flex gap-[0.1rem]",
-            ]
+            "class": " ".join(
+                [
+                    "typing-dots inline-flex gap-[0.1rem]",
+                ]
+            )
         },
         *children,
     )
@@ -53,11 +59,13 @@ def ChatAppTypingDotHtml(
 ):
 
     return Span(
-        {"style": {"animation-delay": animation_delay}},
+        {"style": f"animation-delay: {animation_delay};"},
         {
-            "class": [
-                "dot animate-[bounce_1.4s_infinite_ease-inout_both] font-bold text-[1.2rem] text-accent",
-            ]
+            "class": " ".join(
+                [
+                    "dot animate-[bounce_1.4s_infinite_ease-inout_both] font-bold text-[1.2rem] text-accent",
+                ]
+            )
         },
         dot_text,
     )

@@ -8,10 +8,12 @@ def SideBarButtonHtml(
 ):
     return A(
         {
-            "class": [
-                "flex items-center px-2 py-1.5 text-body text-white rounded-base bg-blue-700",
-                "hover:bg-blue-800 hover:scale-105",
-            ]
+            "class": " ".join(
+                [
+                    "flex items-center px-2 py-1.5 text-body text-white rounded-base bg-blue-700",
+                    "hover:bg-blue-800 hover:scale-105",
+                ]
+            )
         },
         {"href": url},
         Span(

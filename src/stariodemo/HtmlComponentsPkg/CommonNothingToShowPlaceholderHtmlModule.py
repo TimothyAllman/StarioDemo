@@ -8,9 +8,11 @@ def CommonNothingToShowPlaceholderHtml(
 ):
     return Div(
         {
-            "class": [
-                "border rounded p-6 bg-white shadow-sm flex flex-col items-center justify-center text center",
-            ]
+            "class": " ".join(
+                [
+                    "border rounded p-6 bg-white shadow-sm flex flex-col items-center justify-center text center",
+                ]
+            )
         },
         P(
             {"class": "text-sm text-gray-600"},

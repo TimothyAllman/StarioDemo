@@ -8,9 +8,11 @@ def ChatAppOnlineUsersHtml(
     return Span(
         {"id": "online"},
         {
-            "class": [
-                "online-users flex items-center gap-3",
-            ]
+            "class": " ".join(
+                [
+                    "online-users flex items-center gap-3",
+                ]
+            )
         },
         *children,
     )

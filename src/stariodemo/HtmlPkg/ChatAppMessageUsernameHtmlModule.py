@@ -9,11 +9,13 @@ def ChatAppUsernameHtml(
 
     return Span(
         {
-            "class": [
-                "username text-xs font-semibold",
-            ]
+            "class": " ".join(
+                [
+                    "username text-xs font-semibold",
+                ]
+            )
         },
-        {"style": {"color": username_color}},
+        {"style": f"color: {username_color};"},
         username_text,
     )
 
@@ -24,9 +26,11 @@ def ChatAppTimestampHtml(
 
     return Span(
         {
-            "class": [
-                "timestamp text-[0.65rem] text-muted",
-            ]
+            "class": " ".join(
+                [
+                    "timestamp text-[0.65rem] text-muted",
+                ]
+            )
         },
         timestamp_text,
     )
@@ -38,9 +42,11 @@ def ChatAppMessageTextHtml(
 
     return Div(
         {
-            "class": [
-                "message-text text-[0.9rem] leading-[1.45] break-words text-fg",
-            ]
+            "class": " ".join(
+                [
+                    "message-text text-[0.9rem] leading-[1.45] break-words text-fg",
+                ]
+            )
         },
         message_text,
     )

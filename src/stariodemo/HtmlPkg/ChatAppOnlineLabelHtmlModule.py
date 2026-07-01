@@ -7,10 +7,12 @@ def ChatAppOnlineLabelHtml(
 
     return Span(
         {
-            "class": [
-                "online-label text-xs text-muted font-medium",
-                "max-[480px]:hidden",
-            ]
+            "class": " ".join(
+                [
+                    "online-label text-xs text-muted font-medium",
+                    "max-[480px]:hidden",
+                ]
+            )
         },
         label_text,
     )

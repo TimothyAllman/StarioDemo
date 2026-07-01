@@ -19,11 +19,13 @@ def CommonSidebarRightHtml(
         ),
         Button(
             {
-                "class": [
-                    "flex items-center justify-center h-12 w-8 self-center",
-                    "text-white bg-slate-700 rounded-l-md",
-                    "hover:bg-slate-900 transition",
-                ],
+                "class": " ".join(
+                    [
+                        "flex items-center justify-center h-12 w-8 self-center",
+                        "text-white bg-slate-700 rounded-l-md",
+                        "hover:bg-slate-900 transition",
+                    ]
+                ),
                 "type": "button",
                 "title": "Toggle right sidebar",
             },
@@ -41,10 +43,12 @@ def CommonSidebarRightHtml(
         ),
         Div(
             {
-                "class": [
-                    "min-h-screen bg-slate-100",
-                    "transition-all duration-200 overflow-hidden",
-                ]
+                "class": " ".join(
+                    [
+                        "min-h-screen bg-slate-100",
+                        "transition-all duration-200 overflow-hidden",
+                    ]
+                )
             },
             datastar.data.classes(
                 {

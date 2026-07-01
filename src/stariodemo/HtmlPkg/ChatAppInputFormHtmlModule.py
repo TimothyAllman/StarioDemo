@@ -7,9 +7,11 @@ def ChatAppInputFormHtml(
     return Div(
         {"id": "input-form"},
         {
-            "class": [
-                "input-form flex gap-2 items-center",
-            ]
+            "class": " ".join(
+                [
+                    "input-form flex gap-2 items-center",
+                ]
+            )
         },
         *children,
     )

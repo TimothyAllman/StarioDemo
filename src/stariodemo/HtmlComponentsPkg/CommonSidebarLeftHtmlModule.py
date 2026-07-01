@@ -38,11 +38,13 @@ def CommonSidebarLeftHtml(
             {"class": "min-h-screen flex items-center"},
             Button(
                 {
-                    "class": [
-                        "flex items-center justify-center h-12 w-8",
-                        "text-white bg-slate-700 rounded-r-md",
-                        "hover:bg-slate-900 transition",
-                    ],
+                    "class": " ".join(
+                        [
+                            "flex items-center justify-center h-12 w-8",
+                            "text-white bg-slate-700 rounded-r-md",
+                            "hover:bg-slate-900 transition",
+                        ]
+                    ),
                     "type": "button",
                     "title": "Toggle sidebar",
                 },

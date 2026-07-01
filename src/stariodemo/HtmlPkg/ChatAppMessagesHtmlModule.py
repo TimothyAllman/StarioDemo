@@ -9,10 +9,12 @@ def ChatAppMessagesHtml(
     return Div(
         {"id": "message"},
         {
-            "class": [
-                "messages flex-1 p-4 flex flex-col gap-2 overflow-y-auto",
-                extra_classes if extra_classes else "",
-            ]
+            "class": " ".join(
+                [
+                    "messages flex-1 p-4 flex flex-col gap-2 overflow-y-auto",
+                    extra_classes if extra_classes else "",
+                ]
+            )
         },
         *children,
     )

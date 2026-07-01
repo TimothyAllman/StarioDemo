@@ -6,10 +6,12 @@ def ChatAppChatContainerHtml(
 ):
     return Div(
         {
-            "class": [
-                "chat-container flex flex-col h-screen max-w-full mx-auto bg-bg",
-                "md:max-w-[700px]",
-            ]
+            "class": " ".join(
+                [
+                    "chat-container flex flex-col h-screen max-w-full mx-auto bg-bg",
+                    "md:max-w-[700px]",
+                ]
+            )
         },
         *children,
     )
