@@ -29,7 +29,7 @@ def SubscribeEndpoint(db: PiccoloChatDb, relay: Relay[str]):
         signals = await read_chat_signal(c)
 
         if not signals.user_id:
-            responses.redirect(w, CHAT_PAGE_URL)
+            responses.redirect(w, CHAT_PAGE_URL.href())
             return
 
         # Add user to database
