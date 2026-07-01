@@ -1,3 +1,4 @@
+from stario.debug import debug_inspector
 from stario.markup.html import Body
 from stario.markup.html import Head
 from stario.markup.html import Html
@@ -6,7 +7,6 @@ from stario.markup.html import Meta
 from stario.markup.html import Script
 from stario.markup.html import Style
 from stario.markup.html import Title
-from stario.toys import toy_inspector
 
 GLOBAL_CSS_STYLES = """
 @theme {
@@ -104,7 +104,7 @@ def PageHtml(
             ),
         ),
         Body(
-            toy_inspector(position="bottom-right"),  # Dev tool: shows current signals state
+            debug_inspector(position="bottom-right"),  # Dev tool: shows current signals state
             *children,
         ),
     )
