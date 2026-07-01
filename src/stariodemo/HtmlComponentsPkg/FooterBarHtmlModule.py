@@ -1,5 +1,5 @@
-from stario.html import H1
-from stario.html import Div
+from stario.markup.html import H1
+from stario.markup.html import Div
 
 
 def FooterBarHtml():

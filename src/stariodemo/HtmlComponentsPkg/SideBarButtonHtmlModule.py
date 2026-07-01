@@ -1,5 +1,5 @@
-from stario.html import A
-from stario.html import Span
+from stario.markup.html import A
+from stario.markup.html import Span
 
 
 def SideBarButtonHtml(

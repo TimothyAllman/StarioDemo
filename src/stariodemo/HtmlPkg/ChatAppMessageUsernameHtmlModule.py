@@ -1,5 +1,5 @@
-from stario.html import Div
-from stario.html import Span
+from stario.markup.html import Div
+from stario.markup.html import Span
 
 
 def ChatAppUsernameHtml(

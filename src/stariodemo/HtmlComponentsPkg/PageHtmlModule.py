@@ -1,11 +1,11 @@
-from stario.html import Body
-from stario.html import Head
-from stario.html import Html
-from stario.html import Link
-from stario.html import Meta
-from stario.html import Script
-from stario.html import Style
-from stario.html import Title
+from stario.markup.html import Body
+from stario.markup.html import Head
+from stario.markup.html import Html
+from stario.markup.html import Link
+from stario.markup.html import Meta
+from stario.markup.html import Script
+from stario.markup.html import Style
+from stario.markup.html import Title
 from stario.toys import toy_inspector
 
 GLOBAL_CSS_STYLES = """

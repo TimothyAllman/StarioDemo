@@ -1,4 +1,4 @@
-from stario.html import Div
+from stario.markup.html import Div
 
 from stariodemo.HtmlIconsPkg.IconAlertTriangleIconModule import IconAlertTriangleIcon
 from stariodemo.HtmlIconsPkg.InfoCircleIconModule import InfoCircleIcon

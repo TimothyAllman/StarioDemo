@@ -1,4 +1,4 @@
-from stario.html import Div
+from stario.markup.html import Div
 
 
 def CommonMainMiddleSectionHtml(

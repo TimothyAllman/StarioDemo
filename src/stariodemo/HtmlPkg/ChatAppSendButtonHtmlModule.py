@@ -1,4 +1,4 @@
-from stario.html import Button
+from stario.markup.html import Button
 
 
 def ChatAppSendButtonHtml(

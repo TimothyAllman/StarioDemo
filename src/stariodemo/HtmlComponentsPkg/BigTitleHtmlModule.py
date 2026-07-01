@@ -1,4 +1,4 @@
-from stario.html import H2
+from stario.markup.html import H2
 
 
 def BigTitleHtml(title: str):

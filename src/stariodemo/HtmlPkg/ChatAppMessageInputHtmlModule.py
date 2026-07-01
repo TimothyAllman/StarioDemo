@@ -1,4 +1,4 @@
-from stario.html import Input
+from stario.markup.html import Input
 
 
 def ChatAppMessageInputHtml(

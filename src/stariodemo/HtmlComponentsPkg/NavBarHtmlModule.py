@@ -1,5 +1,5 @@
-from stario.html import H1
-from stario.html import Div
+from stario.markup.html import H1
+from stario.markup.html import Div
 
 from stariodemo.DataStructsPkg.UrlsModule import ABC_LIST_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import CHAT_PAGE_URL

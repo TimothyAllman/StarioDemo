@@ -1,4 +1,4 @@
-from stario.html import SafeString
+from stario.markup.html import SafeString
 
 
 def PlaneIcon(

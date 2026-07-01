@@ -1,5 +1,5 @@
 from stario import datastar
-from stario.html import Div
+from stario.markup.html import Div
 
 from stariodemo.DatabasePiccoloTablesPkg.ChatAppMessageDbModule import ChatAppMessageDto
 from stariodemo.DatabasePiccoloTablesPkg.ChatAppUserDbModule import ChatAppUserDto

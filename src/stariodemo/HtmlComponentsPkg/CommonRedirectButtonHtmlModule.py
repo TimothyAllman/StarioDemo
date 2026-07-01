@@ -1,4 +1,4 @@
-from stario.html import A
+from stario.markup.html import A
 
 
 def CommonRedirectButtonHtml(
