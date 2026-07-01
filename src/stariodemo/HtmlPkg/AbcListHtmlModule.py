@@ -42,7 +42,7 @@ def AbcListHtml():
         message="No abcxya list items found. add your first abcxyz.",
         callToActionButton=CommonRedirectButtonHtml(
             name="add thing",
-            url=ABC_ADD_PAGE_URL,
+            url=ABC_ADD_PAGE_URL.href(),
         ),
     )
 
