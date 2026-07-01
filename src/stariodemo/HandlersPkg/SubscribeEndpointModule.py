@@ -14,19 +14,21 @@ from stariodemo.SignalsPkg.ChatSignalsModule import read_chat_signal
 
 
 def SubscribeEndpoint(db: PiccoloChatDb, relay: Relay[str]):
-    """``router.get(..., subscribe(db, relay))`` — captures shared deps."""
-
     async def handler(c: Context, w: Writer) -> None:
-        """
-        Long-lived SSE handler: **setup**, **while connected**, **cleanup**.
+        """GET /rooms/{room_id}/subscribe — SSE patches for this room.
 
-        Same lifecycle as tiles: ``async with relay.subscribe(...)`` first so
-        ``publish`` cannot race ahead of this connection's queue, then
-        ``async for`` inside ``w.alive(live)``, then teardown before exiting the
-        ``async with``.
+        `c.alive` ends the loop on client disconnect or server shutdown, so the
+        presence cleanup below always runs. If the room is deleted mid-stream we
+        navigate the client back to the lobby over SSE.
         """
+        # redirect if no room exists/if room gets deleted
+        # room = room_from_route(c, db)
+        # if room is None:
+        #     responses.redirect(w, LOBBY.href())
+        #     return
+
+        # redirect if no user exists/if user gets deleted
         signals = await read_chat_signal(c)
-
         if not signals.user_id:
             responses.redirect(w, CHAT_PAGE_URL.href())
             return
@@ -37,14 +39,14 @@ def SubscribeEndpoint(db: PiccoloChatDb, relay: Relay[str]):
             username=signals.username,
             color=signals.color,
         )
-
         await db.add_user(user)
         c.span.event(
             "User connected",
             {"user_id": signals.user_id, "username": signals.username},
         )
 
-        # Register relay queue before CHAT_PRESENCE publish so this client cannot miss events.
+        # Subscribe first so this connection's queue exists before we publish
+        # presence (avoids a gap where join could be dropped for this client).
         async with relay.subscribe(CHAT_SUBSCRIBE_PATTERN) as live:
             # async with relay.subscribe(subjects.room_events(room.id)) as live:
             sse = SSE(w)
