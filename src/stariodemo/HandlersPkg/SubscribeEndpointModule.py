@@ -1,7 +1,6 @@
 from stario import Context
 from stario import Relay
 from stario import Writer
-from stario import datastar
 from stario import responses
 
 from stariodemo.DatabasePiccoloTablesPkg.ChatAppUserDbModule import ChatAppUserDto
@@ -25,7 +24,6 @@ def SubscribeEndpoint(db: PiccoloChatDb, relay: Relay[str]):
         ``async for`` inside ``w.alive(live)``, then teardown before exiting the
         ``async with``.
         """
-
         signals = await read_chat_signal(c)
 
         if not signals.user_id:
@@ -47,11 +45,13 @@ def SubscribeEndpoint(db: PiccoloChatDb, relay: Relay[str]):
 
         # Register relay queue before CHAT_PRESENCE publish so this client cannot miss events.
         async with relay.subscribe(CHAT_SUBSCRIBE_PATTERN) as live:
+            # async with relay.subscribe(subjects.room_events(room.id)) as live:
+            sse = SSE(w)
             # Fan-out: every SSE client subscribed to ``chat.*`` wakes and patches.
             relay.publish(CHAT_PRESENCE, "join")
 
             # First patch: stream has started; ship current db truth (messages, roster).
-            datastar.SSE(w).patch_elements(
+            sse.patch_elements(
                 chat_view(
                     signals.user_id,
                     signals.username,
@@ -63,7 +63,7 @@ def SubscribeEndpoint(db: PiccoloChatDb, relay: Relay[str]):
 
             async for subject, _ in c.alive(live):
                 c.span.event("relay", {"subject": subject})
-                datastar.SSE(w).patch_elements(
+                sse.patch_elements(
                     chat_view(
                         signals.user_id,
                         signals.username,
@@ -74,8 +74,8 @@ def SubscribeEndpoint(db: PiccoloChatDb, relay: Relay[str]):
                 )
 
             # Disconnect cleanup — not an error path.
-            c.span.event("User disconnected", {"user_id": signals.user_id})
             await db.remove_user(signals.user_id)
             relay.publish(CHAT_PRESENCE, "leave")
+            c.span.event("User disconnected", {"user_id": signals.user_id})
 
     return handler
