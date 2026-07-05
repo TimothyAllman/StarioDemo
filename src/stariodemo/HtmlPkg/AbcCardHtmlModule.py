@@ -10,7 +10,7 @@ def AbcCardHtml(
     status,
 ):
     return Div(
-        {"class": "border rounded p-4 bg-backcolor1 shadow-sm mb-3"},
+        {"class": "border rounded p-4 bg-backcolor1 text-frontcolor1 shadow-sm mb-3"},
         Div(
             {"class:": "flex items center justify-between"},
             P(
