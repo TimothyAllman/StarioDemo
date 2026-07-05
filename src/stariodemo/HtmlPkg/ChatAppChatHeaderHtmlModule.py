@@ -8,7 +8,7 @@ def ChatAppChatHeaderHtml(
         {
             "class": " ".join(
                 [
-                    "chat-header bg-surface py-3 px-4 flex items-center justify-between border-b border-border-light shrink-0",
+                    "chat-header bg-backcolor1 py-3 px-4 flex items-center justify-between border-b border-edgecolor1 shrink-0",
                 ]
             )
         },
