@@ -28,7 +28,7 @@ def ChatAppTimestampHtml(
         {
             "class": " ".join(
                 [
-                    "timestamp text-[0.65rem] text-muted",
+                    "timestamp text-[0.65rem]",
                 ]
             )
         },
@@ -44,7 +44,7 @@ def ChatAppMessageTextHtml(
         {
             "class": " ".join(
                 [
-                    "message-text text-[0.9rem] leading-[1.45] break-words text-fg",
+                    "message-text text-[0.9rem] leading-[1.45] break-words",
                 ]
             )
         },
