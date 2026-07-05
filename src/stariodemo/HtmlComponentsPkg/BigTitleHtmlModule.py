@@ -6,7 +6,7 @@ def BigTitleHtml(title: str):
         {
             "class": " ".join(
                 [
-                    "text-3xl font-bold tracking-tight text-frontcolor4",
+                    "text-3xl font-bold tracking-tight text-frontcolor1",
                     "mb-4",
                 ]
             )
