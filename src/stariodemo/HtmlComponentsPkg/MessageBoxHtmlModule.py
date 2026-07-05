@@ -36,7 +36,7 @@ def MessageBoxInfoHtml(
         title="Info",
         slot=messageText,
         icon=InfoCircleIcon(),
-        classes="bg-info-bg border-info-edge text-info-fg",
+        classes="bg-backcolorinfo border-edgecolorinfo text-frontcolorinfo",
     )
 
 
