@@ -170,6 +170,63 @@ SPECIFIC_COLORS_FOR_DARK_THEME_CSS = """
 }
 """
 
+SPECIFIC_COLORS_FOR_BLUE_LIGHT_THEME_CSS = """
+[data-theme="blue"] {
+  /* Primary Brand Group (Deep rich blue canvas / ice white text) */
+  --brand-backcolor1: #0f172a;        /* Deep midnight slate/blue canvas */
+  --brand-backcolor1hover: #1e293b;   /* Slightly lighter slate-blue on hover */
+  --brand-edgecolor1: #1e293b;        /* Subtle blue-slate divider */
+  --brand-frontcolor1: #f8fafc;       /* Near white for crisp reading */
+
+  /* Secondary Brand Group (Elevated blue-gray surfaces / cards) */
+  --brand-backcolor2: #1e293b;        /* Lighter container background */
+  --brand-backcolor2hover: #334155;   /* Surface hover state */
+  --brand-edgecolor2: #334155;        /* Container border */
+  --brand-frontcolor2: #e2e8f0;       /* High-contrast light gray text */
+
+  /* Tertiary Brand Group (Vibrant cyan/blue accent highlights) */
+  --brand-backcolor3: #0284c7;        /* Vibrant sky blue background */
+  --brand-backcolor3hover: #0369a1;   /* Deeper blue fill on hover */
+  --brand-edgecolor3: #38bdf8;        /* Bright sky blue border */
+  --brand-frontcolor3: #ffffff;       /* Pure white text for optimal contrast */
+  --brand-frontcolor3hover: #ffffff;  /* Remains white on hover */
+
+  /* Quaternary Brand Group (Sunken inputs / neutral inactive states) */
+  --brand-backcolor4: #090d16;        /* Deepest navy for inset elements */
+  --brand-backcolor4hover: #0f172a;   /* Subtle shift on hover */
+  --brand-edgecolor4: #1e293b;        /* Inactive border outline */
+  --brand-frontcolor4: #64748b;       /* Muted blue-gray text */
+
+  /* Quinary Brand Group (Interactive call-to-actions / success focus) */
+  --brand-backcolor5: #0369a1;        /* Deep cyan background */
+  --brand-backcolor5hover: #0284c7;   /* Brighter cyan on hover */
+  --brand-edgecolor5: #0ea5e9;        /* Electric blue border */
+  --brand-frontcolor5: #f0f9ff;       /* Soft ice-blue text */
+  --brand-frontcolor5hover: #ffffff;  /* Pure white text on hover */
+
+  /* Status Colors (Optimised for legibility against a dark blue background) */
+  --brand-backcolorinfo: #172554;     /* Deep navy info bubble */
+  --brand-edgecolorinfo: #3b82f6;     /* Electric blue info border */
+  --brand-frontcolorinfo: #eff6ff;    /* Ice blue info text */
+
+  --brand-backcolorsuccess: #052e16;  /* Deep forest success background */
+  --brand-edgecolorsuccess: #22c55e;  /* Emerald success border */
+  --brand-frontcolorsuccess: #f0fdf4; /* Mint success text */
+
+  --brand-backcolorwarning: #451a03;  /* Deep amber warning background */
+  --brand-edgecolorwarning: #eab308;  /* Gold warning border */
+  --brand-frontcolorwarning: #fefce8; /* Soft yellow warning text */
+
+  --brand-backcolordanger: #450a0a;   /* Deep crimson danger background */
+  --brand-edgecolordanger: #ef4444;   /* Red danger border */
+  --brand-frontcolordanger: #fef2f2;  /* Soft pink danger text */
+
+  /* Background Pattern Styles */
+  --brand-pattern-dot: #334155;       /* Visible but subtle slate-blue dots */
+  --brand-pattern-size: 24px 24px;    /* Matches your light theme pattern scale */
+}
+"""
+
 BASE_NON_THEME_TAILWIND_V4_PREFLIGHT_DEFAULTS_CSS = """
 /* Tailwind v4 should do this for you via "preflight" but just in case we add it here */
 * {
@@ -203,6 +260,7 @@ GLOBAL_CSS_STYLES = "\n\n".join(
         LAYER_BASE_OPENING_BRACKET,
         SPECIFIC_COLORS_FOR_LIGHT_THEME_CSS,
         SPECIFIC_COLORS_FOR_DARK_THEME_CSS,
+        SPECIFIC_COLORS_FOR_BLUE_LIGHT_THEME_CSS,
         BASE_NON_THEME_TAILWIND_V4_PREFLIGHT_DEFAULTS_CSS,
         LAYER_BASE_CLOSING_BRACKET,
     ]
