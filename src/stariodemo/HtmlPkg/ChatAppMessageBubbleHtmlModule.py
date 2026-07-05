@@ -12,8 +12,8 @@ def ChatAppMessageBubbleHtml(
         {
             "class": " ".join(
                 [
-                    "message max-w-[70%] px-[0.85rem] py-[0.6rem] rounded-[10px] border border-amber-300 rounded-tl-[10-px] rounded-tr-[4px] shadow-[0_1px_2px_rgba(0,0,0,0.04)] animate-[slideIn_0.15s_ease-out]",
-                    "bg-bubble-own self-end" if is_own else "bg-bubble-other self-start",
+                    "message max-w-[70%] px-[0.85rem] py-[0.6rem] rounded-[10px] border border-edgecolor1 rounded-tl-[10-px] rounded-tr-[4px] shadow-[0_1px_2px_rgba(0,0,0,0.04)] animate-[slideIn_0.15s_ease-out]",
+                    "bg-backcolor1 text-frontcolor1 self-end" if is_own else "bg-backcolor2 text-frontcolor2 self-start",
                 ]
             )
         },
