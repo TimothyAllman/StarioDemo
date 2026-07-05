@@ -27,5 +27,9 @@ def ThemeSelectorHtml():
                 {"value": "dark"},
                 "Dark",
             ),
+            Option(
+                {"value": "blue"},
+                "Blue Light",
+            ),
         ),
     )
