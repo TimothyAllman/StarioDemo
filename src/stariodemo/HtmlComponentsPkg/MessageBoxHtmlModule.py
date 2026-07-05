@@ -47,27 +47,27 @@ def MessageBoxSuccessHtml(
         title="Success",
         slot=messageText,
         icon=MoodHappyIcon(),
-        classes="bg-success-bg border-success-border text-success-fg",
+        classes="bg-backcolorsuccess border-edgecolorsuccess text-frontcolorsuccess",
     )
 
 
-def MessageBoxErrorHtml(
+def MessageBoxWarningHtml(
     messageText="warning:",
 ):
     return MessageBoxHtml(
         title="Warning",
         slot=messageText,
         icon=IconAlertTriangleIcon(),
-        classes="bg-warning-bg border-warning-edge text-warning-fg",
+        classes="bg-backcolorwarning border-edgecolorwarning text-frontcolorwarning",
     )
 
 
-def MessageBoxWarningHtml(
-    messageText="An error occured",
+def MessageBoxErrorHtml(
+    messageText="An error occurred",
 ):
     return MessageBoxHtml(
         title="Error",
         slot=messageText,
         icon=MoodSadIcon(),
-        classes="bg-danger-bg border-danger-edge text-danger-fg",
+        classes="bg-backcolordanger border-edgecolordanger text-frontcolordanger",
     )
