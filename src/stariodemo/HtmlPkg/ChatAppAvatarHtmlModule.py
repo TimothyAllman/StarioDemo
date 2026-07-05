@@ -8,7 +8,7 @@ def ChatAppAvatarHtml(
 ):
     return Span(
         {
-            "class": "avatar w-7 h-7 rounded-full flex items-center justify-center text-[0.7rem] font-semibold text-white border-2 border-surface -ml-2 cursor-default uppercase shadow-sm last:ml-0",
+            "class": "avatar w-7 h-7 rounded-full flex items-center justify-center text-[0.7rem] font-semibold text-frontcolor1 border-2 border-edgecolor1 -ml-2 cursor-default uppercase shadow-sm last:ml-0",
             "style": f"background-color: {avatar_color}",
             "title": avatar_title,
         },
@@ -21,7 +21,7 @@ def ChatAppAvatarMoreHtml(
 ):
     return Span(
         {
-            "class": "avatar more w-7 h-7 rounded-full flex items-center justify-center font-semibold border-2 border-surface -ml-2 cursor-default uppercase shadow-sm last:ml-0 bg-border-strong text-muted text-[0.6rem]",
+            "class": "avatar more w-7 h-7 rounded-full flex items-center justify-center font-semibold border-2 border-edgecolor2 -ml-2 cursor-default uppercase shadow-sm last:ml-0 bg-backcolor2 text-frontcolor2 text-[0.6rem]",
         },
         more_text,
     )
