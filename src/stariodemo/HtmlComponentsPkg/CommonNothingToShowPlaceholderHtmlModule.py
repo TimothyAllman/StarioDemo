@@ -10,12 +10,12 @@ def CommonNothingToShowPlaceholderHtml(
         {
             "class": " ".join(
                 [
-                    "border rounded p-6 bg-white shadow-sm flex flex-col items-center justify-center text center",
+                    "border rounded p-6 bg-backcolor1 shadow-sm flex flex-col items-center justify-center text center",
                 ]
             )
         },
         P(
-            {"class": "text-sm text-gray-600"},
+            {"class": "text-sm text-frontcolor1"},
             message,
         ),
         Div(
