@@ -22,8 +22,8 @@ def CommonSidebarRightHtml(
                 "class": " ".join(
                     [
                         "flex items-center justify-center h-12 w-8 self-center",
-                        "text-white bg-slate-700 rounded-l-md",
-                        "hover:bg-slate-900 transition",
+                        "text-frontcolor3 bg-backcolor3 rounded-l-md",
+                        "hover:bg-backcolor3hover transition",
                     ]
                 ),
                 "type": "button",
