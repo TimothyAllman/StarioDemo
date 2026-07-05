@@ -10,8 +10,8 @@ def SideBarButtonHtml(
         {
             "class": " ".join(
                 [
-                    "flex items-center px-2 py-1.5 text-body text-white rounded-base bg-blue-700",
-                    "hover:bg-blue-800 hover:scale-105",
+                    "flex items-center px-2 py-1.5 text-body text-frontcolor1 rounded-base bg-backcolor1",
+                    "hover:bg-backcolor1hover hover:scale-105",
                 ]
             )
         },
