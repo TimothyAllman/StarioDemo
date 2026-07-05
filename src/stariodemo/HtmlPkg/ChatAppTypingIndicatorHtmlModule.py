@@ -63,7 +63,7 @@ def ChatAppTypingDotHtml(
         {
             "class": " ".join(
                 [
-                    "dot animate-[bounce_1.4s_infinite_ease-inout_both] font-bold text-[1.2rem] text-accent",
+                    "dot animate-[bounce_1.4s_infinite_ease-inout_both] font-bold text-[1.2rem] text-frontcolor1",
                 ]
             )
         },
