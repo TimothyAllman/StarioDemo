@@ -38,7 +38,7 @@ def UserListHtml():
         ),
     ]
 
-    noElements = CommonNothingToShowPlaceholderHtml(
+    noElementsCard = CommonNothingToShowPlaceholderHtml(
         message="No user found. add your first user.",
         callToActionButton=CommonRedirectButtonHtml(
             name="Add New User",
@@ -52,7 +52,11 @@ def UserListHtml():
         ),
         Div(
             {"class": "mt-3"},
-            *cards if cards else [noElements],
+            *cards
+            if cards
+            else [
+                noElementsCard,
+            ],
         ),
         rightSidebar=CommonSidebarRightHtml(),
     )
