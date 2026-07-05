@@ -10,11 +10,11 @@ from stariodemo.HtmlComponentsPkg.NavBarHtmlButtonModule import NavBarButtonHtml
 
 def NavBarHtml():
     return Div(
-        {"class": "bg-blue-600 p-4 flex items center"},
+        {"class": "bg-backcolor1 p-4 flex items center"},
         Div(
             {"class": "flex items-center space-x-6 px-2"},
             H1(
-                {"class": "text-white text-2xl font-bold"},
+                {"class": "text-frontcolor1 text-2xl font-bold"},
                 "Stario With Tailwind",
             ),
         ),
