@@ -36,7 +36,7 @@ def MessageBoxInfoHtml(
         title="Info",
         slot=messageText,
         icon=InfoCircleIcon(),
-        classes="bg-blue-100 border-blue-500 text-blue-700",
+        classes="bg-info-bg border-info-edge text-info-fg",
     )
 
 
@@ -47,7 +47,7 @@ def MessageBoxSuccessHtml(
         title="Success",
         slot=messageText,
         icon=MoodHappyIcon(),
-        classes="bg-green-100 border-green-500 text-green-700",
+        classes="bg-success-bg border-success-border text-success-fg",
     )
 
 
@@ -58,7 +58,7 @@ def MessageBoxErrorHtml(
         title="Warning",
         slot=messageText,
         icon=IconAlertTriangleIcon(),
-        classes="bg-yellow-100 border-yellow-500 text-yellow-700",
+        classes="bg-warning-bg border-warning-edge text-warning-fg",
     )
 
 
@@ -69,5 +69,5 @@ def MessageBoxWarningHtml(
         title="Error",
         slot=messageText,
         icon=MoodSadIcon(),
-        classes="bg-red-100 border-red-500 text-red-700",
+        classes="bg-danger-bg border-danger-edge text-danger-fg",
     )
