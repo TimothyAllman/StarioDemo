@@ -12,7 +12,7 @@ def ChatAppTypingIndicatorHtml(
         {
             "class": " ".join(
                 [
-                    "typing-indicator px-4 py-2 flex items-center gap-2 text-muted tex-[0.8rem] shrink-0",
+                    "typing-indicator px-4 py-2 flex items-center gap-2 text-frontcolor1 tex-[0.8rem] shrink-0",
                     "hidden" if hidden else "",
                 ]
             )
