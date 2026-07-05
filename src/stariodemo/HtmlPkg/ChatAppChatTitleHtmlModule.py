@@ -8,7 +8,7 @@ def ChatAppChatTitleHtml(
         {
             "class": " ".join(
                 [
-                    "chat-title tex-[1.1rem] font-bold bg-linear-to-br from-amber-500 via-amber-400 to-amber-300 bg-clip-text text text-transparent",
+                    "chat-title text-[1.1rem] font-bold bg-linear-to-br from-backcolor2 via-backcolor3 to-backcolor4 bg-clip-text text text-frontcolor2",
                 ]
             )
         },
