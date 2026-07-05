@@ -16,7 +16,7 @@ def CommonSidebarLeftHtml(
             if_missing=True,
         ),
         Div(
-            {"class": "min-h-screen bg-slate-100 transition-all duration-200 overflow-hidden"},
+            {"class": "min-h-screen bg-backcolor3 transition-all duration-200 overflow-hidden"},
             datastar.data.classes(
                 {
                     "w-[200px]": "$sidebarOpen",
