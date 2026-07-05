@@ -45,7 +45,7 @@ def CommonSidebarRightHtml(
             {
                 "class": " ".join(
                     [
-                        "min-h-screen bg-slate-100",
+                        "min-h-screen bg-backcolor3",
                         "transition-all duration-200 overflow-hidden",
                     ]
                 )
@@ -66,7 +66,7 @@ def CommonSidebarRightHtml(
                         if children
                         else [
                             P(
-                                {"class": "text-sm text-gray-600 text-center"},
+                                {"class": "text-sm text-frontcolor3 text-center"},
                                 "No extra actions",
                             )
                         ],
