@@ -1,3 +1,4 @@
+from stariodemo.HtmlComponentsPkg.BigTitleHtmlModule import BigTitleHtml
 from stariodemo.HtmlComponentsPkg.CommonMainMiddleSectionHtmlModule import CommonMainMiddleSectionHtml
 
 
@@ -7,6 +8,6 @@ def UserAddHtml():
     """
 
     return CommonMainMiddleSectionHtml(
-        "add",
+        BigTitleHtml("add"),
         rightSidebar=None,
     )
