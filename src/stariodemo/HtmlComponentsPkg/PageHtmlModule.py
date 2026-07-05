@@ -1,3 +1,4 @@
+from stario import datastar
 from stario.debug import debug_inspector
 from stario.markup.html import Body
 from stario.markup.html import Head
@@ -22,6 +23,16 @@ def PageHtml(
     """
     return Html(
         {"lang": "en"},
+        datastar.data.signals(
+            {
+                "theme": "light",
+            },
+            if_missing=True,
+        ),
+        datastar.data.attr(
+            "data-theme",
+            "$theme",
+        ),
         Head(
             Meta({"charset": "UTF-8"}),
             Meta({"name": "viewport", "content": "width=device-width, initial-scale=1"}),
@@ -37,6 +48,16 @@ def PageHtml(
             ),
         ),
         Body(
+            {
+                "style": " ".join(
+                    [
+                        "background-color: var(--brand-bg);",
+                        "color: var(--brand-fg);",
+                        "background-image: radial-gradient(circle, var(--bg-pattern-dot) 1px, transparent 1px);",
+                        "background-size: var(--bg-pattern-size, 24px 24px);",
+                    ]
+                ),
+            },
             debug_inspector(position="bottom-right"),  # Dev tool: shows current signals state
             *children,
         ),
