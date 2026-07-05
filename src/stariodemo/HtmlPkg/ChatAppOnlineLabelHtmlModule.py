@@ -9,7 +9,7 @@ def ChatAppOnlineLabelHtml(
         {
             "class": " ".join(
                 [
-                    "online-label text-xs text-muted font-medium",
+                    "online-label text-xs text-frontcolor1 font-medium",
                     "max-[480px]:hidden",
                 ]
             )
