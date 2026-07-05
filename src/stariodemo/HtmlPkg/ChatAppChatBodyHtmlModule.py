@@ -6,7 +6,7 @@ def ChatAppChatBodyHtml(
 ):
     return Div(
         {
-            "class": "chat-body flex-1 overflow-y-auto flex flex-col relative bg-bg",
+            "class": "chat-body flex-1 overflow-y-auto flex flex-col relative bg-backcolor1",
         },
         *children,
     )
