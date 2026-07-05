@@ -14,49 +14,69 @@ DATASTAR_JS = ASSETS.href("/js/datastar.js")
 
 # custom CSS stuff
 PLACEHOLDER_TAILWIND_V4_TOKENS_FOR_USE_IN_HTML = """
+@import "tailwindcss";
+
 @theme {
+    --color-bg: var(--brand-bg);
+    --color-fg: var(--brand-fg);
+    --color-surface: var(--brand-surface);
+    --color-surface-hover: var( --brand-surface);
+    --color-border: var( --brand-border);
+    --color-border-strong: var( --brand-border);
+    --color-accent: var( --brand-accent);
+    --color-accent-light: var( --brand-accent);
+    --color-accent-glow: var( --brand-accent);
+    --color-accent-soft: var( --brand-accent);
+    --color-muted: var( --brand-muted);
 
-    --color-color1: #0e47a1; 
-    --color-color11: #2365cf;
-    --color-color111: #4287f5;
-
-    --color-color2: #bd6004;
-    --color-color22: #f2800f;
-    --color-color222: #f2a85e;
-
-    --color-color3: #fafaf9;
-    --color-color33: #fafaf9;
-    --color-color333: #fafaf9;
-
-    --color-color4: #fafaf9;
-    --color-color44: #fafaf9;
-    --color-color444: #fafaf9;
-
-    
-
-    --color-bg: #fafaf9;
-    --color-fg: #1c1917;
-    --color-surface: #ffffff;
-    --color-surface-hover: #fef3c7;
-    --color-border: #e7e5e4;
-    --color-border-strong: #d6d3d1;
-    --color-accent: #f59e0b;
-    --color-accent-light: #fbbf24;
-    --color-accent-glow: rgba(245, 158, 11, 0.25);
-    --color-accent-soft: #fef3c7;
-    --color-muted: #78716c;
-
-    --radius-custom: 10px;
-
-    /* Chat-specific */
+   
+    /* same across all themes */
     --color-bubble-other: #ffffff;
     --color-bubble-own: #fef3c7;
+    --radius-custom: 10px;
+    --shadow-glow: 0 0 0 3px rgba(245, 158, 11, 0.25);
 
 }
 """
 
+SPECIFIC_COLORS_FOR_LIGHT_THEME_CSS = """
+:root,
+[data-theme="light"]{
+--brand-primary: #113322;
+--brand-secondary: #113322;
+--brand-bg: #113322;
+--brand-fg: #113322;
+--brand-surface: #113322;
+--brand-surface: #113322;
+--brand-border: #113322;
+--brand-border: #113322;
+--brand-accent: #113322;
+--brand-accent: #113322;
+--brand-accent: #113322;
+--brand-accent: #113322;
+--brand-muted: #113322;
+}
+"""
 
-BASE_CSS = """
+SPECIFIC_COLORS_FOR_DARK_THEME_CSS = """
+[data-theme="dark"]{
+--brand-primary: #113322;
+--brand-secondary: #113322;
+--brand-bg: #113322;
+--brand-fg: #113322;
+--brand-surface: #113322;
+--brand-surface: #113322;
+--brand-border: #113322;
+--brand-border: #113322;
+--brand-accent: #113322;
+--brand-accent: #113322;
+--brand-accent: #113322;
+--brand-accent: #113322;
+--brand-muted: #113322;
+}
+"""
+
+BASE_NON_THEME_TAILWIND_V4_PREFLIGHT_DEFAULTS_CSS = """
 /* Tailwind v4 should do this for you via "preflight" but just in case we add it here */
 * {
     box-sizing: border-box;
@@ -69,16 +89,7 @@ html, body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-body {
-    @apply bg-bg text-fg;
-
-    /* Dotted pattern background like Stario */
-    background-image: radial-gradient(circle, #d6d3d1 1px, transparent 1px);
-    background-size: 24px 24px;
-}
-
 button:not(disabled),
-
 [role="button"]:not(:disabled){
     cursor: pointer;
 }   
@@ -96,7 +107,9 @@ GLOBAL_CSS_STYLES = "\n\n".join(
     [
         PLACEHOLDER_TAILWIND_V4_TOKENS_FOR_USE_IN_HTML,
         LAYER_BASE_OPENING_BRACKET,
-        BASE_CSS,
+        SPECIFIC_COLORS_FOR_LIGHT_THEME_CSS,
+        SPECIFIC_COLORS_FOR_DARK_THEME_CSS,
+        BASE_NON_THEME_TAILWIND_V4_PREFLIGHT_DEFAULTS_CSS,
         LAYER_BASE_CLOSING_BRACKET,
     ]
 )
