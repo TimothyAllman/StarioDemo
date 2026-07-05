@@ -32,9 +32,9 @@ PLACEHOLDER_TAILWIND_V4_TOKENS_FOR_USE_IN_HTML = """
 --color-accent-soft: var( --brand-accent);
 --color-muted: var( --brand-muted);
 /* eventually change this to backcolorinfo */
---color-info-bg: var(--brand-info-bg);
---color-info-border: var(--brand-info-border);
---color-info-fg: var(--brand-info-fg);
+--color-backcolorinfo: var(--brand-backcolorinfo);
+--color-edgecolorinfo: var(--brand-edgecolorinfo);
+--color-frontcolorinfo: var(--brand-frontcolorinfo);
 --color-success-bg: var(--brand-success-bg);
 --color-success-border: var(--brand-success-border);
 --color-success-fg: var(--brand-success-fg);
@@ -76,9 +76,9 @@ SPECIFIC_COLORS_FOR_LIGHT_THEME_CSS = """
 --brand-accent-light: #fbbf24;
 --brand-accent-soft: #fef3c7;
 --brand-muted: #78716c;
---brand-info-bg: #dbeafe;
---brand-info-border: #3b82f6;
---brand-info-fg: #1e3a8a;
+--brand-backcolorinfo: #dbeafe;
+--brand-edgecolorinfo: #3b82f6;
+--brand-frontcolorinfo: #1e3a8a;
 --brand-success-bg: #dcfce7;
 --brand-success-border: #22c55e;
 --brand-success-fg: #166534;
@@ -110,9 +110,9 @@ SPECIFIC_COLORS_FOR_DARK_THEME_CSS = """
 --brand-accent-light: #7dd3fc;
 --brand-accent-soft: #082f49;
 --brand-muted: #94a3b8;
---brand-info-bg: #082f49;
---brand-info-border: #38bdf8;
---brand-info-fg: #bae6fd;
+--brand-backcolorinfo: #082f49;
+--brand-edgecolorinfo: #38bdf8;
+--brand-frontcolorinfo: #bae6fd;
 --brand-success-bg: #052e16;
 --brand-success-border: #16a34a;
 --brand-success-fg: #86efac;
