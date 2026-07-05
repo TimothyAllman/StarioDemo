@@ -9,8 +9,8 @@ def NavBarButtonHtml(
         {
             "class": " ".join(
                 [
-                    "text-white font-semibold px-4 py-2 bg-color1",
-                    "hover:bg-color111 transition transform hover:scale-105",
+                    "text-frontcolor1 font-semibold px-4 py-2 bg-color1",
+                    "hover:bg-backcolor1hover transition transform hover:scale-105",
                 ]
             )
         },
