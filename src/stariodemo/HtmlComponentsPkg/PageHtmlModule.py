@@ -52,7 +52,7 @@ def PageHtml(
                 "style": " ".join(
                     [
                         "background-color: var(--brand-backcolor1);",
-                        "color: var(--brand-backcolor1);",
+                        "color: var(--brand-frontcolor1);",
                         "background-image: radial-gradient(circle, var(--bg-pattern-dot) 1px, transparent 1px);",
                         "background-size: var(--bg-pattern-size, 24px 24px);",
                     ]
