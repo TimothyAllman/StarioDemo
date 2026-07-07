@@ -12,6 +12,7 @@ from stario.markup.html import Title
 from stariodemo.StaticAssetsPkg.StaticAssetsModule import DATASTAR_JS
 from stariodemo.StaticAssetsPkg.StaticAssetsModule import GLOBAL_CSS_STYLES
 from stariodemo.StaticAssetsPkg.StaticAssetsModule import STYLE_CSS
+from stariodemo.StaticAssetsPkg.ThemeSessionStorageModule import THEME_INIT_JS
 
 
 def PageHtml(
@@ -25,14 +26,15 @@ def PageHtml(
         {"lang": "en"},
         datastar.data.signals(
             {
-                "theme": "light",
+                # "theme": "light",
             },
-            if_missing=True,
+            if_missing=False,
         ),
         datastar.data.attr(
             "data-theme",
             "$theme",
         ),
+        datastar.data.init(THEME_INIT_JS),
         Head(
             Meta({"charset": "UTF-8"}),
             Meta({"name": "viewport", "content": "width=device-width, initial-scale=1"}),
