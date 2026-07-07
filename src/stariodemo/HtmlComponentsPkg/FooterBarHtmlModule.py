@@ -9,6 +9,7 @@ def FooterBarHtml():
     return Div(
         {"class": "bg-backcolor1 p-4 flex items center justify-between min-h-60"},
         {"id": "idFooter"},
+        FooterColumn(),  # empty one for spacing
         FooterOtherLinks(),
         FooterColumn(
             *[
@@ -24,7 +25,7 @@ def FooterBarHtml():
     )
 
 
-def FooterColumn(*children, title):
+def FooterColumn(*children, title=None):
     return Div(
         {"class": "flex flex-col"},
         H1(
