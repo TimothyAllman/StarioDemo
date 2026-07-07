@@ -14,7 +14,6 @@ DATASTAR_JS = ASSETS.href("/js/datastar.js")
 
 # custom CSS stuff
 PLACEHOLDER_TAILWIND_V4_TOKENS_FOR_USE_IN_HTML = """
-@import "tailwindcss";
 
 @theme {
 /* different across themes */
