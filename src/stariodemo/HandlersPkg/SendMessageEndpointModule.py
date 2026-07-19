@@ -6,14 +6,17 @@ from stario import Relay
 from stario import Writer
 from stario import responses
 
-from stariodemo.FromTableDatabaseFunctionsPkg import PiccoloChatDb
 from stariodemo.DatabasePiccoloTablesPkg.ChatAppMessageDbModule import ChatAppMessageDto
 from stariodemo.DataStructsPkg.RelayTopicsModule import CHAT_MESSAGE
 from stariodemo.DataStructsPkg.UrlsModule import HOME_PAGE_URL
+from stariodemo.FromTableDatabaseFunctionsPkg import PiccoloChatDb
 from stariodemo.SignalsPkg.ChatSignalsModule import read_chat_signal
 
 
-def SendMessageEndpoint(db: PiccoloChatDb, relay: Relay[str]):
+def SendMessageEndpoint(
+    db: PiccoloChatDb,
+    relay: Relay[str],
+):
     """
     Factory that returns message send handler with db and relay injected.
 
@@ -25,7 +28,7 @@ def SendMessageEndpoint(db: PiccoloChatDb, relay: Relay[str]):
         signals = await read_chat_signal(c)
 
         if not signals.user_id or not await db.user_exists(signals.user_id):
-            responses.redirect(w, HOME_PAGE_URL)
+            responses.redirect(w, HOME_PAGE_URL.href())
             return
 
         text = signals.message.strip()

@@ -1,10 +1,12 @@
 from stariodemo.DatabasePiccoloTablesPkg.ChatAppMessageDbModule import ChatAppMessageDto
 from stariodemo.DatabasePiccoloTablesPkg.ChatAppUserDbModule import ChatAppUserDto
-from stariodemo.DatabasePiccoloTablesPkg.SeedWidgetModule import SeedWidget
 from stariodemo.FromTableDatabaseFunctionsPkg.ChatAppMessagesAddModule import AddMessage
 from stariodemo.FromTableDatabaseFunctionsPkg.ChatAppMessagesGetModule import GetMessages
 from stariodemo.FromTableDatabaseFunctionsPkg.ChatAppUserAddModule import ChatAppUserAdd
 from stariodemo.FromTableDatabaseFunctionsPkg.ChatAppUserExistsModule import ChatAppUserExists
+from stariodemo.FromTableDatabaseFunctionsPkg.ChatAppUserGetModule import GetChatAppUser
+from stariodemo.FromTableDatabaseFunctionsPkg.ChatAppUserRemoveModule import RemoveUser
+from stariodemo.FromTableDatabaseFunctionsPkg.ChatAppUsersGetModule import GetChatAppUsers
 from stariodemo.FromTableDatabaseFunctionsPkg.ChatAppUserTypingSetModule import SetChatAppUserTyping
 
 
@@ -31,18 +33,18 @@ class PiccoloChatDb:
         self,
         user_id: str,
     ) -> None:
-        await RemoveWidget(user_id)
+        await RemoveUser(user_id)
 
     async def get_user(
         self,
         user_id: str,
     ) -> ChatAppUserDto | None:
-        return await GetWidget(user_id)
+        return await GetChatAppUser(user_id)
 
     async def get_users(
         self,
     ) -> dict[str, ChatAppUserDto]:
-        return await GetChatAppUser()
+        return await GetChatAppUsers()
 
     async def user_exists(
         self,
