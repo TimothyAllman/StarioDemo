@@ -2,8 +2,11 @@ from stariodemo.DatabasePiccoloTablesPkg.WidgetDbModule import WidgetDb
 from stariodemo.DatabasePiccoloTablesPkg.WidgetDbModule import WidgetListDto
 
 
-async def FromWidgetsSelectAll() -> list[WidgetListDto] | None:
-    qry = WidgetDb.select()
+async def FromWidgetDbTableUpdateSingleItem(
+    id,
+) -> list[WidgetListDto] | None:
+
+    qry = WidgetDb.update().where(WidgetDb.id == id)
 
     rows = await qry.run()
 

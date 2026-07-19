@@ -2,7 +2,7 @@ from stariodemo.DatabasePiccoloTablesPkg.ChatAppUserDbModule import ChatAppUserD
 from stariodemo.DatabasePiccoloTablesPkg.ChatAppUserDbModule import ChatAppUserDto
 
 
-async def GetWidget(user_id: str) -> ChatAppUserDto | None:
+async def GetChatAppUser(user_id: str) -> ChatAppUserDto | None:
     qry = (
         ChatAppUserDb.select()
         .where(

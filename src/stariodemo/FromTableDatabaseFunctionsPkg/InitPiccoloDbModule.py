@@ -1,6 +1,6 @@
 from stariodemo.DatabasePiccoloTablesPkg.ChatAppMessageDbModule import ChatAppMessageDb
 from stariodemo.DatabasePiccoloTablesPkg.ChatAppUserDbModule import ChatAppUserDb
-from stariodemo.FromTableDatabaseFunctionsPkg.WidgetDbModule import WidgetDb
+from stariodemo.DatabasePiccoloTablesPkg.WidgetDbModule import WidgetDb
 
 
 async def InitPiccoloDb() -> None:

@@ -2,7 +2,7 @@ from stariodemo.DatabasePiccoloTablesPkg.WidgetDbModule import WidgetDb
 from stariodemo.DatabasePiccoloTablesPkg.WidgetDbModule import WidgetListDto
 
 
-async def FromWidgetsSelectAll() -> list[WidgetListDto] | None:
+async def FromWidgetDbTableSelectAllItems() -> list[WidgetListDto] | None:
     qry = WidgetDb.select()
 
     rows = await qry.run()

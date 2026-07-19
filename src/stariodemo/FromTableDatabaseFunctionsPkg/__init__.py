@@ -2,9 +2,9 @@ from stariodemo.DatabasePiccoloTablesPkg.ChatAppMessageDbModule import ChatAppMe
 from stariodemo.DatabasePiccoloTablesPkg.ChatAppUserDbModule import ChatAppUserDto
 from stariodemo.FromTableDatabaseFunctionsPkg.AddMessageModule import AddMessage
 from stariodemo.FromTableDatabaseFunctionsPkg.AddUserModule import AddUser
-from stariodemo.FromTableDatabaseFunctionsPkg.GetMessagesModule import GetMessages
+from stariodemo.FromTableDatabaseFunctionsPkg.ChatAppMessagesGetModule import GetMessages
 from stariodemo.FromTableDatabaseFunctionsPkg.GetWidgetModule import GetWidget
-from stariodemo.FromTableDatabaseFunctionsPkg.GetWidgetsModule import GetWidgets
+from stariodemo.FromTableDatabaseFunctionsPkg.GetWidgetsModule import GetChatAppUser
 from stariodemo.FromTableDatabaseFunctionsPkg.RemoveWidgetModule import RemoveWidget
 from stariodemo.FromTableDatabaseFunctionsPkg.SeedWidgetModule import SeedWidget
 from stariodemo.FromTableDatabaseFunctionsPkg.SetWidgetTypingModule import SetWidgetTyping
@@ -46,7 +46,7 @@ class PiccoloChatDb:
     async def get_users(
         self,
     ) -> dict[str, ChatAppUserDto]:
-        return await GetWidgets()
+        return await GetChatAppUser()
 
     async def user_exists(
         self,

@@ -2,7 +2,7 @@ from stariodemo.DatabasePiccoloTablesPkg.ChatAppUserDbModule import ChatAppUserD
 from stariodemo.DatabasePiccoloTablesPkg.ChatAppUserDbModule import ChatAppUserDto
 
 
-async def GetWidgets() -> dict[str, ChatAppUserDto]:
+async def GetChatAppUser() -> dict[str, ChatAppUserDto]:
     qry = ChatAppUserDb.select()
 
     result = await qry.run()

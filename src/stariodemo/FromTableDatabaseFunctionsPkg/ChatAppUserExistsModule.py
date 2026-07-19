@@ -1,7 +1,7 @@
 from stariodemo.DatabasePiccoloTablesPkg.ChatAppUserDbModule import ChatAppUserDb
 
 
-async def WidgetExists(user_id: str) -> bool:
+async def ChatAppUserExists(user_id: str) -> bool:
     qry = (
         ChatAppUserDb.select(
             ChatAppUserDb.id,
