@@ -1,3 +1,6 @@
+from stariodemo.BasicStructsPkg.UrlsModule import WIDGET_ADD_PAGE_URL
+from stariodemo.BasicStructsPkg.UrlsModule import WIDGET_EDIT_PAGE_URL
+from stariodemo.BasicStructsPkg.UrlsModule import WIDGET_LIST_PAGE_URL
 from stariodemo.HtmlComponentsPkg.CommonSidebarLeftHtmlModule import CommonSidebarLeftHtml
 from stariodemo.HtmlComponentsPkg.SideBarButtonHtmlModule import SideBarButtonHtml
 

@@ -1,12 +1,19 @@
 from stariodemo.DatabasePiccoloTablesPkg.WidgetDbModule import WidgetDb
-from stariodemo.DatabasePiccoloTablesPkg.WidgetDbModule import WidgetListDto
+from stariodemo.HandlersPkg.WidgetAddEndpointModule import WidgetAddSignals
 
 
-async def FromWidgetDbTableInsertSingleItem() -> list[WidgetListDto] | None:
-    qry = WidgetDb.select()
+async def FromWidgetDbTableInsertSingleItem(widgetAddSignal: WidgetAddSignals):
+    trsc = WidgetDb.insert(
+        WidgetDb(
+            **widgetAddSignal.model_dump(),
+        )
+    ).on_conflict(
+        target=WidgetDb.id,
+        action="DO UPDATE",
+        values=[
+            WidgetDb.name,
+            WidgetDb.age,
+        ],
+    )
 
-    rows = await qry.run()
-
-    dtos = [WidgetListDto(**x) for x in rows]
-
-    return dtos
+    result = await trsc.run()

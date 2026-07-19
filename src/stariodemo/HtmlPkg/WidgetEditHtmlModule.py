@@ -8,6 +8,6 @@ def WidgetEditHtml():
     """
 
     return CommonMainMiddleSectionHtml(
-        BigTitleHtml("edit"),
+        BigTitleHtml("Widget Edit"),
         rightSidebar=None,
     )

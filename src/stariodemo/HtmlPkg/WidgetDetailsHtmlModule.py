@@ -8,6 +8,6 @@ def WidgetDetailsHtml():
     """
 
     return CommonMainMiddleSectionHtml(
-        BigTitleHtml("details"),
+        BigTitleHtml("Widget Details"),
         rightSidebar=None,
     )

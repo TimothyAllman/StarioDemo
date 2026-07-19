@@ -8,6 +8,6 @@ def WidgetAddHtml():
     """
 
     return CommonMainMiddleSectionHtml(
-        BigTitleHtml("add"),
+        BigTitleHtml("Widget Add"),
         rightSidebar=None,
     )

@@ -14,22 +14,22 @@ def WidgetCardHtml(
             {"class:": "flex items center justify-between"},
             P(
                 {"class": "text-lg font-semibold"},
-                f"{widgetDto.name} - {widgetDto.age}",
+                f"{widgetDto.id} - {widgetDto.name}",
             ),
             P(
                 {"class": "text-lg font-semibold"},
-                f"{widgetDto.status}",
+                f"{widgetDto.name}",
             ),
         ),
         Div(
             {"class": "grid grid-cols-1 md:grid-cols-3 gap-2 mt-3"},
             P(
                 {"class": "text-sm"},
-                f"Address: {widgetDto.address}",
+                f"Address: {widgetDto.name}",
             ),
             P(
                 {"class": "text-sm"},
-                f"number: {widgetDto.number}",
+                f"number: {widgetDto.username}",
             ),
         ),
         Div(

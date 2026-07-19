@@ -18,7 +18,7 @@ def WidgetListPageEndpoint():
             PageHtml(
                 NavBarAndFooterHtml(
                     WidgetSideBarHtml(
-                        WidgetListHtml(),
+                        await WidgetListHtml(),
                     )
                 )
             ),

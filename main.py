@@ -11,7 +11,6 @@ from stario import StaticAssets
 
 from piccolo_conf import SQLITE_DB_PATH
 from piccolo_conf import enable_wal
-from stariodemo.DatabasePiccoloTablesPkg.InitPiccoloDbModule import InitPiccoloDb
 from stariodemo.BasicStructsPkg.UrlsModule import ABC_ADD_PAGE_URL
 from stariodemo.BasicStructsPkg.UrlsModule import ABC_CALCULATION_PAGE_URL
 from stariodemo.BasicStructsPkg.UrlsModule import ABC_LIST_PAGE_URL
@@ -31,6 +30,8 @@ from stariodemo.BasicStructsPkg.UrlsModule import WIDGET_ADD_PAGE_URL
 from stariodemo.BasicStructsPkg.UrlsModule import WIDGET_DETAILS_PAGE_URL
 from stariodemo.BasicStructsPkg.UrlsModule import WIDGET_EDIT_PAGE_URL
 from stariodemo.BasicStructsPkg.UrlsModule import WIDGET_LIST_PAGE_URL
+from stariodemo.DatabasePiccoloTablesPkg.InitPiccoloDbModule import InitPiccoloDb
+from stariodemo.DatabasePiccoloTablesPkg.SeedWidgetModule import SeedWidget
 from stariodemo.FromTableDatabaseFunctionsPkg import PiccoloChatDb
 from stariodemo.HandlersPkg.AbcAddPageEndpointModule import AbcAddPageEndpoint
 from stariodemo.HandlersPkg.AbcCalculationEndpointModule import AbcCalculationEndpoint
@@ -72,6 +73,8 @@ async def bootstrap(
     db = PiccoloChatDb()
     await enable_wal()
     span.event("stariodemo.db.created.successfully")
+
+    # await SeedWidget()
 
     # Relay for pub/sub between SSE connections
     span.event("stariodemo.relays.creating.all")
