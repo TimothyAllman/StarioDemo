@@ -16,6 +16,8 @@ from stariodemo.DataStructsPkg.UrlsModule import ABC_CALCULATION_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import ABC_LIST_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import API_ABC_CALCULATION_URL
 from stariodemo.DataStructsPkg.UrlsModule import API_CALCULATION_URL
+from stariodemo.DataStructsPkg.UrlsModule import API_TOAST_ERROR_TEST_URL
+from stariodemo.DataStructsPkg.UrlsModule import API_TOAST_SUCCESS_TEST_URL
 from stariodemo.DataStructsPkg.UrlsModule import CHAT_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import CHAT_SEND_URL
 from stariodemo.DataStructsPkg.UrlsModule import CHAT_SUBSCRIBE_URL
@@ -23,6 +25,7 @@ from stariodemo.DataStructsPkg.UrlsModule import CHAT_TYPING_URL
 from stariodemo.DataStructsPkg.UrlsModule import GIVE_ME_JSON_URL
 from stariodemo.DataStructsPkg.UrlsModule import GIVE_ME_TEXT_URL
 from stariodemo.DataStructsPkg.UrlsModule import HOME_PAGE_URL
+from stariodemo.DataStructsPkg.UrlsModule import SUBSCRIBE_TO_TOAST_NOTIFICATIONS_URL
 from stariodemo.DataStructsPkg.UrlsModule import USER_ADD_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import USER_DETAILS_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import USER_EDIT_PAGE_URL
@@ -40,6 +43,9 @@ from stariodemo.HandlersPkg.GiveMeTextEndpointModule import GiveMeTextEndpoint
 from stariodemo.HandlersPkg.HomePageEndpointModule import HomePageEndpoint
 from stariodemo.HandlersPkg.SendMessageEndpointModule import SendMessageEndpoint
 from stariodemo.HandlersPkg.SubscribeEndpointModule import SubscribeEndpoint
+from stariodemo.HandlersPkg.SubscribeToToastNotificationsEndpointModule import SubscribeToToastNotificationsEndpoint
+from stariodemo.HandlersPkg.ToastErrorEndpointModule import ToastErrorEndpoint
+from stariodemo.HandlersPkg.ToastSuccessEndpointModule import ToastSuccessEndpoint
 from stariodemo.HandlersPkg.TypingEndpointModule import TypingEndpoint
 from stariodemo.HandlersPkg.UserAddPageEndpointModule import UserAddPageEndpoint
 from stariodemo.HandlersPkg.UserDetailsPageEndpointModule import UserDetailsPageEndpoint
@@ -111,6 +117,10 @@ async def bootstrap(
 
     app.get(GIVE_ME_TEXT_URL, GiveMeTextEndpoint())
     app.get(GIVE_ME_JSON_URL, GiveMeJsonEndpoint())
+
+    app.get(API_TOAST_SUCCESS_TEST_URL, ToastSuccessEndpoint(relay))
+    app.get(API_TOAST_ERROR_TEST_URL, ToastErrorEndpoint(relay))
+    app.get(SUBSCRIBE_TO_TOAST_NOTIFICATIONS_URL, SubscribeToToastNotificationsEndpoint(relay))
 
     span.event("stariodemo.startup.ready")
 
