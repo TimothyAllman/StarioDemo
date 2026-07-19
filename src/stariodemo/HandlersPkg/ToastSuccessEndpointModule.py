@@ -11,10 +11,11 @@ from stariodemo.HtmlComponentsPkg.MessageBoxHtmlModule import MessageBoxSuccessH
 def ToastSuccessEndpoint(
     relay: Relay[str],
 ):
+    """
+    docstring
+    """
+
     async def handler(c: Context, w: Writer) -> None:
-        """
-        docstring
-        """
 
         # do some stuff
 
