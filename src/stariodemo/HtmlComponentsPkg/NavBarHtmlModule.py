@@ -4,7 +4,6 @@ from stario.markup.html import Div
 from stariodemo.BasicStructsPkg.UrlsModule import ABC_LIST_PAGE_URL
 from stariodemo.BasicStructsPkg.UrlsModule import CHAT_PAGE_URL
 from stariodemo.BasicStructsPkg.UrlsModule import HOME_PAGE_URL
-from stariodemo.BasicStructsPkg.UrlsModule import USER_LIST_PAGE_URL
 from stariodemo.HtmlComponentsPkg.NavBarHtmlButtonModule import NavBarButtonHtml
 
 
@@ -20,6 +19,6 @@ def NavBarHtml():
         ),
         NavBarButtonHtml(name="Home", url=HOME_PAGE_URL.href()),
         NavBarButtonHtml(name="Abc", url=ABC_LIST_PAGE_URL.href()),
-        NavBarButtonHtml(name="Widgets", url=USER_LIST_PAGE_URL.href()),
+        NavBarButtonHtml(name="Widgets", url=WIDGET_LIST_PAGE_URL.href()),
         NavBarButtonHtml(name="Chat", url=CHAT_PAGE_URL.href()),
     )

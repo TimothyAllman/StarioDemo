@@ -20,7 +20,7 @@ CHAT_TYPING_URL = UrlPath("/typing")
 
 
 API_CALCULATION_URL = UrlPath("/api/calculation")
-API_USER_CREATE_URL = UrlPath("/api/user/create")
+API_WIDGET_CREATE_URL = UrlPath("/api/user/create")
 API_ABC_CALCULATION_URL = UrlPath("/api/abc/calculation")
 
 SUBSCRIBE_TO_TOAST_NOTIFICATIONS_URL = UrlPath("/subscribe-to-toast-notifications")

@@ -11,7 +11,7 @@ from stariodemo.FromTableDatabaseFunctionsPkg.FromWidgetDbTableDeleteSingleItemM
 from stariodemo.HandlersPkg.SubscribeToastNotificationsEndpointModule import PublishToastNotification
 from stariodemo.HtmlComponentsPkg.MessageBoxHtmlModule import MessageBoxSuccessHtml
 
-WIDGET_DELETE_URL = UrlPath("/widget-delete-{id}")
+WIDGET_DELETE_URL = UrlPath("/widget-delete/{id}")
 
 
 @dataclass
