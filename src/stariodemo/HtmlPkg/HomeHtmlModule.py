@@ -1,3 +1,6 @@
+from stariodemo.DataStructsPkg.UrlsModule import API_TOAST_ERROR_TEST_URL
+from stariodemo.DataStructsPkg.UrlsModule import API_TOAST_SUCCESS_TEST_URL
+from stariodemo.HtmlComponentsPkg.CommonActionButtonHtmlModule import CommonActionButtonHtml
 from stariodemo.HtmlComponentsPkg.CommonMainMiddleSectionHtmlModule import CommonMainMiddleSectionHtml
 from stariodemo.HtmlComponentsPkg.MessageBoxHtmlModule import MessageBoxErrorHtml
 from stariodemo.HtmlComponentsPkg.MessageBoxHtmlModule import MessageBoxInfoHtml
@@ -26,5 +29,13 @@ def HomeHtml(
         MessageBoxWarningHtml(),
         MessageBoxErrorHtml(),
         PlaneIcon() if showPlaneIsTrue else None,
-        rightSidebar=None
+        CommonActionButtonHtml(
+            buttonText="Try Error",
+            buttonHref=API_TOAST_ERROR_TEST_URL.href(),
+        ),
+        CommonActionButtonHtml(
+            buttonText="Try Success",
+            buttonHref=API_TOAST_SUCCESS_TEST_URL.href(),
+        ),
+        rightSidebar=None,
     )
