@@ -1,6 +1,6 @@
 import random
 
-from stariodemo.DataStructsPkg.ColorsModule import COLORS
+from stariodemo.BasicStructsPkg.ColorsModule import COLORS
 
 
 def generate_color() -> str:

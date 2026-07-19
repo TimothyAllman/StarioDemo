@@ -1,5 +1,5 @@
-from stariodemo.DataStructsPkg.UrlsModule import API_TOAST_ERROR_TEST_URL
-from stariodemo.DataStructsPkg.UrlsModule import API_TOAST_SUCCESS_TEST_URL
+from stariodemo.BasicStructsPkg.UrlsModule import API_TOAST_ERROR_TEST_URL
+from stariodemo.BasicStructsPkg.UrlsModule import API_TOAST_SUCCESS_TEST_URL
 from stariodemo.HtmlComponentsPkg.CommonActionButtonHtmlModule import CommonActionButtonHtml
 from stariodemo.HtmlComponentsPkg.CommonMainMiddleSectionHtmlModule import CommonMainMiddleSectionHtml
 from stariodemo.HtmlComponentsPkg.MessageBoxHtmlModule import MessageBoxErrorHtml

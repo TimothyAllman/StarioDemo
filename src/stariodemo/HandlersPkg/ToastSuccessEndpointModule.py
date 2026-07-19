@@ -3,7 +3,7 @@ from stario import Relay
 from stario import Writer
 from stario import datastar
 
-from stariodemo.DataStructsPkg.UrlsModule import HOME_PAGE_URL
+from stariodemo.BasicStructsPkg.UrlsModule import HOME_PAGE_URL
 from stariodemo.HandlersPkg.SubscribeToToastNotificationsEndpointModule import PublishToastNotification
 from stariodemo.HtmlComponentsPkg.MessageBoxHtmlModule import MessageBoxSuccessHtml
 

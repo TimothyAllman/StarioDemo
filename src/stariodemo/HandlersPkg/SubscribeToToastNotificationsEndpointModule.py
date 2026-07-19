@@ -7,7 +7,7 @@ from stario import Relay
 from stario import Writer
 from stario import datastar
 
-from stariodemo.DataStructsPkg.RelayTopicsModule import RELAY_TOAST_NOTIFICATIONS_SUBSCRIBE_PATTERN
+from stariodemo.BasicStructsPkg.RelayTopicsModule import RELAY_TOAST_NOTIFICATIONS_SUBSCRIBE_PATTERN
 from stariodemo.HtmlComponentsPkg.ToastNotificationsHtmlModule import ToastNotificationItemHtml
 
 _PENDING_TOAST_NOTIFICATIONS: deque[object] = deque()

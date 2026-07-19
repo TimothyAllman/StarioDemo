@@ -7,6 +7,11 @@ async def FromWidgetDbTableSelectAllItems() -> list[WidgetListDto] | None:
 
     rows = await qry.run()
 
-    dtos = [WidgetListDto(**x) for x in rows]
+    dtos = [
+        WidgetListDto(
+            **x,
+        )
+        for x in rows
+    ]
 
     return dtos

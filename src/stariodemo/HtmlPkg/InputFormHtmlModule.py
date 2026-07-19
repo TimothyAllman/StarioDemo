@@ -1,6 +1,6 @@
 from stario import datastar
 
-from stariodemo.DataStructsPkg.UrlsModule import CHAT_TYPING_URL
+from stariodemo.BasicStructsPkg.UrlsModule import CHAT_TYPING_URL
 from stariodemo.HtmlPkg.ChatAppInputFormHtmlModule import ChatAppInputFormHtml
 from stariodemo.HtmlPkg.ChatAppMessageInputHtmlModule import ChatAppMessageInputHtml
 from stariodemo.HtmlPkg.ChatAppSendButtonHtmlModule import ChatAppSendButtonHtml

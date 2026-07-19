@@ -1,10 +1,10 @@
 from stario.markup.html import H1
 from stario.markup.html import Div
 
-from stariodemo.DataStructsPkg.UrlsModule import ABC_LIST_PAGE_URL
-from stariodemo.DataStructsPkg.UrlsModule import CHAT_PAGE_URL
-from stariodemo.DataStructsPkg.UrlsModule import HOME_PAGE_URL
-from stariodemo.DataStructsPkg.UrlsModule import USER_LIST_PAGE_URL
+from stariodemo.BasicStructsPkg.UrlsModule import ABC_LIST_PAGE_URL
+from stariodemo.BasicStructsPkg.UrlsModule import CHAT_PAGE_URL
+from stariodemo.BasicStructsPkg.UrlsModule import HOME_PAGE_URL
+from stariodemo.BasicStructsPkg.UrlsModule import USER_LIST_PAGE_URL
 from stariodemo.HtmlComponentsPkg.NavBarHtmlButtonModule import NavBarButtonHtml
 
 

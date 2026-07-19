@@ -1,7 +1,7 @@
 from stario import datastar
 from stario.markup.html import Div
 
-from stariodemo.DataStructsPkg.UrlsModule import API_ABC_CALCULATION_URL
+from stariodemo.BasicStructsPkg.UrlsModule import API_ABC_CALCULATION_URL
 from stariodemo.HtmlComponentsPkg.BigTitleHtmlModule import BigTitleHtml
 from stariodemo.HtmlComponentsPkg.CommonMainMiddleSectionHtmlModule import CommonMainMiddleSectionHtml
 from stariodemo.HtmlComponentsPkg.DemoAppButtonHtmlModule import DemoAppButtonHtml

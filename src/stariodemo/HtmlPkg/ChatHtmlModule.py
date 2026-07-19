@@ -3,7 +3,7 @@ from stario.markup.html import Div
 
 from stariodemo.DatabasePiccoloTablesPkg.ChatAppMessageDbModule import ChatAppMessageDto
 from stariodemo.DatabasePiccoloTablesPkg.ChatAppUserDbModule import ChatAppUserDto
-from stariodemo.DataStructsPkg.UrlsModule import CHAT_SUBSCRIBE_URL
+from stariodemo.BasicStructsPkg.UrlsModule import CHAT_SUBSCRIBE_URL
 from stariodemo.HtmlPkg.ChatAppChatBodyHtmlModule import ChatAppChatBodyHtml
 from stariodemo.HtmlPkg.ChatAppChatContainerHtmlModule import ChatAppChatContainerHtml
 from stariodemo.HtmlPkg.ChatAppChatFooterHtmlModule import ChatAppChatFooterHtml

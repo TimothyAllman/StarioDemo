@@ -1,6 +1,6 @@
-from stariodemo.DataStructsPkg.UrlsModule import USER_ADD_PAGE_URL
-from stariodemo.DataStructsPkg.UrlsModule import USER_EDIT_PAGE_URL
-from stariodemo.DataStructsPkg.UrlsModule import USER_LIST_PAGE_URL
+from stariodemo.BasicStructsPkg.UrlsModule import USER_ADD_PAGE_URL
+from stariodemo.BasicStructsPkg.UrlsModule import USER_EDIT_PAGE_URL
+from stariodemo.BasicStructsPkg.UrlsModule import USER_LIST_PAGE_URL
 from stariodemo.HtmlComponentsPkg.CommonSidebarLeftHtmlModule import CommonSidebarLeftHtml
 from stariodemo.HtmlComponentsPkg.SideBarButtonHtmlModule import SideBarButtonHtml
 

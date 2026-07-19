@@ -1,6 +1,6 @@
 from stario.markup.html import Div
 
-from stariodemo.DataStructsPkg.UrlsModule import ABC_ADD_PAGE_URL
+from stariodemo.BasicStructsPkg.UrlsModule import ABC_ADD_PAGE_URL
 from stariodemo.HtmlComponentsPkg.BigTitleHtmlModule import BigTitleHtml
 from stariodemo.HtmlComponentsPkg.CommonMainMiddleSectionHtmlModule import CommonMainMiddleSectionHtml
 from stariodemo.HtmlComponentsPkg.CommonNothingToShowPlaceholderHtmlModule import CommonNothingToShowPlaceholderHtml

@@ -3,7 +3,7 @@ from stario import Relay
 from stario import Writer
 from stario import responses
 
-from stariodemo.DataStructsPkg.RelayTopicsModule import CHAT_TYPING
+from stariodemo.BasicStructsPkg.RelayTopicsModule import CHAT_TYPING
 from stariodemo.FromTableDatabaseFunctionsPkg import PiccoloChatDb
 from stariodemo.SignalsPkg.ChatSignalsModule import read_chat_signal
 

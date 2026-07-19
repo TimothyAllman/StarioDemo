@@ -1,7 +1,7 @@
 import random
 
-from stariodemo.DataStructsPkg.AdjectivesModule import ADJECTIVES
-from stariodemo.DataStructsPkg.AnimalsModule import ANIMALS
+from stariodemo.BasicStructsPkg.AdjectivesModule import ADJECTIVES
+from stariodemo.BasicStructsPkg.AnimalsModule import ANIMALS
 
 
 def generate_username() -> str:

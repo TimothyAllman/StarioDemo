@@ -5,9 +5,9 @@ from stario import responses
 from stario.datastar import SSE
 
 from stariodemo.DatabasePiccoloTablesPkg.ChatAppUserDbModule import ChatAppUserDto
-from stariodemo.DataStructsPkg.RelayTopicsModule import CHAT_PRESENCE
-from stariodemo.DataStructsPkg.RelayTopicsModule import CHAT_SUBSCRIBE_PATTERN
-from stariodemo.DataStructsPkg.UrlsModule import CHAT_PAGE_URL
+from stariodemo.BasicStructsPkg.RelayTopicsModule import CHAT_PRESENCE
+from stariodemo.BasicStructsPkg.RelayTopicsModule import CHAT_SUBSCRIBE_PATTERN
+from stariodemo.BasicStructsPkg.UrlsModule import CHAT_PAGE_URL
 from stariodemo.FromTableDatabaseFunctionsPkg import PiccoloChatDb
 from stariodemo.HtmlPkg.ChatHtmlModule import chat_view
 from stariodemo.SignalsPkg.ChatSignalsModule import read_chat_signal
