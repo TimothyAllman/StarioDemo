@@ -9,6 +9,7 @@ from piccolo.conf.apps import AppConfig
 
 from stariodemo.DatabasePiccoloTablesPkg.ChatAppMessageDbModule import ChatAppMessageDb
 from stariodemo.DatabasePiccoloTablesPkg.ChatAppUserDbModule import ChatAppUserDb
+from stariodemo.DatabasePiccoloTablesPkg.WidgetDbModule import WidgetDb
 
 CURRENT_DIRECTORY = os.path.dirname(os.path.abspath(__file__))
 
