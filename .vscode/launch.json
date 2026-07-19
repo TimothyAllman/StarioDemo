@@ -9,7 +9,7 @@
             "program": "${workspaceFolder}/.scripts/UvRunStarioServeMainBootstrap.py",
             "cwd": "${workspaceFolder}",
             "args": [],
-            "console": "integratedTerminal",
+            "console": "internalConsole", //have to set stario_tracer to tty
             "justMyCode": false,
         }
     ]
