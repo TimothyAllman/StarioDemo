@@ -55,6 +55,12 @@ def PageHtml(
         Body(
             {
                 "class": "bg-backcolor1 text-frontcolor1",
+                "style": " ".join(
+                    [
+                        "background-image: radial-gradient(circle, var(--brand-pattern-dot) 1px, transparent 1px);",
+                        "background-size: var(--brand-pattern-size, 24px 24px);",
+                    ]
+                ),
             },
             *children,
         ),
