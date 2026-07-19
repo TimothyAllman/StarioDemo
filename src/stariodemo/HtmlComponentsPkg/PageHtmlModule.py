@@ -9,6 +9,7 @@ from stario.markup.html import Script
 from stario.markup.html import Style
 from stario.markup.html import Title
 
+from stariodemo.HtmlComponentsPkg.ToastNotificationsHtmlModule import ToastNotificationsHtml
 from stariodemo.StaticAssetsPkg.StaticAssetsModule import DATASTAR_JS
 from stariodemo.StaticAssetsPkg.StaticAssetsModule import GLOBAL_CSS_STYLES
 from stariodemo.StaticAssetsPkg.StaticAssetsModule import STYLE_CSS
@@ -49,18 +50,12 @@ def PageHtml(
                 GLOBAL_CSS_STYLES,
             ),
         ),
+        debug_inspector(position="bottom-right"),  # Dev tool: shows current signals state
+        ToastNotificationsHtml(),
         Body(
             {
-                "style": " ".join(
-                    [
-                        "background-color: var(--brand-backcolor1);",
-                        "color: var(--brand-frontcolor1);",
-                        "background-image: radial-gradient(circle, var(--bg-pattern-dot) 1px, transparent 1px);",
-                        "background-size: var(--bg-pattern-size, 24px 24px);",
-                    ]
-                ),
+                "class": "bg-backcolor1 text-frontcolor1",
             },
-            debug_inspector(position="bottom-right"),  # Dev tool: shows current signals state
             *children,
         ),
     )
