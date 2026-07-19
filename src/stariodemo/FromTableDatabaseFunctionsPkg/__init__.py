@@ -1,15 +1,11 @@
 from stariodemo.DatabasePiccoloTablesPkg.ChatAppMessageDbModule import ChatAppMessageDto
 from stariodemo.DatabasePiccoloTablesPkg.ChatAppUserDbModule import ChatAppUserDto
-from stariodemo.FromTableDatabaseFunctionsPkg.ChatAppMessagesAddModule import AddMessage
-from stariodemo.FromTableDatabaseFunctionsPkg.ChatAppUserAddModule import AddUser
-from stariodemo.FromTableDatabaseFunctionsPkg.ChatAppMessagesGetModule import GetMessages
-from stariodemo.FromTableDatabaseFunctionsPkg.GetWidgetModule import GetWidget
-from stariodemo.FromTableDatabaseFunctionsPkg.GetWidgetsModule import GetChatAppUser
-from stariodemo.FromTableDatabaseFunctionsPkg.RemoveWidgetModule import RemoveWidget
 from stariodemo.DatabasePiccoloTablesPkg.SeedWidgetModule import SeedWidget
-from stariodemo.FromTableDatabaseFunctionsPkg.SetWidgetTypingModule import SetWidgetTyping
-from stariodemo.FromTableDatabaseFunctionsPkg.WidgetDbModule import WidgetDto
-from stariodemo.FromTableDatabaseFunctionsPkg.WidgetExistsModule import WidgetExists
+from stariodemo.FromTableDatabaseFunctionsPkg.ChatAppMessagesAddModule import AddMessage
+from stariodemo.FromTableDatabaseFunctionsPkg.ChatAppMessagesGetModule import GetMessages
+from stariodemo.FromTableDatabaseFunctionsPkg.ChatAppUserAddModule import ChatAppUserAdd
+from stariodemo.FromTableDatabaseFunctionsPkg.ChatAppUserExistsModule import ChatAppUserExists
+from stariodemo.FromTableDatabaseFunctionsPkg.ChatAppUserTypingSetModule import SetChatAppUserTyping
 
 
 class PiccoloChatDb:
@@ -17,7 +13,7 @@ class PiccoloChatDb:
         self,
         user: ChatAppUserDto,
     ) -> None:
-        await AddUser(user)
+        await ChatAppUserAdd(user)
 
     async def add_message(
         self,
@@ -52,11 +48,11 @@ class PiccoloChatDb:
         self,
         user_id: str,
     ) -> bool:
-        return await WidgetExists(user_id)
+        return await ChatAppUserExists(user_id)
 
     async def set_user_typing(
         self,
         user_id: str,
         typing: bool,
     ) -> bool:
-        return await SetWidgetTyping(user_id, typing)
+        return await SetChatAppUserTyping(user_id, typing)

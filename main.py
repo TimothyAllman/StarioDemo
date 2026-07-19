@@ -8,13 +8,10 @@ from stario import App
 from stario import Relay
 from stario import Span
 from stario import StaticAssets
-from stariodemo.HandlersPkg.WidgetAddPageEndpointModule import WidgetAddPageEndpoint
-from stariodemo.HandlersPkg.WidgetDetailsPageEndpointModule import WidgetDetailsPageEndpoint
-from stariodemo.HandlersPkg.WidgetEditPageEndpointModule import WidgetEditPageEndpoint
-from stariodemo.HandlersPkg.WidgetListPageEndpointModule import WidgetListPageEndpoint
 
 from piccolo_conf import SQLITE_DB_PATH
 from piccolo_conf import enable_wal
+from stariodemo.DatabasePiccoloTablesPkg.InitPiccoloDbModule import InitPiccoloDb
 from stariodemo.DataStructsPkg.UrlsModule import ABC_ADD_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import ABC_CALCULATION_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import ABC_LIST_PAGE_URL
@@ -35,7 +32,6 @@ from stariodemo.DataStructsPkg.UrlsModule import USER_DETAILS_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import USER_EDIT_PAGE_URL
 from stariodemo.DataStructsPkg.UrlsModule import USER_LIST_PAGE_URL
 from stariodemo.FromTableDatabaseFunctionsPkg import PiccoloChatDb
-from stariodemo.DatabasePiccoloTablesPkg.InitPiccoloDbModule import InitPiccoloDb
 from stariodemo.HandlersPkg.AbcAddPageEndpointModule import AbcAddPageEndpoint
 from stariodemo.HandlersPkg.AbcCalculationEndpointModule import AbcCalculationEndpoint
 from stariodemo.HandlersPkg.AbcCalculationPageEndpointModule import AbcCalculationPageEndpoint
@@ -51,6 +47,10 @@ from stariodemo.HandlersPkg.SubscribeToToastNotificationsEndpointModule import S
 from stariodemo.HandlersPkg.ToastErrorEndpointModule import ToastErrorEndpoint
 from stariodemo.HandlersPkg.ToastSuccessEndpointModule import ToastSuccessEndpoint
 from stariodemo.HandlersPkg.TypingEndpointModule import TypingEndpoint
+from stariodemo.HandlersPkg.WidgetAddPageEndpointModule import WidgetAddPageEndpoint
+from stariodemo.HandlersPkg.WidgetDetailsPageEndpointModule import WidgetDetailsPageEndpoint
+from stariodemo.HandlersPkg.WidgetEditPageEndpointModule import WidgetEditPageEndpoint
+from stariodemo.HandlersPkg.WidgetListPageEndpointModule import WidgetListPageEndpoint
 from stariodemo.StaticAssetsPkg.StaticAssetsModule import ASSETS
 
 

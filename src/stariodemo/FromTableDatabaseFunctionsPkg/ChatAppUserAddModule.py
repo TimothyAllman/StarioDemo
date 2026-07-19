@@ -2,7 +2,7 @@ from stariodemo.DatabasePiccoloTablesPkg.ChatAppUserDbModule import ChatAppUserD
 from stariodemo.DatabasePiccoloTablesPkg.ChatAppUserDbModule import ChatAppUserDto
 
 
-async def AddWidget(user: ChatAppUserDto) -> None:
+async def ChatAppUserAdd(user: ChatAppUserDto) -> None:
     trsc = ChatAppUserDb.insert(
         ChatAppUserDb(
             **user.model_dump(),

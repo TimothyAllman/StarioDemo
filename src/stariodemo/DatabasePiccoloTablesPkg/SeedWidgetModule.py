@@ -1,7 +1,7 @@
 from datetime import date
 from datetime import timedelta
 
-from stariodemo.FromTableDatabaseFunctionsPkg.WidgetDbModule import WidgetDb
+from stariodemo.DatabasePiccoloTablesPkg.WidgetDbModule import WidgetDb
 
 
 async def SeedWidget() -> None:
