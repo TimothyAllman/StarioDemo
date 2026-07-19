@@ -3,7 +3,7 @@ from stariodemo.HtmlPkg.ChatAppAvatarHtmlModule import ChatAppAvatarHtml
 from stariodemo.HtmlPkg.ChatAppAvatarHtmlModule import ChatAppAvatarMoreHtml
 from stariodemo.HtmlPkg.ChatAppAvatarsHtmlModule import ChatAppAvatarsHtml
 from stariodemo.HtmlPkg.ChatAppOnlineLabelHtmlModule import ChatAppOnlineLabelHtml
-from stariodemo.HtmlPkg.ChatAppOnlineWidgetsHtmlModule import ChatAppOnlineWidgetsHtml
+from stariodemo.HtmlPkg.ChatAppOnlineUsersHtmlModule import ChatAppOnlineWidgetsHtml
 
 
 def online_users_view(

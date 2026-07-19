@@ -5,7 +5,7 @@ from stario import datastar
 
 from stariodemo.DataStructsPkg.UrlsModule import HOME_PAGE_URL
 from stariodemo.HandlersPkg.SubscribeToToastNotificationsEndpointModule import PublishToastNotification
-from stariodemo.HtmlComponentsPkg.MessageBoxHtmlModule import MessageBoxErrorHtml
+from stariodemo.HtmlComponentsPkg.MessageBoxHtmlModule import MessageBoxSuccessHtml
 
 
 def ToastSuccessEndpoint(
@@ -23,7 +23,7 @@ def ToastSuccessEndpoint(
         # publish notifications
         PublishToastNotification(
             relay=relay,
-            message_box=MessageBoxErrorHtml(
+            message_box=MessageBoxSuccessHtml(
                 messageText="yay success",
             ),
         )

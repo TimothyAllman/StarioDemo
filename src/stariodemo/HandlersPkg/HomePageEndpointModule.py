@@ -5,7 +5,8 @@ from stario import Writer
 from stario import responses
 
 from stariodemo.DataStructsPkg.GenerateColorModule import generate_color
-from stariodemo.DataStructsPkg.GenerateWidgetNameModule import generate_username
+
+from stariodemo.DataStructsPkg.GenerateUserNameModule import generate_username
 from stariodemo.HtmlComponentsPkg.PageHtmlModule import PageHtml
 from stariodemo.HtmlPkg.HomeHtmlModule import HomeHtml
 from stariodemo.HtmlPkg.NavBarAndFooterHtmlModule import NavBarAndFooterHtml
