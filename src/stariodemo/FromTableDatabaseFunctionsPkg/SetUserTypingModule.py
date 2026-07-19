@@ -2,7 +2,7 @@ from stariodemo.DatabasePiccoloTablesPkg.ChatAppUserDbModule import ChatAppUserD
 from stariodemo.DatabasePiccoloTablesPkg.ChatAppUserDbModule import ChatAppUserDto
 
 
-async def SetUserTyping(user_id: str, typing: bool) -> bool:
+async def SetWidgetTyping(user_id: str, typing: bool) -> bool:
     # set up query
     qry = (
         ChatAppUserDb.select()

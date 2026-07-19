@@ -4,11 +4,11 @@ from stario import responses
 
 from stariodemo.HtmlComponentsPkg.PageHtmlModule import PageHtml
 from stariodemo.HtmlPkg.NavBarAndFooterHtmlModule import NavBarAndFooterHtml
-from stariodemo.HtmlPkg.UserDetailsHtmlModule import UserDetailsHtml
-from stariodemo.HtmlPkg.UserSidebarHtmlModule import UserSideBarHtml
+from stariodemo.HtmlPkg.WidgetDetailsHtmlModule import WidgetDetailsHtml
+from stariodemo.HtmlPkg.WidgetSidebarHtmlModule import WidgetSideBarHtml
 
 
-def UserDetailsPageEndpoint():
+def WidgetDetailsPageEndpoint():
     async def handler(c: Context, w: Writer) -> None:
         """
         Serve abc list page
@@ -17,8 +17,8 @@ def UserDetailsPageEndpoint():
             w,
             PageHtml(
                 NavBarAndFooterHtml(
-                    UserSideBarHtml(
-                        UserDetailsHtml(),
+                    WidgetSideBarHtml(
+                        WidgetDetailsHtml(),
                     )
                 )
             ),

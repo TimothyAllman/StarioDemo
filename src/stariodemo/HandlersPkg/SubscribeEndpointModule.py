@@ -41,7 +41,7 @@ def SubscribeEndpoint(db: PiccoloChatDb, relay: Relay[str]):
         )
         await db.add_user(user)
         c.span.event(
-            "User connected",
+            "Widget connected",
             {"user_id": signals.user_id, "username": signals.username},
         )
 
@@ -79,6 +79,6 @@ def SubscribeEndpoint(db: PiccoloChatDb, relay: Relay[str]):
             # Disconnect cleanup — not an error path.
             await db.remove_user(signals.user_id)
             relay.publish(CHAT_PRESENCE, "leave")
-            c.span.event("User disconnected", {"user_id": signals.user_id})
+            c.span.event("Widget disconnected", {"user_id": signals.user_id})
 
     return handler

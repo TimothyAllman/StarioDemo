@@ -5,7 +5,7 @@ from stariodemo.HtmlComponentsPkg.CommonSidebarLeftHtmlModule import CommonSideb
 from stariodemo.HtmlComponentsPkg.SideBarButtonHtmlModule import SideBarButtonHtml
 
 
-def UserSideBarHtml(
+def WidgetSideBarHtml(
     *children,
 ):
     """
@@ -14,9 +14,9 @@ def UserSideBarHtml(
 
     return CommonSidebarLeftHtml(
         [
-            SideBarButtonHtml(name="List Users", url=USER_LIST_PAGE_URL.href()),
-            SideBarButtonHtml(name="Add User", url=USER_ADD_PAGE_URL.href()),
-            SideBarButtonHtml(name="Edit User", url=USER_EDIT_PAGE_URL.href()),
+            SideBarButtonHtml(name="List Widgets", url=USER_LIST_PAGE_URL.href()),
+            SideBarButtonHtml(name="Add Widget", url=USER_ADD_PAGE_URL.href()),
+            SideBarButtonHtml(name="Edit Widget", url=USER_EDIT_PAGE_URL.href()),
         ],
         *children,
     )

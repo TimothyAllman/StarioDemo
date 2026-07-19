@@ -5,7 +5,7 @@ from piccolo.table import Table
 from pydantic import BaseModel
 
 
-class UserDb(Table):
+class WidgetDb(Table):
     id = Varchar(length=64, primary_key=True)
     username = Varchar(length=255)
     name = Varchar(length=64)
@@ -18,7 +18,7 @@ class UserDb(Table):
     #     tablename = "users"
 
 
-class UserListDto(BaseModel):
+class WidgetListDto(BaseModel):
     """
     A connected user with their display info and typing state.
     """
@@ -27,7 +27,8 @@ class UserListDto(BaseModel):
     username: str
     name: str
 
-class UserUpdateDto(BaseModel):
+
+class WidgetUpdateDto(BaseModel):
     """
     A connected user with their display info and typing state.
     """

@@ -1,16 +1,15 @@
-from stariodemo.FromTableDatabaseFunctionsPkg.AddMessageModule import AddMessage
-from stariodemo.FromTableDatabaseFunctionsPkg.AddUserModule import AddUser
-from stariodemo.FromTableDatabaseFunctionsPkg.AddWidgetModule import AddWidget
-from stariodemo.FromTableDatabaseFunctionsPkg.GetMessagesModule import GetMessages
-from stariodemo.FromTableDatabaseFunctionsPkg.GetUserModule import GetUser
-from stariodemo.FromTableDatabaseFunctionsPkg.GetUsersModule import GetUsers
-from stariodemo.FromTableDatabaseFunctionsPkg.RemoveUserModule import RemoveUser
-from stariodemo.FromTableDatabaseFunctionsPkg.SeedWidgetModule import SeedWidget
-from stariodemo.FromTableDatabaseFunctionsPkg.SetUserTypingModule import SetUserTyping
-from stariodemo.FromTableDatabaseFunctionsPkg.UserExistsModule import UserExists
-from stariodemo.FromTableDatabaseFunctionsPkg.WidgetDbModule import WidgetDto
 from stariodemo.DatabasePiccoloTablesPkg.ChatAppMessageDbModule import ChatAppMessageDto
 from stariodemo.DatabasePiccoloTablesPkg.ChatAppUserDbModule import ChatAppUserDto
+from stariodemo.FromTableDatabaseFunctionsPkg.AddMessageModule import AddMessage
+from stariodemo.FromTableDatabaseFunctionsPkg.AddUserModule import AddUser
+from stariodemo.FromTableDatabaseFunctionsPkg.GetMessagesModule import GetMessages
+from stariodemo.FromTableDatabaseFunctionsPkg.GetWidgetModule import GetWidget
+from stariodemo.FromTableDatabaseFunctionsPkg.GetWidgetsModule import GetWidgets
+from stariodemo.FromTableDatabaseFunctionsPkg.RemoveWidgetModule import RemoveWidget
+from stariodemo.FromTableDatabaseFunctionsPkg.SeedWidgetModule import SeedWidget
+from stariodemo.FromTableDatabaseFunctionsPkg.SetWidgetTypingModule import SetWidgetTyping
+from stariodemo.FromTableDatabaseFunctionsPkg.WidgetDbModule import WidgetDto
+from stariodemo.FromTableDatabaseFunctionsPkg.WidgetExistsModule import WidgetExists
 
 
 class PiccoloChatDb:
@@ -36,28 +35,28 @@ class PiccoloChatDb:
         self,
         user_id: str,
     ) -> None:
-        await RemoveUser(user_id)
+        await RemoveWidget(user_id)
 
     async def get_user(
         self,
         user_id: str,
     ) -> ChatAppUserDto | None:
-        return await GetUser(user_id)
+        return await GetWidget(user_id)
 
     async def get_users(
         self,
     ) -> dict[str, ChatAppUserDto]:
-        return await GetUsers()
+        return await GetWidgets()
 
     async def user_exists(
         self,
         user_id: str,
     ) -> bool:
-        return await UserExists(user_id)
+        return await WidgetExists(user_id)
 
     async def set_user_typing(
         self,
         user_id: str,
         typing: bool,
     ) -> bool:
-        return await SetUserTyping(user_id, typing)
+        return await SetWidgetTyping(user_id, typing)

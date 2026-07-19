@@ -2,7 +2,7 @@ from stario.markup.html import Div
 from stario.markup.html import P
 
 
-def UserCardHtml(
+def WidgetCardHtml(
     name,
     age,
     address,

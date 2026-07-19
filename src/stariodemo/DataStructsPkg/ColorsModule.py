@@ -1,4 +1,4 @@
-# User avatar colors
+# Widget avatar colors
 COLORS = [
     "#e74c3c",  # red
     "#e67e22",  # orange

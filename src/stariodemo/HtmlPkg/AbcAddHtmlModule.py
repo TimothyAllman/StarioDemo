@@ -9,7 +9,7 @@ def AbcAddHtml(
     # color: str,
     # *,
     # messages: list[Message],
-    # users: dict[str, User],
+    # users: dict[str, Widget],
 ):
     """
     docstring

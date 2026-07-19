@@ -1,10 +1,11 @@
 import uuid
 
-from stario import Context, responses
+from stario import Context
 from stario import Writer
+from stario import responses
 
 from stariodemo.DataStructsPkg.GenerateColorModule import generate_color
-from stariodemo.DataStructsPkg.GenerateUserNameModule import generate_username
+from stariodemo.DataStructsPkg.GenerateWidgetNameModule import generate_username
 from stariodemo.HtmlComponentsPkg.PageHtmlModule import PageHtml
 from stariodemo.HtmlPkg.ChatHtmlModule import chat_view
 from stariodemo.HtmlPkg.NavBarAndFooterHtmlModule import NavBarAndFooterHtml
@@ -20,7 +21,8 @@ def ChatPageEndpoint():
         color = generate_color()
 
         # Pass empty collections - user will get real data after subscribing
-        responses.html(w,
+        responses.html(
+            w,
             PageHtml(
                 NavBarAndFooterHtml(
                     chat_view(
@@ -31,7 +33,7 @@ def ChatPageEndpoint():
                         users={},
                     )
                 )
-            )
+            ),
         )
 
     return handler

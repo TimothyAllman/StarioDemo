@@ -3,9 +3,9 @@ import time
 from stariodemo.DatabasePiccoloTablesPkg.ChatAppMessageDbModule import ChatAppMessageDto
 from stariodemo.HtmlPkg.ChatAppMessageBubbleHtmlModule import ChatAppMessageBubbleHtml
 from stariodemo.HtmlPkg.ChatAppMessageBubbleHtmlModule import ChatAppMessageHeaderHtml
-from stariodemo.HtmlPkg.ChatAppMessageUsernameHtmlModule import ChatAppMessageTextHtml
-from stariodemo.HtmlPkg.ChatAppMessageUsernameHtmlModule import ChatAppTimestampHtml
-from stariodemo.HtmlPkg.ChatAppMessageUsernameHtmlModule import ChatAppUsernameHtml
+from stariodemo.HtmlPkg.ChatAppMessageWidgetnameHtmlModule import ChatAppMessageTextHtml
+from stariodemo.HtmlPkg.ChatAppMessageWidgetnameHtmlModule import ChatAppTimestampHtml
+from stariodemo.HtmlPkg.ChatAppMessageWidgetnameHtmlModule import ChatAppUsernameHtml
 
 
 def message_view(

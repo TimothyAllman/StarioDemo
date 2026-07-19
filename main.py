@@ -8,6 +8,10 @@ from stario import App
 from stario import Relay
 from stario import Span
 from stario import StaticAssets
+from stariodemo.HandlersPkg.WidgetAddPageEndpointModule import WidgetAddPageEndpoint
+from stariodemo.HandlersPkg.WidgetDetailsPageEndpointModule import WidgetDetailsPageEndpoint
+from stariodemo.HandlersPkg.WidgetEditPageEndpointModule import WidgetEditPageEndpoint
+from stariodemo.HandlersPkg.WidgetListPageEndpointModule import WidgetListPageEndpoint
 
 from piccolo_conf import SQLITE_DB_PATH
 from piccolo_conf import enable_wal
@@ -47,10 +51,6 @@ from stariodemo.HandlersPkg.SubscribeToToastNotificationsEndpointModule import S
 from stariodemo.HandlersPkg.ToastErrorEndpointModule import ToastErrorEndpoint
 from stariodemo.HandlersPkg.ToastSuccessEndpointModule import ToastSuccessEndpoint
 from stariodemo.HandlersPkg.TypingEndpointModule import TypingEndpoint
-from stariodemo.HandlersPkg.UserAddPageEndpointModule import UserAddPageEndpoint
-from stariodemo.HandlersPkg.UserDetailsPageEndpointModule import UserDetailsPageEndpoint
-from stariodemo.HandlersPkg.UserEditPageEndpointModule import UserEditPageEndpoint
-from stariodemo.HandlersPkg.UserListPageEndpointModule import UserListPageEndpoint
 from stariodemo.StaticAssetsPkg.StaticAssetsModule import ASSETS
 
 
@@ -106,10 +106,10 @@ async def bootstrap(
     app.post(CHAT_SEND_URL, SendMessageEndpoint(db, relay))
     app.post(CHAT_TYPING_URL, TypingEndpoint(db, relay))
 
-    app.get(USER_ADD_PAGE_URL, UserAddPageEndpoint())
-    app.get(USER_LIST_PAGE_URL, UserListPageEndpoint())
-    app.get(USER_EDIT_PAGE_URL, UserEditPageEndpoint())
-    app.get(USER_DETAILS_PAGE_URL, UserDetailsPageEndpoint())
+    app.get(USER_ADD_PAGE_URL, WidgetAddPageEndpoint())
+    app.get(USER_LIST_PAGE_URL, WidgetListPageEndpoint())
+    app.get(USER_EDIT_PAGE_URL, WidgetEditPageEndpoint())
+    app.get(USER_DETAILS_PAGE_URL, WidgetDetailsPageEndpoint())
 
     # api
     app.get(API_CALCULATION_URL, ApiCalculationEndpoint())

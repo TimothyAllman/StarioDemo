@@ -1,7 +1,7 @@
 from stario.markup.html import Span
 
 
-def ChatAppOnlineUsersHtml(
+def ChatAppOnlineWidgetsHtml(
     *children,
 ):
 

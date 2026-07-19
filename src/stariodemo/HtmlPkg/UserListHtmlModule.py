@@ -6,30 +6,30 @@ from stariodemo.HtmlComponentsPkg.CommonMainMiddleSectionHtmlModule import Commo
 from stariodemo.HtmlComponentsPkg.CommonNothingToShowPlaceholderHtmlModule import CommonNothingToShowPlaceholderHtml
 from stariodemo.HtmlComponentsPkg.CommonRedirectButtonHtmlModule import CommonRedirectButtonHtml
 from stariodemo.HtmlComponentsPkg.CommonSidebarRightHtmlModule import CommonSidebarRightHtml
-from stariodemo.HtmlPkg.UserCardHtmlModule import UserCardHtml
+from stariodemo.HtmlPkg.WidgetCardHtmlModule import WidgetCardHtml
 
 
-def UserListHtml():
+def WidgetListHtml():
     """
     docstring
     """
 
     cards = [
-        UserCardHtml(
+        WidgetCardHtml(
             name="Unknown",
             age="Unknown",
             address="Unknown",
             number="Unknown",
             status="Unknown",
         ),
-        UserCardHtml(
+        WidgetCardHtml(
             name="Unknown",
             age="Unknown",
             address="Unknown",
             number="Unknown",
             status="Unknown",
         ),
-        UserCardHtml(
+        WidgetCardHtml(
             name="user",
             age="Unknown",
             address="Unknown",
@@ -41,14 +41,14 @@ def UserListHtml():
     noElementsCard = CommonNothingToShowPlaceholderHtml(
         message="No user found. add your first user.",
         callToActionButton=CommonRedirectButtonHtml(
-            name="Add New User",
+            name="Add New Widget",
             url=ABC_ADD_PAGE_URL.href(),
         ),
     )
 
     return CommonMainMiddleSectionHtml(
         BigTitleHtml(
-            title="Users",
+            title="Widgets",
         ),
         Div(
             {"class": "mt-3"},

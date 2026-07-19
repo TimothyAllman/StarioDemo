@@ -3,7 +3,7 @@ from stariodemo.HtmlPkg.ChatAppAvatarHtmlModule import ChatAppAvatarHtml
 from stariodemo.HtmlPkg.ChatAppAvatarHtmlModule import ChatAppAvatarMoreHtml
 from stariodemo.HtmlPkg.ChatAppAvatarsHtmlModule import ChatAppAvatarsHtml
 from stariodemo.HtmlPkg.ChatAppOnlineLabelHtmlModule import ChatAppOnlineLabelHtml
-from stariodemo.HtmlPkg.ChatAppOnlineUsersHtmlModule import ChatAppOnlineUsersHtml
+from stariodemo.HtmlPkg.ChatAppOnlineWidgetsHtmlModule import ChatAppOnlineWidgetsHtml
 
 
 def online_users_view(
@@ -11,9 +11,9 @@ def online_users_view(
 ):
     """Shows online user avatars. Caps at 8 with a +N overflow indicator."""
     if not users:
-        return ChatAppOnlineUsersHtml()
+        return ChatAppOnlineWidgetsHtml()
 
-    return ChatAppOnlineUsersHtml(
+    return ChatAppOnlineWidgetsHtml(
         ChatAppOnlineLabelHtml(
             f"{len(users)} online",
         ),

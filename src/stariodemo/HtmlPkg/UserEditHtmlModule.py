@@ -2,7 +2,7 @@ from stariodemo.HtmlComponentsPkg.BigTitleHtmlModule import BigTitleHtml
 from stariodemo.HtmlComponentsPkg.CommonMainMiddleSectionHtmlModule import CommonMainMiddleSectionHtml
 
 
-def UserEditHtml():
+def WidgetEditHtml():
     """
     docstring
     """

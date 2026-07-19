@@ -1,16 +1,14 @@
-from stariodemo.DatabasePiccoloTablesPkg.UserDbModule import UserDb
-from stariodemo.DatabasePiccoloTablesPkg.UserDbModule import UserListDto
+from stariodemo.DatabasePiccoloTablesPkg.WidgetDbModule import WidgetDb
+from stariodemo.DatabasePiccoloTablesPkg.WidgetDbModule import WidgetListDto
 
 
-async def FromUserDbUpdateSingle(id,) -> list[UserListDto] | None:
-    qry = UserDb.update(
-       
-    ).where(
-        UserDb.id==id
-    )
+async def FromWidgetDbUpdateSingle(
+    id,
+) -> list[WidgetListDto] | None:
+    qry = WidgetDb.update().where(WidgetDb.id == id)
 
     rows = await qry.run()
 
-    dtos = [UserListDto(**x) for x in rows]
+    dtos = [WidgetListDto(**x) for x in rows]
 
     return dtos

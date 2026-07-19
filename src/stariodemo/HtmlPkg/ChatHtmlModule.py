@@ -11,7 +11,7 @@ from stariodemo.HtmlPkg.ChatAppChatHeaderHtmlModule import ChatAppChatHeaderHtml
 from stariodemo.HtmlPkg.ChatAppChatTitleHtmlModule import ChatAppChatTitleHtml
 from stariodemo.HtmlPkg.InputFormHtmlModule import input_form_view
 from stariodemo.HtmlPkg.MessagesHtmlModule import messages_view
-from stariodemo.HtmlPkg.OnlineUsersHtmlModule import online_users_view
+from stariodemo.HtmlPkg.OnlineWidgetsHtmlModule import online_users_view
 from stariodemo.HtmlPkg.TypingIndicatorHtmlModule import typing_indicator_view
 
 
