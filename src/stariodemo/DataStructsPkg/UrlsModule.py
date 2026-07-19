@@ -23,6 +23,9 @@ API_CALCULATION_URL = UrlPath("/api/calculation")
 API_USER_CREATE_URL = UrlPath("/api/user/create")
 API_ABC_CALCULATION_URL = UrlPath("/api/abc/calculation")
 
+SUBSCRIBE_TO_TOAST_NOTIFICATIONS_URL = UrlPath("/subscribe-to-toast-notifications")
+API_TOAST_ERROR_TEST_URL = UrlPath("/api/toast-error")
+API_TOAST_SUCCESS_TEST_URL = UrlPath("/api/toast-success")
 
 GIVE_ME_TEXT_URL = UrlPath("/give-me-text")
 GIVE_ME_JSON_URL = UrlPath("/give-me-json")
