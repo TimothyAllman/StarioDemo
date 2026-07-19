@@ -7,10 +7,10 @@ ABC_ADD_PAGE_URL = UrlPath("/abc-add")
 ABC_CALCULATION_PAGE_URL = UrlPath("/abc-calculation")
 
 
-USER_LIST_PAGE_URL = UrlPath("/user-list")
-USER_ADD_PAGE_URL = UrlPath("/user-add")
-USER_EDIT_PAGE_URL = UrlPath("/user-edit")
-USER_DETAILS_PAGE_URL = UrlPath("/user-details")
+WIDGET_LIST_PAGE_URL = UrlPath("/user-list")
+WIDGET_ADD_PAGE_URL = UrlPath("/user-add")
+WIDGET_EDIT_PAGE_URL = UrlPath("/user-edit")
+WIDGET_DETAILS_PAGE_URL = UrlPath("/user-details")
 
 
 CHAT_PAGE_URL = UrlPath("/chat/")
