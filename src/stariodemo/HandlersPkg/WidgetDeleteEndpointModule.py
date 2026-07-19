@@ -47,24 +47,19 @@ def WidgetDeleteEndpoint(
 
         payload = await ReadWidgetDeleteSignals(c)
 
-        if payload.id:
+        if payload.widgetId:
             c.span.event(
                 "widget.being.deleted",
                 {
-                    "widget.id": payload.id,
+                    "widget.id": payload.widgetId,
                 },
             )
 
         await FromWidgetDbTableDeleteSingleItem(
-            id=id,
+            id=payload.widgetId,
         )
 
-        PublishToastNotification(
-            relay=relay,
-            message_box=MessageBoxSuccessHtml(
-                messageText="Widget deleted"
-            )
-        )
+        PublishToastNotification(relay=relay, message_box=MessageBoxSuccessHtml(messageText="Widget deleted"))
 
         sse = datastar.SSE(w)
         sse.navigate(WIDGET_LIST_PAGE_URL.href())

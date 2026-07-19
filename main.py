@@ -27,10 +27,10 @@ from stariodemo.BasicStructsPkg.UrlsModule import GIVE_ME_JSON_URL
 from stariodemo.BasicStructsPkg.UrlsModule import GIVE_ME_TEXT_URL
 from stariodemo.BasicStructsPkg.UrlsModule import HOME_PAGE_URL
 from stariodemo.BasicStructsPkg.UrlsModule import SUBSCRIBE_TO_TOAST_NOTIFICATIONS_URL
-from stariodemo.BasicStructsPkg.UrlsModule import USER_ADD_PAGE_URL
-from stariodemo.BasicStructsPkg.UrlsModule import USER_DETAILS_PAGE_URL
-from stariodemo.BasicStructsPkg.UrlsModule import USER_EDIT_PAGE_URL
-from stariodemo.BasicStructsPkg.UrlsModule import USER_LIST_PAGE_URL
+from stariodemo.BasicStructsPkg.UrlsModule import WIDGET_ADD_PAGE_URL
+from stariodemo.BasicStructsPkg.UrlsModule import WIDGET_DETAILS_PAGE_URL
+from stariodemo.BasicStructsPkg.UrlsModule import WIDGET_EDIT_PAGE_URL
+from stariodemo.BasicStructsPkg.UrlsModule import WIDGET_LIST_PAGE_URL
 from stariodemo.FromTableDatabaseFunctionsPkg import PiccoloChatDb
 from stariodemo.HandlersPkg.AbcAddPageEndpointModule import AbcAddPageEndpoint
 from stariodemo.HandlersPkg.AbcCalculationEndpointModule import AbcCalculationEndpoint
@@ -43,7 +43,7 @@ from stariodemo.HandlersPkg.GiveMeTextEndpointModule import GiveMeTextEndpoint
 from stariodemo.HandlersPkg.HomePageEndpointModule import HomePageEndpoint
 from stariodemo.HandlersPkg.SendMessageEndpointModule import SendMessageEndpoint
 from stariodemo.HandlersPkg.SubscribeEndpointModule import SubscribeEndpoint
-from stariodemo.HandlersPkg.SubscribeToToastNotificationsEndpointModule import SubscribeToToastNotificationsEndpoint
+from stariodemo.HandlersPkg.SubscribeToastNotificationsEndpointModule import SubscribeToToastNotificationsEndpoint
 from stariodemo.HandlersPkg.ToastErrorEndpointModule import ToastErrorEndpoint
 from stariodemo.HandlersPkg.ToastSuccessEndpointModule import ToastSuccessEndpoint
 from stariodemo.HandlersPkg.TypingEndpointModule import TypingEndpoint
@@ -106,10 +106,10 @@ async def bootstrap(
     app.post(CHAT_SEND_URL, SendMessageEndpoint(db, relay))
     app.post(CHAT_TYPING_URL, TypingEndpoint(db, relay))
 
-    app.get(USER_ADD_PAGE_URL, WidgetAddPageEndpoint())
-    app.get(USER_LIST_PAGE_URL, WidgetListPageEndpoint())
-    app.get(USER_EDIT_PAGE_URL, WidgetEditPageEndpoint())
-    app.get(USER_DETAILS_PAGE_URL, WidgetDetailsPageEndpoint())
+    app.get(WIDGET_ADD_PAGE_URL, WidgetAddPageEndpoint())
+    app.get(WIDGET_LIST_PAGE_URL, WidgetListPageEndpoint())
+    app.get(WIDGET_EDIT_PAGE_URL, WidgetEditPageEndpoint())
+    app.get(WIDGET_DETAILS_PAGE_URL, WidgetDetailsPageEndpoint())
 
     # api
     app.get(API_CALCULATION_URL, ApiCalculationEndpoint())

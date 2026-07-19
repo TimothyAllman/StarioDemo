@@ -4,7 +4,7 @@ from stario import Writer
 from stario import datastar
 
 from stariodemo.BasicStructsPkg.UrlsModule import HOME_PAGE_URL
-from stariodemo.HandlersPkg.SubscribeToToastNotificationsEndpointModule import PublishToastNotification
+from stariodemo.HandlersPkg.SubscribeToastNotificationsEndpointModule import PublishToastNotification
 from stariodemo.HtmlComponentsPkg.MessageBoxHtmlModule import MessageBoxErrorHtml
 
 
