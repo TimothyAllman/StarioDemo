@@ -25,13 +25,13 @@ from stariodemo.BasicStructsPkg.UrlsModule import CHAT_TYPING_URL
 from stariodemo.BasicStructsPkg.UrlsModule import GIVE_ME_JSON_URL
 from stariodemo.BasicStructsPkg.UrlsModule import GIVE_ME_TEXT_URL
 from stariodemo.BasicStructsPkg.UrlsModule import HOME_PAGE_URL
+from stariodemo.BasicStructsPkg.UrlsModule import PLOTLY_GRAPH_PAGE_URL
 from stariodemo.BasicStructsPkg.UrlsModule import SUBSCRIBE_TO_TOAST_NOTIFICATIONS_URL
 from stariodemo.BasicStructsPkg.UrlsModule import WIDGET_ADD_PAGE_URL
 from stariodemo.BasicStructsPkg.UrlsModule import WIDGET_DETAILS_PAGE_URL
 from stariodemo.BasicStructsPkg.UrlsModule import WIDGET_EDIT_PAGE_URL
 from stariodemo.BasicStructsPkg.UrlsModule import WIDGET_LIST_PAGE_URL
 from stariodemo.DatabasePiccoloTablesPkg.InitPiccoloDbModule import InitPiccoloDb
-from stariodemo.DatabasePiccoloTablesPkg.SeedWidgetModule import SeedWidget
 from stariodemo.FromTableDatabaseFunctionsPkg import PiccoloChatDb
 from stariodemo.HandlersPkg.AbcAddPageEndpointModule import AbcAddPageEndpoint
 from stariodemo.HandlersPkg.AbcCalculationEndpointModule import AbcCalculationEndpoint
@@ -42,6 +42,7 @@ from stariodemo.HandlersPkg.ChatPageEndpointModule import ChatPageEndpoint
 from stariodemo.HandlersPkg.GiveMeJsonEndpointModule import GiveMeJsonEndpoint
 from stariodemo.HandlersPkg.GiveMeTextEndpointModule import GiveMeTextEndpoint
 from stariodemo.HandlersPkg.HomePageEndpointModule import HomePageEndpoint
+from stariodemo.HandlersPkg.PlotlyGraphPageEndpointModule import PlotlyGraphPageEndpoint
 from stariodemo.HandlersPkg.SendMessageEndpointModule import SendMessageEndpoint
 from stariodemo.HandlersPkg.SubscribeEndpointModule import SubscribeEndpoint
 from stariodemo.HandlersPkg.SubscribeToastNotificationsEndpointModule import SubscribeToToastNotificationsEndpoint
@@ -120,6 +121,7 @@ async def bootstrap(
 
     app.get(GIVE_ME_TEXT_URL, GiveMeTextEndpoint())
     app.get(GIVE_ME_JSON_URL, GiveMeJsonEndpoint())
+    app.get(PLOTLY_GRAPH_PAGE_URL, PlotlyGraphPageEndpoint())
 
     app.get(API_TOAST_SUCCESS_TEST_URL, ToastSuccessEndpoint(relay))
     app.get(API_TOAST_ERROR_TEST_URL, ToastErrorEndpoint(relay))
