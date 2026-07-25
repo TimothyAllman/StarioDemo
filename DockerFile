@@ -1,0 +1,154 @@
+#################################################################################################################
+# Start with base (usually someone elses container/image)
+#################################################################################################################
+
+# we start off with an image that contains C#
+FROM mcr.microsoft.com/dotnet/sdk8.0 AS base
+
+# "install" uv for dependency management
+# i.e. copy the uv and uvx (executable binaries) folders from the official Astral uv Docker image directly into the /bin/ directory of your current image.
+COPY --from=ghcr.io/astral-sh/uv:0.11.25 /uv /uvx /bin/
+
+# "install" litestream for database backups
+# i.e. copy litestream (executable binaries) folders from the official litestream image directly into the /bin/ directory of your current image.
+COPY --from=litestream/litestream:0.3.13 /usr/local/bin/litestream /bin/
+
+# Make the folder executable so that we can call `uv sync` etc
+# RUN chmod +x /bin/uv
+# RUN chmod +x /bin/litestream
+# RUN apt-get update && apt-get install -y libstdc++6
+
+
+
+
+
+
+
+
+#################################################################################################################
+# Set up certificates
+#################################################################################################################
+
+# RUN apt-get update && apt-get install -y libgdiplus apt-utilds libc6ev
+
+# install CA certs
+# RUN apt-get update && apt-get install -y ca-certificates
+
+
+
+
+
+
+
+#################################################################################################################
+# Expose the ports the container will use to talk to the surrounding system 
+#################################################################################################################
+
+EXPOSE 8080
+# EXPOSE 443
+
+
+
+
+
+
+
+
+#################################################################################################################
+# Fetch certificates from my cool company storage of the cloud company sorage that my cool company uses
+#################################################################################################################
+# FROM mcr.microsoft,com/azure-cli AS certificatesstep
+# WORKDIR tmp
+
+# RUN az storage blob download -n "mycoolcompany_Issuing_CA_2026.crt" -f mycoolcompany_Issuing_CA_2026.crt -c certificates --account-name abcxyzeun --account-key "asdads2389iubqfobu0813" 
+# RUN az storage blob download -n "mycoolcompany_Root_CA_2026.crt" -f mycoolcompany_Root_CA_2026.crt -c certificates --account-name abcxyzeun --account-key "asdads2389iubqfobu0813" 
+# # or
+# ARG MY_COOL_ACCOUNT_KEY 
+# RUN az storage blob download -n "mycoolcompany_Issuing_CA_2026.crt" -f mycoolcompany_Issuing_CA_2026.crt -c certificates --account-name abcxyzeun --account-key $MY_COOL_ACCOUNT_KEY
+# RUN az storage blob download -n "mycoolcompany_Root_CA_2026.crt" -f mycoolcompany_Root_CA_2026.crt -c certificates --account-name abcxyzeun --account-key $MY_COOL_ACCOUNT_KEY 
+
+
+
+
+#################################################################################################################
+# Copy everything we need from our local repo to the image
+#################################################################################################################
+FROM base AS copyallfilesstep
+
+COPY ["./pyproject.toml", "./workingdirectory/pyproject.toml"]
+COPY ["./README.md", "./workingdirectory/README.md"]
+COPY ["./src", "./workingdirectory/src"]
+COPY ["./main.py", "./workingdirectory/main.py"]
+COPY ["./piccolo_conf.py", "./workingdirectory/piccolo_conf.py"]
+COPY ["./uv.lock", "./workingdirectory/uv.lock"]
+COPY ["./.python-version", "./workingdirectory/.python-version"]
+COPY ["./.scripts/UvRunStarioServeMainBootstrap.py", "./.scripts/UvRunStarioServeMainBootstrap.py"]
+
+
+
+
+
+
+
+
+
+#################################################################################################################
+# Install Dependencies
+#################################################################################################################
+FROM copyallfilesstep AS installalldependenciesstep
+
+
+# Place the certs in the special linux folder and change permissions on them
+COPY --from=certificatestep /tmp /usr/local/share/ca-certificates/
+RUN chmod 644 /usr/local/share/ca-certificates/mycoolcompany_Issuing_CA_2026.crt
+RUN chmod 644 /usr/local/share/ca-certificates/mycoolcompany_Root_CA_2026.crt && update-ca-certificates
+
+
+
+
+# First pull in anything etc we might need
+ARG PAT 
+# i.e. must pass this in when we call docker build 
+# e.g. docker build -PAT='23haon108h0ak' 
+# e.g. docker build -PAT= {{mycoolpat}}
+
+
+
+
+# set up environement variables that uv will use
+ENV UV_INDEX_MYNAMEOFPRIVATEPYPIFEED_PASSWORD=$PAT
+ENV UV_INDEX_MYNAMEOFPRIVATEPYPIFEED_USERNAME="aUserNameTHatDoesNotMatter"
+
+# just some logging to check the env var exist
+RUN echo $UV_INDEX_MYNAMEOFPRIVATEPYPIFEED_USERNAME
+
+# when this shows up in the terminal it is printed as stars i.e. ***** 
+RUN echo $UV_INDEX_MYNAMEOFPRIVATEPYPIFEED_PASSWORD
+
+# set up other environment variables
+ENV UV_SYSTEM_CERTS=true
+ENV STARIO_PORT=8080
+ENV STARIO_HOST=0.0.0.0
+env STARIO_TRACER=tty
+
+# install all dependencies and sync the lock file
+RUN uv sync 
+
+
+
+
+
+#################################################################################################################
+# Finally use all the files to get the website up
+#################################################################################################################
+FROM installalldependenciesstep AS finalstep
+
+# Place the executables in the environment at the front of the path
+ENV PATH="/workingdirectory/.venv/bin:$PATH"
+
+
+# create the command docker will run when it creates a container i.e. the entry point for the application
+ENTRYPOINT ["python", ".scripts/UvRunStarioServeMainBootstrap.py" ]
+
+
+
