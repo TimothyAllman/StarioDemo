@@ -69,7 +69,7 @@ async def bootstrap(
     span.event("stariodemo.db.creating.new")
     await InitPiccoloDb()
     db = PiccoloChatDb()
-    await enable_wal()
+    # await enable_wal()
     span.event("stariodemo.db.created.successfully")
 
     # await SeedWidget()
