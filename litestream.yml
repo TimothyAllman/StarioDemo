@@ -1,4 +1,6 @@
+logging:
+  level: warn
 dbs:
-  - path: "${LITESTREAM_DB_PATH}"
+  - path: ${LITESTREAM_DB_PATH}
     replicas:
-      -url: "${LITESTREAM_REPLICA_URL}"
+      - url: ${LITESTREAM_REPLICAS_URL}
