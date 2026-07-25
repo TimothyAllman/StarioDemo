@@ -2,14 +2,11 @@
 Stario Demo
 """
 
-import os
-
 from stario import App
 from stario import Relay
 from stario import Span
 from stario import StaticAssets
 
-from piccolo_conf import SQLITE_DB_PATH
 from piccolo_conf import enable_wal
 from stariodemo.BasicStructsPkg.UrlsModule import ABC_ADD_PAGE_URL
 from stariodemo.BasicStructsPkg.UrlsModule import ABC_CALCULATION_PAGE_URL
@@ -63,10 +60,10 @@ async def bootstrap(
     span.event("stariodemo.startup.begin")
     # config = Config.from_env()
 
-    # remove any prior db
-    span.event("stariodemo.db.deleting.old")
-    if os.path.exists(SQLITE_DB_PATH):
-        os.remove(SQLITE_DB_PATH)
+    # # remove any prior db
+    # span.event("stariodemo.db.deleting.old")
+    # if os.path.exists(SQLITE_DB_PATH):
+    #     os.remove(SQLITE_DB_PATH)
 
     # Create database
     span.event("stariodemo.db.creating.new")
