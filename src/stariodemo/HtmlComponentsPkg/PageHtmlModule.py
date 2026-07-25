@@ -50,7 +50,7 @@ def PageHtml(
                 GLOBAL_CSS_STYLES,
             ),
         ),
-        debug_inspector(position="bottom-right"),  # Dev tool: shows current signals state
+        debug_inspector(),  # Dev tool: shows current signals state
         ToastNotificationsHtml(),
         Body(
             {
