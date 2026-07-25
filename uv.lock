@@ -798,7 +798,7 @@ wheels = [
 
 [[package]]
 name = "stario"
-version = "4.0.0"
+version = "4.0.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "aiofiles" },
@@ -807,9 +807,9 @@ dependencies = [
     { name = "watchfiles" },
     { name = "xxhash" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/82/f0/87b9958d53fa14687b00442e7373ffb0f6a776dd10c55884fc1b94e7ba99/stario-4.0.0.tar.gz", hash = "sha256:f124c669b9f149371635572219badbcff8c99acbcf75bf8fc2d8e2411391e7ff", size = 129772, upload-time = "2026-06-25T13:51:20.03Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/61/bb/0b3b54938545edb8c1b3ac1f4531855053f68b18d757e85b9c9dc2f141f4/stario-4.0.1.tar.gz", hash = "sha256:a91b7497abd5a6ebcffd40fe09045c1b298bc617b1875ee2a0fc997c7feb55ff", size = 130544, upload-time = "2026-07-17T15:14:19.081Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/d2/2c/6fea7976f29425000e0588274780569ee75567e6924794eace12a06d851a/stario-4.0.0-py3-none-any.whl", hash = "sha256:8e992f0fbba1e82fd53ef6013863a6f3eda0ec8dab48a656322fec4e105993d3", size = 163232, upload-time = "2026-06-25T13:51:17.167Z" },
+    { url = "https://files.pythonhosted.org/packages/c4/b0/d45449a59371a9bea95bf3569443fbf1473e250f8ce181c24301dbbaa1df/stario-4.0.1-py3-none-any.whl", hash = "sha256:2a636c80750de17b80019097a5305009c89375780294189800ae5e2844daf09f", size = 163961, upload-time = "2026-07-17T15:14:17.931Z" },
 ]
 
 [[package]]
@@ -837,7 +837,7 @@ requires-dist = [
     { name = "plotly", specifier = "==6.7.0" },
     { name = "pydantic", specifier = "==2.12.5" },
     { name = "python-dotenv", specifier = "==1.2.2" },
-    { name = "stario", specifier = "==4.0.0" },
+    { name = "stario", specifier = "==4.0.1" },
     { name = "typer", specifier = "==0.26.3" },
     { name = "tzdata", specifier = "==2025.3" },
 ]
