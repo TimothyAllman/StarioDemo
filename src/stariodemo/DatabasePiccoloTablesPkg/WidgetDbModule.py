@@ -20,7 +20,7 @@ class WidgetDb(Table):
 
 class WidgetListDto(BaseModel):
     """
-    A connected user with their display info and typing state.
+    docstring
     """
 
     id: str
@@ -30,7 +30,7 @@ class WidgetListDto(BaseModel):
 
 class WidgetUpdateDto(BaseModel):
     """
-    A connected user with their display info and typing state.
+    docstring
     """
 
     id: str
