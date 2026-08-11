@@ -13,7 +13,7 @@ LITESTREAM_BIN: Path = Path(__file__).resolve().parent / ("litestream.exe" if pl
 CONFIG_FILE: Path = PROJECT_ROOT / "litestream.yml"
 
 
-def Checkpaths():
+def CheckPathsAndEnvVariables():
     """Initialises environment configurations and strictly verifies required variables and architecture."""
     # Force load fresh variables directly from .env file
     load_dotenv(override=True)
@@ -128,7 +128,7 @@ def StartStario():
 
 
 def main():
-    Checkpaths()
+    CheckPathsAndEnvVariables()
     StartLitestreamRestore()
     StartLitestreamReplicate()
     StartStario()
