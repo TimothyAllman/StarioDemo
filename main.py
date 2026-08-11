@@ -7,7 +7,6 @@ from stario import Relay
 from stario import Span
 from stario import StaticAssets
 
-from piccolo_conf import enable_wal
 from stariodemo.BasicStructsPkg.UrlsModule import ABC_ADD_PAGE_URL
 from stariodemo.BasicStructsPkg.UrlsModule import ABC_CALCULATION_PAGE_URL
 from stariodemo.BasicStructsPkg.UrlsModule import ABC_LIST_PAGE_URL
@@ -27,6 +26,7 @@ from stariodemo.BasicStructsPkg.UrlsModule import SUBSCRIBE_TO_TOAST_NOTIFICATIO
 from stariodemo.BasicStructsPkg.UrlsModule import WIDGET_ADD_PAGE_URL
 from stariodemo.BasicStructsPkg.UrlsModule import WIDGET_DETAILS_PAGE_URL
 from stariodemo.BasicStructsPkg.UrlsModule import WIDGET_EDIT_PAGE_URL
+from stariodemo.BasicStructsPkg.UrlsModule import WIDGET_LIST_API_URL
 from stariodemo.BasicStructsPkg.UrlsModule import WIDGET_LIST_PAGE_URL
 from stariodemo.DatabasePiccoloTablesPkg.InitPiccoloDbModule import InitPiccoloDb
 from stariodemo.FromTableDatabaseFunctionsPkg import PiccoloChatDb
@@ -49,6 +49,7 @@ from stariodemo.HandlersPkg.TypingEndpointModule import TypingEndpoint
 from stariodemo.HandlersPkg.WidgetAddPageEndpointModule import WidgetAddPageEndpoint
 from stariodemo.HandlersPkg.WidgetDetailsPageEndpointModule import WidgetDetailsPageEndpoint
 from stariodemo.HandlersPkg.WidgetEditPageEndpointModule import WidgetEditPageEndpoint
+from stariodemo.HandlersPkg.WidgetListApiEndpointModule import WidgetListApiEndpoint
 from stariodemo.HandlersPkg.WidgetListPageEndpointModule import WidgetListPageEndpoint
 from stariodemo.StaticAssetsPkg.StaticAssetsModule import ASSETS
 
@@ -109,6 +110,7 @@ async def bootstrap(
 
     app.get(WIDGET_ADD_PAGE_URL, WidgetAddPageEndpoint())
     app.get(WIDGET_LIST_PAGE_URL, WidgetListPageEndpoint())
+    app.get(WIDGET_LIST_API_URL, WidgetListApiEndpoint())
     app.get(WIDGET_EDIT_PAGE_URL, WidgetEditPageEndpoint())
     app.get(WIDGET_DETAILS_PAGE_URL, WidgetDetailsPageEndpoint())
 
