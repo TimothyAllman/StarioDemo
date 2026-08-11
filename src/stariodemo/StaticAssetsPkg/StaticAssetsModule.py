@@ -120,51 +120,51 @@ SPECIFIC_COLORS_FOR_LIGHT_THEME_CSS = """
 SPECIFIC_COLORS_FOR_DARK_THEME_CSS = """
 [data-theme="dark"]{
 
-/* Primary Brand Group (Deep night canvas / crisp light text) */
---brand-backcolor1: #0f172a;        /* Deep slate background */
---brand-backcolor1hover: #1e293b;   /* Lighter slate on hover */
---brand-edgecolor1: #1e293b;        /* Subtle border definition */
+/* Primary Brand Group (Pure black canvas / crisp light text) */
+--brand-backcolor1: #000000;        /* Pitch black background */
+--brand-backcolor1hover: #0a0a0a;   /* Extremely dark charcoal on hover */
+--brand-edgecolor1: #171717;        /* Subtle dark border definition */
 --brand-frontcolor1: #f8fafc;       /* Off-white text for high contrast */
 
 /* Secondary Brand Group (Elevated surfaces / cards) */
---brand-backcolor2: #1e293b;        /* Elevated card surface */
---brand-backcolor2hover: #334155;   /* Lighter surface on hover */
---brand-edgecolor2: #334155;        /* Card border */
+--brand-backcolor2: #0a0a0a;        /* Deep charcoal elevated card surface */
+--brand-backcolor2hover: #121212;   /* Slightly lighter charcoal on hover */
+--brand-edgecolor2: #171717;        /* Card border */
 --brand-frontcolor2: #cbd5e1;       /* Light gray secondary text */
 
-/* Tertiary Brand Group (Vibrant accent highlights) */
---brand-backcolor3: #1e3a8a;        /* Deep navy accent background */
---brand-backcolor3hover: #2563eb;   /* Vibrant blue fill on hover */
---brand-edgecolor3: #3b82f6;        /* Bright blue border */
+/* Tertiary Brand Group (Deep muted accent highlights) */
+--brand-backcolor3: #121212;        /* Dark charcoal accent background */
+--brand-backcolor3hover: #1c1c1c;   /* Dark gray fill on hover */
+--brand-edgecolor3: #262626;        /* Muted gray border */
 --brand-frontcolor3: #eff6ff;       /* Crisp ice-blue text */
 --brand-frontcolor3hover: #ffffff;  /* Pure white text on hover */
 
 /* Quaternary Brand Group (Disabled fields / inactive states) */
---brand-backcolor4: #020617;        /* Sunken, extra dark input fill */
---brand-backcolor4hover: #0f172a;   /* Subtle shift on hover */
---brand-edgecolor4: #1e293b;        /* Muted inactive border */
+--brand-backcolor4: #000000;        /* Sunken, pure black input fill */
+--brand-backcolor4hover: #0a0a0a;   /* Subtle shift on hover */
+--brand-edgecolor4: #121212;        /* Muted inactive border */
 --brand-frontcolor4: #64748b;       /* Dark gray disabled text */
 
 /* Quinary Brand Group (System alerts / positive success UI) */
---brand-backcolor5: #064e3b;        /* Deep emerald background */
---brand-backcolor5hover: #059669;   /* Bright emerald fill on hover */
---brand-edgecolor5: #10b981;        /* Vibrant green border */
+--brand-backcolor5: #022c22;        /* Ultra dark forest background */
+--brand-backcolor5hover: #047857;   /* Deep green fill on hover */
+--brand-edgecolor5: #059669;        /* Forest green border */
 --brand-frontcolor5: #ecfdf5;       /* Fresh mint success text */
 --brand-frontcolor5hover: #ffffff;  /* Pure white text on hover */
 
---brand-backcolorinfo: #082f49;
---brand-edgecolorinfo: #38bdf8;
+--brand-backcolorinfo: #021d30;     /* Ultra dark navy info background */
+--brand-edgecolorinfo: #0284c7;
 --brand-frontcolorinfo: #bae6fd;
---brand-backcolorsuccess: #052e16;
---brand-edgecolorsuccess: #16a34a;
+--brand-backcolorsuccess: #022c22;  /* Ultra dark green success background */
+--brand-edgecolorsuccess: #059669;
 --brand-frontcolorsuccess: #86efac;
---brand-backcolorwarning: #422006;
---brand-edgecolorwarning: #ca8a04;
+--brand-backcolorwarning: #2d1500;  /* Ultra dark amber warning background */
+--brand-edgecolorwarning: #b45309;
 --brand-frontcolorwarning: #fde68a;
---brand-backcolordanger: #450a0a;
---brand-edgecolordanger: #dc2626;
+--brand-backcolordanger: #2d0606;   /* Ultra dark maroon danger background */
+--brand-edgecolordanger: #b91c1c;
 --brand-frontcolordanger: #fca5a5;
---brand-pattern-dot: #334155;
+--brand-pattern-dot: #171717;       /* Dark grid dots */
 --brand-pattern-size: 50px 50px;
 }
 """
