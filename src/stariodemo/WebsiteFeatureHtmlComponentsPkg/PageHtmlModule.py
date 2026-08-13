@@ -10,10 +10,10 @@ from stario.markup.html import Style
 from stario.markup.html import Title
 
 from stariodemo.WebsiteFeatureHtmlComponentsPkg.ToastNotificationsHtmlModule import ToastNotificationsHtml
-from stariodemo.StaticAssetsPkg.StaticAssetsModule import DATASTAR_JS
-from stariodemo.StaticAssetsPkg.StaticAssetsModule import GLOBAL_CSS_STYLES
-from stariodemo.StaticAssetsPkg.StaticAssetsModule import STYLE_CSS
-from stariodemo.StaticAssetsPkg.ThemeSessionStorageModule import THEME_INIT_JS
+from stariodemo.WebsiteFeatureStaticAssetsPkg.StaticAssetsModule import DATASTAR_JS
+from stariodemo.WebsiteFeatureStaticAssetsPkg.StaticAssetsModule import GLOBAL_CSS_STYLES
+from stariodemo.WebsiteFeatureStaticAssetsPkg.StaticAssetsModule import STYLE_CSS
+from stariodemo.WebsiteFeatureStaticAssetsPkg.ThemeSessionStorageModule import THEME_INIT_JS
 
 
 def PageHtml(
