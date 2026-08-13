@@ -2,10 +2,10 @@ from stario.markup.html import Div
 from stario.markup.html import Input
 from stario.markup.html import Label
 
-from stariodemo.GoUrlsPkg.WidgetAddUrlModule import WIDGET_ADD_URL
 from stariodemo.WebsiteFeatureHtmlComponentsPkg.BigTitleHtmlModule import BigTitleHtml
 from stariodemo.WebsiteFeatureHtmlComponentsPkg.CommonActionButtonHtmlModule import CommonActionButtonHtml
 from stariodemo.WebsiteFeatureHtmlComponentsPkg.CommonMainMiddleSectionHtmlModule import CommonMainMiddleSectionHtml
+from stariodemo.WebsiteFeatureWidgetPkg.WidgetUrlsModule import WIDGET_ADD_API_URL
 
 
 def WidgetAddHtml():
@@ -26,7 +26,7 @@ def WidgetAddHtml():
             # 2. Custom button accepting attributes for Datastar to scrape the inputs
             CommonActionButtonHtml(
                 buttonText="Save new widget",
-                buttonHref=WIDGET_ADD_URL.href(),
+                buttonHref=WIDGET_ADD_API_URL.href(),
             ),
         ),
         rightSidebar=None,

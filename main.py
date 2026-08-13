@@ -61,7 +61,7 @@ async def bootstrap(
     HomeRegisterEndpoints(app)
     AbcRegisterEndpoints(app)
     ChatAppRegisterEndpoints(app, relay, db)
-    WidgetRegisterEndpoints(app)
+    WidgetRegisterEndpoints(app, relay)
     GiveMeRegisterEndpoints(app)
     ToastNotificationsRegisterEndpoints(app, relay)
 

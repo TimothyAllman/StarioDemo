@@ -1,13 +1,40 @@
+from pydantic import BaseModel
 from stario import Context
 from stario import Relay
 from stario import Writer
 from stario import datastar
 
 from stariodemo.FromTableDatabaseFunctionsPkg.FromWidgetDbTableInsertSingleItemModule import FromWidgetDbTableInsertSingleItem
-from stariodemo.GoUrlsPkg.WidgetAddUrlModule import ReadWidgetAddSignals
 from stariodemo.WebsiteFeatureHtmlComponentsPkg.MessageBoxHtmlModule import MessageBoxSuccessHtml
 from stariodemo.WebsiteFeatureToastNotificationsPkg.SubscribeToastNotificationsEndpointModule import PublishToastNotification
 from stariodemo.WebsiteFeatureWidgetPkg.WidgetUrlsModule import WIDGET_LIST_PAGE_URL
+
+
+class WidgetAddSignals(BaseModel):
+    """
+    docstring
+    """
+
+    name: str
+    age: int
+
+
+async def ReadWidgetAddSignals(
+    c: Context,
+) -> WidgetAddSignals:
+    """
+    docstring
+    """
+
+    parsedName = c.route.params.get("name", "").strip()
+    parseAge = c.route.params.get("age", "").strip()
+
+    signals = WidgetAddSignals(
+        name=parsedName,
+        age=int(parseAge),
+    )
+
+    return signals
 
 
 def WidgetAddEndpoint(
