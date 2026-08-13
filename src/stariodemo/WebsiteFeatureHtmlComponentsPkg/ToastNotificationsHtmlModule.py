@@ -4,7 +4,7 @@ from stario import datastar
 from stario.markup.html import Button
 from stario.markup.html import Div
 
-from stariodemo.BasicStructsPkg.UrlsModule import SUBSCRIBE_TO_TOAST_NOTIFICATIONS_URL
+from stariodemo.WebsiteFeatureToastNotificationsPkg.ToastNotificationsUrlsModule import SUBSCRIBE_TO_TOAST_NOTIFICATIONS_URL
 
 
 def ToastNotificationsHtml():

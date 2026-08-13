@@ -1,0 +1,15 @@
+from stario import App
+from stario import Relay
+
+from stariodemo.WebsiteFeatureToastNotificationsPkg.SubscribeToastNotificationsEndpointModule import SubscribeToToastNotificationsEndpoint
+from stariodemo.WebsiteFeatureToastNotificationsPkg.ToastErrorEndpointModule import ToastErrorEndpoint
+from stariodemo.WebsiteFeatureToastNotificationsPkg.ToastNotificationsUrlsModule import API_TOAST_ERROR_TEST_URL
+from stariodemo.WebsiteFeatureToastNotificationsPkg.ToastNotificationsUrlsModule import API_TOAST_SUCCESS_TEST_URL
+from stariodemo.WebsiteFeatureToastNotificationsPkg.ToastNotificationsUrlsModule import SUBSCRIBE_TO_TOAST_NOTIFICATIONS_URL
+from stariodemo.WebsiteFeatureToastNotificationsPkg.ToastSuccessEndpointModule import ToastSuccessEndpoint
+
+
+def ToastNotificationsRegisterEndpoints(app: App, relay: Relay):
+    app.get(API_TOAST_SUCCESS_TEST_URL, ToastSuccessEndpoint(relay))
+    app.get(API_TOAST_ERROR_TEST_URL, ToastErrorEndpoint(relay))
+    app.get(SUBSCRIBE_TO_TOAST_NOTIFICATIONS_URL, SubscribeToToastNotificationsEndpoint(relay))

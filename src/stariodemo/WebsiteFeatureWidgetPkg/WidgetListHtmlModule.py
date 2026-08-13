@@ -2,8 +2,6 @@ from stario import datastar
 from stario.markup.html import Div
 from stario.markup.html import Input
 
-from stariodemo.BasicStructsPkg.UrlsModule import WIDGET_ADD_PAGE_URL
-from stariodemo.BasicStructsPkg.UrlsModule import WIDGET_LIST_API_URL
 from stariodemo.DatabasePiccoloTablesPkg.WidgetDbModule import WidgetListDto
 from stariodemo.WebsiteFeatureHtmlComponentsPkg.BigTitleHtmlModule import BigTitleHtml
 from stariodemo.WebsiteFeatureHtmlComponentsPkg.CommonMainMiddleSectionHtmlModule import CommonMainMiddleSectionHtml
@@ -11,6 +9,8 @@ from stariodemo.WebsiteFeatureHtmlComponentsPkg.CommonNothingToShowPlaceholderHt
 from stariodemo.WebsiteFeatureHtmlComponentsPkg.CommonRedirectButtonHtmlModule import CommonRedirectButtonHtml
 from stariodemo.WebsiteFeatureHtmlComponentsPkg.CommonSidebarRightHtmlModule import CommonSidebarRightHtml
 from stariodemo.WebsiteFeatureWidgetPkg.WidgetCardHtmlModule import WidgetCardHtml
+from stariodemo.WebsiteFeatureWidgetPkg.WidgetUrlsModule import WIDGET_ADD_PAGE_URL
+from stariodemo.WebsiteFeatureWidgetPkg.WidgetUrlsModule import WIDGET_LIST_API_URL
 
 
 def WidgetListHtml(

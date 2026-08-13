@@ -5,4 +5,3 @@ CHAT_PRESENCE = "chat.presence"
 CHAT_MESSAGE = "chat.message"
 CHAT_TYPING = "chat.typing"
 
-RELAY_TOAST_NOTIFICATIONS_SUBSCRIBE_PATTERN = "toast.notifications.relay"

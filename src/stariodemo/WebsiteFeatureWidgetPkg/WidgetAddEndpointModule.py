@@ -3,11 +3,11 @@ from stario import Relay
 from stario import Writer
 from stario import datastar
 
-from stariodemo.BasicStructsPkg.UrlsModule import WIDGET_LIST_PAGE_URL
 from stariodemo.FromTableDatabaseFunctionsPkg.FromWidgetDbTableInsertSingleItemModule import FromWidgetDbTableInsertSingleItem
 from stariodemo.GoUrlsPkg.WidgetAddUrlModule import ReadWidgetAddSignals
-from stariodemo.WebsiteFeatureToastNotificationsPkg.SubscribeToastNotificationsEndpointModule import PublishToastNotification
 from stariodemo.WebsiteFeatureHtmlComponentsPkg.MessageBoxHtmlModule import MessageBoxSuccessHtml
+from stariodemo.WebsiteFeatureToastNotificationsPkg.SubscribeToastNotificationsEndpointModule import PublishToastNotification
+from stariodemo.WebsiteFeatureWidgetPkg.WidgetUrlsModule import WIDGET_LIST_PAGE_URL
 
 
 def WidgetAddEndpoint(

@@ -1,6 +1,6 @@
 import random
 
-from stariodemo.BasicStructsPkg.ColorsModule import COLORS
+from stariodemo.WebsiteFeatureChatAppPkg.ColorsModule import COLORS
 
 
 def generate_color() -> str:

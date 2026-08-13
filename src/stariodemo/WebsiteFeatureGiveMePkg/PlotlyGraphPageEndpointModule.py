@@ -2,9 +2,9 @@ from stario import Context
 from stario import Writer
 from stario import responses
 
-from stariodemo.WebsiteFeatureHtmlComponentsPkg.PageHtmlModule import PageHtml
 from stariodemo.WebsiteFeatureCustomPkg.NavBarAndFooterHtmlModule import NavBarAndFooterHtml
 from stariodemo.WebsiteFeatureGiveMePkg.PlotlyGraphHtmlModule import PlotlyGraphHtml
+from stariodemo.WebsiteFeatureHtmlComponentsPkg.PageHtmlModule import PageHtml
 
 
 def PlotlyGraphPageEndpoint():

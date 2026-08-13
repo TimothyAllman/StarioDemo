@@ -1,0 +1,1 @@
+RELAY_TOAST_NOTIFICATIONS_SUBSCRIBE_PATTERN = "toast.notifications.relay"

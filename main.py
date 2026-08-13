@@ -7,51 +7,15 @@ from stario import Relay
 from stario import Span
 from stario import StaticAssets
 
-from stariodemo.BasicStructsPkg.UrlsModule import ABC_ADD_PAGE_URL
-from stariodemo.BasicStructsPkg.UrlsModule import ABC_CALCULATION_PAGE_URL
-from stariodemo.BasicStructsPkg.UrlsModule import ABC_LIST_PAGE_URL
-from stariodemo.BasicStructsPkg.UrlsModule import API_ABC_CALCULATION_URL
-from stariodemo.BasicStructsPkg.UrlsModule import API_CALCULATION_URL
-from stariodemo.BasicStructsPkg.UrlsModule import API_TOAST_ERROR_TEST_URL
-from stariodemo.BasicStructsPkg.UrlsModule import API_TOAST_SUCCESS_TEST_URL
-from stariodemo.BasicStructsPkg.UrlsModule import CHAT_PAGE_URL
-from stariodemo.BasicStructsPkg.UrlsModule import CHAT_SEND_URL
-from stariodemo.BasicStructsPkg.UrlsModule import CHAT_SUBSCRIBE_URL
-from stariodemo.BasicStructsPkg.UrlsModule import CHAT_TYPING_URL
-from stariodemo.BasicStructsPkg.UrlsModule import GIVE_ME_JSON_URL
-from stariodemo.BasicStructsPkg.UrlsModule import GIVE_ME_TEXT_URL
-from stariodemo.BasicStructsPkg.UrlsModule import HOME_PAGE_URL
-from stariodemo.BasicStructsPkg.UrlsModule import PLOTLY_GRAPH_PAGE_URL
-from stariodemo.BasicStructsPkg.UrlsModule import SUBSCRIBE_TO_TOAST_NOTIFICATIONS_URL
-from stariodemo.BasicStructsPkg.UrlsModule import WIDGET_ADD_PAGE_URL
-from stariodemo.BasicStructsPkg.UrlsModule import WIDGET_DETAILS_PAGE_URL
-from stariodemo.BasicStructsPkg.UrlsModule import WIDGET_EDIT_PAGE_URL
-from stariodemo.BasicStructsPkg.UrlsModule import WIDGET_LIST_API_URL
-from stariodemo.BasicStructsPkg.UrlsModule import WIDGET_LIST_PAGE_URL
 from stariodemo.DatabasePiccoloTablesPkg.InitPiccoloDbModule import InitPiccoloDb
 from stariodemo.FromTableDatabaseFunctionsPkg import PiccoloChatDb
+from stariodemo.WebsiteFeatureAbcPkg.AbcRegisterEndpointsModule import AbcRegisterEndpoints
+from stariodemo.WebsiteFeatureChatAppPkg.ChatAppRegisterEndpointsModule import ChatAppRegisterEndpoints
+from stariodemo.WebsiteFeatureGiveMePkg.GiveMeRegisterEndpointsModule import GiveMeRegisterEndpoints
+from stariodemo.WebsiteFeatureHomePkg.HomeRegisterEndpointsModule import HomeRegisterEndpoints
 from stariodemo.WebsiteFeatureStaticAssetsPkg.StaticAssetsModule import ASSETS
-from stariodemo.WebsiteFeatureAbcPkg.AbcAddPageEndpointModule import AbcAddPageEndpoint
-from stariodemo.WebsiteFeatureAbcPkg.AbcCalculationEndpointModule import AbcCalculationEndpoint
-from stariodemo.WebsiteFeatureAbcPkg.AbcCalculationPageEndpointModule import AbcCalculationPageEndpoint
-from stariodemo.WebsiteFeatureAbcPkg.AbcListPageEndpointModule import AbcListPageEndpoint
-from stariodemo.WebsiteFeatureAbcPkg.ApiCalculationEndpointModule import ApiCalculationEndpoint
-from stariodemo.WebsiteFeatureChatAppPkg.ChatPageEndpointModule import ChatPageEndpoint
-from stariodemo.WebsiteFeatureChatAppPkg.SendMessageEndpointModule import SendMessageEndpoint
-from stariodemo.WebsiteFeatureChatAppPkg.SubscribeEndpointModule import SubscribeEndpoint
-from stariodemo.WebsiteFeatureChatAppPkg.TypingEndpointModule import TypingEndpoint
-from stariodemo.WebsiteFeatureGiveMePkg.GiveMeJsonEndpointModule import GiveMeJsonEndpoint
-from stariodemo.WebsiteFeatureGiveMePkg.GiveMeTextEndpointModule import GiveMeTextEndpoint
-from stariodemo.WebsiteFeatureGiveMePkg.PlotlyGraphPageEndpointModule import PlotlyGraphPageEndpoint
-from stariodemo.WebsiteFeatureHomePkg.HomePageEndpointModule import HomePageEndpoint
-from stariodemo.WebsiteFeatureToastNotificationsPkg.SubscribeToastNotificationsEndpointModule import SubscribeToToastNotificationsEndpoint
-from stariodemo.WebsiteFeatureToastNotificationsPkg.ToastErrorEndpointModule import ToastErrorEndpoint
-from stariodemo.WebsiteFeatureToastNotificationsPkg.ToastSuccessEndpointModule import ToastSuccessEndpoint
-from stariodemo.WebsiteFeatureWidgetPkg.WidgetAddPageEndpointModule import WidgetAddPageEndpoint
-from stariodemo.WebsiteFeatureWidgetPkg.WidgetDetailsPageEndpointModule import WidgetDetailsPageEndpoint
-from stariodemo.WebsiteFeatureWidgetPkg.WidgetEditPageEndpointModule import WidgetEditPageEndpoint
-from stariodemo.WebsiteFeatureWidgetPkg.WidgetListApiEndpointModule import WidgetListApiEndpoint
-from stariodemo.WebsiteFeatureWidgetPkg.WidgetListPageEndpointModule import WidgetListPageEndpoint
+from stariodemo.WebsiteFeatureToastNotificationsPkg.ToastNotificationsRegisterEndpointsModule import ToastNotificationsRegisterEndpoints
+from stariodemo.WebsiteFeatureWidgetPkg.WidgetRegisterEndpointsModule import WidgetRegisterEndpoints
 
 
 async def bootstrap(
@@ -92,39 +56,14 @@ async def bootstrap(
         s.attrs(static.stats)
     static.register(app)
 
-    # register_lobby(app, db, relay)
-    # register_room(app, db, relay)
-
     # Routes - closures inject db/relay where needed
-    app.get(HOME_PAGE_URL, HomePageEndpoint())
-
-    # other pages
-    app.get(ABC_ADD_PAGE_URL, AbcAddPageEndpoint())
-    app.get(ABC_LIST_PAGE_URL, AbcListPageEndpoint())
-    app.get(ABC_CALCULATION_PAGE_URL, AbcCalculationPageEndpoint())
-
-    app.get(CHAT_PAGE_URL, ChatPageEndpoint())
-    app.get(CHAT_SUBSCRIBE_URL, SubscribeEndpoint(db, relay))
-    app.post(CHAT_SEND_URL, SendMessageEndpoint(db, relay))
-    app.post(CHAT_TYPING_URL, TypingEndpoint(db, relay))
-
-    app.get(WIDGET_ADD_PAGE_URL, WidgetAddPageEndpoint())
-    app.get(WIDGET_LIST_PAGE_URL, WidgetListPageEndpoint())
-    app.get(WIDGET_LIST_API_URL, WidgetListApiEndpoint())
-    app.get(WIDGET_EDIT_PAGE_URL, WidgetEditPageEndpoint())
-    app.get(WIDGET_DETAILS_PAGE_URL, WidgetDetailsPageEndpoint())
-
-    # api
-    app.get(API_CALCULATION_URL, ApiCalculationEndpoint())
-    app.get(API_ABC_CALCULATION_URL, AbcCalculationEndpoint())
-
-    app.get(GIVE_ME_TEXT_URL, GiveMeTextEndpoint())
-    app.get(GIVE_ME_JSON_URL, GiveMeJsonEndpoint())
-    app.get(PLOTLY_GRAPH_PAGE_URL, PlotlyGraphPageEndpoint())
-
-    app.get(API_TOAST_SUCCESS_TEST_URL, ToastSuccessEndpoint(relay))
-    app.get(API_TOAST_ERROR_TEST_URL, ToastErrorEndpoint(relay))
-    app.get(SUBSCRIBE_TO_TOAST_NOTIFICATIONS_URL, SubscribeToToastNotificationsEndpoint(relay))
+    span.event("stariodemo.registering.routes")
+    HomeRegisterEndpoints(app)
+    AbcRegisterEndpoints(app)
+    ChatAppRegisterEndpoints(app, relay, db)
+    WidgetRegisterEndpoints(app)
+    GiveMeRegisterEndpoints(app)
+    ToastNotificationsRegisterEndpoints(app, relay)
 
     span.event("stariodemo.startup.ready")
 

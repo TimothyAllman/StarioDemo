@@ -1,12 +1,12 @@
 from stario.markup.html import H1
 from stario.markup.html import Div
 
-from stariodemo.BasicStructsPkg.UrlsModule import ABC_LIST_PAGE_URL
-from stariodemo.BasicStructsPkg.UrlsModule import CHAT_PAGE_URL
-from stariodemo.BasicStructsPkg.UrlsModule import HOME_PAGE_URL
-from stariodemo.BasicStructsPkg.UrlsModule import PLOTLY_GRAPH_PAGE_URL
-from stariodemo.BasicStructsPkg.UrlsModule import WIDGET_LIST_PAGE_URL
+from stariodemo.WebsiteFeatureAbcPkg.AbcUrlsModule import ABC_LIST_PAGE_URL
+from stariodemo.WebsiteFeatureChatAppPkg.ChatAppUrlsModule import CHAT_PAGE_URL
+from stariodemo.WebsiteFeatureGiveMePkg.GiveMeUrlsModule import PLOTLY_GRAPH_PAGE_URL
+from stariodemo.WebsiteFeatureHomePkg.HomeUrlsModule import HOME_PAGE_URL
 from stariodemo.WebsiteFeatureHtmlComponentsPkg.NavBarHtmlButtonModule import NavBarButtonHtml
+from stariodemo.WebsiteFeatureWidgetPkg.WidgetUrlsModule import WIDGET_LIST_PAGE_URL
 
 
 def NavBarHtml():

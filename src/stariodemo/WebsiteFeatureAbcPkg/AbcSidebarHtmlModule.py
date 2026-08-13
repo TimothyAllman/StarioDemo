@@ -1,6 +1,6 @@
-from stariodemo.BasicStructsPkg.UrlsModule import ABC_ADD_PAGE_URL
-from stariodemo.BasicStructsPkg.UrlsModule import ABC_CALCULATION_PAGE_URL
-from stariodemo.BasicStructsPkg.UrlsModule import ABC_LIST_PAGE_URL
+from stariodemo.WebsiteFeatureAbcPkg.AbcUrlsModule import ABC_ADD_PAGE_URL
+from stariodemo.WebsiteFeatureAbcPkg.AbcUrlsModule import ABC_CALCULATION_PAGE_URL
+from stariodemo.WebsiteFeatureAbcPkg.AbcUrlsModule import ABC_LIST_PAGE_URL
 from stariodemo.WebsiteFeatureHtmlComponentsPkg.CommonSidebarLeftHtmlModule import CommonSidebarLeftHtml
 from stariodemo.WebsiteFeatureHtmlComponentsPkg.SideBarButtonHtmlModule import SideBarButtonHtml
 

@@ -3,9 +3,9 @@ from stario import Relay
 from stario import Writer
 from stario import datastar
 
-from stariodemo.BasicStructsPkg.UrlsModule import HOME_PAGE_URL
-from stariodemo.WebsiteFeatureToastNotificationsPkg.SubscribeToastNotificationsEndpointModule import PublishToastNotification
+from stariodemo.WebsiteFeatureHomePkg.HomeUrlsModule import HOME_PAGE_URL
 from stariodemo.WebsiteFeatureHtmlComponentsPkg.MessageBoxHtmlModule import MessageBoxErrorHtml
+from stariodemo.WebsiteFeatureToastNotificationsPkg.SubscribeToastNotificationsEndpointModule import PublishToastNotification
 
 
 def ToastErrorEndpoint(

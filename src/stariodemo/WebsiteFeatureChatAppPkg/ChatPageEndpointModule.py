@@ -4,8 +4,8 @@ from stario import Context
 from stario import Writer
 from stario import responses
 
-from stariodemo.BasicStructsPkg.GenerateColorModule import generate_color
-from stariodemo.BasicStructsPkg.GenerateUserNameModule import generate_username
+from stariodemo.WebsiteFeatureChatAppPkg.GenerateColorModule import generate_color
+from stariodemo.WebsiteFeatureChatAppPkg.GenerateUserNameModule import generate_username
 from stariodemo.WebsiteFeatureHtmlComponentsPkg.PageHtmlModule import PageHtml
 from stariodemo.WebsiteFeatureChatAppPkg.ChatHtmlModule import chat_view
 from stariodemo.WebsiteFeatureCustomPkg.NavBarAndFooterHtmlModule import NavBarAndFooterHtml

@@ -7,10 +7,10 @@ from stario import Writer
 from stario import responses
 
 from stariodemo.DatabasePiccoloTablesPkg.ChatAppMessageDbModule import ChatAppMessageDto
-from stariodemo.BasicStructsPkg.RelayTopicsModule import CHAT_MESSAGE
-from stariodemo.BasicStructsPkg.UrlsModule import HOME_PAGE_URL
 from stariodemo.FromTableDatabaseFunctionsPkg import PiccoloChatDb
+from stariodemo.WebsiteFeatureChatAppPkg.ChatAppRelaysModule import CHAT_MESSAGE
 from stariodemo.WebsiteFeatureChatAppPkg.ChatSignalsModule import read_chat_signal
+from stariodemo.WebsiteFeatureHomePkg.HomeUrlsModule import HOME_PAGE_URL
 
 
 def SendMessageEndpoint(
