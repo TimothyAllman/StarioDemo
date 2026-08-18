@@ -2,15 +2,26 @@ from stario import datastar
 from stario.markup.html import Div
 from stario.markup.html import Input
 
-from stariodemo.WebsiteFeatureWidgetPkg.DbWidgetModule import WidgetListDto
 from stariodemo.WebsiteFeatureHtmlComponentsPkg.BigTitleHtmlModule import BigTitleHtml
 from stariodemo.WebsiteFeatureHtmlComponentsPkg.CommonMainMiddleSectionHtmlModule import CommonMainMiddleSectionHtml
 from stariodemo.WebsiteFeatureHtmlComponentsPkg.CommonNothingToShowPlaceholderHtmlModule import CommonNothingToShowPlaceholderHtml
 from stariodemo.WebsiteFeatureHtmlComponentsPkg.CommonRedirectButtonHtmlModule import CommonRedirectButtonHtml
 from stariodemo.WebsiteFeatureHtmlComponentsPkg.CommonSidebarRightHtmlModule import CommonSidebarRightHtml
+from stariodemo.WebsiteFeatureWidgetPkg.DbWidgetModule import WidgetListDto
 from stariodemo.WebsiteFeatureWidgetPkg.HtmlWidgetCardModule import WidgetCardHtml
 from stariodemo.WebsiteFeatureWidgetPkg.UrlsWidgetModule import WIDGET_ADD_PAGE_URL
 from stariodemo.WebsiteFeatureWidgetPkg.UrlsWidgetModule import WIDGET_LIST_API_URL
+
+
+def WidgetListContainerHtml(
+    *children,
+):
+    return Div(
+        {
+            "id": "__widget_cards_id",
+        },
+        *children,
+    )
 
 
 def WidgetListHtml(
@@ -66,10 +77,7 @@ def WidgetListHtml(
                 )
             ),
         ),
-        Div(
-            {
-                "id": __WIDGET_CARDS_ID,
-            },
+        WidgetListContainerHtml(
             datastar.data.init(
                 datastar.at.get(WIDGET_LIST_API_URL.href()),
             ),
@@ -78,10 +86,7 @@ def WidgetListHtml(
     )
 
 
-__WIDGET_CARDS_ID = "__widget_cards_id"
-
-
-def WidgetListCardsHtml(
+def WidgetListContentHtml(
     widgets: list[WidgetListDto],
 ):
     """
@@ -96,6 +101,12 @@ def WidgetListCardsHtml(
         for dto in widgets
     ]
 
+    return WidgetListContainerHtml(
+        cards,
+    )
+
+
+def WidgetListNoContentHtml():
     noElementsCard = CommonNothingToShowPlaceholderHtml(
         message="No widget found. add your first widget.",
         callToActionButton=CommonRedirectButtonHtml(
@@ -104,11 +115,6 @@ def WidgetListCardsHtml(
         ),
     )
 
-    return Div(
-        {"id": __WIDGET_CARDS_ID},
-        *cards
-        if cards
-        else [
-            noElementsCard,
-        ],
+    return WidgetListContainerHtml(
+        noElementsCard,
     )
