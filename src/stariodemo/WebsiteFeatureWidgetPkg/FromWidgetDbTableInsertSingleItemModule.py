@@ -1,8 +1,7 @@
 from stariodemo.WebsiteFeatureWidgetPkg.DbWidgetModule import WidgetDb
-from stariodemo.WebsiteFeatureWidgetPkg.UrlsWidgetModule import WidgetAddSignals
 
 
-async def FromWidgetDbTableInsertSingleItem(widgetAddSignal: WidgetAddSignals):
+async def FromWidgetDbTableInsertSingleItem(widgetAddSignal):
     trsc = WidgetDb.insert(
         WidgetDb(
             **widgetAddSignal.model_dump(),

@@ -6,9 +6,9 @@ from stario import UrlPath
 from stario import Writer
 from stario import datastar
 
-from stariodemo.WebsiteFeatureWidgetPkg.FromWidgetDbTableDeleteSingleItemModule import FromWidgetDbTableDeleteSingleItem
 from stariodemo.WebsiteFeatureHtmlComponentsPkg.MessageBoxHtmlModule import MessageBoxSuccessHtml
 from stariodemo.WebsiteFeatureToastNotificationsPkg.SubscribeToastNotificationsEndpointModule import PublishToastNotification
+from stariodemo.WebsiteFeatureWidgetPkg.FromWidgetDbTableDeleteSingleItemModule import FromWidgetDbTableDeleteSingleItem
 from stariodemo.WebsiteFeatureWidgetPkg.UrlsWidgetModule import WIDGET_LIST_PAGE_URL
 
 WIDGET_DELETE_URL = UrlPath("/widget-delete/{id}")
