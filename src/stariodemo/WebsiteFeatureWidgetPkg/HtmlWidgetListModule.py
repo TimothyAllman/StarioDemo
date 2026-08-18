@@ -4,11 +4,13 @@ from stario.markup.html import Input
 from stario.markup.html import P
 
 from stariodemo.WebsiteFeatureHtmlComponentsPkg.BigTitleHtmlModule import BigTitleHtml
+from stariodemo.WebsiteFeatureHtmlComponentsPkg.CommonActionButtonHtmlModule import CommonActionButtonHtml
 from stariodemo.WebsiteFeatureHtmlComponentsPkg.CommonMainMiddleSectionHtmlModule import CommonMainMiddleSectionHtml
 from stariodemo.WebsiteFeatureHtmlComponentsPkg.CommonNothingToShowPlaceholderHtmlModule import CommonNothingToShowPlaceholderHtml
 from stariodemo.WebsiteFeatureHtmlComponentsPkg.CommonRedirectButtonHtmlModule import CommonRedirectButtonHtml
 from stariodemo.WebsiteFeatureHtmlComponentsPkg.CommonSidebarRightHtmlModule import CommonSidebarRightHtml
 from stariodemo.WebsiteFeatureWidgetPkg.DbWidgetModule import WidgetListDto
+from stariodemo.WebsiteFeatureWidgetPkg.HandleWidgetDeleteModule import WIDGET_DELETE_API_URL
 from stariodemo.WebsiteFeatureWidgetPkg.UrlsWidgetModule import WIDGET_ADD_PAGE_URL
 from stariodemo.WebsiteFeatureWidgetPkg.UrlsWidgetModule import WIDGET_DETAILS_PAGE_URL
 from stariodemo.WebsiteFeatureWidgetPkg.UrlsWidgetModule import WIDGET_LIST_API_URL
@@ -156,12 +158,12 @@ def WidgetListCardHtml(
         #     # )
         #     "GoToView",
         # ),
-        # CommonActionButtonHtml(
-        #     buttonText="delete",
-        #     buttonHref=WIDGET_DELETE_URL.href(id=widgetDto.id),
-        # ),
+        CommonActionButtonHtml(
+            buttonText="delete",
+            buttonHref=WIDGET_DELETE_API_URL.href(id=widgetDto.id),
+        ),
         CommonRedirectButtonHtml(
-            name="delete",
+            name="details",
             url=WIDGET_DETAILS_PAGE_URL.href(id=widgetDto.id),
         ),
     )

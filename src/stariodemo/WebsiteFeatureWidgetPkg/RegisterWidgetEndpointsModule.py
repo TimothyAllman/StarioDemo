@@ -3,6 +3,8 @@ from stario import Relay
 
 from stariodemo.WebsiteFeatureWidgetPkg.HandleWidgetAddApiModule import WidgetAddEndpoint
 from stariodemo.WebsiteFeatureWidgetPkg.HandleWidgetAddPageModule import WidgetAddPageEndpoint
+from stariodemo.WebsiteFeatureWidgetPkg.HandleWidgetDeleteModule import WIDGET_DELETE_API_URL
+from stariodemo.WebsiteFeatureWidgetPkg.HandleWidgetDeleteModule import WidgetDeleteEndpoint
 from stariodemo.WebsiteFeatureWidgetPkg.HandleWidgetDetailsPageModule import WidgetDetailsPageEndpoint
 from stariodemo.WebsiteFeatureWidgetPkg.HandleWidgetEditPageModule import WidgetEditPageEndpoint
 from stariodemo.WebsiteFeatureWidgetPkg.HandleWidgetListApiModule import WidgetListApiEndpoint
@@ -25,3 +27,5 @@ def WidgetRegisterEndpoints(app: App, relay: Relay):
     app.get(WIDGET_EDIT_PAGE_URL, WidgetEditPageEndpoint())
 
     app.get(WIDGET_DETAILS_PAGE_URL, WidgetDetailsPageEndpoint())
+
+    app.get(WIDGET_DELETE_API_URL, WidgetDeleteEndpoint(relay))

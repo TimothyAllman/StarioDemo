@@ -1,5 +1,5 @@
-from dataclasses import dataclass
-
+from pydantic import BaseModel
+from pydantic import Field
 from stario import Context
 from stario import Relay
 from stario import UrlPath
@@ -11,27 +11,30 @@ from stariodemo.WebsiteFeatureToastNotificationsPkg.SubscribeToastNotificationsE
 from stariodemo.WebsiteFeatureWidgetPkg.FromWidgetDbTableDeleteSingleItemModule import FromWidgetDbTableDeleteSingleItem
 from stariodemo.WebsiteFeatureWidgetPkg.UrlsWidgetModule import WIDGET_LIST_PAGE_URL
 
-WIDGET_DELETE_URL = UrlPath("/widget-delete/{id}")
+WIDGET_DELETE_API_URL = UrlPath("/widget-delete/{id}")
 
 
-@dataclass
-class WidgetDeleteSignals:
+class WidgetDeleteSignals(BaseModel):
     """
     docstring
     """
 
-    widgetId: str
+    # Using Field alias to map the path variable 'id' directly to 'widgetId'
+    widgetId: str = Field(alias="id")
+
+    class Config:
+        # Allows populating by field name or alias
+        populate_by_name = True
 
 
 async def ReadWidgetDeleteSignals(
     c: Context,
 ) -> WidgetDeleteSignals:
+    # 1. Grab the raw routing parameters dictionary from the context
+    raw_params = c.route.params
 
-    parsedId = c.route.params.get("id", "").strip()
-
-    signals = WidgetDeleteSignals(
-        widgetId=parsedId,
-    )
+    # 2. Use Pydantic's official dictionary validation entry point
+    signals = WidgetDeleteSignals.model_validate(raw_params)
 
     return signals
 
