@@ -1,7 +1,7 @@
 from stario.markup.html import Div
 from stario.markup.html import P
 
-from stariodemo.WebsiteFeatureWidgetPkg.WidgetDeleteEndpointModule import WIDGET_DELETE_URL
+from stariodemo.WebsiteFeatureWidgetPkg.HandleWidgetDeleteModule import WIDGET_DELETE_URL
 from stariodemo.WebsiteFeatureHtmlComponentsPkg.CommonActionButtonHtmlModule import CommonActionButtonHtml
 
 

@@ -4,7 +4,7 @@ from stario import Writer
 from stario import datastar
 
 from stariodemo.WebsiteFeatureWidgetPkg.FromWidgetDbTableSelectAllItemsModule import FromWidgetDbTableSelectAllItems
-from stariodemo.WebsiteFeatureWidgetPkg.WidgetListHtmlModule import WidgetListCardsHtml
+from stariodemo.WebsiteFeatureWidgetPkg.HtmlWidgetListModule import WidgetListCardsHtml
 from stariodemo.WebsiteFeatureWidgetPkg.UrlsWidgetModule import WIDGET_LIST_PAGE_URL
 
 

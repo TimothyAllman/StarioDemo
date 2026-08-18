@@ -7,7 +7,7 @@ import os
 
 from piccolo.conf.apps import AppConfig
 
-from stariodemo.WebsiteFeatureWidgetPkg.WidgetDbModule import WidgetDb
+from stariodemo.WebsiteFeatureWidgetPkg.DbWidgetModule import WidgetDb
 
 CURRENT_DIRECTORY = os.path.dirname(os.path.abspath(__file__))
 

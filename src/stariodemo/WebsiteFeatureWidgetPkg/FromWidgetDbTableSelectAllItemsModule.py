@@ -1,5 +1,5 @@
-from stariodemo.WebsiteFeatureWidgetPkg.WidgetDbModule import WidgetDb
-from stariodemo.WebsiteFeatureWidgetPkg.WidgetDbModule import WidgetListDto
+from stariodemo.WebsiteFeatureWidgetPkg.DbWidgetModule import WidgetDb
+from stariodemo.WebsiteFeatureWidgetPkg.DbWidgetModule import WidgetListDto
 
 
 async def FromWidgetDbTableSelectAllItems(

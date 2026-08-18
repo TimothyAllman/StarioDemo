@@ -4,8 +4,8 @@ from stario import responses
 
 from stariodemo.WebsiteFeatureHtmlComponentsPkg.PageHtmlModule import PageHtml
 from stariodemo.WebsiteFeatureCustomPkg.NavBarAndFooterHtmlModule import NavBarAndFooterHtml
-from stariodemo.WebsiteFeatureWidgetPkg.WidgetDetailsHtmlModule import WidgetDetailsHtml
-from stariodemo.WebsiteFeatureWidgetPkg.WidgetSidebarHtmlModule import WidgetSideBarHtml
+from stariodemo.WebsiteFeatureWidgetPkg.HtmlWidgetDetailsModule import WidgetDetailsHtml
+from stariodemo.WebsiteFeatureWidgetPkg.HtmlWidgetSidebarModule import WidgetSideBarHtml
 
 
 def WidgetDetailsPageEndpoint():

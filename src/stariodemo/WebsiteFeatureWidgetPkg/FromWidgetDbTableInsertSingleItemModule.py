@@ -1,4 +1,4 @@
-from stariodemo.WebsiteFeatureWidgetPkg.WidgetDbModule import WidgetDb
+from stariodemo.WebsiteFeatureWidgetPkg.DbWidgetModule import WidgetDb
 from stariodemo.WebsiteFeatureWidgetPkg.UrlsWidgetModule import WidgetAddSignals
 
 

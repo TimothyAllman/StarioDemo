@@ -5,8 +5,8 @@ from stario import responses
 
 from stariodemo.WebsiteFeatureHtmlComponentsPkg.PageHtmlModule import PageHtml
 from stariodemo.WebsiteFeatureCustomPkg.NavBarAndFooterHtmlModule import NavBarAndFooterHtml
-from stariodemo.WebsiteFeatureWidgetPkg.WidgetListHtmlModule import WidgetListHtml
-from stariodemo.WebsiteFeatureWidgetPkg.WidgetSidebarHtmlModule import WidgetSideBarHtml
+from stariodemo.WebsiteFeatureWidgetPkg.HtmlWidgetListModule import WidgetListHtml
+from stariodemo.WebsiteFeatureWidgetPkg.HtmlWidgetSidebarModule import WidgetSideBarHtml
 
 
 class WidgetListPageSignals(BaseModel):
