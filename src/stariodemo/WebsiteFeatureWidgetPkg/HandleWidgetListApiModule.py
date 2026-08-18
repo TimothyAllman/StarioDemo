@@ -4,7 +4,8 @@ from stario import Writer
 from stario import datastar
 
 from stariodemo.WebsiteFeatureWidgetPkg.FromWidgetDbTableSelectAllItemsModule import FromWidgetDbTableSelectAllItems
-from stariodemo.WebsiteFeatureWidgetPkg.HtmlWidgetListModule import WidgetListCardsHtml
+from stariodemo.WebsiteFeatureWidgetPkg.HtmlWidgetListModule import WidgetListContentHtml
+from stariodemo.WebsiteFeatureWidgetPkg.HtmlWidgetListModule import WidgetListNoContentHtml
 from stariodemo.WebsiteFeatureWidgetPkg.UrlsWidgetModule import WIDGET_LIST_PAGE_URL
 
 
@@ -28,7 +29,7 @@ async def ReadWidgetListApiSignals(
 
 def WidgetListApiEndpoint():
     """
-    Serve abc list page
+    docstring
     """
 
     async def handler(c: Context, w: Writer) -> None:
@@ -45,9 +46,11 @@ def WidgetListApiEndpoint():
         )
 
         sse.patch_elements(
-            WidgetListCardsHtml(
+            WidgetListContentHtml(
                 widgets,
             )
+            if widgets
+            else WidgetListNoContentHtml()
         )
 
         newUrl = WIDGET_LIST_PAGE_URL.href(query={k: v for k, v in signals.model_dump().items() if v} or None)
