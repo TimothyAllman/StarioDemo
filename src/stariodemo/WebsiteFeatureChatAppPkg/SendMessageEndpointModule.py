@@ -6,7 +6,7 @@ from stario import Relay
 from stario import Writer
 from stario import responses
 
-from stariodemo.DatabasePiccoloTablesPkg.ChatAppMessageDbModule import ChatAppMessageDto
+from stariodemo.WebsiteFeatureChatAppPkg.ChatAppMessageDbModule import ChatAppMessageDto
 from stariodemo.FromTableDatabaseFunctionsPkg import PiccoloChatDb
 from stariodemo.WebsiteFeatureChatAppPkg.ChatAppRelaysModule import CHAT_MESSAGE
 from stariodemo.WebsiteFeatureChatAppPkg.ChatSignalsModule import read_chat_signal

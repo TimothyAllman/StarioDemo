@@ -1,5 +1,5 @@
-from stariodemo.DatabasePiccoloTablesPkg.WidgetDbModule import WidgetDb
-from stariodemo.DatabasePiccoloTablesPkg.WidgetDbModule import WidgetListDto
+from stariodemo.WebsiteFeatureWidgetPkg.WidgetDbModule import WidgetDb
+from stariodemo.WebsiteFeatureWidgetPkg.WidgetDbModule import WidgetListDto
 
 
 async def FromWidgetDbTableUpdateSingleItem(

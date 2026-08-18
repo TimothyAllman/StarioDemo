@@ -1,7 +1,7 @@
 from stario.markup.html import Div
 from stario.markup.html import Span
 
-from stariodemo.DatabasePiccoloTablesPkg.ChatAppUserDbModule import ChatAppUserDto
+from stariodemo.WebsiteFeatureChatAppPkg.ChatAppUserDbModule import ChatAppUserDto
 
 
 def typing_indicator_view(

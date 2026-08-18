@@ -1,6 +1,6 @@
 from stario import datastar
 
-from stariodemo.DatabasePiccoloTablesPkg.ChatAppMessageDbModule import ChatAppMessageDto
+from stariodemo.WebsiteFeatureChatAppPkg.ChatAppMessageDbModule import ChatAppMessageDto
 from stariodemo.WebsiteFeatureChatAppPkg.ChatAppChatEmptyStateHtmlModule import ChatAppChatEmptyStateHtml
 from stariodemo.WebsiteFeatureChatAppPkg.ChatAppMessagesHtmlModule import ChatAppMessagesHtml
 from stariodemo.WebsiteFeatureChatAppPkg.MessageHtmlModule import message_view

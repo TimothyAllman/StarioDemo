@@ -1,4 +1,4 @@
-from stariodemo.DatabasePiccoloTablesPkg.WidgetDbModule import WidgetDb
+from stariodemo.WebsiteFeatureWidgetPkg.WidgetDbModule import WidgetDb
 
 
 async def FromWidgetDbTableDeleteSingleItem(

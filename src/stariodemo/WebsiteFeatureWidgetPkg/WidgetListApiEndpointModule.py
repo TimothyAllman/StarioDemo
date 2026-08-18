@@ -3,9 +3,9 @@ from stario import Context
 from stario import Writer
 from stario import datastar
 
-from stariodemo.FromTableDatabaseFunctionsPkg.FromWidgetDbTableSelectAllItemsModule import FromWidgetDbTableSelectAllItems
+from stariodemo.WebsiteFeatureWidgetPkg.FromWidgetDbTableSelectAllItemsModule import FromWidgetDbTableSelectAllItems
 from stariodemo.WebsiteFeatureWidgetPkg.WidgetListHtmlModule import WidgetListCardsHtml
-from stariodemo.WebsiteFeatureWidgetPkg.WidgetUrlsModule import WIDGET_LIST_PAGE_URL
+from stariodemo.WebsiteFeatureWidgetPkg.UrlsWidgetModule import WIDGET_LIST_PAGE_URL
 
 
 class WidgetListApiSignals(BaseModel):

@@ -6,7 +6,7 @@ from stariodemo.WebsiteFeatureChatAppPkg.ChatAppUrlsModule import CHAT_PAGE_URL
 from stariodemo.WebsiteFeatureGiveMePkg.GiveMeUrlsModule import PLOTLY_GRAPH_PAGE_URL
 from stariodemo.WebsiteFeatureHomePkg.HomeUrlsModule import HOME_PAGE_URL
 from stariodemo.WebsiteFeatureHtmlComponentsPkg.NavBarHtmlButtonModule import NavBarButtonHtml
-from stariodemo.WebsiteFeatureWidgetPkg.WidgetUrlsModule import WIDGET_LIST_PAGE_URL
+from stariodemo.WebsiteFeatureWidgetPkg.UrlsWidgetModule import WIDGET_LIST_PAGE_URL
 
 
 def NavBarHtml():

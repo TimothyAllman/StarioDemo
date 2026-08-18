@@ -1,5 +1,5 @@
-from stariodemo.DatabasePiccoloTablesPkg.ChatAppUserDbModule import ChatAppUserDb
-from stariodemo.DatabasePiccoloTablesPkg.ChatAppUserDbModule import ChatAppUserDto
+from stariodemo.WebsiteFeatureChatAppPkg.ChatAppUserDbModule import ChatAppUserDb
+from stariodemo.WebsiteFeatureChatAppPkg.ChatAppUserDbModule import ChatAppUserDto
 
 
 async def GetChatAppUsers() -> dict[str, ChatAppUserDto]:

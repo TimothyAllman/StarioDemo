@@ -3,7 +3,7 @@ import os
 from piccolo.conf.apps import AppRegistry
 from piccolo.engine.sqlite import SQLiteEngine
 
-from stariodemo.DatabasePiccoloTablesPkg import piccolo_app
+from stariodemo.WebsiteFeatureWidgetPkg import piccolo_app
 
 SQLITE_DB_PATH = os.getenv("LITESTREAM_DB_PATH", "no ENV_VAR found")
 

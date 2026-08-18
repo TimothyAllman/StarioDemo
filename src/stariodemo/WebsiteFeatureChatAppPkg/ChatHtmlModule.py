@@ -1,8 +1,8 @@
 from stario import datastar
 from stario.markup.html import Div
 
-from stariodemo.DatabasePiccoloTablesPkg.ChatAppMessageDbModule import ChatAppMessageDto
-from stariodemo.DatabasePiccoloTablesPkg.ChatAppUserDbModule import ChatAppUserDto
+from stariodemo.WebsiteFeatureChatAppPkg.ChatAppMessageDbModule import ChatAppMessageDto
+from stariodemo.WebsiteFeatureChatAppPkg.ChatAppUserDbModule import ChatAppUserDto
 from stariodemo.WebsiteFeatureChatAppPkg.ChatAppChatBodyHtmlModule import ChatAppChatBodyHtml
 from stariodemo.WebsiteFeatureChatAppPkg.ChatAppChatContainerHtmlModule import ChatAppChatContainerHtml
 from stariodemo.WebsiteFeatureChatAppPkg.ChatAppChatFooterHtmlModule import ChatAppChatFooterHtml

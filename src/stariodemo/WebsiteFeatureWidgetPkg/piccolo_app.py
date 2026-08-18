@@ -7,19 +7,15 @@ import os
 
 from piccolo.conf.apps import AppConfig
 
-from stariodemo.DatabasePiccoloTablesPkg.ChatAppMessageDbModule import ChatAppMessageDb
-from stariodemo.DatabasePiccoloTablesPkg.ChatAppUserDbModule import ChatAppUserDb
-from stariodemo.DatabasePiccoloTablesPkg.WidgetDbModule import WidgetDb
+from stariodemo.WebsiteFeatureWidgetPkg.WidgetDbModule import WidgetDb
 
 CURRENT_DIRECTORY = os.path.dirname(os.path.abspath(__file__))
 
 
 APP_CONFIG = AppConfig(
-    app_name="PiccoloPkg",
+    app_name="WebsiteFeatureWidgetPkg",
     migrations_folder_path=os.path.join(CURRENT_DIRECTORY, "piccolo_migrations"),
     table_classes=[
-        ChatAppUserDb,
-        ChatAppMessageDb,
         WidgetDb,
     ],
     migration_dependencies=[],

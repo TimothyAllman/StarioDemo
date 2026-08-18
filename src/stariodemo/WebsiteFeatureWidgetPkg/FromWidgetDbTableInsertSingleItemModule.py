@@ -1,5 +1,5 @@
-from stariodemo.DatabasePiccoloTablesPkg.WidgetDbModule import WidgetDb
-from stariodemo.WebsiteFeatureWidgetPkg.WidgetUrlsModule import WidgetAddSignals
+from stariodemo.WebsiteFeatureWidgetPkg.WidgetDbModule import WidgetDb
+from stariodemo.WebsiteFeatureWidgetPkg.UrlsWidgetModule import WidgetAddSignals
 
 
 async def FromWidgetDbTableInsertSingleItem(widgetAddSignal: WidgetAddSignals):

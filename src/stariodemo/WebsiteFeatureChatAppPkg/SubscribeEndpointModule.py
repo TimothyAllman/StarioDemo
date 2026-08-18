@@ -4,7 +4,7 @@ from stario import Writer
 from stario import responses
 from stario.datastar import SSE
 
-from stariodemo.DatabasePiccoloTablesPkg.ChatAppUserDbModule import ChatAppUserDto
+from stariodemo.WebsiteFeatureChatAppPkg.ChatAppUserDbModule import ChatAppUserDto
 from stariodemo.FromTableDatabaseFunctionsPkg import PiccoloChatDb
 from stariodemo.WebsiteFeatureChatAppPkg.ChatAppRelaysModule import CHAT_PRESENCE
 from stariodemo.WebsiteFeatureChatAppPkg.ChatAppRelaysModule import CHAT_SUBSCRIBE_PATTERN

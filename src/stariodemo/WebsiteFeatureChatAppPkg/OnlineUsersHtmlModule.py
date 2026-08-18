@@ -1,4 +1,4 @@
-from stariodemo.DatabasePiccoloTablesPkg.ChatAppUserDbModule import ChatAppUserDto
+from stariodemo.WebsiteFeatureChatAppPkg.ChatAppUserDbModule import ChatAppUserDto
 from stariodemo.WebsiteFeatureChatAppPkg.ChatAppAvatarHtmlModule import ChatAppAvatarHtml
 from stariodemo.WebsiteFeatureChatAppPkg.ChatAppAvatarHtmlModule import ChatAppAvatarMoreHtml
 from stariodemo.WebsiteFeatureChatAppPkg.ChatAppAvatarsHtmlModule import ChatAppAvatarsHtml

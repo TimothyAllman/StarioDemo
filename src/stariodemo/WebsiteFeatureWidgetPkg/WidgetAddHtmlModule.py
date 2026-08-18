@@ -5,7 +5,7 @@ from stario.markup.html import Label
 from stariodemo.WebsiteFeatureHtmlComponentsPkg.BigTitleHtmlModule import BigTitleHtml
 from stariodemo.WebsiteFeatureHtmlComponentsPkg.CommonActionButtonHtmlModule import CommonActionButtonHtml
 from stariodemo.WebsiteFeatureHtmlComponentsPkg.CommonMainMiddleSectionHtmlModule import CommonMainMiddleSectionHtml
-from stariodemo.WebsiteFeatureWidgetPkg.WidgetUrlsModule import WIDGET_ADD_API_URL
+from stariodemo.WebsiteFeatureWidgetPkg.UrlsWidgetModule import WIDGET_ADD_API_URL
 
 
 def WidgetAddHtml():

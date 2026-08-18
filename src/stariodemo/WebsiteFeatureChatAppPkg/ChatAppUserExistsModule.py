@@ -1,4 +1,4 @@
-from stariodemo.DatabasePiccoloTablesPkg.ChatAppUserDbModule import ChatAppUserDb
+from stariodemo.WebsiteFeatureChatAppPkg.ChatAppUserDbModule import ChatAppUserDb
 
 
 async def ChatAppUserExists(user_id: str) -> bool:
