@@ -5,12 +5,14 @@ from stariodemo.WebsiteFeatureWidgetPkg.HandleWidgetAddApiModule import WidgetAd
 from stariodemo.WebsiteFeatureWidgetPkg.HandleWidgetAddPageModule import WidgetAddPageEndpoint
 from stariodemo.WebsiteFeatureWidgetPkg.HandleWidgetDeleteModule import WIDGET_DELETE_API_URL
 from stariodemo.WebsiteFeatureWidgetPkg.HandleWidgetDeleteModule import WidgetDeleteEndpoint
+from stariodemo.WebsiteFeatureWidgetPkg.HandleWidgetDetailsApiModule import WidgetDetailsApiEndpoint
 from stariodemo.WebsiteFeatureWidgetPkg.HandleWidgetDetailsPageModule import WidgetDetailsPageEndpoint
 from stariodemo.WebsiteFeatureWidgetPkg.HandleWidgetEditPageModule import WidgetEditPageEndpoint
 from stariodemo.WebsiteFeatureWidgetPkg.HandleWidgetListApiModule import WidgetListApiEndpoint
 from stariodemo.WebsiteFeatureWidgetPkg.HandleWidgetListPageModule import WidgetListPageEndpoint
 from stariodemo.WebsiteFeatureWidgetPkg.UrlsWidgetModule import WIDGET_ADD_API_URL
 from stariodemo.WebsiteFeatureWidgetPkg.UrlsWidgetModule import WIDGET_ADD_PAGE_URL
+from stariodemo.WebsiteFeatureWidgetPkg.UrlsWidgetModule import WIDGET_DETAILS_API_URL
 from stariodemo.WebsiteFeatureWidgetPkg.UrlsWidgetModule import WIDGET_DETAILS_PAGE_URL
 from stariodemo.WebsiteFeatureWidgetPkg.UrlsWidgetModule import WIDGET_EDIT_PAGE_URL
 from stariodemo.WebsiteFeatureWidgetPkg.UrlsWidgetModule import WIDGET_LIST_API_URL
@@ -27,5 +29,6 @@ def WidgetRegisterEndpoints(app: App, relay: Relay):
     app.get(WIDGET_EDIT_PAGE_URL, WidgetEditPageEndpoint())
 
     app.get(WIDGET_DETAILS_PAGE_URL, WidgetDetailsPageEndpoint())
+    app.get(WIDGET_DETAILS_API_URL, WidgetDetailsApiEndpoint())
 
     app.get(WIDGET_DELETE_API_URL, WidgetDeleteEndpoint(relay))

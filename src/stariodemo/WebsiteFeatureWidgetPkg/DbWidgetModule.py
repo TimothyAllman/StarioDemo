@@ -28,6 +28,16 @@ class WidgetListDto(BaseModel):
     name: str
 
 
+class WidgetDetailsDto(BaseModel):
+    """
+    docstring
+    """
+
+    id: str
+    username: str
+    name: str
+
+
 class WidgetUpdateDto(BaseModel):
     """
     docstring

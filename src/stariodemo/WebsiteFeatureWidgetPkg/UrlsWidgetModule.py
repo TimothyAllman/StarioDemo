@@ -6,3 +6,6 @@ WIDGET_ADD_PAGE_URL = UrlPath("/widget-add")
 WIDGET_ADD_API_URL = UrlPath("/widget-add-api")
 WIDGET_EDIT_PAGE_URL = UrlPath("/widget-edit")
 WIDGET_DETAILS_PAGE_URL = UrlPath("/widget-details/{id}")
+WIDGET_DETAILS_API_URL = UrlPath(
+    "/widget-details-api/{id}",
+)
