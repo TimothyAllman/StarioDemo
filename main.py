@@ -7,8 +7,6 @@ from stario import Relay
 from stario import Span
 from stario import StaticAssets
 
-from stariodemo.DatabasePiccoloTablesPkg.InitPiccoloDbModule import InitPiccoloDb
-from stariodemo.FromTableDatabaseFunctionsPkg import PiccoloChatDb
 from stariodemo.WebsiteFeatureAbcPkg.AbcRegisterEndpointsModule import AbcRegisterEndpoints
 from stariodemo.WebsiteFeatureChatAppPkg.ChatAppRegisterEndpointsModule import ChatAppRegisterEndpoints
 from stariodemo.WebsiteFeatureGiveMePkg.GiveMeRegisterEndpointsModule import GiveMeRegisterEndpoints
@@ -56,7 +54,7 @@ async def bootstrap(
     span.event("stariodemo.registering.routes")
     HomeRegisterEndpoints(app)
     AbcRegisterEndpoints(app)
-    ChatAppRegisterEndpoints(app, relay, db)
+    ChatAppRegisterEndpoints(app, relay)
     WidgetRegisterEndpoints(app, relay)
     GiveMeRegisterEndpoints(app)
     ToastNotificationsRegisterEndpoints(app, relay)

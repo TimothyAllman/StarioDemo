@@ -4,23 +4,27 @@ from stario import Writer
 from stario import responses
 from stario.datastar import SSE
 
-from stariodemo.WebsiteFeatureChatAppPkg.ChatAppUserDbModule import ChatAppUserDto
-from stariodemo.FromTableDatabaseFunctionsPkg import PiccoloChatDb
 from stariodemo.WebsiteFeatureChatAppPkg.ChatAppRelaysModule import CHAT_PRESENCE
 from stariodemo.WebsiteFeatureChatAppPkg.ChatAppRelaysModule import CHAT_SUBSCRIBE_PATTERN
 from stariodemo.WebsiteFeatureChatAppPkg.ChatAppUrlsModule import CHAT_PAGE_URL
+from stariodemo.WebsiteFeatureChatAppPkg.ChatAppUserDbModule import ChatAppUserDto
 from stariodemo.WebsiteFeatureChatAppPkg.ChatHtmlModule import chat_view
 from stariodemo.WebsiteFeatureChatAppPkg.ChatSignalsModule import read_chat_signal
 
 
-def SubscribeEndpoint(db: PiccoloChatDb, relay: Relay[str]):
-    async def handler(c: Context, w: Writer) -> None:
-        """GET /rooms/{room_id}/subscribe — SSE patches for this room.
+def SubscribeEndpoint(
+    relay: Relay[str],
+):
+    """
+    GET /rooms/{room_id}/subscribe — SSE patches for this room.
 
-        `c.alive` ends the loop on client disconnect or server shutdown, so the
-        presence cleanup below always runs. If the room is deleted mid-stream we
-        navigate the client back to the lobby over SSE.
-        """
+    `c.alive` ends the loop on client disconnect or server shutdown, so the
+    presence cleanup below always runs. If the room is deleted mid-stream we
+    navigate the client back to the lobby over SSE.
+    """
+
+    async def handler(c: Context, w: Writer) -> None:
+
         # redirect if no room exists/if room gets deleted
         # room = room_from_route(c, db)
         # if room is None:

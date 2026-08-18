@@ -11,8 +11,8 @@ from stariodemo.WebsiteFeatureChatAppPkg.SubscribeEndpointModule import Subscrib
 from stariodemo.WebsiteFeatureChatAppPkg.TypingEndpointModule import TypingEndpoint
 
 
-def ChatAppRegisterEndpoints(app: App, relay: Relay, db):
+def ChatAppRegisterEndpoints(app: App, relay: Relay):
     app.get(CHAT_PAGE_URL, ChatPageEndpoint())
-    app.get(CHAT_SUBSCRIBE_URL, SubscribeEndpoint(db, relay))
-    app.post(CHAT_SEND_URL, SendMessageEndpoint(db, relay))
-    app.post(CHAT_TYPING_URL, TypingEndpoint(db, relay))
+    app.get(CHAT_SUBSCRIBE_URL, SubscribeEndpoint(relay))
+    app.post(CHAT_SEND_URL, SendMessageEndpoint(relay))
+    app.post(CHAT_TYPING_URL, TypingEndpoint(relay))
