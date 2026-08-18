@@ -2,7 +2,7 @@ from stariodemo.WebsiteFeatureWidgetPkg.DbWidgetModule import WidgetDb
 from stariodemo.WebsiteFeatureWidgetPkg.DbWidgetModule import WidgetListDto
 
 
-async def FromWidgetDbTableSelectAllItems(
+async def FromWidgetDbTableSelectManyItems(
     name_filter: str | None = None,
     status_filter: str | None = None,
 ) -> list[WidgetListDto]:

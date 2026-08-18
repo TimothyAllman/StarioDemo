@@ -1,3 +1,4 @@
+from stario import datastar
 from stario.markup.html import Div
 from stario.markup.html import Input
 from stario.markup.html import Label
@@ -10,36 +11,50 @@ from stariodemo.WebsiteFeatureWidgetPkg.UrlsWidgetModule import WIDGET_ADD_API_U
 
 def WidgetAddHtml():
     """
-    Renders the Widget Add section using formless, naked inputs
-    and direct button dispatch attributes passed via Python dictionaries.
+    Renders the Widget Add section using formless inputs bound to Datastar signals.
     """
     return CommonMainMiddleSectionHtml(
         BigTitleHtml("Widget Add"),
-        # 1. Parent container with an explicit ID dictionary
         Div(
             {"id": "widget-input-wrapper"},
-            Label("Widget Name"),
-            # Inputs with attributes passed via dictionaries
-            Input(
+            # Initialize empty signal states for your input bindings
+            datastar.data.signals(
                 {
-                    "name": "name",
-                    "type": "text",
-                    "required": "true",
-                }
+                    "name": "",
+                    "age": "",
+                },
+                if_missing=True,
+            ),
+            Label("Widget Name"),
+            Div(
+                Input(
+                    {
+                        "type": "text",
+                        "required": "true",
+                    },
+                    # Synchronises input values with the "name" signal state
+                    datastar.data.bind("name"),
+                ),
             ),
             Label("Widget Age"),
-            Input(
-                {
-                    "name": "age",
-                    "type": "number",
-                    "min": "0",
-                    "required": "true",
-                }
+            Div(
+                Input(
+                    {
+                        "type": "number",
+                        "min": "0",
+                        "required": "true",
+                    },
+                    # Synchronises input values with the "age" signal state
+                    datastar.data.bind("age"),
+                ),
             ),
-            # 2. Custom button accepting attributes for Datastar to scrape the inputs
+            # Direct dispatch action to send the payload to the backend
             CommonActionButtonHtml(
                 buttonText="Save new widget",
                 buttonHref=WIDGET_ADD_API_URL.href(),
+                # Note: Ensure CommonActionButtonHtml accepts or routes Datastar
+                # triggers like datastar.data.on("click", datastar.at.post(...))
+                # if you aren't relying on standard anchor navigation tags.
             ),
         ),
         rightSidebar=None,

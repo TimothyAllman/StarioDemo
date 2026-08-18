@@ -3,7 +3,7 @@ from stario import Context
 from stario import Writer
 from stario import datastar
 
-from stariodemo.WebsiteFeatureWidgetPkg.FromWidgetDbTableSelectAllItemsModule import FromWidgetDbTableSelectAllItems
+from stariodemo.WebsiteFeatureWidgetPkg.FromWidgetDbTableSelectManyItemsModule import FromWidgetDbTableSelectManyItems
 from stariodemo.WebsiteFeatureWidgetPkg.HtmlWidgetListModule import WidgetListContentHtml
 from stariodemo.WebsiteFeatureWidgetPkg.HtmlWidgetListModule import WidgetListNoContentHtml
 from stariodemo.WebsiteFeatureWidgetPkg.UrlsWidgetModule import WIDGET_LIST_PAGE_URL
@@ -36,7 +36,7 @@ def WidgetListApiEndpoint():
 
         signals = await ReadWidgetListApiSignals(c)
 
-        widgets = await FromWidgetDbTableSelectAllItems(
+        widgets = await FromWidgetDbTableSelectManyItems(
             name_filter=signals.widget_name_filter or None,
             status_filter=signals.widget_status_filter or None,
         )
