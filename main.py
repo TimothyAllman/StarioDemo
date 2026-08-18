@@ -31,11 +31,7 @@ async def bootstrap(
     #     os.remove(SQLITE_DB_PATH)
 
     # Create database
-    span.event("stariodemo.db.creating.new")
-    await InitPiccoloDb()
-    db = PiccoloChatDb()
-    # await enable_wal()
-    span.event("stariodemo.db.created.successfully")
+    span.event("stariodemo.db.tables.created.successfully")
 
     # await SeedWidget()
 
