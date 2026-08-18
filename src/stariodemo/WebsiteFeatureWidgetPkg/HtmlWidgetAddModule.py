@@ -20,9 +20,22 @@ def WidgetAddHtml():
             {"id": "widget-input-wrapper"},
             Label("Widget Name"),
             # Inputs with attributes passed via dictionaries
-            Input({"name": "name", "type": "text", "required": "true"}),
+            Input(
+                {
+                    "name": "name",
+                    "type": "text",
+                    "required": "true",
+                }
+            ),
             Label("Widget Age"),
-            Input({"name": "age", "type": "number", "min": "0", "required": "true"}),
+            Input(
+                {
+                    "name": "age",
+                    "type": "number",
+                    "min": "0",
+                    "required": "true",
+                }
+            ),
             # 2. Custom button accepting attributes for Datastar to scrape the inputs
             CommonActionButtonHtml(
                 buttonText="Save new widget",

@@ -41,7 +41,7 @@ def WidgetAddEndpoint(
     relay: Relay[str],
 ):
     """
-    Serve abc list page
+    docstring
     """
 
     async def handler(c: Context, w: Writer) -> None:

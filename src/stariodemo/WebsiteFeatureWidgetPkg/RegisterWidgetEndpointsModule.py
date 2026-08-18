@@ -1,7 +1,7 @@
 from stario import App
 from stario import Relay
 
-from stariodemo.WebsiteFeatureWidgetPkg.HandleWidgetAddModule import WidgetAddEndpoint
+from stariodemo.WebsiteFeatureWidgetPkg.HandleWidgetAddApiModule import WidgetAddEndpoint
 from stariodemo.WebsiteFeatureWidgetPkg.HandleWidgetAddPageModule import WidgetAddPageEndpoint
 from stariodemo.WebsiteFeatureWidgetPkg.HandleWidgetDetailsPageModule import WidgetDetailsPageEndpoint
 from stariodemo.WebsiteFeatureWidgetPkg.HandleWidgetEditPageModule import WidgetEditPageEndpoint
