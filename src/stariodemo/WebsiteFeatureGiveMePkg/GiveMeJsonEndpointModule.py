@@ -6,7 +6,7 @@ from stario import responses
 def GiveMeJsonEndpoint():
     async def handler(c: Context, w: Writer) -> None:
         """
-        Serve abc list page
+        docstring
         """
         responses.json(
             w,

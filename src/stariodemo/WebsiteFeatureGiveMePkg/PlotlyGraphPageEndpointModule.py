@@ -10,7 +10,7 @@ from stariodemo.WebsiteFeatureHtmlComponentsPkg.PageHtmlModule import PageHtml
 def PlotlyGraphPageEndpoint():
     async def handler(c: Context, w: Writer) -> None:
         """
-        Serve abc list page
+        docstring
         """
         responses.html(
             w,

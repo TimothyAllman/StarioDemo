@@ -3,8 +3,8 @@ from stario import Context
 from stario import Writer
 from stario import responses
 
-from stariodemo.WebsiteFeatureHtmlComponentsPkg.PageHtmlModule import PageHtml
 from stariodemo.WebsiteFeatureCustomPkg.NavBarAndFooterHtmlModule import NavBarAndFooterHtml
+from stariodemo.WebsiteFeatureHtmlComponentsPkg.PageHtmlModule import PageHtml
 from stariodemo.WebsiteFeatureWidgetPkg.HtmlWidgetListModule import WidgetListHtml
 from stariodemo.WebsiteFeatureWidgetPkg.HtmlWidgetSidebarModule import WidgetSideBarHtml
 
@@ -31,7 +31,7 @@ async def ReadWidgetListPageSignals(
 
 def WidgetListPageEndpoint():
     """
-    Serve abc list page
+    docstring
     """
 
     async def handler(c: Context, w: Writer) -> None:

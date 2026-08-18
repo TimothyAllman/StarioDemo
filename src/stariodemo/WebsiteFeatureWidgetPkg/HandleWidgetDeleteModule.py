@@ -40,7 +40,7 @@ def WidgetDeleteEndpoint(
     relay: Relay[str],
 ):
     """
-    Serve abc list page
+    docstring
     """
 
     async def handler(c: Context, w: Writer) -> None:
@@ -59,7 +59,10 @@ def WidgetDeleteEndpoint(
             id=payload.widgetId,
         )
 
-        PublishToastNotification(relay=relay, message_box=MessageBoxSuccessHtml(messageText="Widget deleted"))
+        PublishToastNotification(
+            relay=relay,
+            message_box=MessageBoxSuccessHtml(messageText="Widget deleted"),
+        )
 
         sse = datastar.SSE(w)
         sse.navigate(WIDGET_LIST_PAGE_URL.href())
